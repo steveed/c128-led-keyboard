@@ -1,0 +1,11 @@
+# Wokwi for VS Code project file.  Open this folder's parent (firmware/) or this folder in
+# VS Code, run `make build-wokwi` first, then F1 -> "Wokwi: Start Simulator".
+# flasher_args.json loads bootloader + partition table + app at their real offsets.
+[wokwi]
+version = 1
+firmware = "../build-wokwi/flasher_args.json"
+elf = "../build-wokwi/c128kb.elf"
+# logic analyzer capture lands here (open with PulseView or the VS Code "WaveTrace" extension)
+vcdFile = "wokwi.vcd"
+# expose the simulated UART0 on a TCP port so a plain serial client can attach:
+#   .venv/bin/pip install pyserial && .venv/bin/python -m serial.tools.miniterm rfc2217://localhost:4000 115200

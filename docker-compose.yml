@@ -1,0 +1,25 @@
+# Containers for this repo's tooling.
+#
+#   idf   ESP-IDF (Espressif's official image) for building the rev 3 keyboard firmware.
+#         Build:      docker compose run --rm idf idf.py build
+#         Configure:  docker compose run --rm idf idf.py menuconfig
+#         See firmware/README.md; `make -C firmware build` wraps this.
+#
+# Flashing and the serial monitor need the USB port, which Docker Desktop on macOS cannot
+# pass through, so those two steps run a small host-side esptool (firmware/Makefile
+# `flash` / `monitor`).  Everything else stays in the container.
+
+services:
+  idf:
+    image: espressif/idf:release-v5.4
+    working_dir: /project/firmware
+    volumes:
+      - .:/project
+      - idf-ccache:/root/.ccache
+    environment:
+      - IDF_CCACHE_ENABLE=1
+      - IDF_TARGET=esp32s3
+    command: idf.py build
+
+volumes:
+  idf-ccache:

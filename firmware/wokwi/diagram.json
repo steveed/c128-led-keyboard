@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "author": "the-c128-keyboard-project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {
+        "flashSize": "8"
+      }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad",
+      "top": -20,
+      "left": 300,
+      "attrs": {
+        "keys": [
+          "⌫",
+          "3",
+          "5",
+          "7",
+          "↵",
+          "W",
+          "R",
+          "Y",
+          "↔",
+          "A",
+          "D",
+          "G",
+          "F7",
+          "4",
+          "6",
+          "8"
+        ]
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_shift",
+      "top": 260,
+      "left": 300,
+      "attrs": {
+        "color": "blue",
+        "label": "SHIFT LOCK",
+        "key": "s",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_caps",
+      "top": 260,
+      "left": 380,
+      "attrs": {
+        "color": "blue",
+        "label": "CAPS LOCK",
+        "key": "c",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_4080",
+      "top": 260,
+      "left": 460,
+      "attrs": {
+        "color": "blue",
+        "label": "40/80",
+        "key": "v",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_restore",
+      "top": 260,
+      "left": 540,
+      "attrs": {
+        "color": "red",
+        "label": "RESTORE",
+        "key": "r",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_4080",
+      "top": 360,
+      "left": 300,
+      "attrs": {
+        "color": "green",
+        "label": "80 col"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_caps",
+      "top": 360,
+      "left": 360,
+      "attrs": {
+        "color": "yellow",
+        "label": "CAPS"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_restore",
+      "top": 360,
+      "left": 420,
+      "attrs": {
+        "color": "red",
+        "label": "RESTORE drive"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 420,
+      "left": 300,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 420,
+      "left": 360,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 420,
+      "left": 420,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "la",
+      "top": -20,
+      "left": 560,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "keypad:R1",
+      "esp:4",
+      "green",
+      []
+    ],
+    [
+      "keypad:R2",
+      "esp:5",
+      "green",
+      []
+    ],
+    [
+      "keypad:R3",
+      "esp:6",
+      "green",
+      []
+    ],
+    [
+      "keypad:R4",
+      "esp:7",
+      "green",
+      []
+    ],
+    [
+      "keypad:C1",
+      "esp:14",
+      "orange",
+      []
+    ],
+    [
+      "keypad:C2",
+      "esp:21",
+      "orange",
+      []
+    ],
+    [
+      "keypad:C3",
+      "esp:47",
+      "orange",
+      []
+    ],
+    [
+      "keypad:C4",
+      "esp:48",
+      "orange",
+      []
+    ],
+    [
+      "btn_shift:1.l",
+      "esp:4",
+      "blue",
+      []
+    ],
+    [
+      "btn_shift:2.l",
+      "esp:20",
+      "blue",
+      []
+    ],
+    [
+      "btn_caps:1.l",
+      "esp:5",
+      "blue",
+      []
+    ],
+    [
+      "btn_caps:2.l",
+      "esp:20",
+      "blue",
+      []
+    ],
+    [
+      "btn_4080:1.l",
+      "esp:6",
+      "blue",
+      []
+    ],
+    [
+      "btn_4080:2.l",
+      "esp:20",
+      "blue",
+      []
+    ],
+    [
+      "btn_restore:1.l",
+      "esp:1",
+      "red",
+      []
+    ],
+    [
+      "btn_restore:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:42",
+      "led_4080:A",
+      "green",
+      []
+    ],
+    [
+      "led_4080:C",
+      "r1:1",
+      "green",
+      []
+    ],
+    [
+      "r1:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:2",
+      "led_caps:A",
+      "green",
+      []
+    ],
+    [
+      "led_caps:C",
+      "r2:1",
+      "green",
+      []
+    ],
+    [
+      "r2:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:13",
+      "led_restore:A",
+      "green",
+      []
+    ],
+    [
+      "led_restore:C",
+      "r3:1",
+      "green",
+      []
+    ],
+    [
+      "r3:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:12",
+      "la:D0",
+      "gray",
+      []
+    ],
+    [
+      "esp:38",
+      "la:D1",
+      "gray",
+      []
+    ],
+    [
+      "esp:39",
+      "la:D2",
+      "gray",
+      []
+    ],
+    [
+      "esp:40",
+      "la:D3",
+      "gray",
+      []
+    ],
+    [
+      "la:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ]
+  ]
+}

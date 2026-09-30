@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="212.00mm" height="71.00mm" viewBox="0 0 212.000 71.000">
+<g fill="#000">
+<text x="4.00" y="6.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">1</text>
+<text x="12.000" y="5.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Blk</text>
+<text x="12.000" y="8.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Orng</text>
+<text x="38.00" y="6.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">2</text>
+<text x="46.000" y="5.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Wht</text>
+<text x="46.000" y="8.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Brn</text>
+<text x="72.00" y="6.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">3</text>
+<text x="80.000" y="5.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Red</text>
+<text x="80.000" y="8.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">L Red</text>
+<text x="106.00" y="6.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">4</text>
+<text x="114.000" y="5.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Cyn</text>
+<text x="114.000" y="8.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">D Gry</text>
+<text x="140.00" y="6.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">5</text>
+<text x="148.000" y="5.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Pur</text>
+<text x="148.000" y="8.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">M Gry</text>
+<text x="174.00" y="6.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">6</text>
+<text x="182.000" y="5.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Grn</text>
+<text x="182.000" y="8.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">L Grn</text>
+<text x="4.00" y="15.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">7</text>
+<text x="12.000" y="14.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Blu</text>
+<text x="12.000" y="17.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">L Blu</text>
+<text x="38.00" y="15.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">8</text>
+<text x="46.000" y="14.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Yel</text>
+<text x="46.000" y="17.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">L Gry</text>
+<text x="72.00" y="15.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">9</text>
+<text x="80.000" y="14.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Rvs</text>
+<text x="80.000" y="17.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">On</text>
+<text x="106.00" y="15.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">0</text>
+<text x="114.000" y="14.870" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Rvs</text>
+<text x="114.000" y="17.180" font-size="2.2" font-family="Helvetica, Arial, sans-serif" font-weight="bold">Off</text>
+<text x="140.00" y="15.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">+</text>
+<rect x="148.000" y="13.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="148.000" y="13.000" width="0.400" height="0.400"/>
+<rect x="148.800" y="13.000" width="0.400" height="0.400"/>
+<rect x="149.600" y="13.000" width="0.400" height="0.400"/>
+<rect x="150.400" y="13.000" width="0.400" height="0.400"/>
+<rect x="148.400" y="13.400" width="0.400" height="0.400"/>
+<rect x="149.200" y="13.400" width="0.400" height="0.400"/>
+<rect x="150.000" y="13.400" width="0.400" height="0.400"/>
+<rect x="150.800" y="13.400" width="0.400" height="0.400"/>
+<rect x="148.000" y="13.800" width="0.400" height="0.400"/>
+<rect x="148.800" y="13.800" width="0.400" height="0.400"/>
+<rect x="149.600" y="13.800" width="0.400" height="0.400"/>
+<rect x="150.400" y="13.800" width="0.400" height="0.400"/>
+<rect x="148.400" y="14.200" width="0.400" height="0.400"/>
+<rect x="149.200" y="14.200" width="0.400" height="0.400"/>
+<rect x="150.000" y="14.200" width="0.400" height="0.400"/>
+<rect x="150.800" y="14.200" width="0.400" height="0.400"/>
+<rect x="148.000" y="14.600" width="0.400" height="0.400"/>
+<rect x="148.800" y="14.600" width="0.400" height="0.400"/>
+<rect x="149.600" y="14.600" width="0.400" height="0.400"/>
+<rect x="150.400" y="14.600" width="0.400" height="0.400"/>
+<rect x="148.400" y="15.000" width="0.400" height="0.400"/>
+<rect x="149.200" y="15.000" width="0.400" height="0.400"/>
+<rect x="150.000" y="15.000" width="0.400" height="0.400"/>
+<rect x="150.800" y="15.000" width="0.400" height="0.400"/>
+<rect x="148.000" y="15.400" width="0.400" height="0.400"/>
+<rect x="148.800" y="15.400" width="0.400" height="0.400"/>
+<rect x="149.600" y="15.400" width="0.400" height="0.400"/>
+<rect x="150.400" y="15.400" width="0.400" height="0.400"/>
+<rect x="148.400" y="15.800" width="0.400" height="0.400"/>
+<rect x="149.200" y="15.800" width="0.400" height="0.400"/>
+<rect x="150.000" y="15.800" width="0.400" height="0.400"/>
+<rect x="150.800" y="15.800" width="0.400" height="0.400"/>
+<rect x="152.100" y="13.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="152.100" y="14.200" width="3.200" height="0.400"/>
+<rect x="153.700" y="13.000" width="0.400" height="3.200"/>
+<text x="174.00" y="15.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">-</text>
+<rect x="182.000" y="13.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="182.000" y="13.000" width="0.400" height="0.400"/>
+<rect x="182.800" y="13.000" width="0.400" height="0.400"/>
+<rect x="182.400" y="13.400" width="0.400" height="0.400"/>
+<rect x="183.200" y="13.400" width="0.400" height="0.400"/>
+<rect x="182.000" y="13.800" width="0.400" height="0.400"/>
+<rect x="182.800" y="13.800" width="0.400" height="0.400"/>
+<rect x="182.400" y="14.200" width="0.400" height="0.400"/>
+<rect x="183.200" y="14.200" width="0.400" height="0.400"/>
+<rect x="182.000" y="14.600" width="0.400" height="0.400"/>
+<rect x="182.800" y="14.600" width="0.400" height="0.400"/>
+<rect x="182.400" y="15.000" width="0.400" height="0.400"/>
+<rect x="183.200" y="15.000" width="0.400" height="0.400"/>
+<rect x="182.000" y="15.400" width="0.400" height="0.400"/>
+<rect x="182.800" y="15.400" width="0.400" height="0.400"/>
+<rect x="182.400" y="15.800" width="0.400" height="0.400"/>
+<rect x="183.200" y="15.800" width="0.400" height="0.400"/>
+<rect x="186.100" y="13.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="187.700" y="13.000" width="0.400" height="3.200"/>
+<text x="4.00" y="24.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">£</text>
+<rect x="12.000" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="12.000" y="23.600" width="0.400" height="0.400"/>
+<rect x="12.800" y="23.600" width="0.400" height="0.400"/>
+<rect x="13.600" y="23.600" width="0.400" height="0.400"/>
+<rect x="14.400" y="23.600" width="0.400" height="0.400"/>
+<rect x="12.400" y="24.000" width="0.400" height="0.400"/>
+<rect x="13.200" y="24.000" width="0.400" height="0.400"/>
+<rect x="14.000" y="24.000" width="0.400" height="0.400"/>
+<rect x="14.800" y="24.000" width="0.400" height="0.400"/>
+<rect x="12.000" y="24.400" width="0.400" height="0.400"/>
+<rect x="12.800" y="24.400" width="0.400" height="0.400"/>
+<rect x="13.600" y="24.400" width="0.400" height="0.400"/>
+<rect x="14.400" y="24.400" width="0.400" height="0.400"/>
+<rect x="12.400" y="24.800" width="0.400" height="0.400"/>
+<rect x="13.200" y="24.800" width="0.400" height="0.400"/>
+<rect x="14.000" y="24.800" width="0.400" height="0.400"/>
+<rect x="14.800" y="24.800" width="0.400" height="0.400"/>
+<rect x="16.100" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="16.100,22.000 19.300,22.000 16.100,25.200"/>
+<text x="38.00" y="24.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">Q</text>
+<rect x="46.000" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="47.600" y="22.000" width="0.400" height="3.200"/>
+<rect x="47.600" y="23.200" width="1.600" height="0.400"/>
+<rect x="50.100" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<circle cx="51.700" cy="23.600" r="1.200" fill="#000" stroke="#000" stroke-width="0.400"/>
+<text x="72.00" y="24.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">W</text>
+<rect x="80.000" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="81.600" y="22.000" width="0.400" height="3.200"/>
+<rect x="80.000" y="23.200" width="2.000" height="0.400"/>
+<rect x="84.100" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<circle cx="85.700" cy="23.600" r="1.200" fill="none" stroke="#000" stroke-width="0.400"/>
+<text x="106.00" y="24.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">E</text>
+<rect x="114.000" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="114.000" y="23.200" width="3.200" height="0.400"/>
+<rect x="115.600" y="22.000" width="0.400" height="1.600"/>
+<rect x="118.100" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="118.100" y="22.400" width="3.200" height="0.400"/>
+<text x="140.00" y="24.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">R</text>
+<rect x="148.000" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="148.000" y="23.200" width="3.200" height="0.400"/>
+<rect x="149.600" y="23.200" width="0.400" height="2.000"/>
+<rect x="152.100" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="152.100" y="24.400" width="3.200" height="0.400"/>
+<text x="174.00" y="24.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">T</text>
+<rect x="182.000" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="182.000" y="22.000" width="3.200" height="0.400"/>
+<rect x="186.100" y="22.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="186.500" y="22.000" width="0.400" height="3.200"/>
+<text x="4.00" y="33.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">Y</text>
+<rect x="12.000" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="12.000" y="31.000" width="3.200" height="0.800"/>
+<rect x="16.100" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="18.500" y="31.000" width="0.400" height="3.200"/>
+<text x="38.00" y="33.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">U</text>
+<rect x="46.000" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="46.000" y="31.000" width="3.200" height="1.200"/>
+<rect x="50.100" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M 53.300 32.400 L 53.100 32.400 A 1.600 1.600 0 0 1 51.900 34.000 L 51.900 34.200" fill="none" stroke="#000" stroke-width="0.400"/>
+<text x="72.00" y="33.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">I</text>
+<rect x="80.000" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="80.000" y="32.600" width="3.200" height="1.600"/>
+<rect x="84.100" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M 84.100 32.400 L 84.300 32.400 A 1.600 1.600 0 0 1 85.900 34.000 L 85.900 34.200" fill="none" stroke="#000" stroke-width="0.400"/>
+<text x="106.00" y="33.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">O</text>
+<rect x="114.000" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="114.000" y="33.000" width="3.200" height="1.200"/>
+<rect x="118.100" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="118.100" y="31.000" width="0.400" height="3.200"/>
+<rect x="118.100" y="31.000" width="3.200" height="0.400"/>
+<text x="140.00" y="33.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">P</text>
+<rect x="148.000" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="148.000" y="33.400" width="3.200" height="0.800"/>
+<rect x="152.100" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="152.100" y="31.000" width="3.200" height="0.400"/>
+<rect x="154.900" y="31.000" width="0.400" height="3.200"/>
+<text x="174.00" y="33.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">@</text>
+<rect x="182.000" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="182.000" y="33.800" width="3.200" height="0.400"/>
+<rect x="186.100" y="31.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="186.100" y="33.800" width="3.200" height="0.400"/>
+<rect x="188.900" y="31.000" width="0.400" height="3.200"/>
+<text x="4.00" y="42.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">*</text>
+<rect x="12.000" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="12.000,40.000 15.200,40.000 15.200,43.200"/>
+<rect x="16.100" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="16.100" y="41.600" width="3.200" height="0.400"/>
+<text x="38.00" y="42.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">↑</text>
+<rect x="46.000" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="47.600" y="42.496" font-size="2.720" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">π</text>
+<text x="72.00" y="42.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">A</text>
+<rect x="80.000" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="81.600" y="41.200" width="1.600" height="0.400"/>
+<rect x="81.600" y="41.200" width="0.400" height="2.000"/>
+<rect x="84.100" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="85.700" y="42.496" font-size="2.720" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">♠</text>
+<text x="106.00" y="42.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">S</text>
+<rect x="114.000" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="114.000" y="41.200" width="2.000" height="0.400"/>
+<rect x="115.600" y="41.200" width="0.400" height="2.000"/>
+<rect x="118.100" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="119.700" y="42.496" font-size="2.720" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">♥</text>
+<text x="140.00" y="42.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">D</text>
+<rect x="148.000" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="149.600" y="41.600" width="1.600" height="1.600"/>
+<rect x="152.100" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="152.100" y="40.800" width="3.200" height="0.400"/>
+<text x="174.00" y="42.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">F</text>
+<rect x="182.000" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="182.000" y="41.600" width="1.600" height="1.600"/>
+<rect x="186.100" y="40.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="186.100" y="42.000" width="3.200" height="0.400"/>
+<text x="4.00" y="51.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">G</text>
+<rect x="12.000" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="12.000" y="49.000" width="0.400" height="3.200"/>
+<rect x="16.100" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="16.900" y="49.000" width="0.400" height="3.200"/>
+<text x="38.00" y="51.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">H</text>
+<rect x="46.000" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="46.000" y="49.000" width="0.800" height="3.200"/>
+<rect x="50.100" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="52.100" y="49.000" width="0.400" height="3.200"/>
+<text x="72.00" y="51.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">J</text>
+<rect x="80.000" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="80.000" y="49.000" width="1.200" height="3.200"/>
+<rect x="84.100" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M 85.900 49.000 L 85.900 49.200 A 1.600 1.600 0 0 0 87.100 50.400 L 87.300 50.400" fill="none" stroke="#000" stroke-width="0.400"/>
+<text x="106.00" y="51.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">K</text>
+<rect x="114.000" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="114.000" y="49.000" width="1.600" height="3.200"/>
+<rect x="118.100" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M 119.900 49.000 L 119.900 49.200 A 1.600 1.600 0 0 1 118.300 50.400 L 118.100 50.400" fill="none" stroke="#000" stroke-width="0.400"/>
+<text x="140.00" y="51.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">L</text>
+<rect x="148.000" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="150.000" y="49.000" width="1.200" height="3.200"/>
+<rect x="152.100" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="152.100" y="49.000" width="0.400" height="3.200"/>
+<rect x="152.100" y="51.800" width="3.200" height="0.400"/>
+<text x="174.00" y="51.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">Z</text>
+<rect x="182.000" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="183.600" y="49.000" width="0.400" height="1.600"/>
+<rect x="183.600" y="50.200" width="1.600" height="0.400"/>
+<rect x="186.100" y="49.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="187.700,49.200 189.100,50.600 187.700,52.000 186.300,50.600"/>
+<text x="4.00" y="60.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">X</text>
+<rect x="12.000" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="12.000" y="59.200" width="2.000" height="0.400"/>
+<rect x="13.600" y="58.000" width="0.400" height="1.600"/>
+<rect x="16.100" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="17.700" y="60.496" font-size="2.720" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">♣</text>
+<text x="38.00" y="60.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">C</text>
+<rect x="46.000" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="47.600" y="58.000" width="1.600" height="1.600"/>
+<rect x="50.100" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="50.100" y="59.200" width="3.200" height="0.400"/>
+<text x="72.00" y="60.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">V</text>
+<rect x="80.000" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="80.000" y="58.000" width="1.600" height="1.600"/>
+<rect x="84.100" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="84.100,58.000 84.500,58.000 87.300,60.800 87.300,61.200 86.900,61.200 84.100,58.400"/>
+<polygon points="86.900,58.000 87.300,58.000 87.300,58.400 84.500,61.200 84.100,61.200 84.100,60.800"/>
+<text x="106.00" y="60.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">B</text>
+<rect x="114.000" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="114.000" y="58.000" width="1.600" height="1.600"/>
+<rect x="115.600" y="59.600" width="1.600" height="1.600"/>
+<rect x="118.100" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="119.300" y="58.000" width="0.400" height="3.200"/>
+<text x="140.00" y="60.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">N</text>
+<rect x="148.000" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="150.400" y="58.000" width="0.800" height="3.200"/>
+<rect x="152.100" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="154.900,58.000 155.300,58.000 155.300,58.400 152.500,61.200 152.100,61.200 152.100,60.800"/>
+<text x="174.00" y="60.60" font-size="2.4" font-family="Helvetica, Arial, sans-serif">M</text>
+<rect x="182.000" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="184.800" y="58.000" width="0.400" height="3.200"/>
+<rect x="186.100" y="58.000" width="3.200" height="3.200" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="186.100,58.000 186.500,58.000 189.300,60.800 189.300,61.200 188.900,61.200 186.100,58.400"/>
+</g>
+</svg>

@@ -1,0 +1,5 @@
+# Overrides for the Wokwi simulator build (make build-wokwi).  Wokwi's ESP32-S3 serial
+# monitor is UART0, not the USB Serial/JTAG port the real board uses.
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+# CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG is not set
+CONFIG_ESP_CONSOLE_UART_BAUDRATE=115200

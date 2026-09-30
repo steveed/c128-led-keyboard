@@ -1,0 +1,29 @@
+# Headless smoke test for wokwi-cli:  make sim-test
+# Presses the lock keys and RESTORE, checks the console reports each one.
+name: rev 3 bench firmware smoke test
+version: 1
+author: the-c128-keyboard-project
+steps:
+  - wait-serial: "restored: shift=0 caps=0 80col=1"
+  - delay: 200ms
+
+  - set-control: { part-id: btn_caps, control: pressed, value: 1 }
+  - wait-serial: "caps -> 1"
+  - wait-serial: "down CapsLock (1,11)"
+  - set-control: { part-id: btn_caps, control: pressed, value: 0 }
+  - wait-serial: "up   CapsLock (1,11)"
+
+  - set-control: { part-id: btn_shift, control: pressed, value: 1 }
+  - wait-serial: "shift -> 1"
+  - set-control: { part-id: btn_shift, control: pressed, value: 0 }
+  - delay: 50ms
+
+  - set-control: { part-id: btn_4080, control: pressed, value: 1 }
+  - wait-serial: "c4080 -> 0"
+  - set-control: { part-id: btn_4080, control: pressed, value: 0 }
+  - delay: 50ms
+
+  - set-control: { part-id: btn_restore, control: pressed, value: 1 }
+  - wait-serial: "down RESTORE"
+  - set-control: { part-id: btn_restore, control: pressed, value: 0 }
+  - wait-serial: "up   RESTORE"

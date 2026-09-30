@@ -1,0 +1,101 @@
+key,group,row,x_mm,width_u,color,top_main,top_upper,front_text,front_left_glyph,front_left_petscii,front_left_unicode,front_left_desc,front_right_glyph,front_right_petscii,front_right_unicode,front_right_desc
+Esc,top1,top,-177.26,1,dark,ESC,,,,,,,,,,
+Tab,top1,top,-158.21,1,dark,TAB,,,,,,,,,,
+Alt,top1,top,-139.16,1,dark,ALT,,,,,,,,,,
+CapsLk,top1,top,-120.11,1,dark,"CAPS
+LOCK",,,,,,,,,,
+Help,top2,top,-62.96,1,dark,HELP,,,,,,,,,,
+LineFeed,top2,top,-43.91,1,dark,"LINE
+FEED",,,,,,,,,,
+40_80,top2,top,-24.86,1,dark,"40/80
+DISPLAY",,,,,,,,,,
+NoScroll,top2,top,-5.81,1,dark,"NO
+SCROLL",,,,,,,,,,
+Crsr-Up,top3,top,51.34,1,dark,↑,,,,,,,,,,
+Crsr-Down,top3,top,70.39,1,dark,↓,,,,,,,,,,
+Crsr-Left,top3,top,89.44,1,dark,←,,,,,,,,,,
+Crsr-Right,top3,top,108.49,1,dark,→,,,,,,,,,,
+F1,top4,top,141.79,1,dark,F1,F2,,,,,,,,,
+F3,top4,top,160.84,1,dark,F3,F4,,,,,,,,,
+F5,top4,top,179.89,1,dark,F5,F6,,,,,,,,,
+F7,top4,top,198.94,1,dark,F7,F8,,,,,,,,,
+LeftArrow,main,1,-177.26,1,light,←,,,,,,,,,,
+1,main,1,-158.21,1,light,1,!,Blk / Orng,,,,,,,,
+2,main,1,-139.16,1,light,2,"""",Wht / Brn,,,,,,,,
+3,main,1,-120.11,1,light,3,#,Red / L Red,,,,,,,,
+4,main,1,-101.06,1,light,4,$,Cyn / D Gry,,,,,,,,
+5,main,1,-82.01,1,light,5,%,Pur / M Gry,,,,,,,,
+6,main,1,-62.96,1,light,6,&,Grn / L Grn,,,,,,,,
+7,main,1,-43.91,1,light,7,',Blu / L Blu,,,,,,,,
+8,main,1,-24.86,1,light,8,(,Yel / L Gry,,,,,,,,
+9,main,1,-5.81,1,light,9,),Rvs / On,,,,,,,,
+0,main,1,13.24,1,light,0 (slashed),,Rvs / Off,,,,,,,,
++,main,1,32.29,1,light,+,,,▒,$A6,U+2592,checkerboard,┼,$DB,U+253C,cross
+-,main,1,51.34,1,light,−,,,🮌,$DC,U+1FB8C,left half checkerboard,│,$DD,U+2502,"vertical line, col 4"
+£,main,1,70.39,1,light,£,,,🮏,$A8,U+1FB8F,lower half checkerboard,◤,$A9,U+25E4,upper-left filled triangle
+Clr/Home,main,1,89.44,1,light,"CLR
+HOME",,,,,,,,,,
+Inst/Del,main,1,108.49,1,light,"INST
+DEL",,,,,,,,,,
+Ctrl,main,2,-172.34,1.5,light,CONTROL,,,,,,,,,,
+Q,main,2,-148.53,1,light,Q,,,├,$AB,U+251C,T pointing right,●,$D1,U+2022,filled circle
+W,main,2,-129.48,1,light,W,,,┤,$B3,U+2524,T pointing left,○,$D7,U+25CB,open circle
+E,main,2,-110.43,1,light,E,,,┴,$B1,U+2534,T pointing up,🭶,$C5,U+1FB76,"horizontal line, row 1"
+R,main,2,-91.38,1,light,R,,,┬,$B2,U+252C,T pointing down,🭻,$D2,U+1FB7B,"horizontal line, row 6"
+T,main,2,-72.33,1,light,T,,,▔,$A3,U+2594,top edge line,🭰,$D4,U+1FB70,"vertical line, col 1"
+Y,main,2,-53.28,1,light,Y,,,🮂,$B7,U+1FB82,upper quarter block,🭵,$D9,U+1FB75,"vertical line, col 6"
+U,main,2,-34.23,1,light,U,,,🮃,$B8,U+1FB83,upper 3/8 block,╭,$D5,U+256D,rounded corner: right and down
+I,main,2,-15.18,1,light,I,,,▄,$A2,U+2584,lower half block,╮,$C9,U+256E,rounded corner: left and down
+O,main,2,3.87,1,light,O,,,▃,$B9,U+2583,lower 3/8 block,🭽,$CF,U+1FB7D,left + top edge lines
+P,main,2,22.92,1,light,P,,,▂,$AF,U+2582,lower quarter block,🭾,$D0,U+1FB7E,top + right edge lines
+@,main,2,41.97,1,light,@,,,▁,$A4,U+2581,bottom edge line,🭿,$BA,U+1FB7F,bottom + right edge lines
+*,main,2,61.02,1,light,*,,,◥,$DF,U+25E5,upper-right filled triangle,─,$C0,U+2500,"horizontal line, row 4"
+UpArrow,main,2,80.07,1,light,↑,,,,,,,π,$DE,U+03C0,pi
+Restore,main,2,103.88,1.5,light,RESTORE,,,,,,,,,,
+Run/Stop,main,3,-177.26,1,light,"RUN
+STOP",,,,,,,,,,
+ShiftLock,main,3,-158.21,1,light,"SHIFT
+LOCK",,,,,,,,,,
+A,main,3,-139.16,1,light,A,,,┌,$B0,U+250C,corner: right and down,♠,$C1,U+2660,spade
+S,main,3,-120.11,1,light,S,,,┐,$AE,U+2510,corner: left and down,♥,$D3,U+2665,heart
+D,main,3,-101.06,1,light,D,,,▗,$AC,U+2597,lower-right quadrant,🭷,$C4,U+1FB77,"horizontal line, row 2"
+F,main,3,-82.01,1,light,F,,,▖,$BB,U+2596,lower-left quadrant,🭺,$C6,U+1FB7A,"horizontal line, row 5"
+G,main,3,-62.96,1,light,G,,,▏,$A5,U+258F,left edge line,🭱,$C7,U+1FB71,"vertical line, col 2"
+H,main,3,-43.91,1,light,H,,,▎,$B4,U+258E,left quarter block,🭴,$C8,U+1FB74,"vertical line, col 5"
+J,main,3,-24.86,1,light,J,,,▍,$B5,U+258D,left 3/8 block,╰,$CA,U+2570,rounded corner: up and right
+K,main,3,-5.81,1,light,K,,,▌,$A1,U+258C,left half block,╯,$CB,U+256F,rounded corner: left and up
+L,main,3,13.24,1,light,L,,,🮈,$B6,U+1FB88,right 3/8 block,🭼,$CC,U+1FB7C,left + bottom edge lines
+:,main,3,32.29,1,light,:,[,,,,,,,,,
+;,main,3,51.34,1,light,;,],,,,,,,,,
+=,main,3,70.39,1,light,=,,,,,,,,,,
+Return,main,3,98.96,2,light,RETURN,,,,,,,,,,
+C=,main,4,-177.26,1,light,C= (Commodore logo),,,,,,,,,,
+L-Shift,main,4,-153.45,1.5,light,SHIFT,,,,,,,,,,
+Z,main,4,-129.64,1,light,Z,,,└,$AD,U+2514,corner: up and right,♦,$DA,U+2666,diamond
+X,main,4,-110.59,1,light,X,,,┘,$BD,U+2518,corner: left and up,♣,$D8,U+2663,club
+C,main,4,-91.54,1,light,C,,,▝,$BC,U+259D,upper-right quadrant,🭸,$C3,U+1FB78,"horizontal line, row 3"
+V,main,4,-72.49,1,light,V,,,▘,$BE,U+2598,upper-left quadrant,╳,$D6,U+2573,diagonal cross
+B,main,4,-53.44,1,light,B,,,▚,$BF,U+259A,diagonal quadrants,🭲,$C2,U+1FB72,"vertical line, col 3"
+N,main,4,-34.39,1,light,N,,,🮇,$AA,U+1FB87,right quarter block,╱,$CE,U+2571,"diagonal, bottom-left to top-right"
+M,main,4,-15.34,1,light,M,,,▕,$A7,U+2595,right edge line,╲,$CD,U+2572,"diagonal, top-left to bottom-right"
+",",main,4,3.71,1,light,",",<,,,,,,,,,
+.,main,4,22.76,1,light,.,>,,,,,,,,,
+/,main,4,41.81,1,light,/,?,,,,,,,,,
+R-Shift,main,4,65.62,1.5,light,SHIFT,,,,,,,,,,
+Crsr Vert,main,4,89.43,1,light,CRSR,"↑ above, ↓ below",,,,,,,,,
+Crsr Horiz,main,4,108.48,1,light,CRSR,"← above, → below",,,,,,,,,
+Space,main,space,-34.23,9,light,,,,,,,,,,,
+Num7,keypad,1,141.79,1,light,7,,,,,,,,,,
+Num8,keypad,1,160.84,1,light,8,,,,,,,,,,
+Num9,keypad,1,179.89,1,light,9,,,,,,,,,,
+Num+,keypad,1,198.94,1,light,+,,,,,,,,,,
+Num4,keypad,2,141.79,1,light,4,,,,,,,,,,
+Num5,keypad,2,160.84,1,light,5,,,,,,,,,,
+Num6,keypad,2,179.89,1,light,6,,,,,,,,,,
+Num-,keypad,2,198.94,1,light,−,,,,,,,,,,
+Num1,keypad,3,141.79,1,light,1,,,,,,,,,,
+Num2,keypad,3,160.84,1,light,2,,,,,,,,,,
+Num3,keypad,3,179.89,1,light,3,,,,,,,,,,
+NumEnter,keypad,3-4,198.94,2 (vertical),light,"ENTER (rotated, reads top to bottom)",,,,,,,,,,
+Num0,keypad,4,151.32,2,light,0,,,,,,,,,,
+Num.,keypad,4,179.89,1,light,.,,,,,,,,,,

@@ -1,0 +1,382 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="279.40mm" height="215.90mm" viewBox="0 0 279.400 215.900">
+<g fill="#000">
+<g transform="translate(168.69 55.65) scale(0.8451)"><rect x="-186.36" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-177.26" y="-28.68" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >←</text>
+<rect x="-167.31" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-165.11" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >!</text>
+<text x="-165.11" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >1</text>
+<text x="-150.71" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Blk</text>
+<text x="-150.71" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Orng</text>
+<rect x="-148.26" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-146.06" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >&quot;</text>
+<text x="-146.06" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >2</text>
+<text x="-131.66" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Wht</text>
+<text x="-131.66" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Brn</text>
+<rect x="-129.21" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-127.01" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >#</text>
+<text x="-127.01" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >3</text>
+<text x="-112.61" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Red</text>
+<text x="-112.61" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >L Red</text>
+<rect x="-110.16" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-107.96" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >$</text>
+<text x="-107.96" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >4</text>
+<text x="-93.56" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Cyn</text>
+<text x="-93.56" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >D Gry</text>
+<rect x="-91.11" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-88.91" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >%</text>
+<text x="-88.91" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >5</text>
+<text x="-74.51" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Pur</text>
+<text x="-74.51" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >M Gry</text>
+<rect x="-72.06" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-69.86" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >&amp;</text>
+<text x="-69.86" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >6</text>
+<text x="-55.46" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Grn</text>
+<text x="-55.46" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >L Grn</text>
+<rect x="-53.01" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-50.81" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >&#x27;</text>
+<text x="-50.81" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >7</text>
+<text x="-36.41" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Blu</text>
+<text x="-36.41" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >L Blu</text>
+<rect x="-33.96" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-31.76" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >(</text>
+<text x="-31.76" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >8</text>
+<text x="-17.36" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Yel</text>
+<text x="-17.36" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >L Gry</text>
+<rect x="-14.91" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-12.71" y="-33.79" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >)</text>
+<text x="-12.71" y="-28.19" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >9</text>
+<text x="1.69" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Rvs</text>
+<text x="1.69" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >On</text>
+<rect x="4.14" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="13.24" y="-31.78" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >0</text>
+<text x="20.74" y="-26.19" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Rvs</text>
+<text x="20.74" y="-22.99" font-size="2.5" text-anchor="end" font-weight="bold" fill="#333" font-family="Helvetica, Arial, sans-serif" >Off</text>
+<rect x="23.19" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="32.29" y="-31.78" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >+</text>
+<rect x="28.190" y="-26.390" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="28.190" y="-26.390" width="0.450" height="0.450"/>
+<rect x="29.090" y="-26.390" width="0.450" height="0.450"/>
+<rect x="29.990" y="-26.390" width="0.450" height="0.450"/>
+<rect x="30.890" y="-26.390" width="0.450" height="0.450"/>
+<rect x="28.640" y="-25.940" width="0.450" height="0.450"/>
+<rect x="29.540" y="-25.940" width="0.450" height="0.450"/>
+<rect x="30.440" y="-25.940" width="0.450" height="0.450"/>
+<rect x="31.340" y="-25.940" width="0.450" height="0.450"/>
+<rect x="28.190" y="-25.490" width="0.450" height="0.450"/>
+<rect x="29.090" y="-25.490" width="0.450" height="0.450"/>
+<rect x="29.990" y="-25.490" width="0.450" height="0.450"/>
+<rect x="30.890" y="-25.490" width="0.450" height="0.450"/>
+<rect x="28.640" y="-25.040" width="0.450" height="0.450"/>
+<rect x="29.540" y="-25.040" width="0.450" height="0.450"/>
+<rect x="30.440" y="-25.040" width="0.450" height="0.450"/>
+<rect x="31.340" y="-25.040" width="0.450" height="0.450"/>
+<rect x="28.190" y="-24.590" width="0.450" height="0.450"/>
+<rect x="29.090" y="-24.590" width="0.450" height="0.450"/>
+<rect x="29.990" y="-24.590" width="0.450" height="0.450"/>
+<rect x="30.890" y="-24.590" width="0.450" height="0.450"/>
+<rect x="28.640" y="-24.140" width="0.450" height="0.450"/>
+<rect x="29.540" y="-24.140" width="0.450" height="0.450"/>
+<rect x="30.440" y="-24.140" width="0.450" height="0.450"/>
+<rect x="31.340" y="-24.140" width="0.450" height="0.450"/>
+<rect x="28.190" y="-23.690" width="0.450" height="0.450"/>
+<rect x="29.090" y="-23.690" width="0.450" height="0.450"/>
+<rect x="29.990" y="-23.690" width="0.450" height="0.450"/>
+<rect x="30.890" y="-23.690" width="0.450" height="0.450"/>
+<rect x="28.640" y="-23.240" width="0.450" height="0.450"/>
+<rect x="29.540" y="-23.240" width="0.450" height="0.450"/>
+<rect x="30.440" y="-23.240" width="0.450" height="0.450"/>
+<rect x="31.340" y="-23.240" width="0.450" height="0.450"/>
+<rect x="32.790" y="-26.390" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="32.790" y="-25.040" width="3.600" height="0.450"/>
+<rect x="34.590" y="-26.390" width="0.450" height="3.600"/>
+<rect x="42.24" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="51.34" y="-31.78" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >−</text>
+<rect x="47.240" y="-26.390" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="47.240" y="-26.390" width="0.450" height="0.450"/>
+<rect x="48.140" y="-26.390" width="0.450" height="0.450"/>
+<rect x="47.690" y="-25.940" width="0.450" height="0.450"/>
+<rect x="48.590" y="-25.940" width="0.450" height="0.450"/>
+<rect x="47.240" y="-25.490" width="0.450" height="0.450"/>
+<rect x="48.140" y="-25.490" width="0.450" height="0.450"/>
+<rect x="47.690" y="-25.040" width="0.450" height="0.450"/>
+<rect x="48.590" y="-25.040" width="0.450" height="0.450"/>
+<rect x="47.240" y="-24.590" width="0.450" height="0.450"/>
+<rect x="48.140" y="-24.590" width="0.450" height="0.450"/>
+<rect x="47.690" y="-24.140" width="0.450" height="0.450"/>
+<rect x="48.590" y="-24.140" width="0.450" height="0.450"/>
+<rect x="47.240" y="-23.690" width="0.450" height="0.450"/>
+<rect x="48.140" y="-23.690" width="0.450" height="0.450"/>
+<rect x="47.690" y="-23.240" width="0.450" height="0.450"/>
+<rect x="48.590" y="-23.240" width="0.450" height="0.450"/>
+<rect x="51.840" y="-26.390" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="53.640" y="-26.390" width="0.450" height="3.600"/>
+<rect x="61.29" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="70.39" y="-31.78" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >£</text>
+<rect x="66.290" y="-26.390" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="66.290" y="-24.590" width="0.450" height="0.450"/>
+<rect x="67.190" y="-24.590" width="0.450" height="0.450"/>
+<rect x="68.090" y="-24.590" width="0.450" height="0.450"/>
+<rect x="68.990" y="-24.590" width="0.450" height="0.450"/>
+<rect x="66.740" y="-24.140" width="0.450" height="0.450"/>
+<rect x="67.640" y="-24.140" width="0.450" height="0.450"/>
+<rect x="68.540" y="-24.140" width="0.450" height="0.450"/>
+<rect x="69.440" y="-24.140" width="0.450" height="0.450"/>
+<rect x="66.290" y="-23.690" width="0.450" height="0.450"/>
+<rect x="67.190" y="-23.690" width="0.450" height="0.450"/>
+<rect x="68.090" y="-23.690" width="0.450" height="0.450"/>
+<rect x="68.990" y="-23.690" width="0.450" height="0.450"/>
+<rect x="66.740" y="-23.240" width="0.450" height="0.450"/>
+<rect x="67.640" y="-23.240" width="0.450" height="0.450"/>
+<rect x="68.540" y="-23.240" width="0.450" height="0.450"/>
+<rect x="69.440" y="-23.240" width="0.450" height="0.450"/>
+<rect x="70.890" y="-26.390" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="70.890,-26.390 74.490,-26.390 70.890,-22.790"/>
+<rect x="80.34" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="89.44" y="-30.74" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >CLR</text>
+<text x="89.44" y="-27.44" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >HOME</text>
+<rect x="99.39" y="-39.39" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="108.49" y="-30.74" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >INST</text>
+<text x="108.49" y="-27.44" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >DEL</text>
+<rect x="-186.20" y="-20.34" width="27.73" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-172.34" y="-10.12" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >CONTROL</text>
+<rect x="-157.63" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-148.53" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >Q</text>
+<rect x="-152.630" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-150.830" y="-7.340" width="0.450" height="3.600"/>
+<rect x="-150.830" y="-5.990" width="1.800" height="0.450"/>
+<rect x="-148.030" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<circle cx="-146.230" cy="-5.540" r="1.350" fill="#000" stroke="#000" stroke-width="0.450"/>
+<rect x="-138.58" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-129.48" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >W</text>
+<rect x="-133.580" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-131.780" y="-7.340" width="0.450" height="3.600"/>
+<rect x="-133.580" y="-5.990" width="2.250" height="0.450"/>
+<rect x="-128.980" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<circle cx="-127.180" cy="-5.540" r="1.350" fill="none" stroke="#000" stroke-width="0.450"/>
+<rect x="-119.53" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-110.43" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >E</text>
+<rect x="-114.530" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-114.530" y="-5.990" width="3.600" height="0.450"/>
+<rect x="-112.730" y="-7.340" width="0.450" height="1.800"/>
+<rect x="-109.930" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-109.930" y="-6.890" width="3.600" height="0.450"/>
+<rect x="-100.48" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-91.38" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >R</text>
+<rect x="-95.480" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-95.480" y="-5.990" width="3.600" height="0.450"/>
+<rect x="-93.680" y="-5.990" width="0.450" height="2.250"/>
+<rect x="-90.880" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-90.880" y="-4.640" width="3.600" height="0.450"/>
+<rect x="-81.43" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-72.33" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >T</text>
+<rect x="-76.430" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-76.430" y="-7.340" width="3.600" height="0.450"/>
+<rect x="-71.830" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-71.380" y="-7.340" width="0.450" height="3.600"/>
+<rect x="-62.38" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-53.28" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >Y</text>
+<rect x="-57.380" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-57.380" y="-7.340" width="3.600" height="0.900"/>
+<rect x="-52.780" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-50.080" y="-7.340" width="0.450" height="3.600"/>
+<rect x="-43.33" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-34.23" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >U</text>
+<rect x="-38.330" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-38.330" y="-7.340" width="3.600" height="1.350"/>
+<rect x="-33.730" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M -30.130 -5.765 L -30.355 -5.765 A 1.800 1.800 0 0 1 -31.705 -3.965 L -31.705 -3.740" fill="none" stroke="#000" stroke-width="0.450"/>
+<rect x="-24.28" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-15.18" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >I</text>
+<rect x="-19.280" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-19.280" y="-5.540" width="3.600" height="1.800"/>
+<rect x="-14.680" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M -14.680 -5.765 L -14.455 -5.765 A 1.800 1.800 0 0 1 -12.655 -3.965 L -12.655 -3.740" fill="none" stroke="#000" stroke-width="0.450"/>
+<rect x="-5.23" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="3.87" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >O</text>
+<rect x="-0.230" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-0.230" y="-5.090" width="3.600" height="1.350"/>
+<rect x="4.370" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="4.370" y="-7.340" width="0.450" height="3.600"/>
+<rect x="4.370" y="-7.340" width="3.600" height="0.450"/>
+<rect x="13.82" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="22.92" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >P</text>
+<rect x="18.820" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="18.820" y="-4.640" width="3.600" height="0.900"/>
+<rect x="23.420" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="23.420" y="-7.340" width="3.600" height="0.450"/>
+<rect x="26.570" y="-7.340" width="0.450" height="3.600"/>
+<rect x="32.87" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="41.97" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >@</text>
+<rect x="37.870" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="37.870" y="-4.190" width="3.600" height="0.450"/>
+<rect x="42.470" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="42.470" y="-4.190" width="3.600" height="0.450"/>
+<rect x="45.620" y="-7.340" width="0.450" height="3.600"/>
+<rect x="51.92" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="61.02" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >*</text>
+<rect x="56.920" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="56.920,-7.340 60.520,-7.340 60.520,-3.740"/>
+<rect x="61.520" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="61.520" y="-5.540" width="3.600" height="0.450"/>
+<rect x="70.97" y="-20.34" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="80.07" y="-12.73" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >↑</text>
+<rect x="78.270" y="-7.340" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="80.070" y="-4.532" font-size="3.060" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">π</text>
+<rect x="90.02" y="-20.34" width="27.73" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="103.88" y="-10.12" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >RESTORE</text>
+<rect x="-186.36" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-177.26" y="7.36" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >RUN</text>
+<text x="-177.26" y="10.66" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >STOP</text>
+<rect x="-167.31" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-158.21" y="7.36" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >SHIFT</text>
+<text x="-158.21" y="10.66" font-size="3.0" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >LOCK</text>
+<rect x="-148.26" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-139.16" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >A</text>
+<rect x="-143.260" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-141.460" y="13.060" width="1.800" height="0.450"/>
+<rect x="-141.460" y="13.060" width="0.450" height="2.250"/>
+<rect x="-138.660" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="-136.860" y="14.518" font-size="3.060" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">♠</text>
+<rect x="-129.21" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-120.11" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >S</text>
+<rect x="-124.210" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-124.210" y="13.060" width="2.250" height="0.450"/>
+<rect x="-122.410" y="13.060" width="0.450" height="2.250"/>
+<rect x="-119.610" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="-117.810" y="14.518" font-size="3.060" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">♥</text>
+<rect x="-110.16" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-101.06" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >D</text>
+<rect x="-105.160" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-103.360" y="13.510" width="1.800" height="1.800"/>
+<rect x="-100.560" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-100.560" y="12.610" width="3.600" height="0.450"/>
+<rect x="-91.11" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-82.01" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >F</text>
+<rect x="-86.110" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-86.110" y="13.510" width="1.800" height="1.800"/>
+<rect x="-81.510" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-81.510" y="13.960" width="3.600" height="0.450"/>
+<rect x="-72.06" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-62.96" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >G</text>
+<rect x="-67.060" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-67.060" y="11.710" width="0.450" height="3.600"/>
+<rect x="-62.460" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-61.560" y="11.710" width="0.450" height="3.600"/>
+<rect x="-53.01" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-43.91" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >H</text>
+<rect x="-48.010" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-48.010" y="11.710" width="0.900" height="3.600"/>
+<rect x="-43.410" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-41.160" y="11.710" width="0.450" height="3.600"/>
+<rect x="-33.96" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-24.86" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >J</text>
+<rect x="-28.960" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-28.960" y="11.710" width="1.350" height="3.600"/>
+<rect x="-24.360" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M -22.335 11.710 L -22.335 11.935 A 1.800 1.800 0 0 0 -20.985 13.285 L -20.760 13.285" fill="none" stroke="#000" stroke-width="0.450"/>
+<rect x="-14.91" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-5.81" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >K</text>
+<rect x="-9.910" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-9.910" y="11.710" width="1.800" height="3.600"/>
+<rect x="-5.310" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<path d="M -3.285 11.710 L -3.285 11.935 A 1.800 1.800 0 0 1 -5.085 13.285 L -5.310 13.285" fill="none" stroke="#000" stroke-width="0.450"/>
+<rect x="4.14" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="13.24" y="6.32" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >L</text>
+<rect x="9.140" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="11.390" y="11.710" width="1.350" height="3.600"/>
+<rect x="13.740" y="11.710" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="13.740" y="11.710" width="0.450" height="3.600"/>
+<rect x="13.740" y="14.860" width="3.600" height="0.450"/>
+<rect x="23.19" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="25.39" y="4.31" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >[</text>
+<text x="25.39" y="9.91" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >:</text>
+<rect x="42.24" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="44.44" y="4.31" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >]</text>
+<text x="44.44" y="9.91" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >;</text>
+<rect x="61.29" y="-1.29" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="70.39" y="9.42" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >=</text>
+<rect x="80.33" y="-1.29" width="37.25" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="98.96" y="8.93" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >RETURN</text>
+<rect x="-186.36" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-177.26" y="28.47" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >C=</text>
+<rect x="-167.31" y="17.76" width="27.73" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-153.45" y="27.98" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >SHIFT</text>
+<rect x="-138.74" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-129.64" y="25.37" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >Z</text>
+<rect x="-133.740" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-131.940" y="30.760" width="0.450" height="1.800"/>
+<rect x="-131.940" y="32.110" width="1.800" height="0.450"/>
+<rect x="-129.140" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="-127.340,30.985 -125.765,32.560 -127.340,34.135 -128.915,32.560"/>
+<rect x="-119.69" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-110.59" y="25.37" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >X</text>
+<rect x="-114.690" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-114.690" y="32.110" width="2.250" height="0.450"/>
+<rect x="-112.890" y="30.760" width="0.450" height="1.800"/>
+<rect x="-110.090" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="-108.290" y="33.568" font-size="3.060" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">♣</text>
+<rect x="-100.64" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-91.54" y="25.37" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >C</text>
+<rect x="-95.640" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-93.840" y="30.760" width="1.800" height="1.800"/>
+<rect x="-91.040" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-91.040" y="32.110" width="3.600" height="0.450"/>
+<rect x="-81.59" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-72.49" y="25.37" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >V</text>
+<rect x="-76.590" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-76.590" y="30.760" width="1.800" height="1.800"/>
+<rect x="-71.990" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="-71.990,30.760 -71.540,30.760 -68.390,33.910 -68.390,34.360 -68.840,34.360 -71.990,31.210"/>
+<polygon points="-68.840,30.760 -68.390,30.760 -68.390,31.210 -71.540,34.360 -71.990,34.360 -71.990,33.910"/>
+<rect x="-62.54" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-53.44" y="25.37" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >B</text>
+<rect x="-57.540" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-57.540" y="30.760" width="1.800" height="1.800"/>
+<rect x="-55.740" y="32.560" width="1.800" height="1.800"/>
+<rect x="-52.940" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-51.590" y="30.760" width="0.450" height="3.600"/>
+<rect x="-43.49" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-34.39" y="25.37" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >N</text>
+<rect x="-38.490" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-35.790" y="30.760" width="0.900" height="3.600"/>
+<rect x="-33.890" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="-30.740,30.760 -30.290,30.760 -30.290,31.210 -33.440,34.360 -33.890,34.360 -33.890,33.910"/>
+<rect x="-24.44" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-15.34" y="25.37" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" >M</text>
+<rect x="-19.440" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="-16.290" y="30.760" width="0.450" height="3.600"/>
+<rect x="-14.840" y="30.760" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<polygon points="-14.840,30.760 -14.390,30.760 -11.240,33.910 -11.240,34.360 -11.690,34.360 -14.840,31.210"/>
+<rect x="-5.39" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-3.19" y="23.36" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >&lt;</text>
+<text x="-3.19" y="28.96" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >,</text>
+<rect x="13.66" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="15.86" y="23.36" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >&gt;</text>
+<text x="15.86" y="28.96" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >.</text>
+<rect x="32.71" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="34.91" y="23.36" font-size="4" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >?</text>
+<text x="34.91" y="28.96" font-size="4.6" text-anchor="start" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >/</text>
+<rect x="51.76" y="17.76" width="27.73" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="65.62" y="27.98" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >SHIFT</text>
+<rect x="80.33" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="89.43" y="22.76" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >↑</text>
+<text x="89.43" y="26.96" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >CRSR</text>
+<text x="89.43" y="31.16" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >↓</text>
+<rect x="99.38" y="17.76" width="18.20" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="108.48" y="22.76" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >←</text>
+<text x="108.48" y="26.96" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >CRSR</text>
+<text x="108.48" y="31.16" font-size="3.2" text-anchor="middle" font-weight="normal" fill="#000" font-family="Helvetica, Arial, sans-serif" >→</text>
+<rect x="-119.53" y="36.81" width="170.60" height="18.20" rx="1.6" fill="#f2f0ea" stroke="#555" stroke-width="0.3"/>
+<text x="-34.23" y="47.52" font-size="4.6" text-anchor="middle" font-weight="bold" fill="#000" font-family="Helvetica, Arial, sans-serif" ></text></g>
+<text x="10" y="14" font-size="6" font-weight="bold" font-family="Helvetica, Arial, sans-serif">Commodore 128 keyboard — graphics characters</text>
+<text x="269.4" y="14" font-size="3.4" text-anchor="end" font-family="Helvetica, Arial, sans-serif">c128-led-keyboard</text>
+<rect x="10.000" y="111.294" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<rect x="11.800" y="112.644" width="1.800" height="0.450"/>
+<rect x="11.800" y="112.644" width="0.450" height="2.250"/>
+<rect x="14.600" y="111.294" width="3.600" height="3.600" fill="none" stroke="#000" stroke-width="0.12"/>
+<text x="16.400" y="114.102" font-size="3.060" text-anchor="middle" font-family="DejaVu Sans, Arial Unicode MS, sans-serif">♠</text>
+<text x="20.00" y="114.49" font-size="3.2" font-weight="normal" font-family="Helvetica, Arial, sans-serif">Under each key: left box = hold the C= key, right box = hold SHIFT.  These are the characters printed on the front of the original keycaps.</text>
+<text x="20.00" y="119.49" font-size="3.2" font-weight="normal" font-family="Helvetica, Arial, sans-serif">Number keys: top word = CONTROL + key sets that color, bottom word = C= + key.  9 / 0 with CONTROL turn reverse video on / off.</text>
+<text x="20.00" y="124.49" font-size="3.2" font-weight="normal" font-family="Helvetica, Arial, sans-serif">Keys with nothing underneath have no front legend.</text>
+</g>
+</svg>

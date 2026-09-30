@@ -1,0 +1,8 @@
+build/
+build-wokwi/
+wokwi/*.vcd
+sdkconfig
+sdkconfig.old
+.venv/
+dependencies.lock
+managed_components/

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210" font-family="Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+    <path d="M0,1 L10,5 L0,9 z" fill="#000"/>
+  </marker>
+  <g id="stem">
+    <circle r="2.75" fill="#fff" stroke="#000" stroke-width="0.3"/>
+    <path d="M-2,-0.65 H-0.65 V-2 H0.65 V-0.65 H2 V0.65 H0.65 V2 H-0.65 V0.65 H-2 Z" fill="#000"/>
+  </g>
+</defs>
+<rect width="297" height="210" fill="#fff"/>
+<rect x="6" y="6" width="285" height="198" fill="none" stroke="#000" stroke-width="0.4"/>
+
+<!-- title -->
+<text x="12" y="16" font-size="6" font-weight="bold">9u spacebar keycap — Cherry MX mount, 3 stems</text>
+<text x="12" y="22.5" font-size="3.2">Commodore 128 mechanical keyboard project · Rev A · 2026-09-30 · all dimensions in mm · 1u = 19.05 mm</text>
+
+<!-- underside view -->
+<text x="12" y="33" font-size="3.2" font-weight="bold">VIEW FROM UNDERSIDE (scale 1:1 when printed on A4 at 100%)</text>
+<g stroke="#000" stroke-width="0.25" fill="none">
+  <!-- extension lines, cap width -->
+  <line x1="63.25" y1="49" x2="63.25" y2="38"/>
+  <line x1="233.75" y1="49" x2="233.75" y2="38"/>
+  <!-- extension lines, stems -->
+  <line x1="81.825" y1="62.5" x2="81.825" y2="92"/>
+  <line x1="148.5" y1="62.5" x2="148.5" y2="84"/>
+  <line x1="215.175" y1="62.5" x2="215.175" y2="92"/>
+  <!-- extension lines, depth -->
+  <line x1="234.75" y1="50" x2="247" y2="50"/>
+  <line x1="234.75" y1="68.2" x2="247" y2="68.2"/>
+  <line x1="62.25" y1="50" x2="52" y2="50"/>
+  <line x1="78.5" y1="59.1" x2="52" y2="59.1"/>
+</g>
+<!-- cap base outline and centre line -->
+<rect x="63.25" y="50" width="170.5" height="18.2" rx="1" fill="#f2f2f2" stroke="#000" stroke-width="0.5"/>
+<rect x="66.25" y="52.4" width="164.5" height="13.4" rx="1.5" fill="none" stroke="#888" stroke-width="0.2" stroke-dasharray="1.5 1"/>
+<line x1="58" y1="59.1" x2="240" y2="59.1" stroke="#000" stroke-width="0.15" stroke-dasharray="4 1 1 1"/>
+<line x1="148.5" y1="45" x2="148.5" y2="73" stroke="#000" stroke-width="0.15" stroke-dasharray="4 1 1 1"/>
+<use href="#stem" x="81.825" y="59.1"/>
+<use href="#stem" x="148.5" y="59.1"/>
+<use href="#stem" x="215.175" y="59.1"/>
+<text x="81.825" y="55.3" font-size="2.4" text-anchor="middle">stabilizer stem</text>
+<text x="148.5" y="55.3" font-size="2.4" text-anchor="middle">switch stem</text>
+<text x="215.175" y="55.3" font-size="2.4" text-anchor="middle">stabilizer stem</text>
+
+<!-- dimensions -->
+<g stroke="#000" stroke-width="0.25" marker-start="url(#a)" marker-end="url(#a)">
+  <line x1="63.25" y1="41" x2="233.75" y2="41"/>
+  <line x1="81.825" y1="81" x2="148.5" y2="81"/>
+  <line x1="148.5" y1="81" x2="215.175" y2="81"/>
+  <line x1="81.825" y1="89" x2="215.175" y2="89"/>
+  <line x1="244" y1="50" x2="244" y2="68.2"/>
+  <line x1="55" y1="50" x2="55" y2="59.1"/>
+</g>
+<g font-size="3.2" text-anchor="middle">
+  <text x="148.5" y="39.8" font-weight="bold">170.5 ±0.2 at the base  (9u pitch = 171.45)</text>
+  <text x="115.16" y="79.8" font-weight="bold">66.675 ±0.1  (3.5u)</text>
+  <text x="181.84" y="79.8" font-weight="bold">66.675 ±0.1  (3.5u)</text>
+  <text x="148.5" y="87.8" font-weight="bold">133.35 ±0.1 stabilizer stem to stabilizer stem  (7u)</text>
+</g>
+<text x="246" y="60.3" font-size="3.2">18.2</text>
+<text x="246" y="64" font-size="2.4">same as your</text>
+<text x="246" y="66.8" font-size="2.4">1u bottom-row cap</text>
+<text x="53" y="55.8" font-size="3.2" text-anchor="end">9.1</text>
+<text x="53" y="63" font-size="2.4" text-anchor="end">stems on the</text>
+<text x="53" y="65.8" font-size="2.4" text-anchor="end">base centre line</text>
+
+<!-- stem detail -->
+<text x="12" y="104" font-size="3.2" font-weight="bold">STEM DETAIL (5:1)</text>
+<g transform="translate(42 136) scale(5)">
+  <use href="#stem"/>
+</g>
+<g stroke="#000" stroke-width="0.25" marker-start="url(#a)" marker-end="url(#a)">
+  <line x1="32" y1="155" x2="52" y2="155"/>
+  <line x1="62" y1="132.75" x2="62" y2="139.25"/>
+</g>
+<g stroke="#000" stroke-width="0.2">
+  <line x1="32" y1="140" x2="32" y2="157"/>
+  <line x1="52" y1="140" x2="52" y2="157"/>
+  <line x1="45.5" y1="132.75" x2="64" y2="132.75"/>
+  <line x1="45.5" y1="139.25" x2="64" y2="139.25"/>
+</g>
+<text x="42" y="160.5" font-size="2.8" text-anchor="middle">4.0 ref.</text>
+<text x="64" y="137" font-size="2.8">1.3 ref.</text>
+<g font-size="2.8">
+  <text x="12" y="170">Standard Cherry MX cross socket, the same as your</text>
+  <text x="12" y="173.8">1u caps; the values shown are for reference only.</text>
+  <text x="12" y="177.6">All three stems are identical, with the cross arms</text>
+  <text x="12" y="181.4">parallel to the cap edges. The stems need the same</text>
+  <text x="12" y="185.2">length and grip as the switch stem, because the</text>
+  <text x="12" y="189">stabilizers use the same MX cross.</text>
+</g>
+
+<!-- notes -->
+<text x="92" y="104" font-size="3.2" font-weight="bold">NOTES</text>
+<g font-size="2.9">
+  <text x="92" y="111"><tspan font-weight="bold">1. Critical dimension: stem positions.</tspan> Centre stem at the cap centre; two stabilizer stems</text>
+  <text x="96" y="115">66.675 mm (3.5u) left and right of it, all on one line. This is the Cherry 9u layout</text>
+  <text x="96" y="119">(Cherry G80-0904, Commodore Amiga 2000) and uses the same 3.5u offset as Cherry 8u / 10u bars.</text>
+  <text x="92" y="125"><tspan font-weight="bold">2. Stabilizers:</tspan> Cherry-style screw-in PCB stabilizers with MX-cross stab stems. No Costar</text>
+  <text x="96" y="129">wire clips or inserts are needed on the cap.</text>
+  <text x="92" y="135"><tspan font-weight="bold">3. Profile, height and top sculpt:</tspan> match the spacebar row of the rest of the set. The top</text>
+  <text x="96" y="139">surface outline (dashed) is illustrative; the base footprint and stems are what must match.</text>
+  <text x="92" y="145"><tspan font-weight="bold">4. Width:</tspan> 9u pitch less your usual cap-to-cap gap (e.g. 171.45 − 0.95 = 170.5). Depth as your</text>
+  <text x="96" y="149">1u bottom-row cap. The case opening allows 1.2 mm per side, so ±0.2 is comfortable.</text>
+  <text x="92" y="155"><tspan font-weight="bold">5. Straightness:</tspan> the long bar should be straight and not twisted within 0.3 mm over its</text>
+  <text x="96" y="159">length, so that all three stems seat without binding.</text>
+  <text x="92" y="165"><tspan font-weight="bold">6. Legend:</tspan> none (blank). Colour and material as agreed for the set.</text>
+</g>
+
+<!-- print check scale -->
+<g stroke="#000" stroke-width="0.3">
+  <line x1="92" y1="190" x2="192" y2="190"/>
+  <line x1="92" y1="187.5" x2="92" y2="192.5"/>
+  <line x1="142" y1="188.5" x2="142" y2="191.5"/>
+  <line x1="192" y1="187.5" x2="192" y2="192.5"/>
+</g>
+<text x="92" y="197" font-size="2.6">0</text>
+<text x="192" y="197" font-size="2.6" text-anchor="middle">100 mm (checks the print scale)</text>
+</svg>

@@ -1,0 +1,24 @@
+# Rev 3 keyboard firmware defaults.  `idf.py menuconfig` writes the full sdkconfig (ignored
+# by git); these are the settings that matter and survive a fresh checkout.
+
+CONFIG_IDF_TARGET="esp32s3"
+
+# 8 MB flash on the WROOM-1-N8 module and the DevKitC-1 N8Rx kits
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="8MB"
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# console on the native USB port (USB Serial/JTAG), so one cable does flashing and logging
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
+
+# 240 MHz, plenty for a 1 kHz scan plus the LED engine later
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
+
+# 1 kHz scheduler tick: the scan task sleeps 1 ms per pass, which is 0 ticks at the
+# 100 Hz default and trips an assert inside vTaskDelayUntil (found in the simulator).
+CONFIG_FREERTOS_HZ=1000
