@@ -678,15 +678,15 @@ def build_matrix(sh, switches):
 
 
 def led_chain_order(switches):
-    first = ["SW89", "SW91", "SW92"]
-    rest = sorted((s for s in switches if s["ref"] not in first), key=lambda s: (round(s["y"], 0), s["x"]))
+    """Lock keys first, then a snake through the rows (layout.led_chain)."""
+    order, _ = layout.led_chain(switches)
     by = {s["ref"]: s for s in switches}
-    return [by[r] for r in first] + rest
+    return [by[r] for r in order]
 
 
 def build_leds(sh, chain):
     sh.text("Per-key RGB: SK6812 MINI (3.5 x 3.5 top mount, in the switch's SMD LED pocket), one per switch, 100n each.  Chain starts at the three lock keys\n"
-            "(SHIFT LOCK, CAPS LOCK, 40/80) so a minimal build with three LEDs still has indicators, then runs row by row.\n"
+            "(SHIFT LOCK, CAPS LOCK, 40/80) so a minimal build with three LEDs still has indicators, then snakes through the rows.\n"
             "LED refs match switch refs (LED89 sits under SW89).  Data in from U5 (5 V), data out to J3.", (15, 15), 1.5)
     per_row = 12
     pitch_x, pitch_y = 40, 46

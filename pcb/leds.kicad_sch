@@ -713,7 +713,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Per-key RGB: SK6812 MINI (3.5 x 3.5 top mount, in the switch's SMD LED pocket), one per switch, 100n each.  Chain starts at the three lock keys\n(SHIFT LOCK, CAPS LOCK, 40/80) so a minimal build with three LEDs still has indicators, then runs row by row.\nLED refs match switch refs (LED89 sits under SW89).  Data in from U5 (5 V), data out to J3."
+	(text "Per-key RGB: SK6812 MINI (3.5 x 3.5 top mount, in the switch's SMD LED pocket), one per switch, 100n each.  Chain starts at the three lock keys\n(SHIFT LOCK, CAPS LOCK, 40/80) so a minimal build with three LEDs still has indicators, then snakes through the rows.\nLED refs match switch refs (LED89 sits under SW89).  Data in from U5 (5 V), data out to J3."
 		(exclude_from_sim no)
 		(at 15.24 15.24 0)
 		(effects
@@ -10391,8 +10391,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "701e889f-e25d-5b84-8a98-f1778a4a0f23")
-		(property "Reference" "LED19"
+		(uuid "c1f6bb96-698f-599b-b322-70a2501786a2")
+		(property "Reference" "LED21"
 			(at 231.14 74.93 0)
 			(effects
 				(font
@@ -10440,7 +10440,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "LeftArrow"
+		(property "Key" "Num+"
 			(at 240.03 87.63 0)
 			(effects
 				(font
@@ -10461,21 +10461,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "9748b741-c0c9-5b7e-b967-349e34151b1f")
+			(uuid "abe9ec85-cf41-59a9-adc5-61fa6c17f2da")
 		)
 		(pin "2"
-			(uuid "67f59ed4-37a8-5d84-a187-cc05c7e119b1")
+			(uuid "c0ef4f54-85ed-5e62-805f-5d81fa28725c")
 		)
 		(pin "3"
-			(uuid "ca636198-eec4-5376-a81b-289622a06c70")
+			(uuid "f6da420d-0332-5c02-8f37-9ef8ad2e5faa")
 		)
 		(pin "4"
-			(uuid "5df60cbd-e25a-5609-aed9-a0c8648a620a")
+			(uuid "d3e83a88-488a-5c04-b14b-d1d9699111ab")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED19")
+					(reference "LED21")
 					(unit 1)
 				)
 			)
@@ -10671,8 +10671,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6cbeacb8-1fa6-5e10-b6a5-ed686509581f")
-		(property "Reference" "C119"
+		(uuid "ccacf4bb-d626-57ae-a331-d97e1c236ddd")
+		(property "Reference" "C121"
 			(at 260.35 104.14 0)
 			(effects
 				(font
@@ -10731,15 +10731,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "c5d45422-de9f-5ba7-87d2-b9c2d96cc845")
+			(uuid "fb58f657-02cd-5253-9233-0fa629d40aa6")
 		)
 		(pin "2"
-			(uuid "3f5b0c62-f8dc-5497-a841-5df28bf3383f")
+			(uuid "67ffa107-d949-59dd-8c05-bf17dd6d3ef0")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C119")
+					(reference "C121")
 					(unit 1)
 				)
 			)
@@ -10956,8 +10956,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7173c83d-dbcb-534f-9c73-3687be022452")
-		(property "Reference" "LED8"
+		(uuid "1aa7c38a-7f10-50ec-8253-6db7d7676f80")
+		(property "Reference" "LED76"
 			(at 270.51 74.93 0)
 			(effects
 				(font
@@ -11005,7 +11005,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "1"
+		(property "Key" "Num9"
 			(at 279.4 87.63 0)
 			(effects
 				(font
@@ -11026,21 +11026,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "127a2e6a-5e60-584c-bb9d-f44a8c4554f4")
+			(uuid "5d0d1f64-96f1-5778-91bf-a72ae98b9583")
 		)
 		(pin "2"
-			(uuid "0b02f407-c882-5dbd-b94e-9efefbc38509")
+			(uuid "e45336c3-4ead-5193-b952-70eec04101e0")
 		)
 		(pin "3"
-			(uuid "0e96fb34-7f2b-5cba-b5ba-88f0b324e4af")
+			(uuid "30407eac-7047-58a2-ac6a-943547c6de5b")
 		)
 		(pin "4"
-			(uuid "953bbc5e-a0d1-574b-8193-d6f7bfdcb366")
+			(uuid "b67ec6aa-1e8f-5804-98c9-2502b524d3f8")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED8")
+					(reference "LED76")
 					(unit 1)
 				)
 			)
@@ -11236,8 +11236,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "74e3812f-afc1-589f-b7fd-65610b476a4c")
-		(property "Reference" "C108"
+		(uuid "3ddf0edc-f75f-50e6-b7a2-cb7c2465aba4")
+		(property "Reference" "C176"
 			(at 299.72 104.14 0)
 			(effects
 				(font
@@ -11296,15 +11296,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "7c239e2c-c8dc-5b3c-bcb3-af14e7568c4e")
+			(uuid "e5396981-9d19-5c0a-9c5f-6aa68c4dfb1c")
 		)
 		(pin "2"
-			(uuid "7845b5ac-7b14-5319-af30-61684fc441c4")
+			(uuid "2a53be41-d347-55d5-839f-a69a6c6d1313")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C108")
+					(reference "C176")
 					(unit 1)
 				)
 			)
@@ -11521,8 +11521,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "40539215-5b7c-5fab-8791-924c85b355d5")
-		(property "Reference" "LED41"
+		(uuid "2fd2a91e-633b-5e4a-b401-8bc97631367e")
+		(property "Reference" "LED20"
 			(at 311.15 74.93 0)
 			(effects
 				(font
@@ -11570,7 +11570,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "2"
+		(property "Key" "Num8"
 			(at 320.04 87.63 0)
 			(effects
 				(font
@@ -11591,21 +11591,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "30c7bdd8-856a-5333-a93e-8b7ccec83669")
+			(uuid "121d27cc-b5cf-51ed-97a3-d87f40699753")
 		)
 		(pin "2"
-			(uuid "8a5a80e3-00fa-5533-abbe-31cb38372b4c")
+			(uuid "c87eed92-29ac-59fd-954f-36e7e6f756ba")
 		)
 		(pin "3"
-			(uuid "892514ff-a11f-5cd9-b04b-95ab313b80d0")
+			(uuid "db3b94cc-4183-5577-ad41-06cbc616e061")
 		)
 		(pin "4"
-			(uuid "23233fc1-7c4f-5510-8d24-a7c64fb396d7")
+			(uuid "02accead-724d-5e4a-9947-3aaef4283a56")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED41")
+					(reference "LED20")
 					(unit 1)
 				)
 			)
@@ -11801,8 +11801,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "428943ed-d71c-58a1-9e66-032003dcce5c")
-		(property "Reference" "C141"
+		(uuid "d43f5fb7-4f17-55cb-bfd7-3e57d688bd67")
+		(property "Reference" "C120"
 			(at 340.36 104.14 0)
 			(effects
 				(font
@@ -11861,15 +11861,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "0be39591-47a3-587b-b675-9cd00611fcd5")
+			(uuid "82bd523a-9d57-5c76-acf3-e2386518d221")
 		)
 		(pin "2"
-			(uuid "81cfaabd-aef5-5cbb-8cb9-1ff0cf7bb565")
+			(uuid "00d62279-36a3-5e0a-9d25-30516c1a5bea")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C141")
+					(reference "C120")
 					(unit 1)
 				)
 			)
@@ -12086,8 +12086,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b0260d2e-dd90-5b81-89e5-3cc91f515420")
-		(property "Reference" "LED2"
+		(uuid "137871b8-221c-5dfa-81f4-3388c4ad8c42")
+		(property "Reference" "LED75"
 			(at 350.52 74.93 0)
 			(effects
 				(font
@@ -12135,7 +12135,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "3"
+		(property "Key" "Num7"
 			(at 359.41 87.63 0)
 			(effects
 				(font
@@ -12156,21 +12156,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "8249c3fb-f4e0-508f-bd69-e35921490935")
+			(uuid "d924ac6a-dc24-5818-b79d-c4fceaf34f62")
 		)
 		(pin "2"
-			(uuid "d1d8ad36-d987-557c-a89c-653c2c09f822")
+			(uuid "2956c968-7651-57e1-8b3b-59bb6a3bb71b")
 		)
 		(pin "3"
-			(uuid "225ceac3-5fd3-5b32-8e6a-4c1a9ba90a66")
+			(uuid "57464815-d280-5866-87f2-9825c0ed5536")
 		)
 		(pin "4"
-			(uuid "9ca39b72-3382-5dcd-b9d7-d72c19eda3d0")
+			(uuid "87f043fd-c230-5e23-9412-21ab1f3fc539")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED2")
+					(reference "LED75")
 					(unit 1)
 				)
 			)
@@ -12366,8 +12366,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d793fb01-8c70-55c1-b25f-0182ac90dcc1")
-		(property "Reference" "C102"
+		(uuid "dc6ff546-94b0-544e-874b-a5f7815b0208")
+		(property "Reference" "C175"
 			(at 379.73 104.14 0)
 			(effects
 				(font
@@ -12426,15 +12426,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "2172269d-c85c-5266-9ad7-6631e79632de")
+			(uuid "84d189cc-9b73-51fe-a980-6347f604f269")
 		)
 		(pin "2"
-			(uuid "af16fa7a-23ce-5898-8ad0-836ac5a568c4")
+			(uuid "1b84b00e-f58e-524f-a4e3-7e1f6fe24427")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C102")
+					(reference "C175")
 					(unit 1)
 				)
 			)
@@ -12651,8 +12651,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5ee3f5d3-aeca-5cf4-b088-d2a7f748e202")
-		(property "Reference" "LED35"
+		(uuid "4d88801c-c381-5b43-aeed-87c5763c88df")
+		(property "Reference" "LED1"
 			(at 391.16 74.93 0)
 			(effects
 				(font
@@ -12700,7 +12700,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "4"
+		(property "Key" "Inst/Del"
 			(at 400.05 87.63 0)
 			(effects
 				(font
@@ -12721,21 +12721,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "a7cc2cae-e3a3-5d5e-9e8c-2442de3e604f")
+			(uuid "e7fa0284-f197-5027-a1d3-e19be4e64f42")
 		)
 		(pin "2"
-			(uuid "45518bf5-60f1-53d2-b101-b575c7ec9712")
+			(uuid "17444d1c-7700-5c4e-acb2-8c81a9c1bfb8")
 		)
 		(pin "3"
-			(uuid "5009f918-98e4-5cb6-a5c5-876c547540aa")
+			(uuid "c30b2ea1-64c7-5778-bce0-b3f54e74a295")
 		)
 		(pin "4"
-			(uuid "83992cca-7bc0-5bd3-b69f-e98cf8b66f28")
+			(uuid "bf9d34cc-b8c5-5dae-8358-72561cc397bf")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED35")
+					(reference "LED1")
 					(unit 1)
 				)
 			)
@@ -12931,8 +12931,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "86e22fc9-bf92-5855-bf34-9107c8bc8892")
-		(property "Reference" "C135"
+		(uuid "9a6b7e24-3ed5-5298-9021-98014e41e8a8")
+		(property "Reference" "C101"
 			(at 420.37 104.14 0)
 			(effects
 				(font
@@ -12991,15 +12991,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "75588a65-f6b5-537e-9543-4737a43187a5")
+			(uuid "00f70128-e962-5f9e-8d81-c81cee86e52d")
 		)
 		(pin "2"
-			(uuid "d0305612-6cfd-5c5b-b978-1829f38c4842")
+			(uuid "57eed7d6-c432-5481-a04f-ae4bd0c2cc2b")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C135")
+					(reference "C101")
 					(unit 1)
 				)
 			)
@@ -13216,8 +13216,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d4aa9d7d-59f7-5bf0-b0ea-3936666eb525")
-		(property "Reference" "LED3"
+		(uuid "558c7623-84b5-51b8-9cf8-0ad0ee637159")
+		(property "Reference" "LED40"
 			(at 430.53 74.93 0)
 			(effects
 				(font
@@ -13265,7 +13265,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "5"
+		(property "Key" "Clr/Home"
 			(at 439.42 87.63 0)
 			(effects
 				(font
@@ -13286,21 +13286,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "52ab6c3b-c38d-5ce7-9aec-c3c6ac096cb3")
+			(uuid "48ac713c-4b1d-59ba-b013-a80f7cf0835a")
 		)
 		(pin "2"
-			(uuid "2ef172fe-7171-5dc5-b610-e29979fa70a3")
+			(uuid "c7ff2822-1c2c-59da-acf5-2dcc144d7c15")
 		)
 		(pin "3"
-			(uuid "be87654c-4afe-5e57-8208-a23a05b46add")
+			(uuid "44baeaa0-f1da-5171-91aa-5c3663413b62")
 		)
 		(pin "4"
-			(uuid "2c119a9f-6719-5d83-8b00-ec85e0aef885")
+			(uuid "3b0a26ef-01b1-5cb9-8a4a-e15a920d702e")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED3")
+					(reference "LED40")
 					(unit 1)
 				)
 			)
@@ -13496,8 +13496,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4919e7a1-7f0f-5b35-b892-9cdfabaecf91")
-		(property "Reference" "C103"
+		(uuid "d23045fa-66cd-5bdd-a4fb-628a2f0e40da")
+		(property "Reference" "C140"
 			(at 459.74 104.14 0)
 			(effects
 				(font
@@ -13556,15 +13556,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "407a4c80-ec10-57b1-8b2b-eee25cf40a7d")
+			(uuid "c68ae4b0-7417-500a-b7d6-7af5dee07ffe")
 		)
 		(pin "2"
-			(uuid "9eda0def-cd3f-556a-b2d5-efa088d7e3f6")
+			(uuid "9fa89bd6-3f35-556b-9f17-a1a83f719def")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C103")
+					(reference "C140")
 					(unit 1)
 				)
 			)
@@ -13781,8 +13781,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d88bd1e8-543a-55c4-b718-4b4892c41f05")
-		(property "Reference" "LED36"
+		(uuid "601fcbe7-a250-5357-a8f1-2bf2cfd51a02")
+		(property "Reference" "LED7"
 			(at 471.17 74.93 0)
 			(effects
 				(font
@@ -13830,7 +13830,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "6"
+		(property "Key" "£"
 			(at 480.06 87.63 0)
 			(effects
 				(font
@@ -13851,21 +13851,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "725542e5-3c48-5544-888b-d1a58be0760a")
+			(uuid "20081fe0-7e43-56d5-8df8-cb13672b7755")
 		)
 		(pin "2"
-			(uuid "735174f0-638d-5742-8b4f-030e25e7ce1e")
+			(uuid "ec3c891f-960f-5d34-953e-8ab17f3d2b10")
 		)
 		(pin "3"
-			(uuid "664ce203-9051-5850-96e2-a60d315868c3")
+			(uuid "fe5b3325-ccc0-5a29-8508-cc5cc7cbf2ae")
 		)
 		(pin "4"
-			(uuid "8fc37f11-f079-5a85-a5a9-156bcf63fc71")
+			(uuid "3bed5a8f-2455-5f08-a874-876ed49f1529")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED36")
+					(reference "LED7")
 					(unit 1)
 				)
 			)
@@ -14061,8 +14061,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f9245bd5-0511-5ec4-ad8f-dbefa2747736")
-		(property "Reference" "C136"
+		(uuid "7cba664d-1a1c-5046-b74c-40acc07a3afb")
+		(property "Reference" "C107"
 			(at 500.38 104.14 0)
 			(effects
 				(font
@@ -14121,15 +14121,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "ae4117cd-b5dc-5b4c-ad89-9211f68a6c2a")
+			(uuid "8f6ec848-0b41-5ea3-98be-62bceceb9241")
 		)
 		(pin "2"
-			(uuid "1112f19a-de56-5fc6-8e9a-5e51a46f99fe")
+			(uuid "59303b5d-c00a-5427-99f1-453bedc7b760")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C136")
+					(reference "C107")
 					(unit 1)
 				)
 			)
@@ -14378,8 +14378,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "18130011-2b78-59c0-901d-3e8a47860ab0")
-		(property "Reference" "LED4"
+		(uuid "b52c44e3-e689-5e85-b47a-f36602513a05")
+		(property "Reference" "LED39"
 			(at 30.48 121.92 0)
 			(effects
 				(font
@@ -14427,7 +14427,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "7"
+		(property "Key" "-"
 			(at 39.37 134.62 0)
 			(effects
 				(font
@@ -14448,21 +14448,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "c3481f01-b2f8-5468-b39a-7dead4dfe4e9")
+			(uuid "2711a519-7c66-564a-9bcd-d8c886800347")
 		)
 		(pin "2"
-			(uuid "b2a62f34-ff69-56aa-b0d0-4abc5554d11a")
+			(uuid "51e15869-ef17-5faa-a478-ab11f2db0a3f")
 		)
 		(pin "3"
-			(uuid "4123f8dc-a3ba-595c-a420-196c49682c2f")
+			(uuid "7bf6171c-7092-50cb-9fa4-a5bf03985f52")
 		)
 		(pin "4"
-			(uuid "e8565814-262f-57d7-85f4-f6903a911f43")
+			(uuid "3f2316de-35a5-5bf3-bd9d-c96fe9c921de")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED4")
+					(reference "LED39")
 					(unit 1)
 				)
 			)
@@ -14658,8 +14658,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9e3acd25-f38a-59ba-97f7-d965d9f25d54")
-		(property "Reference" "C104"
+		(uuid "5804fa24-3cea-53e2-8ffe-f5b0d331b411")
+		(property "Reference" "C139"
 			(at 59.69 151.13 0)
 			(effects
 				(font
@@ -14718,15 +14718,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "19865a8a-f366-5915-8fda-fc37692831c5")
+			(uuid "83267f6e-58ee-5871-a3b4-cb4b0c00ad00")
 		)
 		(pin "2"
-			(uuid "9aec06e9-82b8-5ffa-acfc-6ba9143572ea")
+			(uuid "ed12901e-2bca-5d40-b2b6-9503aed5f04f")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C104")
+					(reference "C139")
 					(unit 1)
 				)
 			)
@@ -14954,8 +14954,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b5aa7970-3861-5f49-b237-266b0c21ebe8")
-		(property "Reference" "LED37"
+		(uuid "5195dd1c-453e-5f7d-aed3-ad3246eec35a")
+		(property "Reference" "LED6"
 			(at 71.12 121.92 0)
 			(effects
 				(font
@@ -15003,7 +15003,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "8"
+		(property "Key" "+"
 			(at 80.01 134.62 0)
 			(effects
 				(font
@@ -15024,21 +15024,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "bd9fdaba-6df4-5405-a541-60a352ba229f")
+			(uuid "46b34c92-c80a-52a6-aee9-5dd90ec5cbba")
 		)
 		(pin "2"
-			(uuid "1fec36c2-228e-543e-a0ff-1a3e24ad72b3")
+			(uuid "72b9a70c-58b9-557e-bbf2-cfef49254da1")
 		)
 		(pin "3"
-			(uuid "b0d23d96-94ff-5c3e-9647-5ecdfd1fc582")
+			(uuid "243789da-f479-5534-8d40-b14d916841cf")
 		)
 		(pin "4"
-			(uuid "0e61bb30-6ef4-5e41-aff7-de59296fe284")
+			(uuid "c7db8e93-3c62-51ea-ac83-087c783445a2")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED37")
+					(reference "LED6")
 					(unit 1)
 				)
 			)
@@ -15234,8 +15234,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c20f1346-fdd2-5848-8191-93a368fbd0fe")
-		(property "Reference" "C137"
+		(uuid "dab5091d-4e0a-556a-8ebf-784ca0304a89")
+		(property "Reference" "C106"
 			(at 100.33 151.13 0)
 			(effects
 				(font
@@ -15294,15 +15294,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "ba128bfa-3c1b-5c04-a6e8-f53d943ca6df")
+			(uuid "cf99829d-d19e-51c6-b942-00c4bf2d1417")
 		)
 		(pin "2"
-			(uuid "1138f706-9ee8-5600-9a82-d5de71e7f13e")
+			(uuid "034dd3ab-ede4-555e-bed2-2429efd28146")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C137")
+					(reference "C106")
 					(unit 1)
 				)
 			)
@@ -15519,8 +15519,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "533e912d-a017-50a5-8ac8-fa56295f9a75")
-		(property "Reference" "LED5"
+		(uuid "a4e9a7b0-c38d-50b0-bf72-7e63746d4f76")
+		(property "Reference" "LED38"
 			(at 110.49 121.92 0)
 			(effects
 				(font
@@ -15568,7 +15568,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "9"
+		(property "Key" "0"
 			(at 119.38 134.62 0)
 			(effects
 				(font
@@ -15589,21 +15589,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "d8b996bf-befd-5923-880e-d2c5979b7c40")
+			(uuid "3f5e5ea8-9516-554b-97b5-dbbb6a1bf66f")
 		)
 		(pin "2"
-			(uuid "3a10f0c6-c8e4-5dcd-a717-3249e31887eb")
+			(uuid "2521766c-c31c-5506-b3d7-578d8342dd08")
 		)
 		(pin "3"
-			(uuid "74b4d457-6908-5054-8acc-e272627cc749")
+			(uuid "de307596-5d7d-5895-96f0-c2d7830389b6")
 		)
 		(pin "4"
-			(uuid "d69253c5-8e3c-5349-aa65-baf6d5d2ad01")
+			(uuid "90679c4a-9356-595e-8083-997b60db30f8")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED5")
+					(reference "LED38")
 					(unit 1)
 				)
 			)
@@ -15799,8 +15799,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ed661c21-7565-5789-9f9f-38f779753dd3")
-		(property "Reference" "C105"
+		(uuid "001bfa12-4f12-5dfd-9349-5a89bd7c3685")
+		(property "Reference" "C138"
 			(at 139.7 151.13 0)
 			(effects
 				(font
@@ -15859,15 +15859,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "daefb333-d4fb-5b18-a1d9-f4a285f6cf2f")
+			(uuid "a255920a-dde0-5ba0-b746-8ed480e7d88f")
 		)
 		(pin "2"
-			(uuid "1635f211-19db-5a84-8ab3-feeca7a3731a")
+			(uuid "1a02f1f7-ff85-58a1-a969-1ffef55c9546")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C105")
+					(reference "C138")
 					(unit 1)
 				)
 			)
@@ -16084,8 +16084,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a4e9a7b0-c38d-50b0-bf72-7e63746d4f76")
-		(property "Reference" "LED38"
+		(uuid "533e912d-a017-50a5-8ac8-fa56295f9a75")
+		(property "Reference" "LED5"
 			(at 151.13 121.92 0)
 			(effects
 				(font
@@ -16133,7 +16133,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "0"
+		(property "Key" "9"
 			(at 160.02 134.62 0)
 			(effects
 				(font
@@ -16154,21 +16154,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f5e5ea8-9516-554b-97b5-dbbb6a1bf66f")
+			(uuid "d8b996bf-befd-5923-880e-d2c5979b7c40")
 		)
 		(pin "2"
-			(uuid "2521766c-c31c-5506-b3d7-578d8342dd08")
+			(uuid "3a10f0c6-c8e4-5dcd-a717-3249e31887eb")
 		)
 		(pin "3"
-			(uuid "de307596-5d7d-5895-96f0-c2d7830389b6")
+			(uuid "74b4d457-6908-5054-8acc-e272627cc749")
 		)
 		(pin "4"
-			(uuid "90679c4a-9356-595e-8083-997b60db30f8")
+			(uuid "d69253c5-8e3c-5349-aa65-baf6d5d2ad01")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED38")
+					(reference "LED5")
 					(unit 1)
 				)
 			)
@@ -16364,8 +16364,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "001bfa12-4f12-5dfd-9349-5a89bd7c3685")
-		(property "Reference" "C138"
+		(uuid "ed661c21-7565-5789-9f9f-38f779753dd3")
+		(property "Reference" "C105"
 			(at 180.34 151.13 0)
 			(effects
 				(font
@@ -16424,15 +16424,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "a255920a-dde0-5ba0-b746-8ed480e7d88f")
+			(uuid "daefb333-d4fb-5b18-a1d9-f4a285f6cf2f")
 		)
 		(pin "2"
-			(uuid "1a02f1f7-ff85-58a1-a969-1ffef55c9546")
+			(uuid "1635f211-19db-5a84-8ab3-feeca7a3731a")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C138")
+					(reference "C105")
 					(unit 1)
 				)
 			)
@@ -16649,8 +16649,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5195dd1c-453e-5f7d-aed3-ad3246eec35a")
-		(property "Reference" "LED6"
+		(uuid "b5aa7970-3861-5f49-b237-266b0c21ebe8")
+		(property "Reference" "LED37"
 			(at 190.5 121.92 0)
 			(effects
 				(font
@@ -16698,7 +16698,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "+"
+		(property "Key" "8"
 			(at 199.39 134.62 0)
 			(effects
 				(font
@@ -16719,21 +16719,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "46b34c92-c80a-52a6-aee9-5dd90ec5cbba")
+			(uuid "bd9fdaba-6df4-5405-a541-60a352ba229f")
 		)
 		(pin "2"
-			(uuid "72b9a70c-58b9-557e-bbf2-cfef49254da1")
+			(uuid "1fec36c2-228e-543e-a0ff-1a3e24ad72b3")
 		)
 		(pin "3"
-			(uuid "243789da-f479-5534-8d40-b14d916841cf")
+			(uuid "b0d23d96-94ff-5c3e-9647-5ecdfd1fc582")
 		)
 		(pin "4"
-			(uuid "c7db8e93-3c62-51ea-ac83-087c783445a2")
+			(uuid "0e61bb30-6ef4-5e41-aff7-de59296fe284")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED6")
+					(reference "LED37")
 					(unit 1)
 				)
 			)
@@ -16929,8 +16929,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dab5091d-4e0a-556a-8ebf-784ca0304a89")
-		(property "Reference" "C106"
+		(uuid "c20f1346-fdd2-5848-8191-93a368fbd0fe")
+		(property "Reference" "C137"
 			(at 219.71 151.13 0)
 			(effects
 				(font
@@ -16989,15 +16989,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "cf99829d-d19e-51c6-b942-00c4bf2d1417")
+			(uuid "ba128bfa-3c1b-5c04-a6e8-f53d943ca6df")
 		)
 		(pin "2"
-			(uuid "034dd3ab-ede4-555e-bed2-2429efd28146")
+			(uuid "1138f706-9ee8-5600-9a82-d5de71e7f13e")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C106")
+					(reference "C137")
 					(unit 1)
 				)
 			)
@@ -17214,8 +17214,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b52c44e3-e689-5e85-b47a-f36602513a05")
-		(property "Reference" "LED39"
+		(uuid "18130011-2b78-59c0-901d-3e8a47860ab0")
+		(property "Reference" "LED4"
 			(at 231.14 121.92 0)
 			(effects
 				(font
@@ -17263,7 +17263,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "-"
+		(property "Key" "7"
 			(at 240.03 134.62 0)
 			(effects
 				(font
@@ -17284,21 +17284,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "2711a519-7c66-564a-9bcd-d8c886800347")
+			(uuid "c3481f01-b2f8-5468-b39a-7dead4dfe4e9")
 		)
 		(pin "2"
-			(uuid "51e15869-ef17-5faa-a478-ab11f2db0a3f")
+			(uuid "b2a62f34-ff69-56aa-b0d0-4abc5554d11a")
 		)
 		(pin "3"
-			(uuid "7bf6171c-7092-50cb-9fa4-a5bf03985f52")
+			(uuid "4123f8dc-a3ba-595c-a420-196c49682c2f")
 		)
 		(pin "4"
-			(uuid "3f2316de-35a5-5bf3-bd9d-c96fe9c921de")
+			(uuid "e8565814-262f-57d7-85f4-f6903a911f43")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED39")
+					(reference "LED4")
 					(unit 1)
 				)
 			)
@@ -17494,8 +17494,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5804fa24-3cea-53e2-8ffe-f5b0d331b411")
-		(property "Reference" "C139"
+		(uuid "9e3acd25-f38a-59ba-97f7-d965d9f25d54")
+		(property "Reference" "C104"
 			(at 260.35 151.13 0)
 			(effects
 				(font
@@ -17554,15 +17554,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "83267f6e-58ee-5871-a3b4-cb4b0c00ad00")
+			(uuid "19865a8a-f366-5915-8fda-fc37692831c5")
 		)
 		(pin "2"
-			(uuid "ed12901e-2bca-5d40-b2b6-9503aed5f04f")
+			(uuid "9aec06e9-82b8-5ffa-acfc-6ba9143572ea")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C139")
+					(reference "C104")
 					(unit 1)
 				)
 			)
@@ -17779,8 +17779,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "601fcbe7-a250-5357-a8f1-2bf2cfd51a02")
-		(property "Reference" "LED7"
+		(uuid "d88bd1e8-543a-55c4-b718-4b4892c41f05")
+		(property "Reference" "LED36"
 			(at 270.51 121.92 0)
 			(effects
 				(font
@@ -17828,7 +17828,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "£"
+		(property "Key" "6"
 			(at 279.4 134.62 0)
 			(effects
 				(font
@@ -17849,21 +17849,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "20081fe0-7e43-56d5-8df8-cb13672b7755")
+			(uuid "725542e5-3c48-5544-888b-d1a58be0760a")
 		)
 		(pin "2"
-			(uuid "ec3c891f-960f-5d34-953e-8ab17f3d2b10")
+			(uuid "735174f0-638d-5742-8b4f-030e25e7ce1e")
 		)
 		(pin "3"
-			(uuid "fe5b3325-ccc0-5a29-8508-cc5cc7cbf2ae")
+			(uuid "664ce203-9051-5850-96e2-a60d315868c3")
 		)
 		(pin "4"
-			(uuid "3bed5a8f-2455-5f08-a874-876ed49f1529")
+			(uuid "8fc37f11-f079-5a85-a5a9-156bcf63fc71")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED7")
+					(reference "LED36")
 					(unit 1)
 				)
 			)
@@ -18059,8 +18059,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7cba664d-1a1c-5046-b74c-40acc07a3afb")
-		(property "Reference" "C107"
+		(uuid "f9245bd5-0511-5ec4-ad8f-dbefa2747736")
+		(property "Reference" "C136"
 			(at 299.72 151.13 0)
 			(effects
 				(font
@@ -18119,15 +18119,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "8f6ec848-0b41-5ea3-98be-62bceceb9241")
+			(uuid "ae4117cd-b5dc-5b4c-ad89-9211f68a6c2a")
 		)
 		(pin "2"
-			(uuid "59303b5d-c00a-5427-99f1-453bedc7b760")
+			(uuid "1112f19a-de56-5fc6-8e9a-5e51a46f99fe")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C107")
+					(reference "C136")
 					(unit 1)
 				)
 			)
@@ -18344,8 +18344,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "558c7623-84b5-51b8-9cf8-0ad0ee637159")
-		(property "Reference" "LED40"
+		(uuid "d4aa9d7d-59f7-5bf0-b0ea-3936666eb525")
+		(property "Reference" "LED3"
 			(at 311.15 121.92 0)
 			(effects
 				(font
@@ -18393,7 +18393,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Clr/Home"
+		(property "Key" "5"
 			(at 320.04 134.62 0)
 			(effects
 				(font
@@ -18414,21 +18414,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "48ac713c-4b1d-59ba-b013-a80f7cf0835a")
+			(uuid "52ab6c3b-c38d-5ce7-9aec-c3c6ac096cb3")
 		)
 		(pin "2"
-			(uuid "c7ff2822-1c2c-59da-acf5-2dcc144d7c15")
+			(uuid "2ef172fe-7171-5dc5-b610-e29979fa70a3")
 		)
 		(pin "3"
-			(uuid "44baeaa0-f1da-5171-91aa-5c3663413b62")
+			(uuid "be87654c-4afe-5e57-8208-a23a05b46add")
 		)
 		(pin "4"
-			(uuid "3b0a26ef-01b1-5cb9-8a4a-e15a920d702e")
+			(uuid "2c119a9f-6719-5d83-8b00-ec85e0aef885")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED40")
+					(reference "LED3")
 					(unit 1)
 				)
 			)
@@ -18624,8 +18624,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d23045fa-66cd-5bdd-a4fb-628a2f0e40da")
-		(property "Reference" "C140"
+		(uuid "4919e7a1-7f0f-5b35-b892-9cdfabaecf91")
+		(property "Reference" "C103"
 			(at 340.36 151.13 0)
 			(effects
 				(font
@@ -18684,15 +18684,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "c68ae4b0-7417-500a-b7d6-7af5dee07ffe")
+			(uuid "407a4c80-ec10-57b1-8b2b-eee25cf40a7d")
 		)
 		(pin "2"
-			(uuid "9fa89bd6-3f35-556b-9f17-a1a83f719def")
+			(uuid "9eda0def-cd3f-556a-b2d5-efa088d7e3f6")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C140")
+					(reference "C103")
 					(unit 1)
 				)
 			)
@@ -18909,8 +18909,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4d88801c-c381-5b43-aeed-87c5763c88df")
-		(property "Reference" "LED1"
+		(uuid "5ee3f5d3-aeca-5cf4-b088-d2a7f748e202")
+		(property "Reference" "LED35"
 			(at 350.52 121.92 0)
 			(effects
 				(font
@@ -18958,7 +18958,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Inst/Del"
+		(property "Key" "4"
 			(at 359.41 134.62 0)
 			(effects
 				(font
@@ -18979,21 +18979,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "e7fa0284-f197-5027-a1d3-e19be4e64f42")
+			(uuid "a7cc2cae-e3a3-5d5e-9e8c-2442de3e604f")
 		)
 		(pin "2"
-			(uuid "17444d1c-7700-5c4e-acb2-8c81a9c1bfb8")
+			(uuid "45518bf5-60f1-53d2-b101-b575c7ec9712")
 		)
 		(pin "3"
-			(uuid "c30b2ea1-64c7-5778-bce0-b3f54e74a295")
+			(uuid "5009f918-98e4-5cb6-a5c5-876c547540aa")
 		)
 		(pin "4"
-			(uuid "bf9d34cc-b8c5-5dae-8358-72561cc397bf")
+			(uuid "83992cca-7bc0-5bd3-b69f-e98cf8b66f28")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED1")
+					(reference "LED35")
 					(unit 1)
 				)
 			)
@@ -19189,8 +19189,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9a6b7e24-3ed5-5298-9021-98014e41e8a8")
-		(property "Reference" "C101"
+		(uuid "86e22fc9-bf92-5855-bf34-9107c8bc8892")
+		(property "Reference" "C135"
 			(at 379.73 151.13 0)
 			(effects
 				(font
@@ -19249,15 +19249,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "00f70128-e962-5f9e-8d81-c81cee86e52d")
+			(uuid "75588a65-f6b5-537e-9543-4737a43187a5")
 		)
 		(pin "2"
-			(uuid "57eed7d6-c432-5481-a04f-ae4bd0c2cc2b")
+			(uuid "d0305612-6cfd-5c5b-b978-1829f38c4842")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C101")
+					(reference "C135")
 					(unit 1)
 				)
 			)
@@ -19474,8 +19474,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "137871b8-221c-5dfa-81f4-3388c4ad8c42")
-		(property "Reference" "LED75"
+		(uuid "b0260d2e-dd90-5b81-89e5-3cc91f515420")
+		(property "Reference" "LED2"
 			(at 391.16 121.92 0)
 			(effects
 				(font
@@ -19523,7 +19523,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Num7"
+		(property "Key" "3"
 			(at 400.05 134.62 0)
 			(effects
 				(font
@@ -19544,21 +19544,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "d924ac6a-dc24-5818-b79d-c4fceaf34f62")
+			(uuid "8249c3fb-f4e0-508f-bd69-e35921490935")
 		)
 		(pin "2"
-			(uuid "2956c968-7651-57e1-8b3b-59bb6a3bb71b")
+			(uuid "d1d8ad36-d987-557c-a89c-653c2c09f822")
 		)
 		(pin "3"
-			(uuid "57464815-d280-5866-87f2-9825c0ed5536")
+			(uuid "225ceac3-5fd3-5b32-8e6a-4c1a9ba90a66")
 		)
 		(pin "4"
-			(uuid "87f043fd-c230-5e23-9412-21ab1f3fc539")
+			(uuid "9ca39b72-3382-5dcd-b9d7-d72c19eda3d0")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED75")
+					(reference "LED2")
 					(unit 1)
 				)
 			)
@@ -19754,8 +19754,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dc6ff546-94b0-544e-874b-a5f7815b0208")
-		(property "Reference" "C175"
+		(uuid "d793fb01-8c70-55c1-b25f-0182ac90dcc1")
+		(property "Reference" "C102"
 			(at 420.37 151.13 0)
 			(effects
 				(font
@@ -19814,15 +19814,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "84d189cc-9b73-51fe-a980-6347f604f269")
+			(uuid "2172269d-c85c-5266-9ad7-6631e79632de")
 		)
 		(pin "2"
-			(uuid "1b84b00e-f58e-524f-a4e3-7e1f6fe24427")
+			(uuid "af16fa7a-23ce-5898-8ad0-836ac5a568c4")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C175")
+					(reference "C102")
 					(unit 1)
 				)
 			)
@@ -20039,8 +20039,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2fd2a91e-633b-5e4a-b401-8bc97631367e")
-		(property "Reference" "LED20"
+		(uuid "40539215-5b7c-5fab-8791-924c85b355d5")
+		(property "Reference" "LED41"
 			(at 430.53 121.92 0)
 			(effects
 				(font
@@ -20088,7 +20088,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Num8"
+		(property "Key" "2"
 			(at 439.42 134.62 0)
 			(effects
 				(font
@@ -20109,21 +20109,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "121d27cc-b5cf-51ed-97a3-d87f40699753")
+			(uuid "30c7bdd8-856a-5333-a93e-8b7ccec83669")
 		)
 		(pin "2"
-			(uuid "c87eed92-29ac-59fd-954f-36e7e6f756ba")
+			(uuid "8a5a80e3-00fa-5533-abbe-31cb38372b4c")
 		)
 		(pin "3"
-			(uuid "db3b94cc-4183-5577-ad41-06cbc616e061")
+			(uuid "892514ff-a11f-5cd9-b04b-95ab313b80d0")
 		)
 		(pin "4"
-			(uuid "02accead-724d-5e4a-9947-3aaef4283a56")
+			(uuid "23233fc1-7c4f-5510-8d24-a7c64fb396d7")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED20")
+					(reference "LED41")
 					(unit 1)
 				)
 			)
@@ -20319,8 +20319,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d43f5fb7-4f17-55cb-bfd7-3e57d688bd67")
-		(property "Reference" "C120"
+		(uuid "428943ed-d71c-58a1-9e66-032003dcce5c")
+		(property "Reference" "C141"
 			(at 459.74 151.13 0)
 			(effects
 				(font
@@ -20379,15 +20379,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "82bd523a-9d57-5c76-acf3-e2386518d221")
+			(uuid "0be39591-47a3-587b-b675-9cd00611fcd5")
 		)
 		(pin "2"
-			(uuid "00d62279-36a3-5e0a-9d25-30516c1a5bea")
+			(uuid "81cfaabd-aef5-5cbb-8cb9-1ff0cf7bb565")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C120")
+					(reference "C141")
 					(unit 1)
 				)
 			)
@@ -20604,8 +20604,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1aa7c38a-7f10-50ec-8253-6db7d7676f80")
-		(property "Reference" "LED76"
+		(uuid "7173c83d-dbcb-534f-9c73-3687be022452")
+		(property "Reference" "LED8"
 			(at 471.17 121.92 0)
 			(effects
 				(font
@@ -20653,7 +20653,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Num9"
+		(property "Key" "1"
 			(at 480.06 134.62 0)
 			(effects
 				(font
@@ -20674,21 +20674,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "5d0d1f64-96f1-5778-91bf-a72ae98b9583")
+			(uuid "127a2e6a-5e60-584c-bb9d-f44a8c4554f4")
 		)
 		(pin "2"
-			(uuid "e45336c3-4ead-5193-b952-70eec04101e0")
+			(uuid "0b02f407-c882-5dbd-b94e-9efefbc38509")
 		)
 		(pin "3"
-			(uuid "30407eac-7047-58a2-ac6a-943547c6de5b")
+			(uuid "0e96fb34-7f2b-5cba-b5ba-88f0b324e4af")
 		)
 		(pin "4"
-			(uuid "b67ec6aa-1e8f-5804-98c9-2502b524d3f8")
+			(uuid "953bbc5e-a0d1-574b-8193-d6f7bfdcb366")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED76")
+					(reference "LED8")
 					(unit 1)
 				)
 			)
@@ -20884,8 +20884,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3ddf0edc-f75f-50e6-b7a2-cb7c2465aba4")
-		(property "Reference" "C176"
+		(uuid "74e3812f-afc1-589f-b7fd-65610b476a4c")
+		(property "Reference" "C108"
 			(at 500.38 151.13 0)
 			(effects
 				(font
@@ -20944,15 +20944,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "e5396981-9d19-5c0a-9c5f-6aa68c4dfb1c")
+			(uuid "7c239e2c-c8dc-5b3c-bcb3-af14e7568c4e")
 		)
 		(pin "2"
-			(uuid "2a53be41-d347-55d5-839f-a69a6c6d1313")
+			(uuid "7845b5ac-7b14-5319-af30-61684fc441c4")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C176")
+					(reference "C108")
 					(unit 1)
 				)
 			)
@@ -21201,8 +21201,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c1f6bb96-698f-599b-b322-70a2501786a2")
-		(property "Reference" "LED21"
+		(uuid "701e889f-e25d-5b84-8a98-f1778a4a0f23")
+		(property "Reference" "LED19"
 			(at 30.48 167.64 0)
 			(effects
 				(font
@@ -21250,7 +21250,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Num+"
+		(property "Key" "LeftArrow"
 			(at 39.37 180.34 0)
 			(effects
 				(font
@@ -21271,21 +21271,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "abe9ec85-cf41-59a9-adc5-61fa6c17f2da")
+			(uuid "9748b741-c0c9-5b7e-b967-349e34151b1f")
 		)
 		(pin "2"
-			(uuid "c0ef4f54-85ed-5e62-805f-5d81fa28725c")
+			(uuid "67f59ed4-37a8-5d84-a187-cc05c7e119b1")
 		)
 		(pin "3"
-			(uuid "f6da420d-0332-5c02-8f37-9ef8ad2e5faa")
+			(uuid "ca636198-eec4-5376-a81b-289622a06c70")
 		)
 		(pin "4"
-			(uuid "d3e83a88-488a-5c04-b14b-d1d9699111ab")
+			(uuid "5df60cbd-e25a-5609-aed9-a0c8648a620a")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED21")
+					(reference "LED19")
 					(unit 1)
 				)
 			)
@@ -21481,8 +21481,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ccacf4bb-d626-57ae-a331-d97e1c236ddd")
-		(property "Reference" "C121"
+		(uuid "6cbeacb8-1fa6-5e10-b6a5-ed686509581f")
+		(property "Reference" "C119"
 			(at 59.69 196.85 0)
 			(effects
 				(font
@@ -21541,15 +21541,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "fb58f657-02cd-5253-9233-0fa629d40aa6")
+			(uuid "c5d45422-de9f-5ba7-87d2-b9c2d96cc845")
 		)
 		(pin "2"
-			(uuid "67ffa107-d949-59dd-8c05-bf17dd6d3ef0")
+			(uuid "3f5b0c62-f8dc-5497-a841-5df28bf3383f")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C121")
+					(reference "C119")
 					(unit 1)
 				)
 			)
@@ -32555,8 +32555,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3413a9e4-b0c0-55a9-8424-864532579967")
-		(property "Reference" "LED85"
+		(uuid "e7b44324-f8c8-5d3b-9dd5-d6f45bea0ff5")
+		(property "Reference" "LED54"
 			(at 350.52 213.36 0)
 			(effects
 				(font
@@ -32604,7 +32604,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Run/Stop"
+		(property "Key" "NumEnter"
 			(at 359.41 226.06 0)
 			(effects
 				(font
@@ -32625,21 +32625,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "3e41e912-da62-5205-9e68-089f5e5c499a")
+			(uuid "962085d0-1c7f-5047-87f0-03e66b2c49b2")
 		)
 		(pin "2"
-			(uuid "0bf478f5-7efb-5fd6-a167-5916e05d533b")
+			(uuid "6647e8a8-3c5f-58b7-a562-ccbf41daa902")
 		)
 		(pin "3"
-			(uuid "b68f891c-a2ba-5cc5-a128-9adb63ad1149")
+			(uuid "c135fba4-ba7f-5e31-bd4b-90de017aa843")
 		)
 		(pin "4"
-			(uuid "99d8b9fe-b728-5c20-8237-7e59536fb26a")
+			(uuid "0697e082-022c-5bdb-85ba-1676917c2533")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED85")
+					(reference "LED54")
 					(unit 1)
 				)
 			)
@@ -32835,8 +32835,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "754ba835-9f12-5b62-a56f-6fbd1e66edc2")
-		(property "Reference" "C185"
+		(uuid "238c613e-eb7b-5999-889d-2f0f3cc26558")
+		(property "Reference" "C154"
 			(at 379.73 242.57 0)
 			(effects
 				(font
@@ -32895,15 +32895,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "e4974b34-525b-5f4c-b434-94420117c66f")
+			(uuid "198b311a-9349-5632-9771-758324adf71b")
 		)
 		(pin "2"
-			(uuid "fc33b38d-6b8f-5eda-b8d2-b12af4f9bcdb")
+			(uuid "4edf66ab-3154-55b9-92d4-5b0280bd7952")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C185")
+					(reference "C154")
 					(unit 1)
 				)
 			)
@@ -33120,8 +33120,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4ba29b80-0970-5fc2-9dcd-1d281aa1b05e")
-		(property "Reference" "LED24"
+		(uuid "8628572d-b6d4-572c-98bb-4b326efadc4b")
+		(property "Reference" "LED87"
 			(at 391.16 213.36 0)
 			(effects
 				(font
@@ -33169,7 +33169,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "A"
+		(property "Key" "Num3"
 			(at 400.05 226.06 0)
 			(effects
 				(font
@@ -33190,21 +33190,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "57fd8408-893f-5a0f-bef5-2d580193b60e")
+			(uuid "ee299f79-56ee-597b-9fa0-7eda1bc077ed")
 		)
 		(pin "2"
-			(uuid "002ca329-3f66-5729-8685-bf52a86d460e")
+			(uuid "99c2f650-d337-579d-bd20-8af35ba91fcd")
 		)
 		(pin "3"
-			(uuid "8ff0cf7f-e554-562d-925b-bb474ea6e1a3")
+			(uuid "3c978f90-725f-52c8-b9e6-bdc5cce98a15")
 		)
 		(pin "4"
-			(uuid "d1fc5736-223d-5935-9062-ccabc210d96f")
+			(uuid "4e49ed17-8630-51b3-bd8e-d4d1c9fad487")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED24")
+					(reference "LED87")
 					(unit 1)
 				)
 			)
@@ -33400,8 +33400,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4fd5e210-1542-5ff8-a10a-f861979956bf")
-		(property "Reference" "C124"
+		(uuid "69ada2b4-762c-5f9d-9d01-1a5299e7251e")
+		(property "Reference" "C187"
 			(at 420.37 242.57 0)
 			(effects
 				(font
@@ -33460,15 +33460,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "59ca0274-47e2-5766-b3c0-80e27a96d8ee")
+			(uuid "1160cb5e-d07a-5fa6-932f-61c0ec9ce694")
 		)
 		(pin "2"
-			(uuid "574bba59-6f56-5334-9012-535d41d36b34")
+			(uuid "0802fc86-09de-57d9-befb-1995190b448b")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C124")
+					(reference "C187")
 					(unit 1)
 				)
 			)
@@ -33685,8 +33685,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "44589e32-473f-5523-84e5-e4e99d54f4e1")
-		(property "Reference" "LED57"
+		(uuid "803249ba-ed75-5943-9c51-cc0835855850")
+		(property "Reference" "LED53"
 			(at 430.53 213.36 0)
 			(effects
 				(font
@@ -33734,7 +33734,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "S"
+		(property "Key" "Num2"
 			(at 439.42 226.06 0)
 			(effects
 				(font
@@ -33755,21 +33755,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "dcb6d6d3-cb78-5c6f-8151-74d3b407cb31")
+			(uuid "fa36c35f-02d8-5585-8969-aa22cebe2acd")
 		)
 		(pin "2"
-			(uuid "2bc08a57-697c-55ca-b967-3ede27960941")
+			(uuid "5f180e50-4453-510c-bb92-543e3ac5f67a")
 		)
 		(pin "3"
-			(uuid "8fadfb5e-bedb-5124-b32c-6fdfe8009ee3")
+			(uuid "5ff1020b-72f6-593b-b6ac-8f85387ab004")
 		)
 		(pin "4"
-			(uuid "34d061d7-20b1-5084-96bd-38573631ce0c")
+			(uuid "36cec757-3265-5244-b5ea-f12a55bf97bf")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED57")
+					(reference "LED53")
 					(unit 1)
 				)
 			)
@@ -33965,8 +33965,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fcb4f68f-6f7d-5af4-aaae-42b9c39939cc")
-		(property "Reference" "C157"
+		(uuid "43dc36b8-d3d2-5db4-a506-ac1a1f19bc07")
+		(property "Reference" "C153"
 			(at 459.74 242.57 0)
 			(effects
 				(font
@@ -34025,15 +34025,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "5499c886-9b47-58b2-8043-d8b97888aa07")
+			(uuid "d4e9f3ee-9e52-5b15-899b-579dfe66fd49")
 		)
 		(pin "2"
-			(uuid "f7389170-d5d3-50db-b087-3ac4fa59d585")
+			(uuid "5b79f90b-7cac-54d2-ac3a-4ac365b8401e")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C157")
+					(reference "C153")
 					(unit 1)
 				)
 			)
@@ -34250,8 +34250,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5825dba5-4a37-5277-b5b5-e5c718d89cf5")
-		(property "Reference" "LED25"
+		(uuid "4fb01a64-dcd5-5467-aa5b-14b5c8096969")
+		(property "Reference" "LED86"
 			(at 471.17 213.36 0)
 			(effects
 				(font
@@ -34299,7 +34299,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "D"
+		(property "Key" "Num1"
 			(at 480.06 226.06 0)
 			(effects
 				(font
@@ -34320,21 +34320,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "9a52f198-673e-5fbc-bef9-dcf35d8e8d40")
+			(uuid "b00d1c58-9fdc-516b-9b92-f8a49adfaf9e")
 		)
 		(pin "2"
-			(uuid "e107aaeb-b348-5649-b123-d3bf7e2208d0")
+			(uuid "0b9844ed-31a4-5ca3-a21c-5777b4bb05ae")
 		)
 		(pin "3"
-			(uuid "6c784dee-6824-56b5-9f33-ab8cf3aa4aa4")
+			(uuid "26fcea7a-c4fe-522a-8002-afdc04a84d64")
 		)
 		(pin "4"
-			(uuid "6a6969de-2624-5a7c-943b-d175de927474")
+			(uuid "c4ba0bcc-761d-5565-a9a6-9e9cb804a42f")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED25")
+					(reference "LED86")
 					(unit 1)
 				)
 			)
@@ -34530,8 +34530,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e2f5bfbc-db8c-52c6-987a-6e35ce2cc558")
-		(property "Reference" "C125"
+		(uuid "43cd613c-eea0-5fa7-ba82-6b71e8d26d14")
+		(property "Reference" "C186"
 			(at 500.38 242.57 0)
 			(effects
 				(font
@@ -34590,15 +34590,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "ee44fed2-93ae-5b79-ab68-e7a738ee73f2")
+			(uuid "699af2ef-7a60-504b-a7d4-0a1d5ac83ca9")
 		)
 		(pin "2"
-			(uuid "ccc4f108-78a3-54e8-af72-546dc3cc2b16")
+			(uuid "2198c16f-9379-5113-90b4-16518a3213c0")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C125")
+					(reference "C186")
 					(unit 1)
 				)
 			)
@@ -34847,8 +34847,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "987b26b6-5680-5b67-a863-3a5463d8be54")
-		(property "Reference" "LED58"
+		(uuid "18a67f0e-9f8a-59fe-8344-4c4f9ce9d82d")
+		(property "Reference" "LED12"
 			(at 30.48 259.08 0)
 			(effects
 				(font
@@ -34896,7 +34896,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "F"
+		(property "Key" "Return"
 			(at 39.37 271.78 0)
 			(effects
 				(font
@@ -34917,21 +34917,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "c750bf81-4739-5184-b71b-ba5aaec07d4d")
+			(uuid "649c9bf8-3634-577b-af59-a3c8cead342b")
 		)
 		(pin "2"
-			(uuid "fc16b28a-47f6-5f9c-a481-40beeb47ce06")
+			(uuid "dfbea87b-edb8-558c-88dd-85649df0ee2a")
 		)
 		(pin "3"
-			(uuid "aaa566dc-88c0-5294-81a6-7af6a369b204")
+			(uuid "f1dff464-e06a-5ab0-800a-edb82f66807e")
 		)
 		(pin "4"
-			(uuid "9751fcdb-991d-549d-bc3e-bac697e4048a")
+			(uuid "8762d33d-4b7c-51eb-a954-631301865109")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED58")
+					(reference "LED12")
 					(unit 1)
 				)
 			)
@@ -35127,8 +35127,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5c10a1eb-06b1-5c0a-93dd-b59756faedcc")
-		(property "Reference" "C158"
+		(uuid "909c8e56-2d11-5730-9f62-22accf229b86")
+		(property "Reference" "C112"
 			(at 59.69 288.29 0)
 			(effects
 				(font
@@ -35187,15 +35187,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "4e6516e2-339e-5b92-bfb0-436e181561a2")
+			(uuid "fe3e1c14-c7e4-55f5-b42f-73d3e5ad5678")
 		)
 		(pin "2"
-			(uuid "e023a1d4-cef5-583f-8268-59112559fb55")
+			(uuid "072a2c3e-8136-5a5a-988e-6c4d365d1bf3")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C158")
+					(reference "C112")
 					(unit 1)
 				)
 			)
@@ -35423,8 +35423,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b201f43a-f8af-55b7-89ca-94fe55cfc778")
-		(property "Reference" "LED26"
+		(uuid "0e1740f6-5f7b-53ab-aad9-bd688d81f002")
+		(property "Reference" "LED62"
 			(at 71.12 259.08 0)
 			(effects
 				(font
@@ -35472,7 +35472,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "G"
+		(property "Key" "="
 			(at 80.01 271.78 0)
 			(effects
 				(font
@@ -35493,21 +35493,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "e999812f-852a-56da-b8e1-7c7e8ac8eff5")
+			(uuid "4ac3649e-d7db-5703-b855-b37e593e33cb")
 		)
 		(pin "2"
-			(uuid "59c884b9-1eac-589c-b831-a3d61e6e588e")
+			(uuid "06471043-6e8e-5f12-b70d-d3a3f1d3d79b")
 		)
 		(pin "3"
-			(uuid "49c39093-8ccd-5052-acd6-a7844eb3e5a8")
+			(uuid "1c034c98-53f9-53f7-9147-aa431e38338c")
 		)
 		(pin "4"
-			(uuid "009a4157-f312-528f-87ec-466424ebc97b")
+			(uuid "24dd7be8-3b17-509f-aa34-1896cfa0655c")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED26")
+					(reference "LED62")
 					(unit 1)
 				)
 			)
@@ -35703,8 +35703,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ebd58848-164c-5a9b-9d4a-cbe20358fdde")
-		(property "Reference" "C126"
+		(uuid "72b93f7d-0289-5d06-81cb-6eaeba40f172")
+		(property "Reference" "C162"
 			(at 100.33 288.29 0)
 			(effects
 				(font
@@ -35763,15 +35763,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "cb6be835-4d4e-54cb-8aa0-c1fed51e597c")
+			(uuid "266ff000-19ba-55a4-aac6-ce240d9a97c2")
 		)
 		(pin "2"
-			(uuid "e7823feb-e087-5653-a1af-ced763db2932")
+			(uuid "68f634b9-b9a2-5c96-8efd-8f0564de8ba7")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C126")
+					(reference "C162")
 					(unit 1)
 				)
 			)
@@ -35988,8 +35988,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "79931500-c650-5276-b7b6-f6092ed24d02")
-		(property "Reference" "LED59"
+		(uuid "dcebc194-e340-5de5-9780-92744382fd20")
+		(property "Reference" "LED29"
 			(at 110.49 259.08 0)
 			(effects
 				(font
@@ -36037,7 +36037,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "H"
+		(property "Key" ";"
 			(at 119.38 271.78 0)
 			(effects
 				(font
@@ -36058,21 +36058,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "3518b31b-be38-54e0-83a8-42c5253eb539")
+			(uuid "ea54d245-7734-527f-8531-e92975d3de5f")
 		)
 		(pin "2"
-			(uuid "c30faf89-e7f1-551c-baba-1dc2bc55f967")
+			(uuid "63ded9cf-f35c-5487-84c0-d589ec3852d5")
 		)
 		(pin "3"
-			(uuid "90911412-2517-5d9e-a1b3-ca3c1898778d")
+			(uuid "da28798c-214a-5520-a0aa-d97a78b97ca6")
 		)
 		(pin "4"
-			(uuid "1608c7a5-d10b-5283-8f66-a5de79ce1b0f")
+			(uuid "77d4d342-a106-5d88-9657-7279bea7f65c")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED59")
+					(reference "LED29")
 					(unit 1)
 				)
 			)
@@ -36268,8 +36268,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4711eb7b-b0dd-563c-ac05-cf55cf775806")
-		(property "Reference" "C159"
+		(uuid "d29a1a3d-aeb3-5186-9c5e-1a3e0a02c251")
+		(property "Reference" "C129"
 			(at 139.7 288.29 0)
 			(effects
 				(font
@@ -36328,15 +36328,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "44a743ab-b744-5cd9-aeaa-301cd3bbc23f")
+			(uuid "0d0f8324-13f9-529e-aba9-4ea7c5746b98")
 		)
 		(pin "2"
-			(uuid "c5b37e4e-ac4f-5025-845b-32d759969a95")
+			(uuid "267f23bc-8529-54dd-8a5a-e20eb8ec21ee")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C159")
+					(reference "C129")
 					(unit 1)
 				)
 			)
@@ -36553,8 +36553,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6e9d278e-9dda-55a6-bca9-675c4422a4f1")
-		(property "Reference" "LED27"
+		(uuid "d0fc2c5b-c242-5474-b05b-ead9c46f741c")
+		(property "Reference" "LED61"
 			(at 151.13 259.08 0)
 			(effects
 				(font
@@ -36602,7 +36602,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "J"
+		(property "Key" ":"
 			(at 160.02 271.78 0)
 			(effects
 				(font
@@ -36623,21 +36623,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a8a228f-04fc-5d74-a3b1-de439b6c91b5")
+			(uuid "509a7837-e847-5960-886e-69c6d42af339")
 		)
 		(pin "2"
-			(uuid "8f70c880-a7c2-5a33-8c46-25af3ff7face")
+			(uuid "f922f3b5-ec10-58d1-a394-b8cd045240ef")
 		)
 		(pin "3"
-			(uuid "51021099-033a-56a4-a130-0807f4f810eb")
+			(uuid "851ab3ca-55bb-5315-96a7-c56a1cf8fe14")
 		)
 		(pin "4"
-			(uuid "21c6922c-7052-513b-9e8e-3ef4670aa0ed")
+			(uuid "c3f655f6-48de-5cf9-b8f1-94241079cad8")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED27")
+					(reference "LED61")
 					(unit 1)
 				)
 			)
@@ -36833,8 +36833,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6205129a-0e1e-5dca-b7f5-87b9ec5c33f5")
-		(property "Reference" "C127"
+		(uuid "0142d5e3-0d9f-59a6-a1b2-47b43152deae")
+		(property "Reference" "C161"
 			(at 180.34 288.29 0)
 			(effects
 				(font
@@ -36893,15 +36893,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "9f75cf81-b944-5217-a82a-0ab0fb55462d")
+			(uuid "9e8c50dc-6c3c-5add-99fa-a3ef66535c9a")
 		)
 		(pin "2"
-			(uuid "7b67eaab-fe70-5d91-a5b7-47d80f3708f3")
+			(uuid "22b43ffa-0f1d-507e-a920-00a9a81ce4f5")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C127")
+					(reference "C161")
 					(unit 1)
 				)
 			)
@@ -37118,8 +37118,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "093ee5e0-affb-5c5b-be60-25b28e4f00b5")
-		(property "Reference" "LED60"
+		(uuid "8c265612-fff9-57ef-ba5d-c08ee607486f")
+		(property "Reference" "LED28"
 			(at 190.5 259.08 0)
 			(effects
 				(font
@@ -37167,7 +37167,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "K"
+		(property "Key" "L"
 			(at 199.39 271.78 0)
 			(effects
 				(font
@@ -37188,21 +37188,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "12feefa2-6e62-5a30-af02-88c265f7fabc")
+			(uuid "fe9f3c7a-80f8-5d14-a0cb-f5265747fee4")
 		)
 		(pin "2"
-			(uuid "d13abe44-7fa3-58fd-9b76-8530a34e8414")
+			(uuid "ca8a7dc2-8c32-55b2-9cdf-4b4b6d40a53c")
 		)
 		(pin "3"
-			(uuid "97cc9e85-9ea4-53ee-926a-fe7df4d3a465")
+			(uuid "e623492b-e8e5-5830-af56-c16fbf933574")
 		)
 		(pin "4"
-			(uuid "a8bd3503-8b7d-5658-8e8d-0f5eb7798bb5")
+			(uuid "b91ff4de-9890-583a-bede-d286a16209c6")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED60")
+					(reference "LED28")
 					(unit 1)
 				)
 			)
@@ -37398,8 +37398,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e348895b-a0e6-5575-8145-20ce8393e600")
-		(property "Reference" "C160"
+		(uuid "489731cf-88ee-5a99-b3d4-a4a9181910ea")
+		(property "Reference" "C128"
 			(at 219.71 288.29 0)
 			(effects
 				(font
@@ -37458,15 +37458,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "3bef55d6-c27e-5a5a-ad85-2f0c7817563b")
+			(uuid "410841c4-f64a-57e0-a247-54a63f62945e")
 		)
 		(pin "2"
-			(uuid "b470d24f-9df7-5430-b0c0-bc250948c5e2")
+			(uuid "9c3f30c1-14eb-5593-92e4-a8be04fc916a")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C160")
+					(reference "C128")
 					(unit 1)
 				)
 			)
@@ -37683,8 +37683,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8c265612-fff9-57ef-ba5d-c08ee607486f")
-		(property "Reference" "LED28"
+		(uuid "093ee5e0-affb-5c5b-be60-25b28e4f00b5")
+		(property "Reference" "LED60"
 			(at 231.14 259.08 0)
 			(effects
 				(font
@@ -37732,7 +37732,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "L"
+		(property "Key" "K"
 			(at 240.03 271.78 0)
 			(effects
 				(font
@@ -37753,21 +37753,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "fe9f3c7a-80f8-5d14-a0cb-f5265747fee4")
+			(uuid "12feefa2-6e62-5a30-af02-88c265f7fabc")
 		)
 		(pin "2"
-			(uuid "ca8a7dc2-8c32-55b2-9cdf-4b4b6d40a53c")
+			(uuid "d13abe44-7fa3-58fd-9b76-8530a34e8414")
 		)
 		(pin "3"
-			(uuid "e623492b-e8e5-5830-af56-c16fbf933574")
+			(uuid "97cc9e85-9ea4-53ee-926a-fe7df4d3a465")
 		)
 		(pin "4"
-			(uuid "b91ff4de-9890-583a-bede-d286a16209c6")
+			(uuid "a8bd3503-8b7d-5658-8e8d-0f5eb7798bb5")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED28")
+					(reference "LED60")
 					(unit 1)
 				)
 			)
@@ -37963,8 +37963,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "489731cf-88ee-5a99-b3d4-a4a9181910ea")
-		(property "Reference" "C128"
+		(uuid "e348895b-a0e6-5575-8145-20ce8393e600")
+		(property "Reference" "C160"
 			(at 260.35 288.29 0)
 			(effects
 				(font
@@ -38023,15 +38023,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "410841c4-f64a-57e0-a247-54a63f62945e")
+			(uuid "3bef55d6-c27e-5a5a-ad85-2f0c7817563b")
 		)
 		(pin "2"
-			(uuid "9c3f30c1-14eb-5593-92e4-a8be04fc916a")
+			(uuid "b470d24f-9df7-5430-b0c0-bc250948c5e2")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C128")
+					(reference "C160")
 					(unit 1)
 				)
 			)
@@ -38248,8 +38248,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d0fc2c5b-c242-5474-b05b-ead9c46f741c")
-		(property "Reference" "LED61"
+		(uuid "6e9d278e-9dda-55a6-bca9-675c4422a4f1")
+		(property "Reference" "LED27"
 			(at 270.51 259.08 0)
 			(effects
 				(font
@@ -38297,7 +38297,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" ":"
+		(property "Key" "J"
 			(at 279.4 271.78 0)
 			(effects
 				(font
@@ -38318,21 +38318,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "509a7837-e847-5960-886e-69c6d42af339")
+			(uuid "2a8a228f-04fc-5d74-a3b1-de439b6c91b5")
 		)
 		(pin "2"
-			(uuid "f922f3b5-ec10-58d1-a394-b8cd045240ef")
+			(uuid "8f70c880-a7c2-5a33-8c46-25af3ff7face")
 		)
 		(pin "3"
-			(uuid "851ab3ca-55bb-5315-96a7-c56a1cf8fe14")
+			(uuid "51021099-033a-56a4-a130-0807f4f810eb")
 		)
 		(pin "4"
-			(uuid "c3f655f6-48de-5cf9-b8f1-94241079cad8")
+			(uuid "21c6922c-7052-513b-9e8e-3ef4670aa0ed")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED61")
+					(reference "LED27")
 					(unit 1)
 				)
 			)
@@ -38528,8 +38528,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0142d5e3-0d9f-59a6-a1b2-47b43152deae")
-		(property "Reference" "C161"
+		(uuid "6205129a-0e1e-5dca-b7f5-87b9ec5c33f5")
+		(property "Reference" "C127"
 			(at 299.72 288.29 0)
 			(effects
 				(font
@@ -38588,15 +38588,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "9e8c50dc-6c3c-5add-99fa-a3ef66535c9a")
+			(uuid "9f75cf81-b944-5217-a82a-0ab0fb55462d")
 		)
 		(pin "2"
-			(uuid "22b43ffa-0f1d-507e-a920-00a9a81ce4f5")
+			(uuid "7b67eaab-fe70-5d91-a5b7-47d80f3708f3")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C161")
+					(reference "C127")
 					(unit 1)
 				)
 			)
@@ -38813,8 +38813,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dcebc194-e340-5de5-9780-92744382fd20")
-		(property "Reference" "LED29"
+		(uuid "79931500-c650-5276-b7b6-f6092ed24d02")
+		(property "Reference" "LED59"
 			(at 311.15 259.08 0)
 			(effects
 				(font
@@ -38862,7 +38862,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" ";"
+		(property "Key" "H"
 			(at 320.04 271.78 0)
 			(effects
 				(font
@@ -38883,21 +38883,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "ea54d245-7734-527f-8531-e92975d3de5f")
+			(uuid "3518b31b-be38-54e0-83a8-42c5253eb539")
 		)
 		(pin "2"
-			(uuid "63ded9cf-f35c-5487-84c0-d589ec3852d5")
+			(uuid "c30faf89-e7f1-551c-baba-1dc2bc55f967")
 		)
 		(pin "3"
-			(uuid "da28798c-214a-5520-a0aa-d97a78b97ca6")
+			(uuid "90911412-2517-5d9e-a1b3-ca3c1898778d")
 		)
 		(pin "4"
-			(uuid "77d4d342-a106-5d88-9657-7279bea7f65c")
+			(uuid "1608c7a5-d10b-5283-8f66-a5de79ce1b0f")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED29")
+					(reference "LED59")
 					(unit 1)
 				)
 			)
@@ -39093,8 +39093,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d29a1a3d-aeb3-5186-9c5e-1a3e0a02c251")
-		(property "Reference" "C129"
+		(uuid "4711eb7b-b0dd-563c-ac05-cf55cf775806")
+		(property "Reference" "C159"
 			(at 340.36 288.29 0)
 			(effects
 				(font
@@ -39153,15 +39153,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "0d0f8324-13f9-529e-aba9-4ea7c5746b98")
+			(uuid "44a743ab-b744-5cd9-aeaa-301cd3bbc23f")
 		)
 		(pin "2"
-			(uuid "267f23bc-8529-54dd-8a5a-e20eb8ec21ee")
+			(uuid "c5b37e4e-ac4f-5025-845b-32d759969a95")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C129")
+					(reference "C159")
 					(unit 1)
 				)
 			)
@@ -39378,8 +39378,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0e1740f6-5f7b-53ab-aad9-bd688d81f002")
-		(property "Reference" "LED62"
+		(uuid "b201f43a-f8af-55b7-89ca-94fe55cfc778")
+		(property "Reference" "LED26"
 			(at 350.52 259.08 0)
 			(effects
 				(font
@@ -39427,7 +39427,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "="
+		(property "Key" "G"
 			(at 359.41 271.78 0)
 			(effects
 				(font
@@ -39448,21 +39448,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "4ac3649e-d7db-5703-b855-b37e593e33cb")
+			(uuid "e999812f-852a-56da-b8e1-7c7e8ac8eff5")
 		)
 		(pin "2"
-			(uuid "06471043-6e8e-5f12-b70d-d3a3f1d3d79b")
+			(uuid "59c884b9-1eac-589c-b831-a3d61e6e588e")
 		)
 		(pin "3"
-			(uuid "1c034c98-53f9-53f7-9147-aa431e38338c")
+			(uuid "49c39093-8ccd-5052-acd6-a7844eb3e5a8")
 		)
 		(pin "4"
-			(uuid "24dd7be8-3b17-509f-aa34-1896cfa0655c")
+			(uuid "009a4157-f312-528f-87ec-466424ebc97b")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED62")
+					(reference "LED26")
 					(unit 1)
 				)
 			)
@@ -39658,8 +39658,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "72b93f7d-0289-5d06-81cb-6eaeba40f172")
-		(property "Reference" "C162"
+		(uuid "ebd58848-164c-5a9b-9d4a-cbe20358fdde")
+		(property "Reference" "C126"
 			(at 379.73 288.29 0)
 			(effects
 				(font
@@ -39718,15 +39718,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "266ff000-19ba-55a4-aac6-ce240d9a97c2")
+			(uuid "cb6be835-4d4e-54cb-8aa0-c1fed51e597c")
 		)
 		(pin "2"
-			(uuid "68f634b9-b9a2-5c96-8efd-8f0564de8ba7")
+			(uuid "e7823feb-e087-5653-a1af-ced763db2932")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C162")
+					(reference "C126")
 					(unit 1)
 				)
 			)
@@ -39943,8 +39943,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "18a67f0e-9f8a-59fe-8344-4c4f9ce9d82d")
-		(property "Reference" "LED12"
+		(uuid "987b26b6-5680-5b67-a863-3a5463d8be54")
+		(property "Reference" "LED58"
 			(at 391.16 259.08 0)
 			(effects
 				(font
@@ -39992,7 +39992,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Return"
+		(property "Key" "F"
 			(at 400.05 271.78 0)
 			(effects
 				(font
@@ -40013,21 +40013,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "649c9bf8-3634-577b-af59-a3c8cead342b")
+			(uuid "c750bf81-4739-5184-b71b-ba5aaec07d4d")
 		)
 		(pin "2"
-			(uuid "dfbea87b-edb8-558c-88dd-85649df0ee2a")
+			(uuid "fc16b28a-47f6-5f9c-a481-40beeb47ce06")
 		)
 		(pin "3"
-			(uuid "f1dff464-e06a-5ab0-800a-edb82f66807e")
+			(uuid "aaa566dc-88c0-5294-81a6-7af6a369b204")
 		)
 		(pin "4"
-			(uuid "8762d33d-4b7c-51eb-a954-631301865109")
+			(uuid "9751fcdb-991d-549d-bc3e-bac697e4048a")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED12")
+					(reference "LED58")
 					(unit 1)
 				)
 			)
@@ -40223,8 +40223,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "909c8e56-2d11-5730-9f62-22accf229b86")
-		(property "Reference" "C112"
+		(uuid "5c10a1eb-06b1-5c0a-93dd-b59756faedcc")
+		(property "Reference" "C158"
 			(at 420.37 288.29 0)
 			(effects
 				(font
@@ -40283,15 +40283,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "fe3e1c14-c7e4-55f5-b42f-73d3e5ad5678")
+			(uuid "4e6516e2-339e-5b92-bfb0-436e181561a2")
 		)
 		(pin "2"
-			(uuid "072a2c3e-8136-5a5a-988e-6c4d365d1bf3")
+			(uuid "e023a1d4-cef5-583f-8268-59112559fb55")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C112")
+					(reference "C158")
 					(unit 1)
 				)
 			)
@@ -40508,8 +40508,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4fb01a64-dcd5-5467-aa5b-14b5c8096969")
-		(property "Reference" "LED86"
+		(uuid "5825dba5-4a37-5277-b5b5-e5c718d89cf5")
+		(property "Reference" "LED25"
 			(at 430.53 259.08 0)
 			(effects
 				(font
@@ -40557,7 +40557,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Num1"
+		(property "Key" "D"
 			(at 439.42 271.78 0)
 			(effects
 				(font
@@ -40578,21 +40578,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "b00d1c58-9fdc-516b-9b92-f8a49adfaf9e")
+			(uuid "9a52f198-673e-5fbc-bef9-dcf35d8e8d40")
 		)
 		(pin "2"
-			(uuid "0b9844ed-31a4-5ca3-a21c-5777b4bb05ae")
+			(uuid "e107aaeb-b348-5649-b123-d3bf7e2208d0")
 		)
 		(pin "3"
-			(uuid "26fcea7a-c4fe-522a-8002-afdc04a84d64")
+			(uuid "6c784dee-6824-56b5-9f33-ab8cf3aa4aa4")
 		)
 		(pin "4"
-			(uuid "c4ba0bcc-761d-5565-a9a6-9e9cb804a42f")
+			(uuid "6a6969de-2624-5a7c-943b-d175de927474")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED86")
+					(reference "LED25")
 					(unit 1)
 				)
 			)
@@ -40788,8 +40788,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "43cd613c-eea0-5fa7-ba82-6b71e8d26d14")
-		(property "Reference" "C186"
+		(uuid "e2f5bfbc-db8c-52c6-987a-6e35ce2cc558")
+		(property "Reference" "C125"
 			(at 459.74 288.29 0)
 			(effects
 				(font
@@ -40848,15 +40848,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "699af2ef-7a60-504b-a7d4-0a1d5ac83ca9")
+			(uuid "ee44fed2-93ae-5b79-ab68-e7a738ee73f2")
 		)
 		(pin "2"
-			(uuid "2198c16f-9379-5113-90b4-16518a3213c0")
+			(uuid "ccc4f108-78a3-54e8-af72-546dc3cc2b16")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C186")
+					(reference "C125")
 					(unit 1)
 				)
 			)
@@ -41073,8 +41073,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "803249ba-ed75-5943-9c51-cc0835855850")
-		(property "Reference" "LED53"
+		(uuid "44589e32-473f-5523-84e5-e4e99d54f4e1")
+		(property "Reference" "LED57"
 			(at 471.17 259.08 0)
 			(effects
 				(font
@@ -41122,7 +41122,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Num2"
+		(property "Key" "S"
 			(at 480.06 271.78 0)
 			(effects
 				(font
@@ -41143,21 +41143,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "fa36c35f-02d8-5585-8969-aa22cebe2acd")
+			(uuid "dcb6d6d3-cb78-5c6f-8151-74d3b407cb31")
 		)
 		(pin "2"
-			(uuid "5f180e50-4453-510c-bb92-543e3ac5f67a")
+			(uuid "2bc08a57-697c-55ca-b967-3ede27960941")
 		)
 		(pin "3"
-			(uuid "5ff1020b-72f6-593b-b6ac-8f85387ab004")
+			(uuid "8fadfb5e-bedb-5124-b32c-6fdfe8009ee3")
 		)
 		(pin "4"
-			(uuid "36cec757-3265-5244-b5ea-f12a55bf97bf")
+			(uuid "34d061d7-20b1-5084-96bd-38573631ce0c")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED53")
+					(reference "LED57")
 					(unit 1)
 				)
 			)
@@ -41353,8 +41353,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "43dc36b8-d3d2-5db4-a506-ac1a1f19bc07")
-		(property "Reference" "C153"
+		(uuid "fcb4f68f-6f7d-5af4-aaae-42b9c39939cc")
+		(property "Reference" "C157"
 			(at 500.38 288.29 0)
 			(effects
 				(font
@@ -41413,15 +41413,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "d4e9f3ee-9e52-5b15-899b-579dfe66fd49")
+			(uuid "5499c886-9b47-58b2-8043-d8b97888aa07")
 		)
 		(pin "2"
-			(uuid "5b79f90b-7cac-54d2-ac3a-4ac365b8401e")
+			(uuid "f7389170-d5d3-50db-b087-3ac4fa59d585")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C153")
+					(reference "C157")
 					(unit 1)
 				)
 			)
@@ -41670,8 +41670,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8628572d-b6d4-572c-98bb-4b326efadc4b")
-		(property "Reference" "LED87"
+		(uuid "4ba29b80-0970-5fc2-9dcd-1d281aa1b05e")
+		(property "Reference" "LED24"
 			(at 30.48 304.8 0)
 			(effects
 				(font
@@ -41719,7 +41719,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "Num3"
+		(property "Key" "A"
 			(at 39.37 317.5 0)
 			(effects
 				(font
@@ -41740,21 +41740,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "ee299f79-56ee-597b-9fa0-7eda1bc077ed")
+			(uuid "57fd8408-893f-5a0f-bef5-2d580193b60e")
 		)
 		(pin "2"
-			(uuid "99c2f650-d337-579d-bd20-8af35ba91fcd")
+			(uuid "002ca329-3f66-5729-8685-bf52a86d460e")
 		)
 		(pin "3"
-			(uuid "3c978f90-725f-52c8-b9e6-bdc5cce98a15")
+			(uuid "8ff0cf7f-e554-562d-925b-bb474ea6e1a3")
 		)
 		(pin "4"
-			(uuid "4e49ed17-8630-51b3-bd8e-d4d1c9fad487")
+			(uuid "d1fc5736-223d-5935-9062-ccabc210d96f")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED87")
+					(reference "LED24")
 					(unit 1)
 				)
 			)
@@ -41950,8 +41950,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "69ada2b4-762c-5f9d-9d01-1a5299e7251e")
-		(property "Reference" "C187"
+		(uuid "4fd5e210-1542-5ff8-a10a-f861979956bf")
+		(property "Reference" "C124"
 			(at 59.69 334.01 0)
 			(effects
 				(font
@@ -42010,15 +42010,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "1160cb5e-d07a-5fa6-932f-61c0ec9ce694")
+			(uuid "59ca0274-47e2-5766-b3c0-80e27a96d8ee")
 		)
 		(pin "2"
-			(uuid "0802fc86-09de-57d9-befb-1995190b448b")
+			(uuid "574bba59-6f56-5334-9012-535d41d36b34")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C187")
+					(reference "C124")
 					(unit 1)
 				)
 			)
@@ -42246,8 +42246,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e7b44324-f8c8-5d3b-9dd5-d6f45bea0ff5")
-		(property "Reference" "LED54"
+		(uuid "3413a9e4-b0c0-55a9-8424-864532579967")
+		(property "Reference" "LED85"
 			(at 71.12 304.8 0)
 			(effects
 				(font
@@ -42295,7 +42295,7 @@
 				(hide yes)
 			)
 		)
-		(property "Key" "NumEnter"
+		(property "Key" "Run/Stop"
 			(at 80.01 317.5 0)
 			(effects
 				(font
@@ -42316,21 +42316,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "962085d0-1c7f-5047-87f0-03e66b2c49b2")
+			(uuid "3e41e912-da62-5205-9e68-089f5e5c499a")
 		)
 		(pin "2"
-			(uuid "6647e8a8-3c5f-58b7-a562-ccbf41daa902")
+			(uuid "0bf478f5-7efb-5fd6-a167-5916e05d533b")
 		)
 		(pin "3"
-			(uuid "c135fba4-ba7f-5e31-bd4b-90de017aa843")
+			(uuid "b68f891c-a2ba-5cc5-a128-9adb63ad1149")
 		)
 		(pin "4"
-			(uuid "0697e082-022c-5bdb-85ba-1676917c2533")
+			(uuid "99d8b9fe-b728-5c20-8237-7e59536fb26a")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "LED54")
+					(reference "LED85")
 					(unit 1)
 				)
 			)
@@ -42526,8 +42526,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "238c613e-eb7b-5999-889d-2f0f3cc26558")
-		(property "Reference" "C154"
+		(uuid "754ba835-9f12-5b62-a56f-6fbd1e66edc2")
+		(property "Reference" "C185"
 			(at 100.33 334.01 0)
 			(effects
 				(font
@@ -42586,15 +42586,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "198b311a-9349-5632-9771-758324adf71b")
+			(uuid "e4974b34-525b-5f4c-b434-94420117c66f")
 		)
 		(pin "2"
-			(uuid "4edf66ab-3154-55b9-92d4-5b0280bd7952")
+			(uuid "fc33b38d-6b8f-5eda-b8d2-b12af4f9bcdb")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path None
-					(reference "C154")
+					(reference "C185")
 					(unit 1)
 				)
 			)

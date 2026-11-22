@@ -66,3 +66,32 @@ def physical_matrix(switches=None):
         used.add((r, c))
         out[s["ref"]] = (r, c)
     return out
+
+
+# --- LED chain ------------------------------------------------------------------------------
+#
+# The three lock keys come first (a build with only those three LEDs still has indicators),
+# then the chain snakes through the scanned rows: row 0 left to right, row 1 right to left,
+# and so on, so it never runs back across the board.  Each LED is turned to face its row's
+# direction (data in on the upstream side), which the board placement reads from here.
+LOCK_LEDS = ("SW89", "SW91", "SW92")
+
+
+def led_chain(switches=None):
+    """(switch refs in chain order, {ref: +1 left to right or -1 right to left})."""
+    switches = switches or load_switches()
+    pm = physical_matrix(switches)
+    by_ref = {s["ref"]: s for s in switches}
+    # RESTORE has an LED but no scanned position: it rides in the row it sits in
+    rows = {ref: r for ref, (r, c) in pm.items()}
+    for s in switches:
+        if s["ref"] not in rows:
+            rows[s["ref"]] = pm[min(pm, key=lambda r: abs(by_ref[r]["y"] - s["y"]))][0]
+    order, direction = list(LOCK_LEDS), {ref: 1 for ref in LOCK_LEDS}
+    for r in range(PHYS_ROWS):
+        d = 1 if r % 2 == 0 else -1
+        keys = sorted((ref for ref, rr in rows.items() if rr == r and ref not in LOCK_LEDS),
+                      key=lambda ref: d * by_ref[ref]["x"])
+        order += keys
+        direction.update({ref: d for ref in keys})
+    return order, direction
