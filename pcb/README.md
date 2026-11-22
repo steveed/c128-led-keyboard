@@ -166,7 +166,19 @@ in the switch's frame, and keeps it in one group, `route_keys`, that the next ru
 
 On its first run: 91 switch-to-diode links, 92 LED power pairs, 77 data hops, no DRC
 copper errors.  It refills the planes after laying its vias, so every LED pad reaches GND or
-5V_SYS through them.  Next: Freerouting for the rest.
+5V_SYS through them.  Its copper is locked, so the autorouter treats it as fixed wiring.
+
+`tools/freeroute.py` routes the rest with Freerouting 2.5.0 in a container (the
+`freerouting` service in `docker-compose.yml`, built from `freerouting/Dockerfile`, jar pinned
+by checksum): it exports the board to Specctra DSN in `freerouting/out/` (not committed),
+runs the router headless, imports the session and refills the planes.  It changes the board
+in place, so commit first; `git checkout` is the undo.
+
+```
+PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
+$PY pcb/tools/route_keys.py
+$PY pcb/tools/freeroute.py 20        # max passes
+```
 
 ## Plate
 
