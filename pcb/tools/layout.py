@@ -10,11 +10,12 @@ import os
 LAYOUT_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "layout"))
 SWITCHES = os.path.join(LAYOUT_DIR, "switches.json")
 PLATE = os.path.join(LAYOUT_DIR, "plate.json")
+OUTLINE = os.path.join(LAYOUT_DIR, "outline.json")
 
 
 def load_switches():
     """Every switch footprint: ref, key legend (val), center x/y in KiCad board coordinates
-    (mm, y down), and the row/col nets on pads 1 and 2."""
+    (mm, y down), rotation in degrees, and the row/col nets on pads 1 and 2."""
     return json.load(open(SWITCHES, encoding="utf-8"))["switches"]
 
 
@@ -23,3 +24,9 @@ def load_plate():
     {"outer": [...], "holes": [[...], ...]}.  gen_plate.py fits it onto the switches."""
     d = json.load(open(PLATE, encoding="utf-8"))
     return {"outer": d["outer"], "holes": d["holes"]}
+
+
+def load_outline():
+    """The board outline as {"line": [x0, y0, x1, y1]} and {"circle": [cx, cy, r]} segments,
+    in KiCad board coordinates."""
+    return json.load(open(OUTLINE, encoding="utf-8"))["segments"]
