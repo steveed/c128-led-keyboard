@@ -20,11 +20,14 @@ A part-by-part explanation of the circuit is in
 | `matrix.kicad_sch` | 92 switches in a 6 x 20 scanned matrix that follows the board (`tools/layout.py` `physical_matrix`), one 1N4148W per scanned key, 74HC154 plus five GPIO for the columns |
 | `leds.kicad_sch` | 92 SK6812 MINI (top mount) in chain order (lock keys first) |
 | `c128rev3.kicad_sym`, `sym-lib-table` | project library with the CH446Q symbol (LQFP-44 numbering) |
-| `c128rev3.pretty/`, `fp-lib-table` | project footprints: MX switches (1u, 1.5u, 2u, spacebar) and the SK6812 MINI for the switch LED pocket |
+| `c128rev3.pretty/`, `fp-lib-table` | project footprints: MX switches (1u, 1.5u, 2u, spacebar), the SK6812 MINI for the switch LED pocket, and the USB-C receptacle |
+| `datasheets/` | drawings the project footprints are made from |
 | `tools/gen_fp.py` | the generator that writes `c128rev3.pretty/` and `fp-lib-table` |
-| `C128-keyboard-rev3.kicad_pcb` | the board: rev 2.3 outline, all 418 footprints linked to the schematic and placed, unrouted |
+| `C128-keyboard-rev3.kicad_pcb` | the board: rev 2.3 outline, four layers, every footprint linked to the schematic and placed; routing in progress |
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
 | `tools/route_keys.py` | lays the regular per-key copper on the board; rerunnable (see *Routing*) |
+| `tools/freeroute.py`, `tools/plane_taps.py`, `tools/clean_dangling.py` | autoroute the rest in a container; tap the inner planes from SMD pads; delete dead-end stubs (see *Routing*) |
+| `tools/swap_footprint.py` | swaps one footprint on the board for another, keeping its schematic link and nets |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
 | `tools/pinmaps.json` | CH446Q LQFP-44 pin map, GPIO plan, host connector pinout |
@@ -104,9 +107,11 @@ Placeholders to resolve during layout:
   The original C128 spacebar on its adapters wants the narrower 125.35 mm the rev 2.3 board
   drilled (and 99.77 mm for its 6.25u set); 125.35 and 133.35 are 4 mm apart, so one
   footprint cannot carry both, and rev 3 drills for standard MX spacebars.
-- The USB-C footprint is the GCT USB4105, a top-mount part.  Rev 3 wants a mid-mount 16-pin
-  receptacle for the underside height budget; KiCad ships none, so it goes in `c128rev3.pretty`
-  once the part is chosen.
+- USB-C is the SHOU HAN TYPE-C 16P 3MD 040 (LCSC C41417453, `datasheets/C41417453.pdf`), a
+  16-pin USB 2.0 receptacle that sits on the board surface (3.26 mm tall) with its shell legs
+  in four plated slots.  It is on the back at the rear edge, where the case leaves about
+  17 mm under the board, so a mid-mount part is not needed.  The footprint is drawn from the
+  datasheet's recommended layout (`usb_c()` in `gen_fp.py`), front flush with the board edge.
 - The CH446Q footprint is KiCad's generic LQFP-44 10 x 10 mm; check it against the WCH drawing.
 
 ## The board
@@ -174,10 +179,21 @@ by checksum): it exports the board to Specctra DSN in `freerouting/out/` (not co
 runs the router headless, imports the session and refills the planes.  It changes the board
 in place, so commit first; `git checkout` is the undo.
 
+The planes are In1.Cu (GND) and In2.Cu (+5V_SYS).  An SMD pad reaches its plane only
+through a via, and the router leaves many of those taps out, so `tools/plane_taps.py` adds
+them: for each GND or +5V_SYS SMD pad whose copper holds no via or through-hole pad, a via
+beside it on a short track (or inside it, for a big pad), at the first spot that clears
+everything on all four copper layers.  Its copper is the group `plane_taps`, replaced on each
+run.  Pads in tight spots (fine-pitch IC pins) are listed as having no room, for the next
+router pass.
+
 ```
 PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
 $PY pcb/tools/route_keys.py
 $PY pcb/tools/freeroute.py 20        # max passes
+$PY pcb/tools/clean_dangling.py
+$PY pcb/tools/plane_taps.py
+$PY pcb/tools/freeroute.py 10 00:20:00
 ```
 
 ## Plate
