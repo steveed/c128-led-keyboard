@@ -27,7 +27,7 @@ A part-by-part explanation of the circuit is in
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
 | `tools/route_keys.py` | lays the regular per-key copper on the board; rerunnable (see *Routing*) |
 | `tools/freeroute.py`, `tools/plane_taps.py`, `tools/clean_dangling.py` | autoroute the rest in a container; tap the inner planes from SMD pads; delete dead-end stubs (see *Routing*) |
-| `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py` | rework a routed board: swap a footprint, take the schematic's nets after a change, rip up an area |
+| `tools/move.py`, `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py` | rework a routed board: move or turn parts, swap a footprint, take the schematic's nets after a change, rip up an area |
 | `tools/route_host.py` | lays the host lines between J2 and the CH446Q (see *Routing*) |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
@@ -198,7 +198,10 @@ leaves out any LED data hop that would cross the pockets' electronics.
 Other tools for reworking a routed board: `tools/rip_up.py` deletes unlocked copper in a
 rectangle or around named pads; `tools/sync_nets.py` gives the pads the schematic's nets
 after a schematic change (and deletes copper on the nets that changed);
-`tools/swap_footprint.py` replaces a footprint in place.
+`tools/swap_footprint.py` replaces a footprint in place; `tools/move.py REF=X,Y,ROT ...` moves
+or turns parts (by courtyard center), with `--check` to list clashes with other courtyards,
+switch holes and the edge before anything is saved.  sync_nets.py drops all unlocked copper
+on a changed net, board-wide: a remap of a matrix row loses that row's routing too.
 
 ```
 PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
