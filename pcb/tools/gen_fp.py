@@ -183,10 +183,11 @@ def led():
     fp.prop("Value", name, (0, 2.5), "F.Fab", 0.5)
     fp.prop("Datasheet", "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf", (0, 0), "F.Fab", hide=True)
     fp.prop("Description", "", (0, 0), "F.Fab", hide=True)
-    fp.smd("1", -1.75, -0.875, 1.6, 0.85)    # VDD
-    fp.smd("2", -1.75, 0.875, 1.6, 0.85)     # DOUT
-    fp.smd("3", 1.75, 0.875, 1.6, 0.85)      # GND
-    fp.smd("4", 1.75, -0.875, 1.6, 0.85)     # DIN
+    # numbering as KiCad's LED:SK6812MINI symbol
+    fp.smd("1", -1.75, -0.875, 1.6, 0.85)    # DOUT
+    fp.smd("2", -1.75, 0.875, 1.6, 0.85)     # VSS
+    fp.smd("3", 1.75, 0.875, 1.6, 0.85)      # DIN
+    fp.smd("4", 1.75, -0.875, 1.6, 0.85)     # VDD
     fp.rect(-1.75, -1.75, 1.75, 1.75, "F.Fab", 0.1)
     fp.line(1.75, 0.75, 0.75, 1.75, "F.Fab", 0.1)
     fp.circle(-2.95, -0.875, 0.15, "F.SilkS", 0.12, fill=True)   # pin 1 dot, clear of the pads
