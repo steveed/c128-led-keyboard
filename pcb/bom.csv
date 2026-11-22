@@ -6,7 +6,7 @@
 "D1,D2","SS34","Diode_SMD:D_SMA","C8678","2"
 "D3,D101-D189,D191,D192","1N4148W","Diode_SMD:D_SOD-123","C81598","92"
 "F1","1.1A","Fuse:Fuse_1812_4532Metric","","1"
-"J1","USB-C","Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal","","1"
+"J1","USB-C","c128rev3:USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040","C41417453","1"
 "J2","C128 keyboard (D-sub IDC order)","Connector_IDC:IDC-Header_2x13_P2.54mm_Vertical","","1"
 "J3","Ext LED","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","","1"
 "J4","UART0","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","","1"
