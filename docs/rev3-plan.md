@@ -176,11 +176,17 @@ no table.
   shield is the tight dimension, and rev 3 puts taller parts on the back than rev 2.3 ever
   had: the ESP32 module (~3.2 mm), the USB-C receptacle (~3.3 mm), the cable header and the
   CH446Q (LQFP-44, ~1.6 mm, no longer a concern).  A 26-way IDC header is about 9 mm mated
-  whether vertical or right-angle, so on a flat it probably does not fit and the ribbon is
-  soldered into the pads instead; the header is for 128D-case builds and bench boards.  The
-  bottom cover takes about 1 mm more.  Measure the flat's clearance before layout and record
-  it here.  The 1 mm the plate change in issue 4 gives back below the plate counts toward this
-  budget.
+  whether vertical or right-angle.  The 1 mm the plate change in issue 4 gives back below
+  the plate counts toward this budget.
+
+  Measured 2026-11-21 on a flat 128, case top to RF shield: about 25 mm at the rear edge and
+  about 10 mm at the front edge.  Less the 8 mm keyboard stack (plate top to PCB bottom),
+  that leaves **about 17 mm under the PCB at the rear and about 2 mm at the front**, tapering
+  in between (the case angles up toward the rear).  On a straight taper over the 126 mm
+  depth, the rear band (y < 113) has 13 to 17 mm, so the IDC header, the electrolytic and the
+  tact switches all fit there, header included.  The front rows have about 2 mm against
+  1.7 mm of switch pins: rev 3 adds nothing taller than the pins there (only the SOD-123
+  diodes and 0603 capacitors), and nothing tall may move forward of the rear band.
 - Cluster every tall back-side part (module, CH446Q, USB-C, connectors) in a band along the
   rear edge.  The flat 128's wedge is deepest at the rear, and it keeps the bottom cover flat
   over the rest of the board.
@@ -209,9 +215,11 @@ A thin insulating sheet under the PCB so the switch pins, solder joints and back
 can never touch the flat 128's RF shield, a bench, or a hand.  In the printed 128D case the
 tray already does this job, so the cover is for flat builds and bare keyboards.
 
-- Two-level shape: a flat floor about 1 mm below the pin tips over the switch field (nearly
-  the whole board), with a raised pocket along the rear band that clears the electronics
-  cluster.  Openings for the cable exit, USB-C, and the ESP32 antenna region (plastic over
+- Coverage: the 128's main board does not reach under the last two key rows (the Z row and
+  the spacebar), which is also where there is only about 2 mm below the PCB.  The cover stops
+  short of them; it only has to cover the area over the main board.
+- Two-level shape: a flat floor about 1 mm below the pin tips over the switch field it
+  covers, with a raised pocket along the rear band that clears the electronics cluster.  Openings for the cable exit, USB-C, and the ESP32 antenna region (plastic over
   the antenna is fine, metal is not).
 - Material and thickness: printed PETG with a 0.6 mm floor in two halves for a 256 mm bed,
   or a 0.5 mm PET/polycarbonate sheet cut by the plate vendor for the flat part with a small
@@ -459,7 +467,8 @@ All SMD goes on at the fab (see Assembly); the hand-build path is through-hole o
   draw wastes only about a quarter of a watt in a linear part, and a buck adds parts, layout
   rules and switching noise next to the antenna.  If a machine ever measures under 4.7 V, the
   next lever is a P-FET ideal diode in place of D1.
-- Exact connector Y position on the back, and the whole underside height budget, pending
-  the flat-128 clearance measurement.
+- ~~Underside height budget.~~  Measured 2026-11-21: about 17 mm under the PCB at the rear,
+  about 2 mm at the front; see *Layout changes*.  The layout keeps every part taller than the
+  switch pins in the rear band (y < 113); the cover stops before the last two rows.
 - Which system macros beyond UNNEW the community wants.
 - ~~A RESTORE driver?~~  Decided 2026-09-19: added as Q3/R12 on IO13.
