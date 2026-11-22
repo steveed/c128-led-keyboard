@@ -111,8 +111,8 @@ and what has to be proven on the bench before copper is ordered.
 | Column select | 74HC154 4-to-16 decoder for columns 0-14, five GPIO for columns 15-19, 20 x 1 k series resistors | the scanned matrix follows the board (6 key rows x 20 columns, decided 2026-11-21), not the C128's assignment, which keeps the matrix copper short; the firmware maps each position to its host position.  Columns go low one at a time; the resistors bound the current when two keys in one row are pressed |
 | Rows | 8 GPIO inputs with internal pull-ups | ROW0..7 physical |
 | Matrix diodes | 91 x 1N4148W SOD-123 (D101..D192, one per scanned key; RESTORE has none) | row -> switch -> diode -> column; any chord reads without ghosting, which USB keyboard mode needs |
-| RESTORE sense | D3 1N4148W, cathode to H_RESTORE, anode to IO1 with the internal pull-up on | reads the key with or without a Commodore attached; replaces the 10k/20k divider |
-| RESTORE driver | Q3 2N7002 open-drain on H_RESTORE, 100 k gate pull-down (R12), gate on IO13 | lets the firmware press RESTORE (RUN/STOP + RESTORE from the network keyboard, macros); the physical switch stays hard-wired in parallel |
+| RESTORE sense | D3 1N4148W, cathode to H_RESTORE, anode to IO14 with the internal pull-up on | reads the key with or without a Commodore attached; replaces the 10k/20k divider |
+| RESTORE driver | Q3 2N7002 open-drain on H_RESTORE, 100 k gate pull-down (R12), gate on IO9 | lets the firmware press RESTORE (RUN/STOP + RESTORE from the network keyboard, macros); the physical switch stays hard-wired in parallel |
 | Lock drivers | 2 x 2N7002 | 40/80 gate has a 10 k pull-up to 3.3 V behind a solder jumper (closed = asserts 80 columns from the instant power arrives, before the MCU boots); the MCU drives the gate low to release.  CAPS LOCK is plain open-drain |
 | LEDs | 92 x SK6812 MINI (top mount), 92 x 100 nF, 74AHCT1G125 single-gate level shifter, 3-pin external LED header | chain order: SHIFT LOCK, CAPS LOCK, 40/80, then row by row.  Data out of the last LED to the header for a "Razzle"-style power LED or an underglow strip |
 | Connector | 2 x 13 0.1" footprint on B.Cu in D-sub IDC pin order.  Populate a shrouded IDC box header (vertical or right-angle, both ~9 mm mated) where height allows, otherwise leave it empty and solder the ribbon into the pads | pinout below.  Replaces the FFC |
@@ -124,7 +124,7 @@ and what has to be proven on the bench before copper is ordered.
 |---|---|
 | Physical rows in | 6 |
 | Column select (74HC154 A..D) | 4 |
-| GPIO columns 15-19 (IO17, 18, 14, 21, 35) | 5 |
+| GPIO columns 15-19 (IO1, 2, 4, 5, 6) | 5 |
 | CH446Q DAT, CS/CK, STB, RST (serial mode) | 4 |
 | LED data | 1 |
 | 40/80, CAPS LOCK gates | 2 |

@@ -106,7 +106,10 @@ generates the LED data stream in hardware.
 The `-N8` suffix means 8 MB flash, no PSRAM.  That matters because the PSRAM versions steal
 GPIO 35, 36 and 37 for the memory chip; the N8 leaves them free.
 
-The GPIO assignments are printed on the sheet.  Four pins are avoided on purpose: IO0, IO3,
+The GPIO assignments are printed on the sheet.  They are picked for the layout rather than
+in any logical order: the module sits on the back turned so its row of ground pins faces the
+rear edge, and each signal uses a pin on the side facing where it goes (the S3 can route any
+peripheral to almost any pin, so this costs nothing).  Four pins are avoided on purpose: IO0, IO3,
 IO45 and IO46 are *strapping pins*, which the chip reads at the instant of reset to decide how
 to boot, and driving them from external circuitry can put it into the wrong mode.
 

@@ -408,21 +408,35 @@ class Placed:
 # ESP32-S3-MINI-1U-N8 (2.4 mm tall, U.FL antenna: the whole PCB sits under the plate, so an
 # on-board antenna would be under metal).  Strapping pins (IO0, IO3, IO45, IO46) are left
 # free.  The scanned matrix is 6 rows x 20 columns: 15 columns through the 74HC154, five
-# straight from GPIO (IO17, 18, 14, 21, 35; the bench rig uses IO17/18 as its rows 6 and 7).
-# Spare: IO36, 37, plus IO26, 33, 34 which only the MINI brings out.
+# straight from GPIO.
+#
+# The pins are chosen for the layout, the way the CH446Q's are.  The module sits on the back
+# turned 180 degrees, so its GND row faces the rear edge and the other three sides face the
+# board.  Everything bound east (the five GPIO columns at the keypad, the lock-line gates, the
+# crosspoint, the decoder address) is on the east side, top to bottom, then along the south
+# side from its east end: that order runs out into the channel under the top row without a
+# crossing.  The matrix rows leave the south side west of USB and drop straight into the main
+# block; the LED data and ROW0 (top row, westward) leave the west side.  USB, UART0, EN and
+# IO0 keep their fixed pins.  The bench rig is wired to its own, older plan (firmware pins.h).
+# Spare: IO21, IO37-42.
 GPIO = {
-    "IO4": "P_ROW0", "IO5": "P_ROW1", "IO6": "P_ROW2", "IO7": "P_ROW3",
-    "IO15": "P_ROW4", "IO16": "P_ROW5",
-    "IO17": "MCU_COL15", "IO18": "MCU_COL16", "IO14": "MCU_COL17", "IO21": "MCU_COL18", "IO35": "MCU_COL19",
-    "IO8": "MCU_COLSEL0", "IO9": "MCU_COLSEL1", "IO10": "MCU_COLSEL2", "IO11": "MCU_COLSEL3",
-    "IO12": "MCU_XP_CK", "IO38": "MCU_XP_DAT", "IO39": "MCU_XP_STB", "IO40": "MCU_XP_RST",
-    "IO13": "MCU_RESTORE_GATE",
-    "IO36": None, "IO37": None,   # spare
-    "IO41": "MCU_LED_DATA", "IO42": "MCU_4080_GATE", "IO2": "MCU_CAPLK_GATE", "IO1": "MCU_RESTORE_SENSE",
-    "IO0": "MCU_BOOT", "EN": "MCU_EN", "USB_D-": "USB_DN", "USB_D+": "USB_DP",
-    "TXD0": "MCU_TXD0", "RXD0": "MCU_RXD0",
-    "IO3": None, "IO45": None, "IO46": None, "IO47": None, "IO48": None,
-    "IO26": None, "IO33": None, "IO34": None,
+    # east side, top to bottom
+    "IO1": "MCU_COL15", "IO2": "MCU_COL16", "IO4": "MCU_COL17", "IO5": "MCU_COL18", "IO6": "MCU_COL19",
+    "IO7": "MCU_4080_GATE", "IO8": "MCU_CAPLK_GATE", "IO9": "MCU_RESTORE_GATE",
+    "IO10": "MCU_XP_STB", "IO11": "MCU_XP_CK",
+    # south side, east to west
+    "IO12": "MCU_XP_DAT", "IO13": "MCU_XP_RST", "IO14": "MCU_RESTORE_SENSE",
+    "IO15": "MCU_COLSEL3", "IO16": "MCU_COLSEL2", "IO17": "MCU_COLSEL1", "IO18": "MCU_COLSEL0",
+    "USB_D-": "USB_DN", "USB_D+": "USB_DP",
+    "IO21": None,
+    "IO26": "P_ROW1", "IO47": "P_ROW2", "IO33": "P_ROW3", "IO34": "P_ROW4", "IO48": "P_ROW5",
+    # west side, bottom to top
+    "IO35": "MCU_LED_DATA", "IO36": "P_ROW0",
+    "IO37": None, "IO38": None, "IO39": None, "IO40": None, "IO41": None, "IO42": None,
+    "TXD0": "MCU_TXD0", "RXD0": "MCU_RXD0", "EN": "MCU_EN",
+    # fixed
+    "IO0": "MCU_BOOT",
+    "IO3": None, "IO45": None, "IO46": None,
 }
 
 # host connector (2x13 in D-sub IDC order): header pin -> net

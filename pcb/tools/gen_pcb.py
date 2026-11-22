@@ -56,10 +56,12 @@ CAP_OFFSET = (0.0, 6.1)        # back, behind the LED
 
 # Electronics on B.Cu: courtyard center (x, y) and rotation.  The three switch-free pockets of
 # the top row (x 182.7-225.3, 297.0-339.6 and 411.3-430.1, y 80.1 to about 112.4) have no
-# holes on the back.  Pocket A: MCU, USB-C, 3.3 V regulator, buttons.  Pocket B, at rev 2.3's
-# FFC: host connector, crosspoint, lock-line and RESTORE FETs, LED buffer, and the keyboard
-# 5 V fuse and diode next to the connector's +5 V pin.  Pocket C, by the keypad: the five
-# GPIO-column resistors (columns 15-19).  The 74HC154 drives columns 0-14 (x 118-385), so it
+# holes on the back.  Pocket A: MCU (turned so its GND row faces the edge and its signal
+# sides face the board), USB-C, LED buffer, and the 3.3 V regulator and buttons west of it so
+# the channel under the MCU stays clear.  Pocket B, at rev 2.3's FFC: host connector,
+# crosspoint, lock-line and RESTORE FETs, and the keyboard 5 V fuse and diode next to the
+# connector's +5 V pin.  Pocket C, by the keypad: the five GPIO-column resistors (columns
+# 15-19) and the 5 V bulk capacitor.  The 74HC154 drives columns 0-14 (x 118-385), so it
 # and its resistors sit mid-board in the channel under the top row (y 97.5-113 on the back is
 # clear of holes the whole width: top-row diodes and caps end at 97.1, number-row pins start
 # at 113.5).  First pass, packed from the footprints' courtyards; to be refined by hand.
@@ -68,15 +70,16 @@ PLACE = {
     "J1": (189.0, 84.6, 180), "D2": (200.5, 83.0, 0),
     "U7": (189.0, 92.0, 0), "R3": (184.5, 92.0, 90), "R4": (193.5, 92.0, 90),
     "R1": (199.0, 88.0, 0), "C1": (199.0, 90.0, 0), "R2": (199.0, 92.0, 0),
-    "C2": (206.5, 87.0, 90), "C3": (206.5, 91.0, 90), "U1": (216.5, 89.0, 0),
-    "J4": (190.0, 96.5, 90), "SW93": (188.5, 103.5, 0), "SW94": (199.5, 103.5, 0),
-    "U2": (213.5, 102.5, 0), "C5": (221.6, 103.3, 90), "C6": (207.5, 110.0, 0), "C7": (214.0, 109.5, 0),
+    "C2": (223.2, 84.0, 90), "C3": (225.0, 84.0, 90), "U1": (214.0, 89.0, 180),
+    "J4": (190.0, 96.5, 90), "SW93": (188.5, 102.05, 0), "SW94": (199.5, 102.05, 0),
+    "U4": (203.5, 95.0, 0), "C9": (198.0, 95.0, 0),
+    "U2": (200.0, 109.5, 0), "C6": (189.5, 108.6, 0), "C7": (189.5, 111.6, 0),
     # pocket B
     "J2": (318.25, 85.7, 90), "U3": (318.25, 98.5, 0),
     "Q1": (300.0, 93.6, 0), "JP1": (300.0, 97.0, 0), "Q2": (300.0, 100.5, 0), "Q3": (300.0, 104.5, 0),
     "R5": (306.5, 92.8, 0), "R6": (306.5, 94.8, 0), "C8": (306.5, 97.0, 0), "R7": (306.5, 100.5, 0),
     "R12": (306.5, 104.5, 0), "F1": (301.0, 109.5, 0), "D1": (308.5, 109.5, 0),
-    "R10": (328.5, 93.0, 0), "R11": (328.5, 95.0, 0), "U4": (329.0, 98.5, 0), "C9": (335.0, 98.5, 0),
+    "R10": (328.5, 93.0, 0), "R11": (328.5, 95.0, 0),
     "D3": (330.0, 103.0, 0), "J3": (332.5, 109.5, 90),
     # channel under the top row: decoder, its decoupling, and column resistors R20-R34 in
     # column order, west of it for columns 0-7 and east for 8-14
@@ -86,6 +89,7 @@ for i in range(15):
     PLACE[f"R{20 + i}"] = (227.2 + 2.0 * i, 105.5, 90) if i < 8 else (260.8 + 2.0 * (i - 8), 105.5, 90)
 for i in range(15, 20):                              # GPIO columns, pocket C
     PLACE[f"R{20 + i}"] = (420.7, 88.0 + 2.0 * (i - 15), 0)
+PLACE["C5"] = (413.0, 84.5, 0)                       # 5 V bulk, in the top-row gap by the keypad
 
 
 # --- netlist ------------------------------------------------------------------------------

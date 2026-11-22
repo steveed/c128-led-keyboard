@@ -86,8 +86,9 @@ crosspoint or toggles the lock.
   columns (`pcb/tools/layout.py` `physical_matrix`), which keeps the matrix copper short.
   The CH446Q's pins are wired in routing order too, so `ch446q_set(row, col)` takes host
   row and column and looks up the chip's pins in `crosspoint_map.h`.
-  Columns 0-14 come from the 74HC154, 15-19 straight from GPIO 17, 18, 14, 21 and 35 (the
-  pins the bench rig uses for rows 6 and 7, plus three spares).
+  Columns 0-14 come from the 74HC154, 15-19 straight from GPIO 1, 2, 4, 5 and 6.  The rev 3
+  board's pins are picked for the layout (`pcb/tools/gen_sch.py` GPIO), so `main/pins.h` has
+  one block for it and one for the bench rig.
 
 RESTORE is not in either matrix.
 
