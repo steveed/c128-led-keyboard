@@ -24,6 +24,7 @@ A part-by-part explanation of the circuit is in
 | `tools/gen_fp.py` | the generator that writes `c128rev3.pretty/` and `fp-lib-table` |
 | `C128-keyboard-rev3.kicad_pcb` | the board: rev 2.3 outline, all 418 footprints linked to the schematic and placed, unrouted |
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
+| `tools/route_keys.py` | lays the regular per-key copper on the board; rerunnable (see *Routing*) |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
 | `tools/pinmaps.json` | CH446Q LQFP-44 pin map, GPIO plan, host connector pinout |
@@ -132,7 +133,9 @@ What it set up:
   Keypad Enter keeps -90.  `UNIFORM_180` in the script.
 - **Per key:** LED on the front in the pocket; diode (anode toward switch pin 2) and the
   LED's 100n on the back, behind the pocket.  Their references are on B.Fab: under the plate
-  nobody reads them.
+  nobody reads them.  The LED chain snakes through the rows (`layout.led_chain`: lock keys
+  first, then row 0 left to right, row 1 right to left, ...), and each LED is turned so data
+  comes in on its upstream side; the 100n is turned to match its power pads.
 - **Electronics** on the back in the three switch-free pockets of the top row, which have no
   holes on the back: x 183-225 (MCU, USB-C, LDO, buttons), x 297-340 at rev 2.3's FFC
   (host connector, CH446Q, FETs, LED buffer, keyboard-side fuse and diode), x 411-430
@@ -145,6 +148,21 @@ What it set up:
 
 DRC on the unrouted board has no copper or courtyard errors; it reports about 290
 silkscreen warnings (labels over pads and each other) left for the hand tidy.
+
+## Routing
+
+`tools/route_keys.py` (KiCad's python, like `gen_pcb.py`) lays the copper every key shares,
+in the switch's frame, and keeps it in one group, `route_keys`, that the next run replaces:
+
+- switch pin 2 to the diode anode on B.Cu, past the east side of the center hole
+- each LED power pad to a via (below the bottom-left pad, east of the top-right one), and
+  both vias to the 100n on B.Cu
+- the data hop to the next LED on F.Cu along the LED center line, where the two keys are
+  neighbours in a row; hops around the lock keys, between rows and at the row ends are
+  left for the router
+
+On its first run: 91 switch-to-diode links, 92 LED power pairs, 77 data hops, no DRC
+copper errors.  Next: GND on B.Cu and 5V_SYS on F.Cu, then Freerouting for the rest.
 
 ## Plate
 

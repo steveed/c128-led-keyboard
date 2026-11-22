@@ -162,6 +162,15 @@ def center_courtyard(fp, x, y):
     fp.Move(pcbnew.VECTOR2I(mm(x) - c.x, mm(y) - c.y))
 
 
+def face_pad(fp, num, s, rot, side):
+    """Turn fp by 180 degrees unless pad `num` lies on the `side` (+1 = +x) of the switch frame."""
+    px, py = pad_xy(fp, num)
+    c = fp.GetPosition()
+    ux, uy = rotate((1, 0), rot)
+    if ((px - pcbnew.ToMM(c.x)) * ux + (py - pcbnew.ToMM(c.y)) * uy) * side < 0:
+        fp.SetOrientationDegrees(fp.GetOrientationDegrees() + 180)
+
+
 def pad_xy(fp, num):
     p = next(p for p in fp.Pads() if p.GetNumber() == num).GetPosition()
     return pcbnew.ToMM(p.x), pcbnew.ToMM(p.y)
@@ -186,6 +195,7 @@ def outline(board):
 def build():
     comps, nets = netlist()
     switches = {s["ref"]: s for s in layout.load_switches()}
+    _, chain_dir = layout.led_chain()
     board = pcbnew.CreateEmptyBoard()
     board.SetCopperLayerCount(2)
     tb = board.GetTitleBlock()
@@ -239,19 +249,20 @@ def build():
             if kind == "switch":
                 place(fp, s["x"], s["y"], rot, back=False)
             elif kind == "led":
+                # data in (pad 3) on the upstream side of the snake: west in left-to-right rows
                 dx, dy = rotate(gen_fp.LED_OFFSET, rot)
                 place(fp, s["x"] + dx, s["y"] + dy, rot, back=False)
+                face_pad(fp, "3", s, rot, -chain_dir[sw_ref])
             else:
                 dx, dy = rotate(DIODE_OFFSET if kind == "diode" else CAP_OFFSET, rot)
                 place(fp, s["x"] + dx, s["y"] + dy, rot, back=True)
                 # under the plate nobody reads these; keep the reference on the fab layer
                 fp.Reference().SetLayer(pcbnew.B_Fab)
                 if kind == "diode":
-                    # anode (pad 2) toward the switch's pin 2, which is on its +x side
-                    ax, ay = pad_xy(fp, "2")
-                    ux, uy = rotate((1, 0), rot)
-                    if (ax - s["x"] - dx) * ux + (ay - s["y"] - dy) * uy < 0:
-                        fp.SetOrientationDegrees(rot + 180)
+                    face_pad(fp, "2", s, rot, +1)       # anode toward the switch's pin 2 (+x)
+                else:
+                    # 5 V pad toward the LED's 5 V via: west in left-to-right rows (route_keys.py)
+                    face_pad(fp, "1", s, rot, -chain_dir[sw_ref])
         elif ref in PLACE:
             x, y, r = PLACE[ref]
             place(fp, x, y, r, back=True)
