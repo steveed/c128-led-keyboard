@@ -484,7 +484,8 @@ def build_mcu(sh):
 
     # USB-C
     j1 = sh.symbol("Connector:USB_C_Receptacle_USB2.0_16P", "J1", "USB-C", (260, 120),
-                   footprint="Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal")
+                   footprint="c128rev3:USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040",
+                   fields={"LCSC": "C41417453"})
     sh.connect(j1, "A4", "VBUS"); sh.connect(j1, "A5", "CC1"); sh.connect(j1, "B5", "CC2")
     sh.connect(j1, "A6", "USB_DP_C"); sh.connect(j1, "B6", "USB_DP_C")
     sh.connect(j1, "A7", "USB_DN_C"); sh.connect(j1, "B7", "USB_DN_C")

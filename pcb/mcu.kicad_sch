@@ -7586,7 +7586,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+		(property "Footprint" "c128rev3:USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040"
 			(at 260.35 119.38 0)
 			(effects
 				(font
@@ -7616,7 +7616,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C41417453"
 			(at 260.35 119.38 0)
 			(effects
 				(font
