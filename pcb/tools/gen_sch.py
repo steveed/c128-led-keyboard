@@ -407,14 +407,17 @@ class Placed:
 
 # ESP32-S3-MINI-1U-N8 (2.4 mm tall, U.FL antenna: the whole PCB sits under the plate, so an
 # on-board antenna would be under metal).  Strapping pins (IO0, IO3, IO45, IO46) are left
-# free.  Spare: IO14, 21, 35, 36, 37, plus IO26, 33, 34 which only the MINI brings out.
+# free.  The scanned matrix is 6 rows x 20 columns: 15 columns through the 74HC154, five
+# straight from GPIO (IO17, 18, 14, 21, 35; the bench rig uses IO17/18 as its rows 6 and 7).
+# Spare: IO36, 37, plus IO26, 33, 34 which only the MINI brings out.
 GPIO = {
     "IO4": "P_ROW0", "IO5": "P_ROW1", "IO6": "P_ROW2", "IO7": "P_ROW3",
-    "IO15": "P_ROW4", "IO16": "P_ROW5", "IO17": "P_ROW6", "IO18": "P_ROW7",
+    "IO15": "P_ROW4", "IO16": "P_ROW5",
+    "IO17": "MCU_COL15", "IO18": "MCU_COL16", "IO14": "MCU_COL17", "IO21": "MCU_COL18", "IO35": "MCU_COL19",
     "IO8": "MCU_COLSEL0", "IO9": "MCU_COLSEL1", "IO10": "MCU_COLSEL2", "IO11": "MCU_COLSEL3",
     "IO12": "MCU_XP_CK", "IO38": "MCU_XP_DAT", "IO39": "MCU_XP_STB", "IO40": "MCU_XP_RST",
     "IO13": "MCU_RESTORE_GATE",
-    "IO14": None, "IO21": None, "IO35": None, "IO36": None, "IO37": None,   # spare
+    "IO36": None, "IO37": None,   # spare
     "IO41": "MCU_LED_DATA", "IO42": "MCU_4080_GATE", "IO2": "MCU_CAPLK_GATE", "IO1": "MCU_RESTORE_SENSE",
     "IO0": "MCU_BOOT", "EN": "MCU_EN", "USB_D-": "USB_DN", "USB_D+": "USB_DP",
     "TXD0": "MCU_TXD0", "RXD0": "MCU_RXD0",
@@ -517,8 +520,8 @@ def build_mcu(sh):
     for i, (net, x) in enumerate((("+5V_KB", 150), ("+5V_SYS", 180), ("GND", 210), ("VBUS", 240))):
         sh.power("PWR_FLAG", (x, 250))
         sh.glabel(net, (x, 250), "D")
-    sh.text("GPIO map: rows IO4-7,15-18; column select IO8-11; CH446Q serial: CK IO12, DAT IO38, STB IO39, RST IO40;\n"
-            "LED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, RESTORE gate IO13.  Spare: IO14,21,35-37.  IO0/IO3/IO45/IO46 strapping.",
+    sh.text("GPIO map: rows IO4-7,15,16; column select IO8-11 (columns 0-14); columns 15-19 IO17,18,14,21,35; CH446Q serial: CK IO12,\n"
+            "DAT IO38, STB IO39, RST IO40; LED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, gate IO13.  Spare: IO36,37.  IO0/IO3/IO45/IO46 strapping.",
             (15, 280), 1.27)
 
 
@@ -598,14 +601,12 @@ def build_crosspoint(sh):
     sh.connect(j3, 1, "+5V_SYS"); sh.connect(j3, 2, "LED_OUT"); sh.connect(j3, 3, "GND", kind="label")
 
 
-LOCK_KEYS = {"SW89": ("P_ROW0", "P_COL11"), "SW91": ("P_ROW1", "P_COL11"), "SW92": ("P_ROW2", "P_COL11")}
-
-
 def build_matrix(sh, switches):
-    sh.text("Physical matrix, scanned by the MCU at 3.3 V.  Same ROW/COL assignment as the C128 (and rev 2.3) so the\n"
-            "firmware mirrors position n to position n.  One diode per key (row -> switch -> diode -> column) so any chord\n"
-            "reads without ghosting: needed for USB keyboard mode.  Lock keys sit on an extra column P_COL11.  RESTORE\n"
-            "bypasses the MCU entirely.  Column select: 74HC154 (3.3 V) through 1k so two keys in one row cannot fight.", (15, 15), 1.5)
+    sh.text("Physical matrix, scanned by the MCU at 3.3 V: 6 rows x 20 columns following the board (pcb/tools/layout.py\n"
+            "physical_matrix), not the C128's assignment; the firmware maps each position to its host position.  One diode per\n"
+            "key (row -> switch -> diode -> column) so any chord reads without ghosting: needed for USB keyboard mode.  RESTORE\n"
+            "bypasses the MCU entirely.  Columns 0-14 from the 74HC154 (3.3 V; output 15 is the idle park), 15-19 from GPIO,\n"
+            "each through 1k so two keys in one row cannot fight.", (15, 15), 1.5)
     u6 = sh.symbol("74xx:74LS154", "U6", "74HC154", (60, 80), footprint="Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm")
     n6 = u6.pins_named()
     for i in range(4):
@@ -613,11 +614,11 @@ def build_matrix(sh, switches):
     sh.connect(u6, n6["E0"], "GND", kind="label"); sh.connect(u6, n6["E1"], "GND", kind="label")
     sh.connect(u6, n6["VCC"], "+3V3"); sh.connect(u6, n6["GND"], "GND")
     for i in range(16):
-        if i <= 11:
+        if i <= 14:
             # fan the 2.54 mm-pitch outputs out to 7.62 mm so resistors and labels have room
             p, _ = u6.pin_end(n6[f"S{i}"])
             p0, _ = u6.pin_end(n6["S0"])
-            xi = p[0] + 5.08 + (11 - i) * 2.54
+            xi = p[0] + 5.08 + (14 - i) * 2.54
             yt = p0[1] + i * 7.62
             r = sh.symbol("Device:R", f"R{20 + i}", "1k", (p[0] + 44.45, yt), rot=90, footprint=R_FP)
             pa, _ = r.pin_end(1)
@@ -628,6 +629,17 @@ def build_matrix(sh, switches):
             sh.glabel(f"P_COL{i}", (pb[0] + 5.08, pb[1]), "R")
         else:
             sh.connect(u6, n6[f"S{i}"], None)
+    # columns 15-19 straight from GPIO, below the decoder's
+    p0, _ = u6.pin_end(n6["S0"])
+    for k, i in enumerate(range(15, 20)):
+        yt = p0[1] + (16 + k) * 7.62
+        r = sh.symbol("Device:R", f"R{20 + i}", "1k", (p0[0] + 44.45, yt), rot=90, footprint=R_FP)
+        pa, _ = r.pin_end(1)
+        pb, _ = r.pin_end(2)
+        sh.wire(pa, (pa[0] - 10.16, pa[1]))
+        sh.glabel(f"MCU_COL{i}", (pa[0] - 10.16, pa[1]), "L")
+        sh.wire(pb, (pb[0] + 5.08, pb[1]))
+        sh.glabel(f"P_COL{i}", (pb[0] + 5.08, pb[1]), "R")
     c11 = sh.symbol("Device:C", "C11", "100n", (100, 40), footprint=C_FP)
     sh.connect(c11, 1, "+3V3"); sh.connect(c11, 2, "GND")
 
@@ -639,6 +651,7 @@ def build_matrix(sh, switches):
             centers.append(y)
     def row_of(y):
         return min(range(len(centers)), key=lambda i: abs(centers[i] - y))
+    phys = layout.physical_matrix(switches)
     x0 = min(s["x"] for s in switches)
     for s in switches:
         xs = 165 + (s["x"] - x0) * 1.0
@@ -650,10 +663,8 @@ def build_matrix(sh, switches):
             sh.connect(sw, 1, "H_RESTORE", stub=2.54, kind="label")
             sh.connect(sw, 2, "GND", stub=2.54, kind="label")
             continue
-        if s["ref"] in LOCK_KEYS:
-            row, col = LOCK_KEYS[s["ref"]]
-        else:
-            row, col = "P_" + s["row"], "P_" + s["col"]
+        pr, pc = phys[s["ref"]]
+        row, col = f"P_ROW{pr}", f"P_COL{pc}"
         # row (pulled up) -> switch -> diode anode ... cathode -> column (driven low)
         sh.connect(sw, 1, row, stub=2.54, kind="label")
         top, _ = sw.pin_end(2)

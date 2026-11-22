@@ -58,7 +58,7 @@ and what has to be proven on the bench before copper is ordered.
 
 ```
                  ┌──────────── physical side (3.3 V) ────────────┐   ┌──── host side (5 V) ────┐
- 92 switches ──► 8 rows x 11 cols ──► ESP32-S3 ──► CH446Q 8x16 crosspoint ──► ROW0-7, COL0-10
+ 92 switches ──► 6 rows x 20 cols ──► ESP32-S3 ──► CH446Q 8x16 crosspoint ──► ROW0-7, COL0-10
                                           │        (serial: DAT, CK, STB, RST, 3.3 V direct)
    (1 diode per key) (74HC154 selects      │   └─► 2N7002 open-drain ──────────► 40/80 (default-assert)
                     the column)           │   └─► 2N7002 open-drain ──────────► CAPS LOCK
@@ -104,7 +104,7 @@ and what has to be proven on the bench before copper is ordered.
 | 5 V OR-ing | 2 x SS34 Schottky (keyboard +5 V, USB VBUS) into 5V_SYS, PTC fuse 1.1 A on the keyboard side, 220 uF bulk | the CH446Q and lock FETs are referenced to the keyboard rail; everything else runs from 5V_SYS |
 | USB-C | 16-pin receptacle, 5.1 k CC pull-downs, ESD array | native USB on GPIO19/20 for flashing, serial config and the web flasher |
 | Crosspoint | CH446Q LQFP-44 at 5 V (VDD = +5V_KB, VEE = GND), 100 nF | Y0..Y7 = host ROW0..7, X0..X10 = host COL0..COL10, X11..X15 unused.  Serial mode: P/S and AX0-3/AY0-2 to GND; DAT, CS/CK, STB, RST direct from the ESP32.  10k pull-up on RST (crosspoint stays cleared until the MCU boots), 10k pull-down on STB |
-| Column select | 74HC154 4-to-16 decoder, 11 x 1 k series resistors | 4 GPIO drive 11 columns low one at a time; the resistors bound the current when two keys in one row are pressed |
+| Column select | 74HC154 4-to-16 decoder for columns 0-14, five GPIO for columns 15-19, 20 x 1 k series resistors | the scanned matrix follows the board (6 key rows x 20 columns, decided 2026-11-21), not the C128's assignment, which keeps the matrix copper short; the firmware maps each position to its host position.  Columns go low one at a time; the resistors bound the current when two keys in one row are pressed |
 | Rows | 8 GPIO inputs with internal pull-ups | ROW0..7 physical |
 | Matrix diodes | 91 x 1N4148W SOD-123 (D101..D192, one per scanned key; RESTORE has none) | row -> switch -> diode -> column; any chord reads without ghosting, which USB keyboard mode needs |
 | RESTORE sense | D3 1N4148W, cathode to H_RESTORE, anode to IO1 with the internal pull-up on | reads the key with or without a Commodore attached; replaces the 10k/20k divider |
@@ -118,15 +118,16 @@ and what has to be proven on the bench before copper is ordered.
 
 | Function | Pins |
 |---|---|
-| Physical rows in | 8 |
+| Physical rows in | 6 |
 | Column select (74HC154 A..D) | 4 |
+| GPIO columns 15-19 (IO17, 18, 14, 21, 35) | 5 |
 | CH446Q DAT, CS/CK, STB, RST (serial mode) | 4 |
 | LED data | 1 |
 | 40/80, CAPS LOCK gates | 2 |
 | RESTORE sense | 1 |
 | RESTORE drive | 1 |
 | USB D+/D- | dedicated (19/20) |
-| **Total** | **21** of ~31 usable (five spare: IO14, 21, 35, 36, 37) |
+| **Total** | **24** of ~31 usable (spare: IO36, 37, and IO26, 33, 34 on the MINI) |
 
 ### Connector pinout (stock C128 order)
 

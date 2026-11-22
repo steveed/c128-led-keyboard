@@ -313,14 +313,18 @@ there is.
 
 ### U6, 74HC154: column select
 
-To scan, the ESP32 has to pull one of twelve columns low at a time.  Twelve GPIO would do it,
-but a 4-to-16 decoder does the same with four: give it a 4-bit number and exactly one of its
-sixteen outputs goes low.  Twelve outputs are used, four are no-connect.  The two enable
+To scan, the ESP32 has to pull one of twenty columns low at a time.  The scanned matrix
+follows the board, six key rows by twenty columns (one per key of the number row), rather
+than the C128's own assignment; the firmware knows which C128 position each key stands for.
+Twenty GPIO would do it, but a 4-to-16 decoder covers fifteen of them with four: give it a
+4-bit number and exactly one of its sixteen outputs goes low.  Outputs 0-14 are columns 0-14;
+output 15 has nothing on it, and the firmware selects it between scans so no column sits
+low.  Columns 15-19 come straight from five GPIO.  The two enable
 inputs are grounded so it is always active.  It runs from 3.3 V (the HC family works from 2
 to 6 V) because everything on this sheet is on the ESP32's side of the fence.  C11 is its
 decoupling capacitor.
 
-### R20 to R31, 1 k in each column
+### R20 to R39, 1 k in each column
 
 Imagine two keys pressed in the same row but different columns.  The scan pulls one column
 low while the decoder holds the other high, and the two pressed switches connect those two
@@ -331,7 +335,7 @@ the row pins are about 45 k, so 1 k in series barely dents the low level).
 
 ### The rows
 
-The eight row lines go straight to ESP32 inputs with the chip's internal pull-ups enabled.
+The six row lines go straight to ESP32 inputs with the chip's internal pull-ups enabled.
 A pressed key connects a row to the selected (low) column and the input reads low.
 
 ### RESTORE

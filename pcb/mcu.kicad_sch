@@ -5263,9 +5263,37 @@
 			)
 		)
 	)
-	(no_connect
-		(at 119.38 139.7)
-		(uuid "78c38a3f-c324-5cd1-9a23-e75f32e7c3a9")
+	(wire
+		(pts
+			(xy 119.38 139.7)
+			(xy 111.76 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc495adf-9771-5ae5-9bdd-7cdb8e152b01")
+	)
+	(global_label "MCU_COL17"
+		(shape passive)
+		(at 111.76 139.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "439478b4-cb75-5ac3-b80d-d42349547a90")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 	)
 	(wire
 		(pts
@@ -5342,7 +5370,7 @@
 		)
 		(uuid "8e5a787d-d3d2-589d-be1a-67e7f27ab6e5")
 	)
-	(global_label "P_ROW6"
+	(global_label "MCU_COL15"
 		(shape passive)
 		(at 111.76 147.32 180)
 		(fields_autoplaced yes)
@@ -5352,7 +5380,7 @@
 			)
 			(justify right)
 		)
-		(uuid "fab53a50-053a-5559-bb9a-26d06276c7c1")
+		(uuid "58d8e80e-bfa8-5f3e-a026-7b5ba7cd01ba")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 147.32 0)
 			(effects
@@ -5374,7 +5402,7 @@
 		)
 		(uuid "d50f965c-caa1-5bce-bcd8-8b5f6b5e011e")
 	)
-	(global_label "P_ROW7"
+	(global_label "MCU_COL16"
 		(shape passive)
 		(at 111.76 149.86 180)
 		(fields_autoplaced yes)
@@ -5384,7 +5412,7 @@
 			)
 			(justify right)
 		)
-		(uuid "5185ec4c-50a9-5439-81b3-5df36b8625be")
+		(uuid "9a4c720d-1acf-5295-a36c-8e2cc025b419")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 149.86 0)
 			(effects
@@ -5459,9 +5487,37 @@
 			)
 		)
 	)
-	(no_connect
-		(at 149.86 111.76)
-		(uuid "c872a040-d30e-5cea-9db2-7bbdc2a649dc")
+	(wire
+		(pts
+			(xy 149.86 111.76)
+			(xy 157.48 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11d9cfe4-4dac-5717-b771-2d92cd7cdb08")
+	)
+	(global_label "MCU_COL18"
+		(shape passive)
+		(at 157.48 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f088bf44-f0de-5d0b-bc6c-408750554d32")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 	)
 	(no_connect
 		(at 149.86 114.3)
@@ -5483,9 +5539,37 @@
 		(at 149.86 149.86)
 		(uuid "b10b722d-3afa-5831-abce-a21a0a07917c")
 	)
-	(no_connect
-		(at 149.86 121.92)
-		(uuid "485e3df8-d0b1-5bae-a363-018615d399c1")
+	(wire
+		(pts
+			(xy 149.86 121.92)
+			(xy 157.48 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dc2dda8-06db-59d1-a888-6b9bdc7194b6")
+	)
+	(global_label "MCU_COL19"
+		(shape passive)
+		(at 157.48 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4acdc95a-b1b8-526f-8e4a-a307f1273c41")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 	)
 	(no_connect
 		(at 149.86 124.46)
@@ -10660,7 +10744,7 @@
 			)
 		)
 	)
-	(text "GPIO map: rows IO4-7,15-18; column select IO8-11; CH446Q serial: CK IO12, DAT IO38, STB IO39, RST IO40;\nLED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, RESTORE gate IO13.  Spare: IO14,21,35-37.  IO0/IO3/IO45/IO46 strapping."
+	(text "GPIO map: rows IO4-7,15,16; column select IO8-11 (columns 0-14); columns 15-19 IO17,18,14,21,35; CH446Q serial: CK IO12,\nDAT IO38, STB IO39, RST IO40; LED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, gate IO13.  Spare: IO36,37.  IO0/IO3/IO45/IO46 strapping."
 		(exclude_from_sim no)
 		(at 15.24 279.4 0)
 		(effects
