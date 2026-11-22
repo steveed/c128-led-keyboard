@@ -15,6 +15,13 @@
 #if MATRIX_DIRECT_COLUMNS && CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG
 #error "MATRIX_DIRECT_COLUMNS is for the Wokwi build only; real hardware needs the column decoder"
 #endif
+#if MATRIX_DIRECT_COLUMNS && BOARD_REV3
+#error "the Wokwi diagram is the bench rig's 8 x 12 matrix; build the simulator without BOARD_REV3"
+#endif
+#ifndef DECODER_COLS
+#define DECODER_COLS MATRIX_COLS     // bench: every column through the decoder
+#endif
+#define DECODER_PARK 15              // a decoder output with no column on it
 #define DEBOUNCE_MS 5
 #define SETTLE_US   20               // decoder + 1 k + row capacitance settle time
 
@@ -28,8 +35,13 @@ static inline void settle(uint32_t us)
     while (esp_timer_get_time() - t0 < us) { }
 }
 
+#if BOARD_REV3
+static const int ROW_PINS[MATRIX_ROWS] = {PIN_ROW0, PIN_ROW1, PIN_ROW2, PIN_ROW3, PIN_ROW4, PIN_ROW5};
+static const int GPIO_COL_PINS[MATRIX_COLS - DECODER_COLS] = PIN_GPIO_COLS;
+#else
 static const int ROW_PINS[MATRIX_ROWS] = {PIN_ROW0, PIN_ROW1, PIN_ROW2, PIN_ROW3,
                                           PIN_ROW4, PIN_ROW5, PIN_ROW6, PIN_ROW7};
+#endif
 #if MATRIX_DIRECT_COLUMNS
 static const int COL_PINS[MATRIX_COLS] = PIN_DIRECT_COLS;
 #else
@@ -49,7 +61,14 @@ static void select_column(int c)
     if (c >= 0) gpio_set_level(COL_PINS[c], 0);
     current = c;
 #else
-    for (int b = 0; b < 4; b++) gpio_set_level(SEL_PINS[b], (c >> b) & 1);
+    // decoder columns through the 74HC154; anything else parks the decoder on its spare
+    // output and, on rev 3, pulls one GPIO column low
+    int sel = (c >= 0 && c < DECODER_COLS) ? c : DECODER_PARK;
+    for (int b = 0; b < 4; b++) gpio_set_level(SEL_PINS[b], (sel >> b) & 1);
+#if BOARD_REV3
+    for (int g = 0; g < MATRIX_COLS - DECODER_COLS; g++)
+        gpio_set_level(GPIO_COL_PINS[g], c != DECODER_COLS + g);
+#endif
 #endif
 }
 
@@ -72,11 +91,18 @@ void matrix_init(void)
     }
 #else
     for (int b = 0; b < 4; b++) out.pin_bit_mask |= 1ULL << SEL_PINS[b];
+#if BOARD_REV3
+    // GPIO columns idle high; set the level before the pin becomes an output
+    for (int g = 0; g < MATRIX_COLS - DECODER_COLS; g++) {
+        gpio_set_level(GPIO_COL_PINS[g], 1);
+        out.pin_bit_mask |= 1ULL << GPIO_COL_PINS[g];
+    }
+#endif
 #endif
     gpio_config(&out);
     // park on an unused decoder output so no column sits low between scans
 #if !MATRIX_DIRECT_COLUMNS
-    select_column(15);
+    select_column(-1);
 #endif
     memset(&debounced, 0, sizeof debounced);
     memset(&last_raw, 0, sizeof last_raw);
@@ -92,11 +118,7 @@ void matrix_scan(matrix_state_t *out)
         for (int r = 0; r < MATRIX_ROWS; r++)
             if (!gpio_get_level(ROW_PINS[r])) out->rows[r] |= 1u << c;     // active low
     }
-#if !MATRIX_DIRECT_COLUMNS
-    select_column(15);
-#else
     select_column(-1);
-#endif
 }
 
 bool matrix_tick(void)

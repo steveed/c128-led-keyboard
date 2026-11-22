@@ -2,15 +2,22 @@
 // pcb/tools/pinmaps.json and pcb/bench/README.md.
 #pragma once
 
-// physical matrix
+// physical matrix.  The bench rig scans the rev 2.3 board, 8 x 12 in the C128's order; the
+// rev 3 board (BOARD_REV3) scans 6 x 20: decoder columns 0-14, then 15-19 straight from GPIO,
+// on the pins the bench's rows 6 and 7 use plus three spares.
 #define PIN_ROW0        4
 #define PIN_ROW1        5
 #define PIN_ROW2        6
 #define PIN_ROW3        7
 #define PIN_ROW4        15
 #define PIN_ROW5        16
+#if BOARD_REV3
+#define DECODER_COLS    15     // 74HC154 outputs 0-14 are columns 0-14; output 15 is the park
+#define PIN_GPIO_COLS   { 17, 18, 14, 21, 35 }    // columns 15-19
+#else
 #define PIN_ROW6        17
 #define PIN_ROW7        18
+#endif
 #define PIN_COLSEL0     8      // 74HC154 A0 (or the two 74HC138s' A) ...
 #define PIN_COLSEL1     9
 #define PIN_COLSEL2     10

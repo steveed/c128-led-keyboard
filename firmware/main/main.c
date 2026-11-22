@@ -37,15 +37,17 @@ static const char *key_name(int r, int c)
 // mirror one physical key change into the host matrix, or handle a lock key
 static void on_key(int r, int c, bool down)
 {
-    if (c < HOST_COLS) {
-        ch446q_set(r, c, down);
+    uint8_t h = KEY_HOST[r][c];
+    if (h == HOST_NONE) return;
+    if (h < HOST_LOCK_SHIFT) {               // a crosspoint: host row in the high nibble
+        ch446q_set(h >> 4, h & 0x0F, down);
         return;
     }
     if (!down) return;                       // lock keys act on press
-    switch (r) {
-    case 0: locks_toggle(LOCK_SHIFT); break;
-    case 1: locks_toggle(LOCK_CAPS); break;
-    case 2: locks_toggle(LOCK_4080); break;
+    switch (h) {
+    case HOST_LOCK_SHIFT: locks_toggle(LOCK_SHIFT); break;
+    case HOST_LOCK_CAPS:  locks_toggle(LOCK_CAPS); break;
+    case HOST_LOCK_4080:  locks_toggle(LOCK_4080); break;
     default: break;
     }
 }
@@ -120,7 +122,7 @@ static void scan_task(void *arg)
         if (changed) {
             const matrix_state_t *cur = matrix_debounced();
             for (int r = 0; r < MATRIX_ROWS; r++) {
-                uint16_t diff = cur->rows[r] ^ prev.rows[r];
+                uint32_t diff = cur->rows[r] ^ prev.rows[r];
                 for (int c = 0; diff; c++, diff >>= 1) {
                     if (!(diff & 1)) continue;
                     bool down = (cur->rows[r] >> c) & 1;
