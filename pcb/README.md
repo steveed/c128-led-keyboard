@@ -126,7 +126,10 @@ hand-edited, and schematic changes come in through Update PCB from Schematic (F8
 What it set up:
 
 - **Outline** from `layout/outline.json`, the rev 2.3 Edge.Cuts unchanged (including the
-  6.25 mm hole in the spacebar tab).  2 layers, 1.6 mm.
+  6.25 mm hole in the spacebar tab).  1.6 mm, four layers: signals on F.Cu and B.Cu, a
+  GND plane on In1.Cu and a 5V_SYS plane on In2.Cu, each a zone over the whole board.  The
+  script leaves them unfilled (pcbnew's filler crashes on a board built in memory);
+  `route_keys.py` fills them.
 - **Switches** on the rev 2.3 centers.  Rev 2.3 turned 14 top-row switches by 180 degrees;
   with an LED in every pocket that would light those keys from the top and the rest from the
   bottom, so rev 3 lines them all up (pins north, LED south, like the rev 2.3 lock keys).
@@ -144,7 +147,7 @@ What it set up:
   is clear of holes on the back the whole width (y 97.5-113).  First pass, packed by
   courtyard; no overlaps.
 - **Rules** in the project file: net class Power (0.5 mm) for GND, +5V_KB, +5V_KB_F,
-  +5V_SYS, +3V3 and VBUS; Default 0.25 mm, 0.6/0.3 mm vias; JLCPCB two-layer minimums.
+  +5V_SYS, +3V3 and VBUS; Default 0.25 mm, 0.6/0.3 mm vias; JLCPCB minimums.
 
 DRC on the unrouted board has no copper or courtyard errors; it reports about 290
 silkscreen warnings (labels over pads and each other) left for the hand tidy.
@@ -162,7 +165,8 @@ in the switch's frame, and keeps it in one group, `route_keys`, that the next ru
   left for the router
 
 On its first run: 91 switch-to-diode links, 92 LED power pairs, 77 data hops, no DRC
-copper errors.  Next: GND on B.Cu and 5V_SYS on F.Cu, then Freerouting for the rest.
+copper errors.  It refills the planes after laying its vias, so every LED pad reaches GND or
+5V_SYS through them.  Next: Freerouting for the rest.
 
 ## Plate
 

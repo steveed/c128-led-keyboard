@@ -153,6 +153,8 @@ def main():
         cu.track(pts, net, pcbnew.F_Cu, SIGNAL_W)
         counts["hop"] += 1
 
+    # the new vias change what the inner planes connect to
+    pcbnew.ZONE_FILLER(board).Fill(board.Zones())
     board.Save(BOARD)
     print(f"route_keys: {counts['anode']} switch-to-diode links, {counts['led']} LED power pairs, "
           f"{counts['hop']} data hops")

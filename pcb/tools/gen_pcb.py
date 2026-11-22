@@ -10,7 +10,8 @@ Needs KiCad's own python (the pcbnew module), not the host's or a container's.  
   2. loads every footprint from its library and links it to its symbol (sheet path plus
      symbol UUID, as Update PCB from Schematic does), with value, fields and pad nets,
   3. draws the outline from layout/outline.json (the rev 2.3 board's, unchanged),
-  4. places parts: switches on the centers in layout/switches.json; each switch's LED in its
+  4. adds a GND plane on In1.Cu and a 5V_SYS plane on In2.Cu (four layers),
+  5. places parts: switches on the centers in layout/switches.json; each switch's LED in its
      pocket (front), its diode and the LED's 100n behind it (back); the electronics on the
      back in the three switch-free pockets of the top row.
 
@@ -192,12 +193,38 @@ def outline(board):
         board.Add(s)
 
 
+PLANES = ((pcbnew.In1_Cu, "GND"), (pcbnew.In2_Cu, "+5V_SYS"))
+
+
+def planes(board, netinfo):
+    """A full-board zone on each inner layer; KiCad clips it to the outline and the holes."""
+    xs, ys = [], []
+    for seg in layout.load_outline():
+        if "line" in seg:
+            xs += seg["line"][0::2]; ys += seg["line"][1::2]
+    for layer, net in PLANES:
+        z = pcbnew.ZONE(board)
+        z.SetLayer(layer)
+        z.SetNet(netinfo[net])
+        z.SetMinThickness(mm(0.25))
+        z.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
+        o = z.Outline()
+        o.NewOutline()
+        for x, y in ((min(xs), min(ys)), (max(xs), min(ys)), (max(xs), max(ys)), (min(xs), max(ys))):
+            o.Append(mm(x), mm(y))
+        board.Add(z)
+
+
 def build():
     comps, nets = netlist()
     switches = {s["ref"]: s for s in layout.load_switches()}
     _, chain_dir = layout.led_chain()
     board = pcbnew.CreateEmptyBoard()
-    board.SetCopperLayerCount(2)
+    # four layers (decided 2026-11-21): signals outside, a GND plane and a 5V_SYS plane inside,
+    # so every LED's power vias land on a plane and the outer layers stay free for the matrix
+    board.SetCopperLayerCount(4)
+    for layer in (pcbnew.In1_Cu, pcbnew.In2_Cu):
+        board.SetLayerType(layer, pcbnew.LT_POWER)
     tb = board.GetTitleBlock()
     tb.SetTitle("C128 keyboard, rev 3")
     tb.SetRevision("3")
@@ -231,6 +258,8 @@ def build():
                 pad.SetNet(netinfo[n])
         board.Add(fp)
         fps[ref] = fp
+
+    planes(board, netinfo)
 
     unplaced = []
     for ref, fp in fps.items():
@@ -281,7 +310,7 @@ POWER_NETS = ["GND", "+5V_KB", "+5V_KB_F", "+5V_SYS", "+3V3", "VBUS"]
 
 
 def project_rules():
-    """Net classes and JLCPCB two-layer minimums in the project file (KiCad keeps them there)."""
+    """Net classes and JLCPCB minimums (they hold for its 4-layer boards too) in the project file."""
     p = json.load(open(PROJECT, encoding="utf-8"))
     ns = p["net_settings"]
     default = next(c for c in ns["classes"] if c["name"] == "Default")
@@ -304,6 +333,8 @@ def main():
     board, unplaced = build()
     # pcbnew's save also writes a project file beside the board; save in a scratch folder and
     # keep only the board, so the real project file is not replaced
+    # planes are left unfilled: pcbnew's filler crashes on a board built in memory, and
+    # route_keys.py (or pressing B in pcbnew) fills them on a loaded board
     tmp = tempfile.mkdtemp()
     pcbnew.SaveBoard(os.path.join(tmp, NAME + ".kicad_pcb"), board)
     shutil.copy(os.path.join(tmp, NAME + ".kicad_pcb"), BOARD)

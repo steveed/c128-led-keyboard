@@ -51,6 +51,10 @@ and what has to be proven on the bench before copper is ordered.
 - One 1N4148W diode per scanned key, on the back with the other SMD parts, so the board also
   works as a ghost-free USB keyboard.
 - Every SMD part is placed by the fab; builders solder through-hole only (see Assembly).
+- Four copper layers (decided 2026-11-21): signals on F.Cu and B.Cu, a GND plane on In1.Cu
+  and a 5V_SYS plane on In2.Cu.  On two layers the matrix rows and LED chain (horizontal, F.Cu)
+  and columns (vertical, B.Cu) cut any 5 V or GND pour into strips, and 92 LEDs at full white
+  draw several amps; the planes give every LED's power vias a solid return and supply.
 - The firmware also gives the board a USB keyboard mode for emulators and a network keyboard
   (see Firmware).
 
@@ -206,8 +210,8 @@ no table.
   of switch pins.
 - USB-C on the rear edge, accessible with the plate on; on the flat it will be reachable only
   with the case open, which is acceptable.
-- LED chain routed as a single snake; power for the LEDs as a wide 5V_SYS pour with stitching
-  vias.  The chain starts at the three lock keys.
+- LED chain routed as a single snake; power for the LEDs from the 5V_SYS plane on In2.Cu,
+  one via per LED pad.  The chain starts at the three lock keys.
 - The three lock keys keep their positions; only their footprint changes.
 
 ## Bottom cover
@@ -234,6 +238,11 @@ tray already does this job, so the cover is for flat builds and bare keyboards.
   hole positions, like the case.
 
 ## Layout tooling: KiCadRoutingTools
+
+**Superseded 2026-11-21:** the regular per-key copper is laid by `pcb/tools/route_keys.py`
+and the rest goes to Freerouting in a Docker container (push-and-shove, and it keeps to the
+containers-only rule; KiCadRoutingTools needs host numpy/scipy/shapely and ships a
+macOS-only router binary).  The review below is kept for reference.
 
 `../KiCadRoutingTools` (v0.22.0, also installed as the KiCad 10 plugin) is the autorouter and
 checker set to use for rev 3.  Reviewed 2026-09-18; the fit for this board:
