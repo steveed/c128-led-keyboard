@@ -672,6 +672,8 @@ def build_matrix(sh, switches):
         d = sh.symbol("Diode:1N4148W", "D" + str(100 + int(s["ref"][2:])), "1N4148W", (xs, top[1] - 3.81), rot=270,
                       footprint="Diode_SMD:D_SOD-123")
         assert d.pin_end(2)[0] == top, (d.pin_end(2)[0], top)   # pin 2 = anode, bottom after rot 270
+        # pins that merely touch are not connected in the netlist; a label on the point is
+        sh.label(f"KEY{s['ref'][2:]}", top)
         sh.connect(d, 1, col, stub=2.54, kind="label")          # pin 1 = cathode, top
 
 
