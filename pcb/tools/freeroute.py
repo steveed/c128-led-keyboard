@@ -10,7 +10,9 @@
 
 Freerouting's fanout pre-pass is off: it tries to put a via stub on every SMD pad (978 here),
 stalls after a few passes, and a keyboard's pads want short tracks to their neighbours, not
-vias.  The optimizer is capped at a few passes and the whole job has a time budget.
+vias.  GND and 5V_SYS are declared plane nets, so their pads get a via to the inner plane
+instead of a track.  It can be rerun on a routed board: unlocked copper goes out as ordinary
+wiring and the router carries on from it.  The optimizer is capped at a few passes and the whole job has a time budget.
 
 The per-key copper from route_keys.py is locked, so it goes out as protected wiring and
 Freerouting routes around it.  Run route_keys.py first.  Commit before running: the import
@@ -47,6 +49,7 @@ def main():
     cmd = ["docker", "compose", "-f", os.path.join(REPO, "docker-compose.yml"), "run", "--rm", "freerouting",
            "-de", rel(dsn), "-do", rel(ses),
            "--router.fanout.enabled=false",
+           "--router.plane_nets=GND,+5V_SYS",        # reach the inner planes with a via
            f"--router.autorouter.max_passes={passes}",
            "--router.optimizer.max_passes=5",
            f"--router.job_timeout={timeout}",
