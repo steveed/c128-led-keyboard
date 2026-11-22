@@ -161,9 +161,12 @@ no table.
 ## Layout changes
 
 - Keep the rev 2.3 outline, mounting holes, plate-ground pad and every switch center.
-- Screw-in stabilizer holes (3.05 mm screw and 4.0 mm peg) on every stabilized key.  The
-  spacebar footprint already has them at all three spacings; confirm the 2u footprints
-  (Return, keypad 0, the flipped keypad Enter) have both hole sizes and add them if not.
+- Screw-in stabilizer holes (3.05 mm screw and 4.0 mm peg) on every stabilized key.  The 2u
+  footprints (Return, keypad 0, the flipped keypad Enter) had both sizes on rev 2.3 and keep
+  them.  The rev 2.3 spacebar as fabricated has two sets, 99.77 mm and 125.35 mm (not the
+  three spacings its library file suggests); the rev 3 footprint drills the standard MX 100 mm and
+  133.35 mm that the plates and keycap drawing use (decided 2026-11-21: standard MX spacebar;
+  the original spacebar's narrower 125.35 mm is not drilled).  See pcb/README.md.
 - Every switch footprint gains SK6812 MINI pads on the front at the north LED position, where
   the Outemu bottom housing has its SMD LED pocket.  No cutouts, so the rev 2.3 routing
   survives; the LED chain and 5 V feed are new front-side traces.  Front-side SMD means the

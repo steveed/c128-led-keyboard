@@ -19,6 +19,8 @@ A part-by-part explanation of the circuit is in
 | `matrix.kicad_sch` | 92 switches with the rev 2.3 ROW/COL assignments, one 1N4148W per scanned key, 74HC154 column select |
 | `leds.kicad_sch` | 92 SK6812 MINI (top mount) in chain order (lock keys first) |
 | `c128rev3.kicad_sym`, `sym-lib-table` | project library with the CH446Q symbol (LQFP-44 numbering) |
+| `c128rev3.pretty/`, `fp-lib-table` | project footprints: MX switches (1u, 1.5u, 2u, spacebar) and the SK6812 MINI for the switch LED pocket |
+| `tools/gen_fp.py` | the generator that writes `c128rev3.pretty/` and `fp-lib-table` |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
 | `tools/pinmaps.json` | CH446Q LQFP-44 pin map, GPIO plan, host connector pinout |
@@ -82,10 +84,21 @@ fan-out, the jumper link).  Wires that end on a label, junction or another wire 
 
 Placeholders to resolve during layout:
 
-- Switch footprints are KiCad's `SW_Cherry_MX_1.00u_PCB`.  Rev 3 needs footprints with the
-  SK6812 MINI pads at the north LED position and the screw-in stabilizer holes; make them in a project footprint
-  library and reassign (the 2u keys, keypad Enter and the 9u/6.25u spacebar included).
-- The USB-C footprint is the GCT USB4105; swap for whatever is actually ordered.
+- Switch and LED footprints are the project's own (`tools/gen_fp.py`, run it with
+  `python3 pcb/tools/gen_fp.py`).  The switches keep rev 2.3's MX pin pattern without the
+  Alps pads; the LED is a separate footprint that the placement script puts at `LED_OFFSET`
+  in each switch's frame, opposite the pins where rev 2.3 had its lock-key LED holes.
+  `LED_OFFSET` (0, 5.08) is **provisional** until the Outemu LED pocket is measured
+  (bench/before-parts-arrive.md section 5).  The LED footprint has no courtyard on purpose:
+  it sits inside the switch's.
+- Spacebar stabilizer spacing (`SPACEBAR_STABS` in `gen_fp.py`): standard MX, 100 mm (6.25u)
+  and 133.35 mm (9u), matching both plates and the 9u keycap drawing.  Decided 2026-11-21.
+  The original C128 spacebar on its adapters wants the narrower 125.35 mm the rev 2.3 board
+  drilled (and 99.77 mm for its 6.25u set); 125.35 and 133.35 are 4 mm apart, so one
+  footprint cannot carry both, and rev 3 drills for standard MX spacebars.
+- The USB-C footprint is the GCT USB4105, a top-mount part.  Rev 3 wants a mid-mount 16-pin
+  receptacle for the underside height budget; KiCad ships none, so it goes in `c128rev3.pretty`
+  once the part is chosen.
 - The CH446Q footprint is KiCad's generic LQFP-44 10 x 10 mm; check it against the WCH drawing.
 
 ## Plate

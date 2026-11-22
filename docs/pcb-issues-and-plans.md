@@ -31,8 +31,10 @@ Facts pulled from [`pcb/C128-keyboard.kicad_pcb`](https://codeberg.org/jflitton/
   understands.  The `c128-mech-keyboard-adapter` project next door exists purely to remap those
   26 pins onto the stock DB25 order.  +5 V and GND each get one or two pins.
 - **Spacebar.**  SW52 uses a custom footprint, `MX-6.25_7_9U-ReversedStabilizers-NoLED`, centerd
-  under N with stabilizer holes at +/-49.9 mm (6.25u, 100 mm), +/-57.15 mm (7u, 114.3 mm) and
-  +/-66.7 mm (9u, 133.35 mm), with both the 3.05 mm and 4.0 mm holes for screw-in stabs.  The
+  under N.  Its library file has stabilizer holes at +/-49.9 mm (6.25u, 100 mm), +/-57.15 mm
+  (7u, 114.3 mm) and +/-66.7 mm (9u, 133.35 mm), but the copy on the board, and the NPTH
+  drill file it was fabricated from, has only +/-49.886 and +/-62.675 mm (125.35 mm), with
+  both the 3.05 mm and 4.0 mm holes for screw-in stabs.  The
   stock C128 spacebar is 9u (the keycap legend map lists it as width 9), and the plate STEP is
   cut for that.
 - **Per-key printed parts** when reusing Mitsumi keycaps: one stem adapter per key

@@ -36,8 +36,14 @@ LIB_VERSION = "20251024"
 R_FP = "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 C_FP = "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 C_FP_1206 = "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-SW_FP = "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"   # placeholder; rev 3 footprints get the SK6812 cutout
-LED_FP = "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm"   # top-mount, sits in the switch's SMD LED pocket
+# switch and LED footprints come from the project library, pcb/c128rev3.pretty (tools/gen_fp.py)
+SW_FP = "c128rev3:SW_MX_1u"
+SW_FP_BY_REF = {   # the wider keys, as on the rev 2.3 board; keypad Enter is a 2u placed at -90
+    "SW79": "c128rev3:SW_MX_1.5u", "SW90": "c128rev3:SW_MX_1.5u",
+    "SW12": "c128rev3:SW_MX_2u", "SW22": "c128rev3:SW_MX_2u", "SW54": "c128rev3:SW_MX_2u",
+    "SW52": "c128rev3:SW_MX_Spacebar",
+}
+LED_FP = "c128rev3:LED_SK6812MINI_MX"   # top-mount, sits in the switch's SMD LED pocket
 
 
 # Every UUID is derived from what the object *is*, not from when it was generated, so a
@@ -637,7 +643,7 @@ def build_matrix(sh, switches):
     for s in switches:
         xs = 165 + (s["x"] - x0) * 1.0
         ys = 55 + row_of(s["y"]) * 52
-        sw = sh.symbol("Switch:SW_Push", s["ref"], s["val"], (xs, ys), rot=90, footprint=SW_FP,
+        sw = sh.symbol("Switch:SW_Push", s["ref"], s["val"], (xs, ys), rot=90, footprint=SW_FP_BY_REF.get(s["ref"], SW_FP),
                        fields={"Key": s["val"]})
         if s["val"] == "Restore":
             # hard-wired to the host NMI line, no diode: it must work with the firmware dead
