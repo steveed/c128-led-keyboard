@@ -1,0 +1,135 @@
+(footprint "LED_SK6812MINI_MX"
+	(version 20260206)
+	(generator "gen_fp")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SK6812 MINI 3.5x3.5 mm top-mount RGB LED for an MX switch LED pocket; pads as KiCad LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm, no courtyard (sits inside the switch's by design)")
+	(tags "LED RGB SK6812MINI 3535 MX pocket c128 rev3")
+	(property "Reference" "REF**"
+		(at 0 -2.5 0)
+		(layer "F.Fab")
+		(uuid "c2b476d4-d12e-5e3b-aa86-684fb3c2fbbc")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(property "Value" "LED_SK6812MINI_MX"
+		(at 0 2.5 0)
+		(layer "F.Fab")
+		(uuid "9130a8e1-136a-50fb-a18e-2912eca8a401")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a7972d60-6b5d-500c-97f1-3ee8b5235796")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c6cc997a-c181-53e3-b447-1c2718189ac7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd allow_missing_courtyard)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 1.75 0.75)
+		(end 0.75 1.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "28242db4-60f4-5a1c-8700-d2c2feeb3fdc")
+	)
+	(fp_rect
+		(start -1.75 -1.75)
+		(end 1.75 1.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "0cc962bd-54e9-5a03-a736-dd006657e0c2")
+	)
+	(fp_circle
+		(center -2.95 -0.875)
+		(end -2.8 -0.875)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "a14207b9-43d3-5f9c-b2cb-644615ad379c")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "1b12cf22-5c11-5490-99d4-0df4a2183455")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.75 -0.875)
+		(size 1.6 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "0a7797b5-75a3-55cf-a799-eda78ac25edd")
+	)
+	(pad "2" smd rect
+		(at -1.75 0.875)
+		(size 1.6 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9e52638d-92f6-5879-9f4f-a95fc41abf24")
+	)
+	(pad "3" smd rect
+		(at 1.75 0.875)
+		(size 1.6 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "a02df8e0-dc43-5115-aeaa-c7abf6f985cb")
+	)
+	(pad "4" smd rect
+		(at 1.75 -0.875)
+		(size 1.6 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9b3c53ca-6385-5855-b3a6-63f7072e4744")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
