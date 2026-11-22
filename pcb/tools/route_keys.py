@@ -14,8 +14,8 @@ Every key gets the same pattern, in its switch's frame (mm, y down, pins north, 
     B.Cu is turned to match (gen_pcb.py) and joins both vias
   - the data hop to the next LED of the chain on F.Cu, when the two keys are neighbours in
     the same row with no key between them: out of DOUT, along y = LED center (5.08), into the
-    next DIN.  Other hops (around the lock keys, across rows, the row ends) are left to the
-    router
+    next DIN.  Other hops (around the lock keys, across rows, the row ends, and across the
+    top row's electronics pockets) are left to the router
 
 What this lays is kept in one group, "route_keys", which the next run deletes first, so the
 script can be rerun after a footprint or offset change without touching anything else.
@@ -96,6 +96,13 @@ class Layer:
         self.board.Add(v); self.group.AddItem(v)
 
 
+def is_key_part(ref):
+    """Switches, their LEDs, and the per-key diode and 100n (numbered from 100)."""
+    if ref.startswith(("SW", "LED")):
+        return True
+    return ref[:1] in "CD" and ref[1:].isdigit() and int(ref[1:]) >= 100
+
+
 def clear_previous(board):
     """Delete the tracks and vias of the previous run's group, then the group.  Go through
     the board's own track list: items fetched through the group come back as uncast SWIG
@@ -142,7 +149,9 @@ def main():
             cu.track([k(p) for p in to_cap], net, pcbnew.B_Cu, POWER_W)
         counts["led"] += 1
 
-    # data hops between neighbours in a row
+    # data hops between neighbours in a row, unless the hop would cross other parts (the
+    # electronics in the top row's pockets)
+    others = [fp.GetBoundingBox(False) for fp in board.GetFootprints() if not is_key_part(fp.GetReference())]
     by_ref = {s["ref"]: s for s in switches}
     for a, b in zip(order, order[1:]):
         sa, sb = by_ref[a], by_ref[b]
@@ -160,6 +169,11 @@ def main():
         net = pad_at(f("LED" + a[2:]), ka(dout)).GetNet()
         assert pad_at(f("LED" + b[2:]), kb(din)).GetNetname() == net.GetNetname(), (a, b)
         pts = [ka(dout), ka((dout[0] + JOG * d, DATA_Y)), kb((din[0] - JOG * d, DATA_Y)), kb(din)]
+        (x0, y0), (x1, y1) = pts[1], pts[2]
+        path = pcbnew.BOX2I(pcbnew.VECTOR2I(mm(min(x0, x1)), mm(min(y0, y1) - 0.5)),
+                            pcbnew.VECTOR2I(mm(abs(x1 - x0)), mm(abs(y1 - y0) + 1.0)))
+        if any(path.Intersects(o) for o in others):
+            continue
         cu.track(pts, net, pcbnew.F_Cu, SIGNAL_W)
         counts["hop"] += 1
 

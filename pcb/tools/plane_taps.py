@@ -10,7 +10,8 @@ joined to it) holds neither, this drops a via next to the pad, joined by a short
 the first spot that clears everything else on every copper layer.  Big pads (the module's
 center ground) take the via inside the pad instead.
 
-What it adds goes in the group "plane_taps", which the next run deletes first.  Run it after
+What it adds is locked, so the autorouter keeps it, and goes in the group "plane_taps",
+which the next run deletes first.  Run it after
 the autorouter, then run DRC: it checks clearances itself, but DRC has the last word.
 """
 import math
@@ -174,6 +175,7 @@ def tap(board, obs, pad, group):
             continue
         v = pcbnew.PCB_VIA(board)
         v.SetPosition(pt(x, y)); v.SetWidth(mm(VIA_D)); v.SetDrill(mm(VIA_DRILL)); v.SetNet(net)
+        v.SetLocked(True)                          # fixed for the autorouter
         if not obs.clear(name, COPPER, v.GetEffectiveShape(pcbnew.F_Cu), v.GetBoundingBox(), CLEARANCE):
             continue
         if not obs.edge_ok(v):
@@ -182,6 +184,7 @@ def tap(board, obs, pad, group):
         if not inside:
             t = pcbnew.PCB_TRACK(board)
             t.SetStart(c); t.SetEnd(pt(x, y)); t.SetLayer(layer); t.SetWidth(mm(TRACK_W)); t.SetNet(net)
+            t.SetLocked(True)
             if not obs.clear(name, (layer,), t.GetEffectiveShape(layer), t.GetBoundingBox(), CLEARANCE):
                 continue
         board.Add(v); group.AddItem(v)

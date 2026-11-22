@@ -27,7 +27,8 @@ A part-by-part explanation of the circuit is in
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
 | `tools/route_keys.py` | lays the regular per-key copper on the board; rerunnable (see *Routing*) |
 | `tools/freeroute.py`, `tools/plane_taps.py`, `tools/clean_dangling.py` | autoroute the rest in a container; tap the inner planes from SMD pads; delete dead-end stubs (see *Routing*) |
-| `tools/swap_footprint.py` | swaps one footprint on the board for another, keeping its schematic link and nets |
+| `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py` | rework a routed board: swap a footprint, take the schematic's nets after a change, rip up an area |
+| `tools/route_host.py` | lays the host lines between J2 and the CH446Q (see *Routing*) |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
 | `tools/pinmaps.json` | CH446Q LQFP-44 pin map, GPIO plan, host connector pinout |
@@ -169,7 +170,7 @@ in the switch's frame, and keeps it in one group, `route_keys`, that the next ru
   neighbours in a row; hops around the lock keys, between rows and at the row ends are
   left for the router
 
-On its first run: 91 switch-to-diode links, 92 LED power pairs, 77 data hops, no DRC
+It lays 91 switch-to-diode links, 92 LED power pairs and 75 data hops, with no DRC
 copper errors.  It refills the planes after laying its vias, so every LED pad reaches GND or
 5V_SYS through them.  Its copper is locked, so the autorouter treats it as fixed wiring.
 
@@ -187,13 +188,25 @@ everything on all four copper layers.  Its copper is the group `plane_taps`, rep
 run.  Pads in tight spots (fine-pitch IC pins) are listed as having no room, for the next
 router pass.
 
+`tools/route_host.py` lays the host lines between J2 and the CH446Q by hand, locked, in the
+group `route_host`.  The crosspoint's pin order (`XP_X_OF_COL` / `XP_Y_OF_ROW` in
+`gen_sch.py`) is chosen so they need no crossings: columns on B.Cu into the package's sides
+in nested lanes, rows on F.Cu down to vias inside the ring of pins.  It also ties the
+CH446Q's corner GND pins and gives STB a way out from between two rows.  `route_keys.py`
+leaves out any LED data hop that would cross the pockets' electronics.
+
+Other tools for reworking a routed board: `tools/rip_up.py` deletes unlocked copper in a
+rectangle or around named pads; `tools/sync_nets.py` gives the pads the schematic's nets
+after a schematic change (and deletes copper on the nets that changed);
+`tools/swap_footprint.py` replaces a footprint in place.
+
 ```
 PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
 $PY pcb/tools/route_keys.py
-$PY pcb/tools/freeroute.py 20        # max passes
-$PY pcb/tools/clean_dangling.py
+$PY pcb/tools/rip_up.py --rect 297 80.1 340 112.4     # the CH446Q pocket
+$PY pcb/tools/route_host.py
 $PY pcb/tools/plane_taps.py
-$PY pcb/tools/freeroute.py 10 00:20:00
+$PY pcb/tools/freeroute.py 25 00:45:00
 ```
 
 ## Plate
