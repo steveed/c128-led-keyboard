@@ -399,8 +399,9 @@ class Placed:
 
 # --- GPIO plan ---------------------------------------------------------------------------
 
-# ESP32-S3-WROOM-1-N8.  Strapping pins (IO0, IO3, IO45, IO46) are left free.  Six GPIO are
-# spare (IO13, 14, 21, 35, 36, 37) now that the crosspoint is driven serially.
+# ESP32-S3-MINI-1U-N8 (2.4 mm tall, U.FL antenna: the whole PCB sits under the plate, so an
+# on-board antenna would be under metal).  Strapping pins (IO0, IO3, IO45, IO46) are left
+# free.  Spare: IO14, 21, 35, 36, 37, plus IO26, 33, 34 which only the MINI brings out.
 GPIO = {
     "IO4": "P_ROW0", "IO5": "P_ROW1", "IO6": "P_ROW2", "IO7": "P_ROW3",
     "IO15": "P_ROW4", "IO16": "P_ROW5", "IO17": "P_ROW6", "IO18": "P_ROW7",
@@ -412,6 +413,7 @@ GPIO = {
     "IO0": "MCU_BOOT", "EN": "MCU_EN", "USB_D-": "USB_DN", "USB_D+": "USB_DP",
     "TXD0": "MCU_TXD0", "RXD0": "MCU_RXD0",
     "IO3": None, "IO45": None, "IO46": None, "IO47": None, "IO48": None,
+    "IO26": None, "IO33": None, "IO34": None,
 }
 
 # host connector (2x13 in D-sub IDC order): header pin -> net
@@ -429,8 +431,8 @@ def build_mcu(sh):
     sh.text("MCU, USB-C and power.  +5V_KB is the raw keyboard rail from the host connector; +5V_SYS is the\n"
             "OR of the fused keyboard rail and USB VBUS; +3V3 feeds the ESP32, the 74HC154 and the physical matrix.",
             (15, 15), 1.5)
-    u1 = sh.symbol("RF_Module:ESP32-S3-WROOM-1", "U1", "ESP32-S3-WROOM-1-N8", (135, 125),
-                   footprint="RF_Module:ESP32-S3-WROOM-1")
+    u1 = sh.symbol("RF_Module:ESP32-S3-MINI-1U", "U1", "ESP32-S3-MINI-1U-N8", (135, 125),
+                   footprint="RF_Module:ESP32-S2-MINI-1U")   # KiCad's S3-MINI-1U symbol uses this; same land pattern
     for p in sh.pins_cache[u1.lib_id]:
         name, num = p["name"], p["number"]
         if p["hidden"]:

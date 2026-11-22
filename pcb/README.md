@@ -14,7 +14,7 @@ A part-by-part explanation of the circuit is in
 | File | What |
 |---|---|
 | `C128-keyboard-rev3.kicad_pro` / `.kicad_sch` | project and root sheet (four sub-sheets) |
-| `mcu.kicad_sch` | ESP32-S3-WROOM-1-N8, USB-C, 5 V OR-ing, AP7361C-33E LDO, buttons |
+| `mcu.kicad_sch` | ESP32-S3-MINI-1U-N8 (U.FL antenna), USB-C, 5 V OR-ing, AP7361C-33E LDO, buttons |
 | `crosspoint.kicad_sch` | CH446Q in serial mode, 74AHCT1G125 LED-data buffer, lock-line and RESTORE FETs, RESTORE sense diode D3, host connector J2, external LED header J3 |
 | `matrix.kicad_sch` | 92 switches with the rev 2.3 ROW/COL assignments, one 1N4148W per scanned key, 74HC154 column select |
 | `leds.kicad_sch` | 92 SK6812 MINI (top mount) in chain order (lock keys first) |

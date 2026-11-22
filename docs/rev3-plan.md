@@ -39,8 +39,12 @@ and what has to be proven on the bench before copper is ordered.
 - Stabilizers: **PCB-mount screw-in** on every stabilized key (spacebar, Return, keypad 0,
   keypad Enter).  The plate carries clearance slots for the stabilizer housings and wires,
   not stabilizer mounting cutouts.
-- MCU: ESP32-S3-WROOM-1-N8 module (no PSRAM, so GPIO 35..37 stay free).  RP2040 is the
-  fallback only if the ESP32 fails bring-up on power or timing.
+- MCU: ESP32-S3-MINI-1U-N8 module (no PSRAM, so GPIO 35..37 stay free).  Changed from the
+  WROOM-1 on 2026-11-21: the whole PCB sits under the plate (PCB rear edge y 80.1, plate to
+  y 70), so an on-board antenna would be under metal, and the MINI is 2.4 mm tall against the
+  WROOM's 3.2 mm, which matters on the flat 128's underside.  The antenna is external on the
+  U.FL; with no WiFi wanted, nothing is fitted.  Same GPIO map.  RP2040 is the fallback only
+  if the ESP32 fails bring-up on power or timing.
 - Board outline, plate-ground pad and switch positions do **not** move, so the existing
   plate, printed case and printables keep fitting.  The PCB gains mounting holes (it has
   none today) for a thin insulating bottom cover.
@@ -95,7 +99,7 @@ and what has to be proven on the bench before copper is ordered.
 
 | Block | Parts | Notes |
 |---|---|---|
-| MCU | ESP32-S3-WROOM-1-N8, BOOT and RESET tact switches, 10 k pull-ups, 100 nF | strapping pins (GPIO0, 3, 45, 46) left free or used only for outputs that are safe at boot |
+| MCU | ESP32-S3-MINI-1U-N8 (U.FL antenna), BOOT and RESET tact switches, 10 k pull-ups, 100 nF | strapping pins (GPIO0, 3, 45, 46) left free or used only for outputs that are safe at boot |
 | 3.3 V supply | AP7361C-33E low-dropout LDO (SOT-223, 1 A, 0.36 V dropout, LCSC C500795), 10 uF in/out | fed from the OR'd 5 V rail, about 4.55 V; the AMS1117 originally planned had no headroom there |
 | 5 V OR-ing | 2 x SS34 Schottky (keyboard +5 V, USB VBUS) into 5V_SYS, PTC fuse 1.1 A on the keyboard side, 220 uF bulk | the CH446Q and lock FETs are referenced to the keyboard rail; everything else runs from 5V_SYS |
 | USB-C | 16-pin receptacle, 5.1 k CC pull-downs, ESD array | native USB on GPIO19/20 for flashing, serial config and the web flasher |
@@ -110,7 +114,7 @@ and what has to be proven on the bench before copper is ordered.
 | Connector | 2 x 13 0.1" footprint on B.Cu in D-sub IDC pin order.  Populate a shrouded IDC box header (vertical or right-angle, both ~9 mm mated) where height allows, otherwise leave it empty and solder the ribbon into the pads | pinout below.  Replaces the FFC |
 | Test | 0.1" test points on 5V_SYS, 3V3, LED data, one row, one column | layout item; not in the schematic yet |
 
-### GPIO budget (ESP32-S3-WROOM-1-N8)
+### GPIO budget (ESP32-S3-MINI-1U-N8)
 
 | Function | Pins |
 |---|---|
@@ -184,9 +188,10 @@ no table.
 - Connector footprints on B.Cu near the rear edge, at roughly the same X as today's CN2 so the
   printed case's DB25 cutout still lines up.  Confirm clearance to the flat C128's RF shield
   before fixing Y.
-- ESP32-S3 module on B.Cu with the antenna end at the rear board edge, copper keep-out under
-  and beside the antenna on both layers, no plate steel above it (the rear edge is outside the
-  plate).  Distance from the 5 V / LED traces.
+- ESP32-S3-MINI-1U on B.Cu in the rear band.  The rear edge is *not* outside the plate (the
+  plate overhangs it by 10 mm), which is why the module is the U.FL variant: route the
+  antenna lead out of the case rather than keeping copper clear for a trace antenna.  Keep
+  the U.FL reachable and its mated height (about 2 mm above the module) inside the budget.
 - CH446Q on B.Cu next to the connector, so the 19 host lines are short.  Keep its pads clear
   of switch pins.
 - USB-C on the rear edge, accessible with the plate on; on the flat it will be reachable only
@@ -362,7 +367,7 @@ solders only through-hole parts: switches, connectors and headers.  Consequences
   Keep every other SMD part off the front so the front side is LEDs only.
 - **Fab-stocked parts first.**  0603 passives, SS34, 2N7002, USBLC6-2SC6 and the
   AP7361C-33E are basic or common stock items and carry their LCSC numbers in the schematic's
-  `LCSC` field (verify each on the LCSC site before ordering).  The ESP32-S3-WROOM-1-N8,
+  `LCSC` field (verify each on the LCSC site before ordering).  The ESP32-S3-MINI-1U-N8,
   SK6812 MINI, CH446Q, 74HC154 and 74AHCT1G125 are stocked in some package; pick the
   stocked package at layout time and fill the field in.  The 220 uF electrolytic, the polyfuse
   and the USB-C receptacle likewise.
@@ -380,7 +385,7 @@ solders only through-hole parts: switches, connectors and headers.  Consequences
 
 | Item | Qty | Approx. cost |
 |---|---|---|
-| ESP32-S3-WROOM-1-N8 | 1 | 3 |
+| ESP32-S3-MINI-1U-N8, U.FL antenna | 1 | 4 |
 | CH446Q LQFP-44 | 1 | 1-2 |
 | SK6812 MINI | 92 | 11 |
 | 74HC154, 74AHCT1G125, AP7361C-33E | 3 | 2 |

@@ -111,7 +111,7 @@
 "SW92","40_80","Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB","","1"
 "SW93","RESET","Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92","","1"
 "SW94","BOOT","Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92","","1"
-"U1","ESP32-S3-WROOM-1-N8","RF_Module:ESP32-S3-WROOM-1","","1"
+"U1","ESP32-S3-MINI-1U-N8","RF_Module:ESP32-S2-MINI-1U","","1"
 "U2","AP7361C-33E","Package_TO_SOT_SMD:SOT-223-3_TabPin2","C500795","1"
 "U3","CH446Q","Package_QFP:LQFP-44_10x10mm_P0.8mm","","1"
 "U4","74AHCT1G125","Package_TO_SOT_SMD:SOT-23-5","","1"

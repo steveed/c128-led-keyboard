@@ -77,7 +77,10 @@
   "IO45": null,
   "IO46": null,
   "IO47": null,
-  "IO48": null
+  "IO48": null,
+  "IO26": null,
+  "IO33": null,
+  "IO34": null
  },
  "host_pins": {
   "1": "GND",

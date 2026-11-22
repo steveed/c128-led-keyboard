@@ -91,12 +91,14 @@ nothing on the board.
 
 ## Sheet: MCU and power
 
-### U1, ESP32-S3-WROOM-1-N8
+### U1, ESP32-S3-MINI-1U-N8
 
 The microcontroller, bought as a module rather than a bare chip.  The module includes the
 ESP32-S3 die, 8 MB of flash for the firmware and settings, the crystal, the RF matching
-network and a PCB-trace antenna, all under a metal can, and it comes with regulatory
-certification for the radio.  Designing that from parts is a project in itself; the module
+network and a U.FL socket for an external antenna, all under a metal can, and it comes with
+regulatory certification for the radio.  The U variant (no PCB-trace antenna) is used because
+the whole keyboard PCB sits under the metal plate, where an on-board antenna would barely
+radiate; it is also only 2.4 mm tall, which helps under a flat 128.  Designing that from parts is a project in itself; the module
 costs about three dollars.  Why this MCU: it has WiFi (for the configuration web page),
 native USB (for flashing and a serial console), enough GPIO, and a peripheral (RMT) that
 generates the LED data stream in hardware.
