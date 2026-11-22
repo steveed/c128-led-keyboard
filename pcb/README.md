@@ -5,7 +5,8 @@ ESP32-S3 module scanning the switches, a CH446Q crosspoint presenting them to th
 per-key SK6812 MINI lighting, saved lock state, and a rear-exit host connector in stock C128
 pin order.
 
-Status: **schematic drafted and revised through 2026-09-18, passes ERC with zero violations; no layout yet.**
+Status: **schematic passes ERC with zero violations; board file created 2026-11-21 with every part placed
+(first pass) and nothing routed.**
 A part-by-part explanation of the circuit is in
 [docs/rev3-circuit-walkthrough.md](../docs/rev3-circuit-walkthrough.md).
 
@@ -21,6 +22,8 @@ A part-by-part explanation of the circuit is in
 | `c128rev3.kicad_sym`, `sym-lib-table` | project library with the CH446Q symbol (LQFP-44 numbering) |
 | `c128rev3.pretty/`, `fp-lib-table` | project footprints: MX switches (1u, 1.5u, 2u, spacebar) and the SK6812 MINI for the switch LED pocket |
 | `tools/gen_fp.py` | the generator that writes `c128rev3.pretty/` and `fp-lib-table` |
+| `C128-keyboard-rev3.kicad_pcb` | the board: rev 2.3 outline, all 418 footprints linked to the schematic and placed, unrouted |
+| `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
 | `tools/pinmaps.json` | CH446Q LQFP-44 pin map, GPIO plan, host connector pinout |
@@ -43,7 +46,11 @@ repository's `layout/` folder rather than from another board file:
   model's own frame.  Extracted from that project's
   [`plate/plate.step`](https://codeberg.org/jflitton/the-c128-keyboard-project/src/branch/main/plate/plate.step); `gen_plate.py` fits it onto the switches.
 
-They are the original measurements, used until the new board exists.  Once it is laid out,
+- `layout/outline.json`: the board outline (Edge.Cuts lines and circles) from the same
+  rev 2.3 board; `gen_pcb.py` drew the rev 3 outline from it.
+
+`switches.json` also records each switch's rotation.  They are the original measurements,
+used until the new board exists.  Once it is laid out,
 point the extractor at it and regenerate:
 
 ```
@@ -100,6 +107,41 @@ Placeholders to resolve during layout:
   receptacle for the underside height budget; KiCad ships none, so it goes in `c128rev3.pretty`
   once the part is chosen.
 - The CH446Q footprint is KiCad's generic LQFP-44 10 x 10 mm; check it against the WCH drawing.
+
+## The board
+
+`tools/gen_pcb.py` made the first `C128-keyboard-rev3.kicad_pcb` straight from the schematic
+netlist, the way Update PCB from Schematic would (every footprint carries its symbol's sheet
+path and UUID), and `kicad-cli pcb drc --schematic-parity` reports no parity issues.  It runs
+under KiCad's own python, because it needs the pcbnew module:
+
+```
+/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 pcb/tools/gen_pcb.py
+```
+
+It refuses to overwrite an existing board (`--force` to start over): from here the board is
+hand-edited, and schematic changes come in through Update PCB from Schematic (F8).
+
+What it set up:
+
+- **Outline** from `layout/outline.json`, the rev 2.3 Edge.Cuts unchanged (including the
+  6.25 mm hole in the spacebar tab).  2 layers, 1.6 mm.
+- **Switches** on the rev 2.3 centers.  Rev 2.3 turned 14 top-row switches by 180 degrees;
+  with an LED in every pocket that would light those keys from the top and the rest from the
+  bottom, so rev 3 lines them all up (pins north, LED south, like the rev 2.3 lock keys).
+  Keypad Enter keeps -90.  `UNIFORM_180` in the script.
+- **Per key:** LED on the front in the pocket; diode (anode toward switch pin 2) and the
+  LED's 100n on the back, behind the pocket.  Their references are on B.Fab: under the plate
+  nobody reads them.
+- **Electronics** on the back in the three switch-free pockets of the top row, which have no
+  holes on the back: x 183-225 (MCU, USB-C, LDO, buttons), x 297-340 at rev 2.3's FFC
+  (host connector, CH446Q, FETs, LED buffer, keyboard-side fuse and diode), x 411-430
+  (74HC154 and the column resistors).  First pass, packed by courtyard; no overlaps.
+- **Rules** in the project file: net class Power (0.5 mm) for GND, +5V_KB, +5V_KB_F,
+  +5V_SYS, +3V3 and VBUS; Default 0.25 mm, 0.6/0.3 mm vias; JLCPCB two-layer minimums.
+
+DRC on the unrouted board has no copper or courtyard errors; it reports about 290
+silkscreen warnings (labels over pads and each other) left for the hand tidy.
 
 ## Plate
 

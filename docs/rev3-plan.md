@@ -2,7 +2,7 @@
 
 Status: schematic drafted 2026-09-17 in `pcb/`, revised 2026-09-18 (CH446Q in serial
 mode, per-key diodes, top-mount LEDs, RESTORE sense diode, fab assembly, aluminum plate
-boards generated); bench proofs and layout not started.  Decisions taken 2026-09-17/18.  Background and the reasoning
+boards generated); board file created and placed 2026-11-21, not routed; bench proofs not started.  Decisions taken 2026-09-17/18.  Background and the reasoning
 behind each change is in [pcb-issues-and-plans.md](pcb-issues-and-plans.md), and a part-by-part
 explanation of the schematic is in [rev3-circuit-walkthrough.md](rev3-circuit-walkthrough.md);
 this document is
