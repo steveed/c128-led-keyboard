@@ -195,8 +195,17 @@ Things on the sheet that need explaining:
   of ground labels.
 - **On-resistance.**  A closed switch is about 120 to 185 ohm at 5 V.  The Commodore's row
   inputs are pulled up through a few kilohms, so a few hundred ohms in the path is nothing.
-- **X11..X15 unused.**  The Commodore has eleven columns; the chip has sixteen X lines.  The
-  extras are marked no-connect.
+- **Which pin carries which line.**  The Commodore has eleven columns and eight rows; the chip
+  has sixteen X lines and eight Y lines, and any X/Y pair can be closed.  So which X pin
+  carries which column, and which Y pin which row, is free: the firmware addresses a switch
+  through a table (`firmware/main/crosspoint_map.h`), and the Commodore sees the same matrix
+  either way.  The order is chosen for the board.  The host connector's pins follow the
+  C128's own connector, which scatters the lines; taken in order (column n on X n) they all
+  cross between J2 and the chip.  Instead each column goes to the X pin on the side of the
+  package it can reach without crossing, and each row to the Y pin whose via sits in the
+  same left-to-right order as its J2 pin (`XP_X_OF_COL` and `XP_Y_OF_ROW` in
+  `pcb/tools/gen_sch.py`).  Five X pins are left over and marked no-connect.  The bench rig
+  wires the chip in plain order, and its build uses the plain table.
 - **C8, 100 nF.**  Decoupling, as always.
 
 ### R10 and R11: what the crosspoint does while the ESP32 is still asleep

@@ -526,17 +526,35 @@ def build_mcu(sh):
             (15, 280), 1.27)
 
 
+# Which crosspoint X pin carries each host column, and which Y pin each host row.  The C128
+# sees the same matrix whatever the order (the firmware addresses the switch by pin number
+# through this table), so the order is chosen for the board: host connector J2's pins, which
+# follow the C128's own connector, then reach their CH446Q pins without crossing.  Columns
+# run on the back into the package's sides, nested so the line nearest the chip takes the
+# pin nearest J2: COL0-2 and COL7-10 the left side (seven lanes fit there, beside R5-R7),
+# COL3-6 the top of the right side (R10/R11 and U4 leave room for four).  Rows run on the top
+# straight down from J2 and drop through vias inside the ring of pins, so their order is
+# J2's, left to right, against the Y pins inside the ring, left to right (route_host.py).
+XP_X_OF_COL = {0: 15, 10: 6, 9: 7, 8: 8, 7: 9, 1: 10, 2: 11, 3: 13, 4: 12, 5: 5, 6: 4}
+XP_Y_OF_ROW = {0: 7, 1: 6, 2: 5, 7: 4, 4: 3, 5: 2, 6: 1, 3: 0}
+assert sorted(XP_X_OF_COL) == list(range(11)) and len(set(XP_X_OF_COL.values())) == 11
+assert sorted(XP_Y_OF_ROW) == list(range(8)) and sorted(XP_Y_OF_ROW.values()) == list(range(8))
+
+
 def build_crosspoint(sh):
-    sh.text("Host side: CH446Q crosspoint mirrors the physical matrix onto the C128 ROW/COL lines.  X = host columns, Y = host rows.\n"
+    sh.text("Host side: CH446Q crosspoint mirrors the physical matrix onto the C128 ROW/COL lines.  X = host columns, Y = host rows,\n"
+            "in the order that routes cleanly from J2 (XP_X_OF_COL / XP_Y_OF_ROW in gen_sch.py); the firmware addresses through the same table.\n"
             "Serial address mode (P/S low): DAT, CS/CK, STB, RST straight from the ESP32 (VIH is 2.0 V at a 5 V supply).\n"
             "Lock lines are open-drain FETs; 40/80 asserts at power-on when JP1 is closed, before the MCU boots.\n"
             "RESTORE is hard-wired to the host; D3 lets the MCU see it, Q3 lets the MCU press it.", (15, 15), 1.5)
     u3 = sh.symbol("c128rev3:CH446Q", "U3", "CH446Q", (110, 110))
     names = u3.pins_named()
+    col_of_x = {x: c for c, x in XP_X_OF_COL.items()}
+    row_of_y = {y: r for r, y in XP_Y_OF_ROW.items()}
     for i in range(16):
-        sh.connect(u3, names[f"X{i}"], f"H_COL{i}" if i <= 10 else None, stub=7.62)
+        sh.connect(u3, names[f"X{i}"], f"H_COL{col_of_x[i]}" if i in col_of_x else None, stub=7.62)
     for i in range(8):
-        sh.connect(u3, names[f"Y{i}"], f"H_ROW{i}", stub=7.62)
+        sh.connect(u3, names[f"Y{i}"], f"H_ROW{row_of_y[i]}", stub=7.62)
     for n in ("AX0", "AX1", "AX2", "AX3", "AY0", "AY1", "AY2", "P/S"):
         sh.connect(u3, names[n], "GND", stub=7.62, kind="label")   # serial mode: unused address pins to GND
     for n, net in (("DAT", "MCU_XP_DAT"), ("CS/CK", "MCU_XP_CK"), ("STB", "MCU_XP_STB"), ("RST", "MCU_XP_RST")):
@@ -751,7 +769,9 @@ def main():
         sh.emit()
     root.emit(is_root=True)
     # bench notes want the DIP numbering
-    json.dump({"ch446q_lqfp44": CH446Q_LQFP, "gpio": GPIO, "host_pins": HOST_PINS},
+    json.dump({"ch446q_lqfp44": CH446Q_LQFP, "gpio": GPIO, "host_pins": HOST_PINS,
+               "crosspoint_rev3": {"x_of_col": [XP_X_OF_COL[c] for c in range(11)],
+                                   "y_of_row": [XP_Y_OF_ROW[r] for r in range(8)]}},
               open(os.path.join(OUT_DIR, "tools", "pinmaps.json"), "w"), indent=1)
     # project symbol library holding the custom CH446Q, plus the table that registers it
     S = K.Sym
