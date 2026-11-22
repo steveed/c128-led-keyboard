@@ -86,20 +86,28 @@ class Layer:
             t = pcbnew.PCB_TRACK(self.board)
             t.SetStart(pt(a)); t.SetEnd(pt(b))
             t.SetLayer(layer); t.SetWidth(mm(width)); t.SetNet(net)
+            t.SetLocked(True)                      # protected wiring for the autorouter
             self.board.Add(t); self.group.AddItem(t)
 
     def via(self, xy, net):
         v = pcbnew.PCB_VIA(self.board)
         v.SetPosition(pt(xy)); v.SetWidth(mm(VIA_D)); v.SetDrill(mm(VIA_DRILL)); v.SetNet(net)
+        v.SetLocked(True)
         self.board.Add(v); self.group.AddItem(v)
 
 
 def clear_previous(board):
+    """Delete the tracks and vias of the previous run's group, then the group.  Go through
+    the board's own track list: items fetched through the group come back as uncast SWIG
+    pointers, and removing those corrupts pcbnew's memory."""
+    for t in list(board.GetTracks()):
+        g = t.GetParentGroup()
+        if g is not None and g.GetName() == GROUP:
+            g.RemoveItem(t)
+            board.Delete(t)
     for g in list(board.Groups()):
         if g.GetName() == GROUP:
-            for item in list(g.GetItems()):
-                board.Remove(item)
-            board.Remove(g)
+            board.Delete(g)
 
 
 def main():
@@ -109,7 +117,9 @@ def main():
     group.SetName(GROUP)
     board.Add(group)
     cu = Layer(board, group)
-    f = board.FindFootprintByReference
+    # FindFootprintByReference can hand back an uncast SWIG pointer on a loaded board
+    fps = {fp.GetReference(): fp for fp in board.GetFootprints()}
+    f = fps.get
     switches = layout.load_switches()
     order, direction = layout.led_chain(switches)
     rows = {ref: rc[0] for ref, rc in layout.physical_matrix(switches).items()}
