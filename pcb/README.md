@@ -17,7 +17,7 @@ A part-by-part explanation of the circuit is in
 | `C128-keyboard-rev3.kicad_pro` / `.kicad_sch` | project and root sheet (four sub-sheets) |
 | `mcu.kicad_sch` | ESP32-S3-MINI-1U-N8 (U.FL antenna), USB-C, 5 V OR-ing, AP7361C-33E LDO, buttons |
 | `crosspoint.kicad_sch` | CH446Q in serial mode, 74AHCT1G125 LED-data buffer, lock-line and RESTORE FETs, RESTORE sense diode D3, host connector J2, external LED header J3 |
-| `matrix.kicad_sch` | 92 switches with the rev 2.3 ROW/COL assignments, one 1N4148W per scanned key, 74HC154 column select |
+| `matrix.kicad_sch` | 92 switches in a 6 x 20 scanned matrix that follows the board (`tools/layout.py` `physical_matrix`), one 1N4148W per scanned key, 74HC154 plus five GPIO for the columns |
 | `leds.kicad_sch` | 92 SK6812 MINI (top mount) in chain order (lock keys first) |
 | `c128rev3.kicad_sym`, `sym-lib-table` | project library with the CH446Q symbol (LQFP-44 numbering) |
 | `c128rev3.pretty/`, `fp-lib-table` | project footprints: MX switches (1u, 1.5u, 2u, spacebar) and the SK6812 MINI for the switch LED pocket |
@@ -136,7 +136,10 @@ What it set up:
 - **Electronics** on the back in the three switch-free pockets of the top row, which have no
   holes on the back: x 183-225 (MCU, USB-C, LDO, buttons), x 297-340 at rev 2.3's FFC
   (host connector, CH446Q, FETs, LED buffer, keyboard-side fuse and diode), x 411-430
-  (74HC154 and the column resistors).  First pass, packed by courtyard; no overlaps.
+  (the five GPIO-column resistors, next to the keypad columns they drive).  The 74HC154
+  and its 15 resistors sit mid-board at x 227-274 in the channel under the top row, which
+  is clear of holes on the back the whole width (y 97.5-113).  First pass, packed by
+  courtyard; no overlaps.
 - **Rules** in the project file: net class Power (0.5 mm) for GND, +5V_KB, +5V_KB_F,
   +5V_SYS, +3V3 and VBUS; Default 0.25 mm, 0.6/0.3 mm vias; JLCPCB two-layer minimums.
 

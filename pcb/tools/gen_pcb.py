@@ -57,8 +57,11 @@ CAP_OFFSET = (0.0, 6.1)        # back, behind the LED
 # the top row (x 182.7-225.3, 297.0-339.6 and 411.3-430.1, y 80.1 to about 112.4) have no
 # holes on the back.  Pocket A: MCU, USB-C, 3.3 V regulator, buttons.  Pocket B, at rev 2.3's
 # FFC: host connector, crosspoint, lock-line and RESTORE FETs, LED buffer, and the keyboard
-# 5 V fuse and diode next to the connector's +5 V pin.  Pocket C: column decoder.  First pass,
-# packed from the footprints' courtyards; to be refined by hand.
+# 5 V fuse and diode next to the connector's +5 V pin.  Pocket C, by the keypad: the five
+# GPIO-column resistors (columns 15-19).  The 74HC154 drives columns 0-14 (x 118-385), so it
+# and its resistors sit mid-board in the channel under the top row (y 97.5-113 on the back is
+# clear of holes the whole width: top-row diodes and caps end at 97.1, number-row pins start
+# at 113.5).  First pass, packed from the footprints' courtyards; to be refined by hand.
 PLACE = {
     # pocket A
     "J1": (189.0, 84.6, 180), "D2": (200.5, 83.0, 0),
@@ -74,12 +77,14 @@ PLACE = {
     "R12": (306.5, 104.5, 0), "F1": (301.0, 109.5, 0), "D1": (308.5, 109.5, 0),
     "R10": (328.5, 93.0, 0), "R11": (328.5, 95.0, 0), "U4": (329.0, 98.5, 0), "C9": (335.0, 98.5, 0),
     "D3": (330.0, 103.0, 0), "J3": (332.5, 109.5, 90),
-    # pocket C
-    "U6": (420.7, 89.5, 0), "C11": (420.7, 99.2, 0),
+    # channel under the top row: decoder, its decoupling, and column resistors R20-R34 in
+    # column order, west of it for columns 0-7 and east for 8-14
+    "U6": (251.0, 105.5, 90), "C11": (262.5, 100.5, 0),
 }
-COL_RESISTORS = [f"R{n}" for n in range(20, 32)]   # 74HC154 outputs to the columns, pocket C
-for i, r in enumerate(COL_RESISTORS):
-    PLACE.setdefault(r, (416.0 if i < 6 else 425.4, 101.5 + (i % 6) * 1.8, 0))
+for i in range(15):
+    PLACE[f"R{20 + i}"] = (227.2 + 2.0 * i, 105.5, 90) if i < 8 else (260.8 + 2.0 * (i - 8), 105.5, 90)
+for i in range(15, 20):                              # GPIO columns, pocket C
+    PLACE[f"R{20 + i}"] = (420.7, 88.0 + 2.0 * (i - 15), 0)
 
 
 # --- netlist ------------------------------------------------------------------------------
