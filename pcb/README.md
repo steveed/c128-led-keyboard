@@ -27,7 +27,7 @@ A part-by-part explanation of the circuit is in
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
 | `tools/route_keys.py` | lays the regular per-key copper on the board; rerunnable (see *Routing*) |
 | `tools/freeroute.py`, `tools/plane_taps.py`, `tools/clean_dangling.py` | autoroute the rest in a container; tap the inner planes from SMD pads; delete dead-end stubs (see *Routing*) |
-| `tools/move.py`, `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py` | rework a routed board: move or turn parts, swap a footprint, take the schematic's nets after a change, rip up an area |
+| `tools/move.py`, `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py`, `tools/tidy.py` | rework a routed board: move or turn parts, swap a footprint, take the schematic's nets after a change, rip up an area, tidy the router's copper |
 | `tools/route_host.py` | lays the host lines between J2 and the CH446Q (see *Routing*) |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
@@ -203,6 +203,12 @@ or turns parts (by courtyard center), with `--check` to list clashes with other 
 switch holes and the edge before anything is saved.  sync_nets.py drops all unlocked copper
 on a changed net, board-wide: a remap of a matrix row loses that row's routing too.
 
+After a router pass, `tools/tidy.py` cleans up its copper: it deletes stubs to nowhere and
+copper wholly inside pads, then string-pulls every chain of segments into the fewest
+0/45/90-degree runs that still clear the other nets, the holes and the edge.  Locked copper
+and the USB pair are left alone.  `--report` lists the chains it couldn't clean (most bends,
+longest detour) without changing anything, and `--mark` circles them on Eco1.User.
+
 ```
 PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
 $PY pcb/tools/route_keys.py
@@ -210,6 +216,7 @@ $PY pcb/tools/rip_up.py --rect 297 80.1 340 112.4     # the CH446Q pocket
 $PY pcb/tools/route_host.py
 $PY pcb/tools/plane_taps.py
 $PY pcb/tools/freeroute.py 25 00:45:00
+$PY pcb/tools/tidy.py
 ```
 
 ## Plate
