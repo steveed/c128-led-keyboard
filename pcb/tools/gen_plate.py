@@ -7,8 +7,10 @@ Steps:
   2. find the rigid transform that lays the 88 switch openings onto the switch centers in
      layout/switches.json (tries all eight axis permutations / flips, then a least-squares
      translation);
-  3. write pcb/plate/plate-9u.kicad_pcb with every loop on Edge.Cuts, and a JSON of the
-     mounting features in PCB coordinates for the layout and the bottom cover.
+  3. move the spacebar's stabilizer boxes onto the PCB's stabilizer holes (the stock plate's
+     sit at rev 2.3's 125.35 mm) and check them;
+  4. write pcb/plate/plate-9u, plate-6.25u and plate-dual.kicad_pcb with every loop on
+     Edge.Cuts, and a JSON of the mounting features in PCB coordinates for the layout.
 
 Run:  python3 pcb/tools/gen_plate.py
 """
@@ -23,10 +25,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import layout  # noqa: E402
 import plate_step as P  # noqa: E402
+import gen_fp  # noqa: E402  (SPACEBAR_STABS: the PCB's stabilizer holes)
 
 HEADER = os.path.join(HERE, "plate_header.kicad_pcb")
 OUT_DIR = os.path.normpath(os.path.join(HERE, "..", "plate"))
 STABILIZED = {"SW12", "SW22", "SW54", "SW52"}   # Return, Num0, NumEnter, Space: not plain 14 mm openings
+SPACEBAR = "SW52"
 
 
 UUID_NS = uuid.uuid5(uuid.NAMESPACE_DNS, "rev3-plate.the-c128-keyboard-project")
@@ -175,35 +179,102 @@ def text(s, at, size=1.5, layer="F.SilkS"):
             f' (effects (font (size {size} {size}) (thickness {size/8:.3f})) (justify left)))')
 
 
-def spacebar_variant(holes, cls, spacing):
-    """Return a copy of the hole loops with the spacebar stabilizer boxes moved to `spacing`
-    (center-to-center, mm).  The stock cutout is a dumbbell: switch square in the middle, a
-    wire channel each side, a housing box at each end at 133.35 mm; vertices further than
-    20 mm from the center along the long axis belong to the boxes and channels' outer ends."""
-    out = []
-    shift = (133.35 - spacing) / 2
-    for h, c in zip(holes, cls):
-        if c["kind"] == "cutout" and max(c["w"], c["h"]) > 100:
-            long_axis = 0 if c["w"] > c["h"] else 1
-            center = c["cx"] if long_axis == 0 else c["cy"]
+def spacebar_cutout(cls):
+    """Index of the spacebar's dumbbell cutout (the only cutout over 100 mm long)."""
+    found = [i for i, c in enumerate(cls) if c["kind"] == "cutout" and max(c["w"], c["h"]) > 100]
+    assert len(found) == 1, found
+    return found[0]
 
-            def mv(p):
-                d = p[long_axis] - center
-                if abs(d) > 20:
-                    q = list(p); q[long_axis] = round(p[long_axis] - shift * (1 if d > 0 else -1), 5)
-                    return tuple(q)
-                return p
-            nh = []
-            for s in h:
-                ns = dict(s)
-                for k in ("a", "b", "mid", "c"):
-                    if k in ns:
-                        ns[k] = mv(ns[k])
-                nh.append(ns)
-            out.append(nh)
-        else:
-            out.append(h)
+
+def box_centers(h, c):
+    """Long-axis centers of the two stabilizer boxes of a spacebar cutout, as (low, high).
+
+    The stock cutout is a dumbbell: switch square in the middle, a wire channel each side, a
+    housing box near each end.  Along the long axis a box runs from its inner edge to its
+    outer edge, and the wire notch sticks out 0.8 mm past the outer edge; so a box's center
+    is midway between the nearest coordinate to the middle and the second farthest."""
+    ax = 0 if c["w"] > c["h"] else 1
+    mid = c["cx"] if ax == 0 else c["cy"]
+    coords = sorted({round(v[ax], 5) for s in h for k in ("a", "b") for v in (s[k],)})
+    out = []
+    for side in (-1, 1):
+        far = sorted((v for v in coords if (v - mid) * side > 20), key=lambda v: abs(v - mid))
+        out.append((far[0] + far[-2]) / 2)
+    return tuple(out)
+
+
+def long_axis(c, T):
+    """For a cutout: its long axis and middle in the plate frame, the PCB axis that long axis
+    maps to through T, and the sense of that mapping (+1 or -1)."""
+    ax = 0 if c["w"] > c["h"] else 1
+    mid = c["cx"] if ax == 0 else c["cy"]
+    p0, p1 = [c["cx"], c["cy"]], [c["cx"], c["cy"]]
+    p1[ax] += 1
+    q0, q1 = T(tuple(p0)), T(tuple(p1))
+    pax = 0 if abs(q1[0] - q0[0]) > abs(q1[1] - q0[1]) else 1
+    return ax, mid, pax, (1 if q1[pax] > q0[pax] else -1)
+
+
+def spacebar_variant(holes, cls, half, T, sw):
+    """A copy of the hole loops with the spacebar's stabilizer boxes centered on the PCB's
+    stabilizer holes at `sw` (the spacebar switch center, PCB frame) +/- `half` mm.
+
+    The boxes are placed from the board, not from a spacing assumed for the stock plate: the
+    stock plate's boxes sit at 125.35 mm, rev 2.3's spacing, while rev 3 drills 100 and
+    133.35 (gen_fp.SPACEBAR_STABS).  Each box, with its end of the wire channel, moves along
+    the long axis until its center maps through T onto its hole."""
+    i = spacebar_cutout(cls)
+    h, c = holes[i], cls[i]
+    ax, mid, pax, sense = long_axis(c, T)
+
+    def at(t):                                  # PCB point of long-axis coordinate t
+        p = [c["cx"], c["cy"]]
+        p[ax] = t
+        return T(tuple(p))
+
+    shifts = {}
+    for side, t_c in zip((-1, 1), box_centers(h, c)):
+        target = sw[pax] + side * sense * half  # this side's hole, PCB frame
+        shifts[side] = (target - at(t_c)[pax]) * sense
+
+    def mv(p):
+        dlt = p[ax] - mid
+        if abs(dlt) > 20:
+            q = list(p)
+            q[ax] = round(p[ax] + shifts[1 if dlt > 0 else -1], 5)
+            return tuple(q)
+        return p
+    nh = []
+    for seg in h:
+        ns = dict(seg)
+        for k in ("a", "b", "mid", "c"):
+            if k in ns:
+                ns[k] = mv(ns[k])
+        nh.append(ns)
+    out = list(holes)
+    out[i] = nh
     return out
+
+
+def check_spacebar(holes, cls, halves, T, sw):
+    """Every stabilizer hole pair the PCB drills has a box centered on it (to 0.02 mm)."""
+    i = spacebar_cutout(cls)
+    c = cls[i]
+    ax, _, pax, _ = long_axis(c, T)
+    pts = {(round(v[0], 5), round(v[1], 5)) for s in holes[i] for v in (s["a"], s["b"])}
+    long_coords = sorted({p[ax] for p in pts})
+    # every box: an inner edge, an outer edge 6.75 mm on (the housing's length)
+    boxes = []
+    for a in long_coords:
+        for b in long_coords:
+            if abs(b - a - 6.75) < 0.01:
+                p = [c["cx"], c["cy"]]; p[ax] = (a + b) / 2
+                boxes.append(T(tuple(p)))
+    for half in halves:
+        for side in (-1, 1):
+            want = sw[pax] + side * half
+            err = min(abs(bx[pax] - want) for bx in boxes)
+            assert err < 0.02, f"no stabilizer box over the hole at {want:.3f} ({err:.3f} mm off)"
 
 
 def rectilinear_union(loops, snap=0.002):
@@ -273,17 +344,13 @@ def rectilinear_union(loops, snap=0.002):
     return [{"type": "line", "a": a, "b": b} for a, b in zip(xy, xy[1:] + xy[:1])]
 
 
-def dual_spacebar(holes, cls, spacing):
-    """The stock 9u spacebar cutout with a second pair of stabilizer boxes at `spacing` too, so
-    either spacebar's stabilizers fit: the union of the stock cutout and its shifted copy."""
-    shifted = spacebar_variant(holes, cls, spacing)
-    out = []
-    for h, s, c in zip(holes, shifted, cls):
-        if c["kind"] == "cutout" and max(c["w"], c["h"]) > 100:
-            assert all(seg["type"] == "line" for seg in h), "spacebar cutout has curves"
-            out.append(rectilinear_union([h, s]))
-        else:
-            out.append(h)
+def dual_spacebar(holes, cls, halves, T, sw):
+    """A spacebar cutout with a pair of stabilizer boxes for each of `halves`, so either
+    spacebar's stabilizers fit: the union of the single-spacebar cutouts."""
+    i = spacebar_cutout(cls)
+    assert all(seg["type"] == "line" for seg in holes[i]), "spacebar cutout has curves"
+    out = list(holes)
+    out[i] = rectilinear_union([spacebar_variant(holes, cls, h, T, sw)[i] for h in halves])
     return out
 
 
@@ -319,11 +386,20 @@ def main():
     print(f"transform {params}, switch-center RMS {rms:.3f} mm")
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    x0, y0, x1, y1 = write_board("plate-9u.kicad_pcb", geo, geo["holes"], T, "stock 9u spacebar")
-    write_board("plate-6.25u.kicad_pcb", geo, spacebar_variant(geo["holes"], cls, 100.0), T, "6.25u spacebar, 100 mm stabs")
-    write_board("plate-dual.kicad_pcb", geo, dual_spacebar(geo["holes"], cls, 100.0), T,
-                "9u or 6.25u spacebar, stabs at 133.35 and 100 mm")
-    fill_zones([os.path.join(OUT_DIR, n) for n in ("plate-9u.kicad_pcb", "plate-6.25u.kicad_pcb", "plate-dual.kicad_pcb")])
+    # the spacebar's stabilizer boxes go over the PCB's stabilizer holes: 6.25u and 9u sets
+    sw = next((s["x"], s["y"]) for s in switches if s["ref"] == SPACEBAR)
+    h625, h9 = gen_fp.SPACEBAR_STABS
+    variants = [("plate-9u.kicad_pcb", spacebar_variant(geo["holes"], cls, h9, T, sw), (h9,),
+                 f"9u spacebar, stabs at {2 * h9:g} mm"),
+                ("plate-6.25u.kicad_pcb", spacebar_variant(geo["holes"], cls, h625, T, sw), (h625,),
+                 f"6.25u spacebar, stabs at {2 * h625:g} mm"),
+                ("plate-dual.kicad_pcb", dual_spacebar(geo["holes"], cls, (h9, h625), T, sw), (h9, h625),
+                 f"9u or 6.25u spacebar, stabs at {2 * h9:g} and {2 * h625:g} mm")]
+    for name, holes, halves, note in variants:
+        check_spacebar(holes, cls, halves, T, sw)
+        x0, y0, x1, y1 = write_board(name, geo, holes, T, note)
+    print("spacebar stabilizer boxes centered on the PCB's holes in every plate")
+    fill_zones([os.path.join(OUT_DIR, n) for n, *_ in variants])
 
     # feature table in PCB coordinates
     feats = []

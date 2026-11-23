@@ -13,7 +13,7 @@ were checked against a Commodore 128 keyboard photo; the PETSCII glyphs use the 
 | [`legend_map.md`](legend_map.md) | the same table, readable. |
 | [`front_legends_sheet.svg`](front_legends_sheet.svg) | every front legend on one sheet, at actual size. |
 | `fronts/*.svg` | one file per key, actual size, for an engraver or UV printer. |
-| [`spacebar_9u_spec.svg`](spacebar_9u_spec.svg) / [`.pdf`](spacebar_9u_spec.pdf) | one-page A4 drawing of the 9u spacebar for a keycap vendor: base size, the three MX stems at centre and ±66.675 mm (the Cherry 9u layout, matching the plate's 133.35 mm stabilizer spacing), 1:1 with a 100 mm scale bar. |
+| [`spacebar_9u_spec.svg`](spacebar_9u_spec.svg) / [`.pdf`](spacebar_9u_spec.pdf) | one-page A4 drawing of the 9u spacebar for a keycap vendor: base size, the three MX stems at centre and ±66.675 mm (the Cherry 9u layout, matching the rev 3 PCB's 133.35 mm stabilizer holes and the 9u and dual plates; the original plate and the rev 2.3 board use 125.35 mm), 1:1 with a 100 mm scale bar. |
 | [`front_legend_vendors.md`](front_legend_vendors.md) | who can print the front legends, what it costs, and the open questions for Signature Plastics. |
 | [`front_decal_sheet.svg`](front_decal_sheet.svg) | print-ready decal sheet: every front legend ×3, actual size, with cut guides, key labels and a 50 mm scale bar.  For a dry-transfer or waterslide vendor, or a laser printer at 100 %. |
 | [`cheat_sheet.svg`](cheat_sheet.svg) | one-page printable reference (letter landscape, fits A4): the whole keyboard with every key's C= and Shift graphics and the color keys.  For builds that skip the front legends — print it, laminate it, keep it by the machine. |

@@ -7,7 +7,7 @@ PLATE := pcb/plate/plate-dual.kicad_pcb
 BUILD := build
 KICAD := docker compose run --rm kicad kicad-cli
 
-.PHONY: render models clean
+.PHONY: render models adapters clean
 
 # 3D models the KiCad library lacks, fetched for the renders rather than kept in the repo.
 # The ESP32-S3-MINI-1U is Espressif's (github.com/espressif/kicad-libraries, CC-BY-SA 4.0
@@ -30,6 +30,18 @@ render: models
 	$(KICAD) $(RENDER) --width 2400 --height 1200 --perspective --rotate "-45,0,-20" --zoom 1.35 \
 		-o $(BUILD)/render/board-iso.png $(BOARD)
 	$(KICAD) $(RENDER) --side top --width 2400 --height 840 --zoom 2.8 -o $(BUILD)/render/plate-top.png $(PLATE)
+
+# Printed parts.  The spacebar offset adapter puts the C128's own spacebar on the board's
+# 9u (133.35 mm) stabilizers; one STL per side, committed so they print without tools.
+OPENSCAD := docker compose run --rm openscad openscad --backend=manifold --export-format=binstl
+ADAPTER  := printables/spacebar_offset_adapter
+adapters: $(ADAPTER)/stl/offset_adapter_left.stl $(ADAPTER)/stl/offset_adapter_right.stl
+$(ADAPTER)/stl/offset_adapter_left.stl: $(ADAPTER)/adapter.scad
+	mkdir -p $(dir $@)
+	$(OPENSCAD) -D side=-1 -o $@ $<
+$(ADAPTER)/stl/offset_adapter_right.stl: $(ADAPTER)/adapter.scad
+	mkdir -p $(dir $@)
+	$(OPENSCAD) -D side=1 -o $@ $<
 
 clean:
 	rm -rf $(BUILD)
