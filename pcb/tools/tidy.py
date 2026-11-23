@@ -9,9 +9,9 @@ ends are fixed anchors.  In order:
 
   1. split segments wherever another same-net track ends on their middle (a T), so every
      junction is a shared endpoint;
-  2. delete copper that carries nothing: segments wholly inside one pad, dangling segments with a free end (no pad, via, or other track there),
-     repeatedly, and vias that touch nothing on a signal net (plane nets keep their vias:
-     they tap In1/In2);  co-located duplicate vias go too;
+  2. delete copper that carries nothing: segments wholly inside one pad, duplicate vias,
+     and tracks and signal vias KiCad calls dangling, repeatedly (plane nets keep their
+     vias: they tap In1/In2);
   3. straighten: each chain of segments between anchors (pads, vias, junctions, layer or
      width changes, locked copper) is string-pulled: from each anchor take the farthest bend
      still reachable by a one- or two-segment 0/45/90-degree path that clears every other
@@ -20,7 +20,8 @@ ends are fixed anchors.  In order:
 
 --report prints the counts and the worst chains (most segments, longest detour) without
 saving;  --mark also draws a circle on Eco1.User at each one, in the group "tidy_marks".
-After a run, check with DRC (parity and copper) as usual.
+Every change is checked against KiCad's connectivity and undone if the unconnected count
+rises.  After a run, check with DRC (parity and copper) as usual.
 """
 import argparse
 import collections
@@ -229,63 +230,78 @@ def split_tees(board):
     return n
 
 
-def prune(board, cu):
-    """Delete dangling unlocked segments and useless vias, until nothing changes."""
+class Guard:
+    """KiCad's own connectivity: the unconnected count must never rise.
+
+    Endpoints are not enough to judge connection by: a hand-drawn track often ends on a via's
+    ring or a pad's edge rather than its center, and KiCad counts that as connected.
+    """
+
+    def __init__(self, board):
+        self.board = board
+        self.base = self.count()
+        self.grave = []        # items off the board: hold them so Python never frees one in use
+
+
+    def count(self):
+        self.board.BuildConnectivity()
+        return self.board.GetConnectivity().GetUnconnectedCount(True)
+
+    def dangling(self, item):
+        return self.board.GetConnectivity().TestTrackEndpointDangling(item, False)
+
+    def try_remove(self, items, add=()):
+        """Take items off the board (and put `add` on); keep the change only if nothing
+        comes apart.  Returns True if kept."""
+        for t in items:
+            self.board.Remove(t)
+        for t in add:
+            self.board.Add(t)
+            t.thisown = 0
+        self.grave.extend(items)
+        self.grave.extend(add)
+        if self.count() <= self.base:
+            return True
+        for t in add:
+            self.board.Remove(t)
+        for t in items:
+            self.board.Add(t)
+        self.count()
+        return False
+
+
+def prune(board, cu, guard):
+    """Delete copper that carries nothing, until nothing changes."""
     removed_s = removed_v = 0
-    # zero-length segments and duplicate vias first
-    for t in cu.segs():
-        if not t.IsLocked() and key(t.GetStart()) == key(t.GetEnd()):
-            board.Delete(t); removed_s += 1
-    # segments wholly inside one pad of their net carry nothing
+    # zero-length segments, segments wholly inside one pad of their net, duplicate vias
     for t in cu.segs():
         if t.IsLocked():
             continue
-        pa = cu.pad_at(key(t.GetStart()), t.GetLayer(), t.GetNetCode())
-        pb = cu.pad_at(key(t.GetEnd()), t.GetLayer(), t.GetNetCode())
-        if pa is not None and pb is not None and uid(pa) == uid(pb):
-            board.Delete(t); removed_s += 1
+        if key(t.GetStart()) != key(t.GetEnd()):
+            pa = cu.pad_at(key(t.GetStart()), t.GetLayer(), t.GetNetCode())
+            pb = cu.pad_at(key(t.GetEnd()), t.GetLayer(), t.GetNetCode())
+            if pa is None or pb is None or uid(pa) != uid(pb):
+                continue
+        if guard.try_remove([t]):
+            removed_s += 1
     seen = {}
     for v in cu.vias():
         k = (key(v.GetPosition()), v.GetNetCode())
         if k in seen and not v.IsLocked():
-            board.Delete(v); removed_v += 1
+            if guard.try_remove([v]):
+                removed_v += 1
         else:
             seen[k] = v
+    # dangling tracks and vias, as KiCad's DRC sees them, repeatedly
     while True:
-        all_segs = cu.segs()
-        ends, vias = cu.ends(all_segs)
-        dead = []
-        for t in all_segs:
-            if t.IsLocked():
-                continue
-            for p in (key(t.GetStart()), key(t.GetEnd())):
-                others = [o for o in ends[(t.GetLayer(), p)] if uid(o) != uid(t)]
-                if others or vias.get(p) or cu.pad_at(p, t.GetLayer(), t.GetNetCode()):
-                    continue
-                # an end on the middle of another same-net track counts as connected
-                if any(on_segment(pcbnew.VECTOR2I(*p), o) for o in all_segs
-                       if o.GetNetCode() == t.GetNetCode() and o.GetLayer() == t.GetLayer()
-                       and uid(o) != uid(t)):
-                    continue
-                dead.append(t)
-                break
-        dead_v = []
-        for p, vs in vias.items():
-            for v in vs:
-                if v.IsLocked() or v.GetNetname() in PLANE_NETS:
-                    continue
-                layers = {l for l in (pcbnew.F_Cu, pcbnew.B_Cu)
-                          if ends.get((l, p)) or cu.pad_at(p, l, v.GetNetCode())}
-                if len(layers) < 2:
-                    dead_v.append(v)
-        if not dead and not dead_v:
+        guard.count()
+        dead = [t for t in board.GetTracks()
+                if not t.IsLocked() and guard.dangling(t)
+                and not (is_via(t) and t.GetNetname() in PLANE_NETS)]
+        if not dead or not guard.try_remove(dead):
             break
-        for t in dead:
-            board.Delete(t)
-        for v in dead_v:
-            board.Delete(v)
-        removed_s += len(dead)
-        removed_v += len(dead_v)
+        removed_s += sum(1 for t in dead if is_seg(t))
+        removed_v += sum(1 for t in dead if is_via(t))
     return removed_s, removed_v
 
 
@@ -354,7 +370,7 @@ def ugly(pts):
     return odd, short
 
 
-def straighten(board, cu, idx):
+def straighten(board, cu, idx, guard):
     replaced = before = after = 0
     for pts, run in chains(board, cu):
         if len(run) < 2 and all(octilinear(a, b) for a, b in zip(pts, pts[1:])):
@@ -397,18 +413,23 @@ def straighten(board, cu, idx):
             simp.append(p)
         if len(simp) - 1 >= len(run) and simp == pts:
             continue
-        before += len(run)
-        after += len(simp) - 1
-        replaced += 1
-        for t in run:
-            idx.remove(t)
-            board.Delete(t)
+        new_tracks = []
         for a, b in zip(simp, simp[1:]):
             nt = pcbnew.PCB_TRACK(board)
             nt.SetStart(pcbnew.VECTOR2I(*a)); nt.SetEnd(pcbnew.VECTOR2I(*b))
             nt.SetLayer(layer); nt.SetWidth(width); nt.SetNet(netinfo)
-            board.Add(nt)
+            new_tracks.append(nt)
+        # something may join the old run off its bends (a track ending on its side): if the
+        # new run leaves it behind, keep the old one
+        if not guard.try_remove(run, add=new_tracks):
+            continue
+        for t in run:
+            idx.remove(t)
+        for nt in new_tracks:
             idx.add(nt)
+        before += len(run)
+        after += len(simp) - 1
+        replaced += 1
     return replaced, before, after
 
 
@@ -459,20 +480,24 @@ def main():
         if a.mark:
             board.Save(BOARD)
         return 0
+    guard = Guard(board)
     n = split_tees(board)
-    s, v = prune(board, cu)
+    s, v = prune(board, cu, guard)
     print(f"tidy: split {n} segments at tees; removed {s} dangling segments, {v} vias")
     if not a.no_straighten:
         idx = Index(board)
         for rnd in range(3):
-            r, b4, af = straighten(board, cu, idx)
+            r, b4, af = straighten(board, cu, idx, guard)
             print(f"tidy: pass {rnd + 1}: {r} chains straightened, {b4} -> {af} segments")
             if not r:
                 break
-        s, v = prune(board, cu)
+        s, v = prune(board, cu, guard)
         if s or v:
             print(f"tidy: removed {s} more dangling segments, {v} vias")
     report(board, cu, a.mark)
+    if guard.count() > guard.base:
+        print(f"tidy: unconnected went {guard.base} -> {guard.count()}; not saved")
+        return 1
     pcbnew.ZONE_FILLER(board).Fill(board.Zones())
     board.Save(BOARD)
     return 0
