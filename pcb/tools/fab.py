@@ -80,16 +80,30 @@ def bom(tmp):
     run("sch", "export", "bom", "-o", raw, "--fields", "Reference,Value,Footprint,LCSC",
         "--group-by", "Value,Footprint,LCSC", "--ref-range-delimiter", "", SCH)
     rows, skipped, lcsc_of = [], [], {}
+    by_lcsc = {}
     for r in csv.DictReader(open(raw, encoding="utf-8")):
         refs = [x.strip() for x in r["Reference"].split(",") if x.strip()]
-        if not r["LCSC"].strip():
+        lcsc = r["LCSC"].strip()
+        if not lcsc:
             skipped.extend(refs)
             continue
         fp = r["Footprint"].split(":", 1)[-1]
-        rows.append({"Comment": r["Value"], "Designator": ",".join(refs), "Footprint": fp,
-                     "LCSC Part #": r["LCSC"].strip()})
+        # one line per LCSC number: JLCPCB rejects a BOM where two lines name the same part
+        # (SW93 RESET and SW94 BOOT are both the PTS645)
+        row = by_lcsc.get(lcsc)
+        if row is None:
+            row = by_lcsc[lcsc] = {"Comment": [], "Designator": [], "Footprint": fp, "LCSC Part #": lcsc}
+            rows.append(row)
+        elif row["Footprint"] != fp:
+            sys.exit(f"fab: {lcsc} is on two footprints, {row['Footprint']} and {fp}")
+        if r["Value"] not in row["Comment"]:
+            row["Comment"].append(r["Value"])
+        row["Designator"].extend(refs)
         for ref in refs:
-            lcsc_of[ref] = r["LCSC"].strip()
+            lcsc_of[ref] = lcsc
+    for row in rows:
+        row["Comment"] = "/".join(row["Comment"])
+        row["Designator"] = ",".join(row["Designator"])
     return rows, skipped, lcsc_of
 
 
