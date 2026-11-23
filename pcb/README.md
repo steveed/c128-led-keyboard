@@ -27,7 +27,7 @@ A part-by-part explanation of the circuit is in
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
 | `tools/route_keys.py` | lays the regular per-key copper on the board; rerunnable (see *Routing*) |
 | `tools/freeroute.py`, `tools/plane_taps.py`, `tools/clean_dangling.py` | autoroute the rest in a container; tap the inner planes from SMD pads; delete dead-end stubs (see *Routing*) |
-| `tools/move.py`, `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py`, `tools/tidy.py` | rework a routed board: move or turn parts, swap a footprint, take the schematic's nets after a change, rip up an area, tidy the router's copper |
+| `tools/move.py`, `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py`, `tools/tidy.py`, `tools/silk.py`, `tools/to_sheet.py` | rework a routed board: move or turn parts, swap a footprint, take the schematic's nets after a change, rip up an area, tidy the router's copper, clear the silkscreen, center the board on its sheet |
 | `tools/route_host.py` | lays the host lines between J2 and the CH446Q (see *Routing*) |
 | `bom.csv` | grouped BOM exported from the schematic |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
@@ -209,14 +209,21 @@ copper wholly inside pads, then string-pulls every chain of segments into the fe
 and the USB pair are left alone.  `--report` lists the chains it couldn't clean (most bends,
 longest detour) without changing anything, and `--mark` circles them on Eco1.User.
 
+`tools/silk.py` hides the LCSC and Key fields the schematic gives every footprint and moves
+any reference that overlaps other silk, a mask opening, a hole or the edge to a clear spot
+beside its part.  `tools/to_sheet.py` puts the board in the middle of an A3 sheet.  It moved
+the board by (-96.475, +5.475) mm, so its coordinates no longer match rev 2.3's, `layout.py`
+or the `gen_pcb.py` PLACE table; add that offset to any coordinate taken from those.
+
 ```
 PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
 $PY pcb/tools/route_keys.py
-$PY pcb/tools/rip_up.py --rect 297 80.1 340 112.4     # the CH446Q pocket
+$PY pcb/tools/rip_up.py --rect 200.525 85.575 243.525 117.875   # the CH446Q pocket
 $PY pcb/tools/route_host.py
 $PY pcb/tools/plane_taps.py
 $PY pcb/tools/freeroute.py 25 00:45:00
 $PY pcb/tools/tidy.py
+$PY pcb/tools/silk.py
 ```
 
 ## Plate
