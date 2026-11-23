@@ -4886,7 +4886,7 @@
 		)
 		(uuid "1cfbfb69-7b13-52eb-9b97-3792db32c962")
 	)
-	(global_label "MCU_COL15"
+	(global_label "P_COL15"
 		(shape passive)
 		(at 111.76 106.68 180)
 		(fields_autoplaced yes)
@@ -4896,7 +4896,7 @@
 			)
 			(justify right)
 		)
-		(uuid "83e408f2-d0dd-51ba-ac85-ad9fc11e6713")
+		(uuid "d34fd9c2-d8f1-504f-acba-d5e6cdd66c47")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 106.68 0)
 			(effects
@@ -4918,7 +4918,7 @@
 		)
 		(uuid "4c6e431d-652e-5b2d-9438-c8983f21863a")
 	)
-	(global_label "MCU_COL16"
+	(global_label "P_COL16"
 		(shape passive)
 		(at 111.76 109.22 180)
 		(fields_autoplaced yes)
@@ -4928,7 +4928,7 @@
 			)
 			(justify right)
 		)
-		(uuid "e42374dc-8424-57b1-8002-5639a036e2d5")
+		(uuid "89197d73-622d-55e0-939d-afeaa6dd5246")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 109.22 0)
 			(effects
@@ -4954,7 +4954,7 @@
 		)
 		(uuid "5fdeb0a1-5475-5077-bb6a-7f78990df22d")
 	)
-	(global_label "MCU_COL17"
+	(global_label "P_COL17"
 		(shape passive)
 		(at 111.76 114.3 180)
 		(fields_autoplaced yes)
@@ -4964,7 +4964,7 @@
 			)
 			(justify right)
 		)
-		(uuid "fa297202-73f6-5ca6-8ed4-015bbb70c158")
+		(uuid "3b1b114f-1773-553c-8800-10e450019f60")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 114.3 0)
 			(effects
@@ -4986,7 +4986,7 @@
 		)
 		(uuid "9cf9d42d-0068-5af7-a1c0-39bf7842fe22")
 	)
-	(global_label "MCU_COL18"
+	(global_label "P_COL18"
 		(shape passive)
 		(at 111.76 116.84 180)
 		(fields_autoplaced yes)
@@ -4996,7 +4996,7 @@
 			)
 			(justify right)
 		)
-		(uuid "c82c0a56-2151-569e-b92f-798a4980398b")
+		(uuid "1e2b8260-ddad-511d-92a8-92517e0ebfd2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 116.84 0)
 			(effects
@@ -5018,7 +5018,7 @@
 		)
 		(uuid "826ad3e1-a353-5032-90f7-2000ca343460")
 	)
-	(global_label "MCU_COL19"
+	(global_label "P_COL19"
 		(shape passive)
 		(at 111.76 119.38 180)
 		(fields_autoplaced yes)
@@ -5028,7 +5028,7 @@
 			)
 			(justify right)
 		)
-		(uuid "35dd7c15-230d-504d-9bfa-eab31dd832fd")
+		(uuid "899b83fc-467f-57a5-baa0-2356a1b84bff")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 119.38 0)
 			(effects

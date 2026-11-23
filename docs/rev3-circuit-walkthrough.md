@@ -336,14 +336,16 @@ inputs are grounded so it is always active.  It runs from 3.3 V (the HC family w
 to 6 V) because everything on this sheet is on the ESP32's side of the fence.  C11 is its
 decoupling capacitor.
 
-### R20 to R39, 1 k in each column
+### No resistors in the columns
 
 Imagine two keys pressed in the same row but different columns.  The scan pulls one column
-low while the decoder holds the other high, and the two pressed switches connect those two
-columns together through the row wire.  Without resistors the decoder's two outputs would
-fight each other directly.  1 k in each column limits that to about 3 mA, harmless, while
-still letting a pressed key pull its row input firmly low (the ESP32's internal pull-ups on
-the row pins are about 45 k, so 1 k in series barely dents the low level).
+low while the decoder holds the other high, and the two pressed switches join those two
+columns through the row wire.  In a matrix without diodes that would short the decoder's two
+outputs together, and the usual fix is a resistor in each column (the rev 2.3 bench rig has
+them for that reason).  Here every key has its diode, cathode toward the column: a column
+held high only reverse-biases its diodes, so no current can flow from it into the row, and
+the only path is the one being read, from the pulled-up row down into the low column.  The
+outputs drive the columns directly, decoder and GPIO alike.
 
 ### The rows
 

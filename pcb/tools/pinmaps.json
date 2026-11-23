@@ -41,11 +41,11 @@
   "Y7": 11
  },
  "gpio": {
-  "IO1": "MCU_COL15",
-  "IO2": "MCU_COL16",
-  "IO4": "MCU_COL17",
-  "IO5": "MCU_COL18",
-  "IO6": "MCU_COL19",
+  "IO1": "P_COL15",
+  "IO2": "P_COL16",
+  "IO4": "P_COL17",
+  "IO5": "P_COL18",
+  "IO6": "P_COL19",
   "IO7": "MCU_4080_GATE",
   "IO8": "MCU_CAPLK_GATE",
   "IO9": "MCU_RESTORE_GATE",

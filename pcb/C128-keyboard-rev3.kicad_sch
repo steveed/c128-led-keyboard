@@ -189,7 +189,7 @@
 			)
 		)
 	)
-	(text "Nets between sheets are global labels:\n  P_ROW0-7, P_COL0-11      physical matrix (3.3 V), MCU <-> matrix sheet\n  MCU_COLSEL0-3            74HC154 address\n  MCU_XP_DAT/CK/STB/RST    CH446Q serial control, driven directly at 3.3 V\n  H_ROW0-7, H_COL0-10, H_RESTORE, H_4080, H_CAPLK   host (C128) lines\n  MCU_LED_DATA -> LED_DATA_5V -> LED_D1..LED_D91 -> LED_OUT   LED chain\n  +5V_KB (raw keyboard rail), +5V_SYS (OR'd with USB), +3V3, GND"
+	(text "Nets between sheets are global labels:\n  P_ROW0-5, P_COL0-19      physical matrix (3.3 V), MCU <-> matrix sheet\n  MCU_COLSEL0-3            74HC154 address\n  MCU_XP_DAT/CK/STB/RST    CH446Q serial control, driven directly at 3.3 V\n  H_ROW0-7, H_COL0-10, H_RESTORE, H_4080, H_CAPLK   host (C128) lines\n  MCU_LED_DATA -> LED_DATA_5V -> LED_D1..LED_D91 -> LED_OUT   LED chain\n  +5V_KB (raw keyboard rail), +5V_SYS (OR'd with USB), +3V3, GND"
 		(exclude_from_sim no)
 		(at 20.32 100.33 0)
 		(effects

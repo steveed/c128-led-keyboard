@@ -421,7 +421,7 @@ class Placed:
 # Spare: IO21, IO37-42.
 GPIO = {
     # east side, top to bottom
-    "IO1": "MCU_COL15", "IO2": "MCU_COL16", "IO4": "MCU_COL17", "IO5": "MCU_COL18", "IO6": "MCU_COL19",
+    "IO1": "P_COL15", "IO2": "P_COL16", "IO4": "P_COL17", "IO5": "P_COL18", "IO6": "P_COL19",
     "IO7": "MCU_4080_GATE", "IO8": "MCU_CAPLK_GATE", "IO9": "MCU_RESTORE_GATE",
     "IO10": "MCU_XP_STB", "IO11": "MCU_XP_CK",
     # south side, east to west
@@ -638,8 +638,9 @@ def build_matrix(sh, switches):
     sh.text("Physical matrix, scanned by the MCU at 3.3 V: 6 rows x 20 columns following the board (pcb/tools/layout.py\n"
             "physical_matrix), not the C128's assignment; the firmware maps each position to its host position.  One diode per\n"
             "key (row -> switch -> diode -> column) so any chord reads without ghosting: needed for USB keyboard mode.  RESTORE\n"
-            "bypasses the MCU entirely.  Columns 0-14 from the 74HC154 (3.3 V; output 15 is the idle park), 15-19 from GPIO,\n"
-            "each through 1k so two keys in one row cannot fight.", (15, 15), 1.5)
+            "bypasses the MCU entirely.  Columns 0-14 straight from the 74HC154 (3.3 V; output 15 is the idle park), 15-19\n"
+            "straight from GPIO.  No series resistors: a column held high reverse-biases its diodes, so two keys in one row\n"
+            "cannot connect two outputs.", (15, 15), 1.5)
     u6 = sh.symbol("74xx:74LS154", "U6", "74HC154", (60, 80), footprint="Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm")
     n6 = u6.pins_named()
     for i in range(4):
@@ -647,32 +648,7 @@ def build_matrix(sh, switches):
     sh.connect(u6, n6["E0"], "GND", kind="label"); sh.connect(u6, n6["E1"], "GND", kind="label")
     sh.connect(u6, n6["VCC"], "+3V3"); sh.connect(u6, n6["GND"], "GND")
     for i in range(16):
-        if i <= 14:
-            # fan the 2.54 mm-pitch outputs out to 7.62 mm so resistors and labels have room
-            p, _ = u6.pin_end(n6[f"S{i}"])
-            p0, _ = u6.pin_end(n6["S0"])
-            xi = p[0] + 5.08 + (14 - i) * 2.54
-            yt = p0[1] + i * 7.62
-            r = sh.symbol("Device:R", f"R{20 + i}", "1k", (p[0] + 44.45, yt), rot=90, footprint=R_FP)
-            pa, _ = r.pin_end(1)
-            pb, _ = r.pin_end(2)
-            sh.path(p, (xi, p[1]), (xi, yt), pa)
-            sh.label(f"S{i}", (p[0] + 1.27, p[1]))
-            sh.wire(pb, (pb[0] + 5.08, pb[1]))
-            sh.glabel(f"P_COL{i}", (pb[0] + 5.08, pb[1]), "R")
-        else:
-            sh.connect(u6, n6[f"S{i}"], None)
-    # columns 15-19 straight from GPIO, below the decoder's
-    p0, _ = u6.pin_end(n6["S0"])
-    for k, i in enumerate(range(15, 20)):
-        yt = p0[1] + (16 + k) * 7.62
-        r = sh.symbol("Device:R", f"R{20 + i}", "1k", (p0[0] + 44.45, yt), rot=90, footprint=R_FP)
-        pa, _ = r.pin_end(1)
-        pb, _ = r.pin_end(2)
-        sh.wire(pa, (pa[0] - 10.16, pa[1]))
-        sh.glabel(f"MCU_COL{i}", (pa[0] - 10.16, pa[1]), "L")
-        sh.wire(pb, (pb[0] + 5.08, pb[1]))
-        sh.glabel(f"P_COL{i}", (pb[0] + 5.08, pb[1]), "R")
+        sh.connect(u6, n6[f"S{i}"], f"P_COL{i}" if i <= 14 else None, stub=7.62)
     c11 = sh.symbol("Device:C", "C11", "100n", (100, 40), footprint=C_FP)
     sh.connect(c11, 1, "+3V3"); sh.connect(c11, 2, "GND")
 
@@ -758,7 +734,7 @@ def build_root(root, sheets):
         root.sheet_ref(sub, (x, 50), (70, 30))
         x += 90
     root.text("Nets between sheets are global labels:\n"
-              "  P_ROW0-7, P_COL0-11      physical matrix (3.3 V), MCU <-> matrix sheet\n"
+              "  P_ROW0-5, P_COL0-19      physical matrix (3.3 V), MCU <-> matrix sheet\n"
               "  MCU_COLSEL0-3            74HC154 address\n"
               "  MCU_XP_DAT/CK/STB/RST    CH446Q serial control, driven directly at 3.3 V\n"
               "  H_ROW0-7, H_COL0-10, H_RESTORE, H_4080, H_CAPLK   host (C128) lines\n"

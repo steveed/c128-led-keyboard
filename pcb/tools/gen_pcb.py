@@ -60,9 +60,8 @@ CAP_OFFSET = (0.0, 6.1)        # back, behind the LED
 # sides face the board), USB-C, LED buffer, and the 3.3 V regulator and buttons west of it so
 # the channel under the MCU stays clear.  Pocket B, at rev 2.3's FFC: host connector,
 # crosspoint, lock-line and RESTORE FETs, and the keyboard 5 V fuse and diode next to the
-# connector's +5 V pin.  Pocket C, by the keypad: the five GPIO-column resistors (columns
-# 15-19) and the 5 V bulk capacitor.  The 74HC154 drives columns 0-14 (x 118-385), so it
-# and its resistors sit mid-board in the channel under the top row (y 97.5-113 on the back is
+# connector's +5 V pin.  Pocket C, by the keypad: the 5 V bulk capacitor.  The 74HC154
+# drives columns 0-14 (x 118-385), so it sits mid-board in the channel under the top row (y 97.5-113 on the back is
 # clear of holes the whole width: top-row diodes and caps end at 97.1, number-row pins start
 # at 113.5).  First pass, packed from the footprints' courtyards; to be refined by hand.
 PLACE = {
@@ -81,14 +80,9 @@ PLACE = {
     "R12": (306.5, 104.5, 0), "F1": (301.0, 109.5, 0), "D1": (308.5, 109.5, 0),
     "R10": (328.5, 93.0, 0), "R11": (328.5, 95.0, 0),
     "D3": (330.0, 103.0, 0), "J3": (332.5, 109.5, 90),
-    # channel under the top row: decoder, its decoupling, and column resistors R20-R34 in
-    # column order, west of it for columns 0-7 and east for 8-14
+    # channel under the top row: decoder and its decoupling
     "U6": (251.0, 105.5, 90), "C11": (262.5, 100.5, 0),
 }
-for i in range(15):
-    PLACE[f"R{20 + i}"] = (227.2 + 2.0 * i, 105.5, 90) if i < 8 else (260.8 + 2.0 * (i - 8), 105.5, 90)
-for i in range(15, 20):                              # GPIO columns, pocket C
-    PLACE[f"R{20 + i}"] = (420.7, 88.0 + 2.0 * (i - 15), 0)
 PLACE["C5"] = (413.0, 84.5, 0)                       # 5 V bulk, in the top-row gap by the keypad
 
 

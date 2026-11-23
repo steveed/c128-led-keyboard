@@ -710,146 +710,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Diode:1N4148W"
 			(pin_numbers
 				(hide yes)
@@ -1471,7 +1331,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Physical matrix, scanned by the MCU at 3.3 V: 6 rows x 20 columns following the board (pcb/tools/layout.py\nphysical_matrix), not the C128's assignment; the firmware maps each position to its host position.  One diode per\nkey (row -> switch -> diode -> column) so any chord reads without ghosting: needed for USB keyboard mode.  RESTORE\nbypasses the MCU entirely.  Columns 0-14 from the 74HC154 (3.3 V; output 15 is the idle park), 15-19 from GPIO,\neach through 1k so two keys in one row cannot fight."
+	(text "Physical matrix, scanned by the MCU at 3.3 V: 6 rows x 20 columns following the board (pcb/tools/layout.py\nphysical_matrix), not the C128's assignment; the firmware maps each position to its host position.  One diode per\nkey (row -> switch -> diode -> column) so any chord reads without ghosting: needed for USB keyboard mode.  RESTORE\nbypasses the MCU entirely.  Columns 0-14 straight from the 74HC154 (3.3 V; output 15 is the idle park), 15-19\nstraight from GPIO.  No series resistors: a column held high reverse-biases its diodes, so two keys in one row\ncannot connect two outputs."
 		(exclude_from_sim no)
 		(at 15.24 15.24 0)
 		(effects
@@ -2004,123 +1864,20 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 62.23 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "56039554-5fe6-5cc7-ac7f-f617637a3910")
-		(property "Reference" "R20"
-			(at 113.03 59.69 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 64.77 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 62.23 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 62.23 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 62.23 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 62.23 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2e25ccac-8444-5499-b932-7c9eb62794f2")
-		)
-		(pin "2"
-			(uuid "be32c69d-eebc-5087-8d32-80f53a9ad9e4")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
 	(wire
 		(pts
 			(xy 72.39 62.23)
-			(xy 113.03 62.23)
+			(xy 80.01 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bde4f1b4-30b1-5e65-9a5e-bb78e1062d4f")
-	)
-	(label "S0"
-		(at 73.66 62.23 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0d80b93f-d7c9-5945-8d6a-455cdaf12ac7")
-	)
-	(wire
-		(pts
-			(xy 120.65 62.23)
-			(xy 125.73 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b8114f2-1fd1-5323-aabb-ddf929813ce6")
+		(uuid "45121435-08d6-5d7c-8425-853e680f6746")
 	)
 	(global_label "P_COL0"
 		(shape passive)
-		(at 125.73 62.23 0)
+		(at 80.01 62.23 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2128,156 +1885,31 @@
 			)
 			(justify left)
 		)
-		(uuid "ce90ab30-c727-535a-ab3b-ffbbae95c1b3")
+		(uuid "f3682b92-d3e7-5b94-bcf5-07d212f33629")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 62.23 0)
+			(at 80.01 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 69.85 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7783fe60-0efb-5c6b-ac29-35af289f8b7e")
-		(property "Reference" "R21"
-			(at 113.03 67.31 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 72.39 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 69.85 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 69.85 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 69.85 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 69.85 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b180de58-0ac6-5879-91f1-6dddecbd2ddc")
-		)
-		(pin "2"
-			(uuid "3e51f496-98ab-59d1-aee5-9da754fa1f83")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R21")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 64.77)
-			(xy 110.49 64.77)
+			(xy 80.01 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "de8f71a2-8da2-5888-a537-57bd86f7333b")
-	)
-	(wire
-		(pts
-			(xy 110.49 64.77)
-			(xy 110.49 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "706092a6-fd89-5915-aaa6-8be6d5025307")
-	)
-	(wire
-		(pts
-			(xy 110.49 69.85)
-			(xy 113.03 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "239f0828-967d-5e31-b51b-d2adbc70903b")
-	)
-	(label "S1"
-		(at 73.66 64.77 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2947df19-8adf-55f8-9e45-15bd5b9abdaa")
-	)
-	(wire
-		(pts
-			(xy 120.65 69.85)
-			(xy 125.73 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5f1ac427-9a8c-5ec4-963e-363c2f69fa71")
+		(uuid "31f32da8-e159-546b-a8ab-5dfc34196db7")
 	)
 	(global_label "P_COL1"
 		(shape passive)
-		(at 125.73 69.85 0)
+		(at 80.01 64.77 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2285,156 +1917,31 @@
 			)
 			(justify left)
 		)
-		(uuid "dca7f7c9-e5f4-5512-b710-aafcb5933125")
+		(uuid "0831789d-e7c2-57a1-ab23-bbb86cbfd9b4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 69.85 0)
+			(at 80.01 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 77.47 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "371c34ef-0ae8-537d-b7cd-e0bf307b9d01")
-		(property "Reference" "R22"
-			(at 113.03 74.93 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 80.01 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 77.47 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 77.47 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 77.47 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 77.47 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6a0256b1-9c3d-5d8d-85e3-197f1f8f10d0")
-		)
-		(pin "2"
-			(uuid "b785a078-a526-5eed-8cd0-ee7abfbc43e6")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R22")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 67.31)
-			(xy 107.95 67.31)
+			(xy 80.01 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3c015761-eba0-5e71-af4d-b086caead95b")
-	)
-	(wire
-		(pts
-			(xy 107.95 67.31)
-			(xy 107.95 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c9598f3-33b8-5176-aa2f-376b0a5712b6")
-	)
-	(wire
-		(pts
-			(xy 107.95 77.47)
-			(xy 113.03 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65dbd7b0-4efd-5bae-9aca-df37a3e3b0b7")
-	)
-	(label "S2"
-		(at 73.66 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fa4e5df3-ea6c-5e23-b8a9-2456cea9aaa2")
-	)
-	(wire
-		(pts
-			(xy 120.65 77.47)
-			(xy 125.73 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7ce8f969-cbd1-5c25-ac34-25bcf0d1c56c")
+		(uuid "de47a327-1775-5be5-8392-8964404a8191")
 	)
 	(global_label "P_COL2"
 		(shape passive)
-		(at 125.73 77.47 0)
+		(at 80.01 67.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2442,156 +1949,31 @@
 			)
 			(justify left)
 		)
-		(uuid "eab03afc-03b8-5107-9f71-d15dd91153da")
+		(uuid "4262b61f-1fb0-506f-ade9-4d239c4e7102")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 77.47 0)
+			(at 80.01 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 85.09 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "be1111b5-ad93-5b65-be22-b032a24fc25c")
-		(property "Reference" "R23"
-			(at 113.03 82.55 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 87.63 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 85.09 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 85.09 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 85.09 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 85.09 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ab8d3084-e7f3-5c28-b12d-2bec44f9ef53")
-		)
-		(pin "2"
-			(uuid "6ad07f0b-6cae-511d-8c36-cf942cb40648")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R23")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 69.85)
-			(xy 105.41 69.85)
+			(xy 80.01 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0711af7d-26a1-5806-8959-82f28417bc10")
-	)
-	(wire
-		(pts
-			(xy 105.41 69.85)
-			(xy 105.41 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f9ccaec-11cf-5303-9a4a-2795c69f4152")
-	)
-	(wire
-		(pts
-			(xy 105.41 85.09)
-			(xy 113.03 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e61da22f-a3c1-5f87-bbbb-f6c780c78d1e")
-	)
-	(label "S3"
-		(at 73.66 69.85 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8ccf0560-e3b5-5977-bbb8-165f39940365")
-	)
-	(wire
-		(pts
-			(xy 120.65 85.09)
-			(xy 125.73 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7b38f36-98e7-550b-bf55-51e27b8cf997")
+		(uuid "178a4b58-b2f1-5b7f-b2fd-c8a66eeb8ee1")
 	)
 	(global_label "P_COL3"
 		(shape passive)
-		(at 125.73 85.09 0)
+		(at 80.01 69.85 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2599,156 +1981,31 @@
 			)
 			(justify left)
 		)
-		(uuid "e5a8e336-905b-5f44-a146-6a44fd03f8f4")
+		(uuid "6a1aca89-677c-5f44-9da7-86cd0307036b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 85.09 0)
+			(at 80.01 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 92.71 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f2af840f-ad46-5541-a8a2-93ebbef4140d")
-		(property "Reference" "R24"
-			(at 113.03 90.17 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 95.25 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 92.71 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 92.71 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 92.71 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 92.71 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d266ecdb-b358-5a53-a950-a25247a5e883")
-		)
-		(pin "2"
-			(uuid "3dd951ea-73ef-54f4-83c4-019bfe0375c3")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R24")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 72.39)
-			(xy 102.87 72.39)
+			(xy 80.01 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2f726861-b804-5747-a57c-15f6d31e77a5")
-	)
-	(wire
-		(pts
-			(xy 102.87 72.39)
-			(xy 102.87 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bbb2f2b0-08d4-5e17-8bd8-f908c83253db")
-	)
-	(wire
-		(pts
-			(xy 102.87 92.71)
-			(xy 113.03 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "351d7193-bbd4-519b-89d8-0b641b5b1dbd")
-	)
-	(label "S4"
-		(at 73.66 72.39 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c6555a6e-a0b2-5500-89c0-87255d64bfa0")
-	)
-	(wire
-		(pts
-			(xy 120.65 92.71)
-			(xy 125.73 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6489cbc-8052-5f21-a8f1-b36af502d3df")
+		(uuid "9ac8345c-c323-54d7-964e-ae0482ac0d89")
 	)
 	(global_label "P_COL4"
 		(shape passive)
-		(at 125.73 92.71 0)
+		(at 80.01 72.39 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2756,156 +2013,31 @@
 			)
 			(justify left)
 		)
-		(uuid "561525eb-a5ac-5d78-9702-4491a71b3d45")
+		(uuid "61383426-7093-5f35-97f7-f8d74a4ae912")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 92.71 0)
+			(at 80.01 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 100.33 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3101f414-e3ac-54c1-88d6-c22bbdf1fae8")
-		(property "Reference" "R25"
-			(at 113.03 97.79 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 102.87 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 100.33 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 100.33 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 100.33 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 100.33 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9c705926-fd2a-5fd9-b6b7-b11fd6158560")
-		)
-		(pin "2"
-			(uuid "12e17b41-aca6-5936-83a2-14fa63c2a52b")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R25")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 74.93)
-			(xy 100.33 74.93)
+			(xy 80.01 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d88e05e4-8057-555d-9f8d-b0d0128c595f")
-	)
-	(wire
-		(pts
-			(xy 100.33 74.93)
-			(xy 100.33 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3e47097-2b65-52d5-9c3a-91e9a2e0764a")
-	)
-	(wire
-		(pts
-			(xy 100.33 100.33)
-			(xy 113.03 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f4b0a416-5b33-500c-8bb7-b083200a3416")
-	)
-	(label "S5"
-		(at 73.66 74.93 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fe9bb14e-025b-5ce9-af7e-264e61eea974")
-	)
-	(wire
-		(pts
-			(xy 120.65 100.33)
-			(xy 125.73 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1587cceb-4ab2-536f-a0fc-0b485c332e3a")
+		(uuid "a8559842-750b-53fa-a795-8adc9ada16eb")
 	)
 	(global_label "P_COL5"
 		(shape passive)
-		(at 125.73 100.33 0)
+		(at 80.01 74.93 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2913,156 +2045,31 @@
 			)
 			(justify left)
 		)
-		(uuid "b2261abf-3a8b-570d-a8dd-a9c465403b89")
+		(uuid "97cc8a43-bb2d-57d7-932c-08a3b4aa8112")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 100.33 0)
+			(at 80.01 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 107.95 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1629b2ad-565e-513f-8edf-93a857dc81f5")
-		(property "Reference" "R26"
-			(at 113.03 105.41 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 110.49 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 107.95 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 107.95 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 107.95 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 107.95 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "01114456-25ff-57e9-a4c2-d742812acc59")
-		)
-		(pin "2"
-			(uuid "54a840a9-15f0-5929-a25e-2eccb9b326ff")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R26")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 77.47)
-			(xy 97.79 77.47)
+			(xy 80.01 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9613687f-79f8-5d70-a575-c1e01f7ee0ec")
-	)
-	(wire
-		(pts
-			(xy 97.79 77.47)
-			(xy 97.79 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f9c2157-925e-530f-8cb5-edc25b9ed717")
-	)
-	(wire
-		(pts
-			(xy 97.79 107.95)
-			(xy 113.03 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8bf0bdf5-179d-5eec-a8f8-b5e57cd6b878")
-	)
-	(label "S6"
-		(at 73.66 77.47 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1ab0de75-d4b9-5674-b016-b57bc2982aef")
-	)
-	(wire
-		(pts
-			(xy 120.65 107.95)
-			(xy 125.73 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f24f320-f9d7-50e9-ab24-0d7f758bf26a")
+		(uuid "4fd10bf8-d759-5e5e-b3bf-569351121857")
 	)
 	(global_label "P_COL6"
 		(shape passive)
-		(at 125.73 107.95 0)
+		(at 80.01 77.47 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3070,156 +2077,31 @@
 			)
 			(justify left)
 		)
-		(uuid "d10cf045-5b7e-5f0b-91b1-e5f105fd91e5")
+		(uuid "10f4c3da-883f-5b2a-88d6-3ea7d101b4fa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 107.95 0)
+			(at 80.01 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 115.57 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "856c20ec-086b-51da-896e-19956d2470f0")
-		(property "Reference" "R27"
-			(at 113.03 113.03 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 118.11 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 115.57 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 115.57 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 115.57 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 115.57 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c879a795-8ec0-5986-b988-a5c97944182e")
-		)
-		(pin "2"
-			(uuid "ef4802ea-db6c-52a6-9c10-d8b768940489")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R27")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 80.01)
-			(xy 95.25 80.01)
+			(xy 80.01 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ce24923e-3de0-5c72-b964-c603fc54d95c")
-	)
-	(wire
-		(pts
-			(xy 95.25 80.01)
-			(xy 95.25 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "603d724a-7b81-523e-a23c-952dc92f15aa")
-	)
-	(wire
-		(pts
-			(xy 95.25 115.57)
-			(xy 113.03 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "18e30840-9d5e-54ac-9281-907b035cc6b6")
-	)
-	(label "S7"
-		(at 73.66 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "125c1416-13a5-5080-a7ab-c4e6daeb2981")
-	)
-	(wire
-		(pts
-			(xy 120.65 115.57)
-			(xy 125.73 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "545b2505-5d1f-5647-b880-23444fad68ab")
+		(uuid "83ab8e03-a27e-5fd5-b150-e2c8b3534012")
 	)
 	(global_label "P_COL7"
 		(shape passive)
-		(at 125.73 115.57 0)
+		(at 80.01 80.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3227,156 +2109,31 @@
 			)
 			(justify left)
 		)
-		(uuid "bff8f084-93ec-5ef6-aeea-8808b1fe09fa")
+		(uuid "dd0adb80-5102-5bfc-b09f-1ddd70e233ef")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 115.57 0)
+			(at 80.01 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 123.19 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2f930958-e92d-5c23-9697-2e4049529bc6")
-		(property "Reference" "R28"
-			(at 113.03 120.65 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 125.73 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 123.19 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 123.19 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 123.19 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 123.19 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c570f942-7034-51af-9207-1d03818e8525")
-		)
-		(pin "2"
-			(uuid "c6b354fd-367e-50b1-a29c-f65ef34e8f68")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R28")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 82.55)
-			(xy 92.71 82.55)
+			(xy 80.01 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8ab673a5-928b-5cf6-a473-0579fa70fb03")
-	)
-	(wire
-		(pts
-			(xy 92.71 82.55)
-			(xy 92.71 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e728331-193e-52d4-9404-b3f8ffdf11c9")
-	)
-	(wire
-		(pts
-			(xy 92.71 123.19)
-			(xy 113.03 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b001c145-68e6-517e-8a32-158e212de366")
-	)
-	(label "S8"
-		(at 73.66 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cf5afe51-9da1-56b2-b310-76ae1b2b9605")
-	)
-	(wire
-		(pts
-			(xy 120.65 123.19)
-			(xy 125.73 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef02ee70-5d16-5389-a352-f6ecfd170fe8")
+		(uuid "79731da9-4091-5ad6-96bf-51e99b4c0461")
 	)
 	(global_label "P_COL8"
 		(shape passive)
-		(at 125.73 123.19 0)
+		(at 80.01 82.55 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3384,156 +2141,31 @@
 			)
 			(justify left)
 		)
-		(uuid "3b330fc2-5544-5d31-80a0-973a8c06bf6a")
+		(uuid "0caf7b2e-26a1-504c-b194-7528f93ca533")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 123.19 0)
+			(at 80.01 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 130.81 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e883c0c7-fe64-51cb-b624-41ad86552053")
-		(property "Reference" "R29"
-			(at 113.03 128.27 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 133.35 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 130.81 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 130.81 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 130.81 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 130.81 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "26160dde-43f2-52c1-8c5d-b1eff07495dd")
-		)
-		(pin "2"
-			(uuid "db4d2248-8147-5b74-9d2a-30031aca7187")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R29")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 85.09)
-			(xy 90.17 85.09)
+			(xy 80.01 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a533e4e0-e417-52eb-8bea-c0bd51693d5b")
-	)
-	(wire
-		(pts
-			(xy 90.17 85.09)
-			(xy 90.17 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa98010b-ea2e-584f-b006-f426755720f3")
-	)
-	(wire
-		(pts
-			(xy 90.17 130.81)
-			(xy 113.03 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2db23cab-17cb-56a1-a210-4729af2e34b5")
-	)
-	(label "S9"
-		(at 73.66 85.09 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "da892334-2b17-5086-87fb-4c7e1ae668b5")
-	)
-	(wire
-		(pts
-			(xy 120.65 130.81)
-			(xy 125.73 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9829d3e7-77ea-5eb3-990e-0b4a66fcf8ae")
+		(uuid "9fcfe12e-2177-55d1-9e08-275553b5ebb8")
 	)
 	(global_label "P_COL9"
 		(shape passive)
-		(at 125.73 130.81 0)
+		(at 80.01 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3541,156 +2173,31 @@
 			)
 			(justify left)
 		)
-		(uuid "2ea86a62-a0de-596a-941c-74be0e39b542")
+		(uuid "c3aa5a86-fc03-56cf-9a2a-cd5083502267")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 130.81 0)
+			(at 80.01 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 138.43 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bcde50b4-7a51-5d61-abac-3a106cd91c34")
-		(property "Reference" "R30"
-			(at 113.03 135.89 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 140.97 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 138.43 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 138.43 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 138.43 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 138.43 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e1418bca-0166-53b0-a0e5-e186624fc1b5")
-		)
-		(pin "2"
-			(uuid "6f5e0ecd-d837-5a61-9bea-083256bc7851")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R30")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 87.63)
-			(xy 87.63 87.63)
+			(xy 80.01 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "15580a26-16e3-5ffd-a947-18227e866d50")
-	)
-	(wire
-		(pts
-			(xy 87.63 87.63)
-			(xy 87.63 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c07accf7-3ea0-5bc2-8fae-30e0d02a0b14")
-	)
-	(wire
-		(pts
-			(xy 87.63 138.43)
-			(xy 113.03 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75649ca1-04e1-57d5-8ab7-9b18c65f1182")
-	)
-	(label "S10"
-		(at 73.66 87.63 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "787f0d04-b51e-5c10-9736-6c0c4a3f75ce")
-	)
-	(wire
-		(pts
-			(xy 120.65 138.43)
-			(xy 125.73 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c850f842-ec78-5045-946e-a9cee36ea40b")
+		(uuid "d8bd0e79-a749-5098-b5ae-97c3116da929")
 	)
 	(global_label "P_COL10"
 		(shape passive)
-		(at 125.73 138.43 0)
+		(at 80.01 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3698,156 +2205,31 @@
 			)
 			(justify left)
 		)
-		(uuid "bb43485a-1117-5b39-91ac-19a4e0b90492")
+		(uuid "cbb97e05-ede4-5f91-8c01-f358ad624c01")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 138.43 0)
+			(at 80.01 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 146.05 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d0d79152-a576-5e8d-9277-b27f83854680")
-		(property "Reference" "R31"
-			(at 113.03 143.51 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 148.59 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 146.05 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 146.05 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 146.05 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 146.05 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b7b2b8f6-1818-5512-adb0-de086e014670")
-		)
-		(pin "2"
-			(uuid "76adc10a-c860-595c-a356-105ff6ba03a2")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R31")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 90.17)
-			(xy 85.09 90.17)
+			(xy 80.01 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "57f4c17e-64b0-57f9-bac8-cf16a4e9b082")
-	)
-	(wire
-		(pts
-			(xy 85.09 90.17)
-			(xy 85.09 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c39f76ef-1e38-56b5-8883-849f72011949")
-	)
-	(wire
-		(pts
-			(xy 85.09 146.05)
-			(xy 113.03 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f35deeee-56f3-584b-a9db-9225a0285cee")
-	)
-	(label "S11"
-		(at 73.66 90.17 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "131ccd0e-7800-580d-99c7-7c50fa788f78")
-	)
-	(wire
-		(pts
-			(xy 120.65 146.05)
-			(xy 125.73 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "952a84a9-d669-5d69-a23f-32cdfa4c37f0")
+		(uuid "49602224-b208-5319-871f-4b0c2d5aa46e")
 	)
 	(global_label "P_COL11"
 		(shape passive)
-		(at 125.73 146.05 0)
+		(at 80.01 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3855,156 +2237,31 @@
 			)
 			(justify left)
 		)
-		(uuid "5a5adf9e-0202-5762-8b72-b217ae27cf32")
+		(uuid "e1513f72-4c1f-52e2-94b2-68f181605622")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 146.05 0)
+			(at 80.01 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 153.67 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4312cc88-ee40-53de-bb4a-916f64626493")
-		(property "Reference" "R32"
-			(at 113.03 151.13 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 156.21 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 153.67 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 153.67 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 153.67 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 153.67 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "97fc9c09-b233-564e-af3d-7e00aafa7503")
-		)
-		(pin "2"
-			(uuid "2458f6ba-d1f8-58e1-b45c-17a3a14a1828")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R32")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 92.71)
-			(xy 82.55 92.71)
+			(xy 80.01 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "041b56ae-a2bb-59d8-a3d8-70d3a7aac99e")
-	)
-	(wire
-		(pts
-			(xy 82.55 92.71)
-			(xy 82.55 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad3708f0-e60e-598f-a9c5-45d304e7752e")
-	)
-	(wire
-		(pts
-			(xy 82.55 153.67)
-			(xy 113.03 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "51aade99-bb16-5fb6-9522-1cf65c7f2cfc")
-	)
-	(label "S12"
-		(at 73.66 92.71 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "27103b8b-c56f-5706-8127-9c5c85eae4d3")
-	)
-	(wire
-		(pts
-			(xy 120.65 153.67)
-			(xy 125.73 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "54db315a-f25e-5302-8023-89df8313ea86")
+		(uuid "4e325e7a-e331-5c63-86ce-58fbd78f9141")
 	)
 	(global_label "P_COL12"
 		(shape passive)
-		(at 125.73 153.67 0)
+		(at 80.01 92.71 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4012,96 +2269,14 @@
 			)
 			(justify left)
 		)
-		(uuid "3e27bf8b-cae0-53c2-84f5-0e95ce5670e7")
+		(uuid "02046ff3-6d2f-51e5-a47b-a985839d0a9a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 153.67 0)
+			(at 80.01 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 161.29 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6993e7d5-c40a-5247-b514-2634730cc111")
-		(property "Reference" "R33"
-			(at 113.03 158.75 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 163.83 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 161.29 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 161.29 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 161.29 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 161.29 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dc24d973-0807-56b6-89a7-082d6e782504")
-		)
-		(pin "2"
-			(uuid "22c49315-e459-5c4d-8c37-1187865ba0b8")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R33")
-					(unit 1)
-				)
 			)
 		)
 	)
@@ -4116,52 +2291,9 @@
 		)
 		(uuid "f763255a-efed-52a9-92b6-f4cdbcec5fc0")
 	)
-	(wire
-		(pts
-			(xy 80.01 95.25)
-			(xy 80.01 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76ba131c-542a-5f21-9125-674fa70c8165")
-	)
-	(wire
-		(pts
-			(xy 80.01 161.29)
-			(xy 113.03 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8eebddaa-9ab2-5f91-ae89-710305555933")
-	)
-	(label "S13"
-		(at 73.66 95.25 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "900239bc-1cf5-5f0f-9eed-573e29ca98e5")
-	)
-	(wire
-		(pts
-			(xy 120.65 161.29)
-			(xy 125.73 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7405c06-073a-5322-9fe4-a212bd8bd10d")
-	)
 	(global_label "P_COL13"
 		(shape passive)
-		(at 125.73 161.29 0)
+		(at 80.01 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4169,156 +2301,31 @@
 			)
 			(justify left)
 		)
-		(uuid "b8dee10c-96bf-5946-b513-f3d7bf962aff")
+		(uuid "80d45834-e9c6-55c1-9027-a95812e77c52")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 161.29 0)
+			(at 80.01 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 168.91 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "25caeab5-9710-583b-a69d-5de842a6124e")
-		(property "Reference" "R34"
-			(at 113.03 166.37 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 171.45 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 168.91 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 168.91 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 168.91 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 168.91 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2731cc42-a1a8-532e-b477-0a458af43f03")
-		)
-		(pin "2"
-			(uuid "b8a04e1b-32ee-59aa-aeae-15801bf78eaf")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R34")
-					(unit 1)
-				)
 			)
 		)
 	)
 	(wire
 		(pts
 			(xy 72.39 97.79)
-			(xy 77.47 97.79)
+			(xy 80.01 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3db92c93-ca77-56a8-a4f8-23cc7102e2bc")
-	)
-	(wire
-		(pts
-			(xy 77.47 97.79)
-			(xy 77.47 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "392765bc-95a1-52d5-9e97-723842c95a28")
-	)
-	(wire
-		(pts
-			(xy 77.47 168.91)
-			(xy 113.03 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c0e83a2b-de1c-5421-ad6d-0235a764512d")
-	)
-	(label "S14"
-		(at 73.66 97.79 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2e6dd839-e6da-5baa-9229-2132ce2f477b")
-	)
-	(wire
-		(pts
-			(xy 120.65 168.91)
-			(xy 125.73 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ed89647-285b-5e0e-84ce-c8a298e602d3")
+		(uuid "57a9a094-57d7-5943-8ae0-2039d5bb57cf")
 	)
 	(global_label "P_COL14"
 		(shape passive)
-		(at 125.73 168.91 0)
+		(at 80.01 97.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4326,9 +2333,9 @@
 			)
 			(justify left)
 		)
-		(uuid "41a51231-11ee-518b-a079-ea2682e3f1fa")
+		(uuid "a53bce1b-3abe-5ec4-bf56-c8836e6b85fa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 168.91 0)
+			(at 80.01 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4340,736 +2347,6 @@
 	(no_connect
 		(at 72.39 100.33)
 		(uuid "fec307ef-2dff-5372-a295-f7acdf93b562")
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 184.15 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "606ad938-c27f-5c15-a0d9-1da4c9ffa9df")
-		(property "Reference" "R35"
-			(at 113.03 181.61 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 186.69 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 184.15 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 184.15 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 184.15 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 184.15 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "079e9bf8-66ac-5040-9c14-c8755265d2d9")
-		)
-		(pin "2"
-			(uuid "0a8b4665-e1f9-52ba-ad32-76fb46c6aa4f")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R35")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 113.03 184.15)
-			(xy 102.87 184.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3716528e-837a-5988-9a61-505177b77885")
-	)
-	(global_label "MCU_COL15"
-		(shape passive)
-		(at 102.87 184.15 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "01c46a0f-2854-56f5-853b-ee2e4610203f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 102.87 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 120.65 184.15)
-			(xy 125.73 184.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d085ccec-323f-5d8d-8d9d-d84e86675d1b")
-	)
-	(global_label "P_COL15"
-		(shape passive)
-		(at 125.73 184.15 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8fa0f6ab-9aee-5c69-8da2-485bc6cf59be")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 191.77 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "418be42e-36b0-507f-90fa-a820d60e744b")
-		(property "Reference" "R36"
-			(at 113.03 189.23 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 194.31 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 191.77 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 191.77 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 191.77 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 191.77 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b87d321a-ab2d-57f3-ab58-ed65e1fbc78f")
-		)
-		(pin "2"
-			(uuid "95b1b2d5-8669-5320-8f65-2b639920cd47")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R36")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 113.03 191.77)
-			(xy 102.87 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21d935db-dd0f-5ae3-90a0-157a330c7f8c")
-	)
-	(global_label "MCU_COL16"
-		(shape passive)
-		(at 102.87 191.77 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "445be409-327c-5375-a3cc-abc457485afe")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 102.87 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 120.65 191.77)
-			(xy 125.73 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3fcae3e0-440e-57bb-9418-24f8b4e4c1be")
-	)
-	(global_label "P_COL16"
-		(shape passive)
-		(at 125.73 191.77 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a2482074-dab9-50ec-bf75-8ede1e1a8307")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 199.39 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dbaeabb1-7d3a-5abe-99be-99432a6425c4")
-		(property "Reference" "R37"
-			(at 113.03 196.85 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 201.93 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 199.39 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 199.39 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 199.39 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 199.39 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "32f37751-9505-517c-946b-26a509ab2270")
-		)
-		(pin "2"
-			(uuid "ebbf59c2-b34a-5b0f-9cbc-0edd5ad096f3")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R37")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 113.03 199.39)
-			(xy 102.87 199.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0c4916f-35dd-5d09-a8f8-8fd29a3bd561")
-	)
-	(global_label "MCU_COL17"
-		(shape passive)
-		(at 102.87 199.39 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a2a8d14d-36be-557f-a769-a02d497e7aab")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 102.87 199.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 120.65 199.39)
-			(xy 125.73 199.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4cbc400e-f87f-5a8f-9c38-7f82f64e5297")
-	)
-	(global_label "P_COL17"
-		(shape passive)
-		(at 125.73 199.39 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "993adb0a-1ca1-537d-a8dd-06f2d750504e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 199.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 207.01 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "74449887-55f2-5d59-854d-41fc2c32b9b0")
-		(property "Reference" "R38"
-			(at 113.03 204.47 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 209.55 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 207.01 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 207.01 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 207.01 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 207.01 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "30c6ece0-1e4f-5098-b4e5-b459edfc0884")
-		)
-		(pin "2"
-			(uuid "43bb2c3c-a9b1-5847-8cc8-fbb5a98aa2d1")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R38")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 113.03 207.01)
-			(xy 102.87 207.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "047e847d-7cfe-53bd-a27f-66ef925356dd")
-	)
-	(global_label "MCU_COL18"
-		(shape passive)
-		(at 102.87 207.01 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7c17c404-797e-5ce8-9455-e6e80aea9dee")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 102.87 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 120.65 207.01)
-			(xy 125.73 207.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d12a401c-2c6b-5ce9-a033-0d62dcddea7f")
-	)
-	(global_label "P_COL18"
-		(shape passive)
-		(at 125.73 207.01 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "81b91432-8da7-5638-b4e9-0204c0346bc5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 214.63 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5460d1fe-7c7a-5768-8810-55592341ed2d")
-		(property "Reference" "R39"
-			(at 113.03 212.09 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 113.03 217.17 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 116.84 214.63 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 214.63 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 116.84 214.63 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 116.84 214.63 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4d47ecaa-40cf-5529-abb6-c5a467999321")
-		)
-		(pin "2"
-			(uuid "c5c3f68a-6310-5df0-9e9b-19d17b68e9b4")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path None
-					(reference "R39")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 113.03 214.63)
-			(xy 102.87 214.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bb6f2da4-6ad1-59e6-9ff3-180458b3e7a8")
-	)
-	(global_label "MCU_COL19"
-		(shape passive)
-		(at 102.87 214.63 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7bf199f8-1d8c-5d43-8678-d9d81453fbaa")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 102.87 214.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 120.65 214.63)
-			(xy 125.73 214.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "abc82d7b-28fc-5614-bf1d-e696f13d6d38")
-	)
-	(global_label "P_COL19"
-		(shape passive)
-		(at 125.73 214.63 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d14f95de-e3a1-5b9f-ab59-53e1668ca07e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 214.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:C")
