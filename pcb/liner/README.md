@@ -43,6 +43,11 @@ so only the tape touches the PCB.
 - **Coverage:** the sheet stops at the Z row, where the 128's main board ends and the case
   closes to about 2 mm.  At its front edge there's still about 6 mm under the PCB, against
   the liner's 2.7 mm.
+- **Z row and spacebar:** cover them with Kapton tape if they need it, for example on a bare
+  keyboard.  There's no shield under them, but Kapton is only about 0.07 mm, so it fits
+  even at the front edge.  Use 25 mm tape and overlap the liner's front edge by a few
+  millimetres.  Trim the pins short first, or use two layers, so sharp pins can't wear
+  through.  Tape around the stabilizer screws rather than over them.
 
 ## Fitting
 

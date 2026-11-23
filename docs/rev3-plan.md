@@ -232,7 +232,8 @@ fits), generated from the board by `pcb/tools/gen_liner.py`.
 
 - Coverage: the 128's main board does not reach under the last two key rows (the Z row and
   the spacebar), which is also where there is only about 2 mm below the PCB.  The liner stops
-  at the Z row; at its front edge there is still about 6 mm.
+  at the Z row; at its front edge there is still about 6 mm.  Kapton tape over the trimmed
+  pins covers the Z row and spacebar where a build wants it (decided 2026-11-23).
 - Material: Formex GK-17 (0.43 mm polypropylene) or 0.4 mm fish paper, die cut or cut by
   hand from the 1:1 drawing.
 - Fixing: five strips of 2.3 mm double-sided foam tape on bare board, as on the A1000: two
