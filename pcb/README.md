@@ -276,10 +276,25 @@ resource-fork twins with the same extensions, which some uploaders mistake for l
 
 ## Part numbers for fab assembly
 
-Every symbol carries an `LCSC` field.  The generator fills it for the parts we are sure are
-stock items at JLCPCB (0603 R/C, SS34, 2N7002, USBLC6-2SC6, AP7361C-33E); the rest are blank
-and get filled in at layout time once the stocked package is chosen.  `bom.csv` includes the
-column.  Verify every number on lcsc.com before ordering; part numbers rotate.
+Every symbol carries an `LCSC` field, set in `gen_sch.py` (the `LCSC` table and a few
+explicit fields).  Every SMD part has one; the through-hole parts the builder solders (key
+switches, J2-J4) and JP1 (copper only) are blank, which keeps them out of the fab's BOM.
+`bom.csv` includes the column.  Verify every number on lcsc.com before ordering; part
+numbers rotate.
+
+## Ordering from JLCPCB
+
+```
+$PY pcb/tools/fab.py
+```
+
+writes `pcb/fab/` (untracked): `C128-keyboard-rev3-gerbers.zip`, `-bom.csv` and `-cpl.csv`.
+It refuses to write if DRC finds an error, anything unconnected or a parity difference, or if
+an SMD part has no LCSC number.  Order a 4-layer board, upload the zip, then turn on
+assembly for **both sides** and upload the BOM and CPL.  In the placement preview check
+every part's rotation and pin 1, the LEDs and the ESP32 module especially: JLCPCB's part
+models don't all share KiCad's zero orientation.  Fix a turned part there, or put its
+footprint in `ROT_FIX` in `fab.py` and rerun.
 
 ## Verifying
 
