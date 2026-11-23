@@ -175,7 +175,8 @@ no table.
   133.35 mm that the plates and keycap drawing use (decided 2026-11-21: standard MX spacebar;
   the original spacebar's narrower 125.35 mm is not drilled).  See pcb/README.md.  The
   original bar fits through a printed offset adapter (`printables/spacebar_offset_adapter`,
-  decided 2026-11-23 over drilling 125.35 again); to be test-fitted on a 9u MX board.
+  decided 2026-11-23 over drilling 125.35 again); test-fitted on a 9u MX board the same day,
+  and it works.
 - Every switch footprint gains SK6812 MINI pads on the front at the north LED position, where
   the Outemu bottom housing has its SMD LED pocket.  No cutouts, so the rev 2.3 routing
   survives; the LED chain and 5 V feed are new front-side traces.  Front-side SMD means the
