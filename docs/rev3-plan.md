@@ -464,7 +464,9 @@ All SMD goes on at the fab (see Assembly); the hand-build path is through-hole o
 5. Firmware milestones 1 and 2 on a devkit wired to a rev 2.3 board through the breadboarded
    crosspoint, so bring-up of the first rev 3 board is just hardware.  **Started**: the
    ESP-IDF project in [firmware/](../firmware/README.md) has the scan, crosspoint mirror,
-   saved lock keys, RESTORE sense/press and a console; it builds in the `idf` container
+   saved lock keys, RESTORE sense/press, the LED engine (milestone 3: twelve patterns, seven
+   key actions, lock indicators, the 40/80 strobe and a current cap, host-tested) and a
+   console; it builds in the `idf` container
    (`make -C firmware build`) and flashes from the host.
 6. Order boards: two unlit hand builds, one assembled lit board.  **Ready** (2026-11-23):
    five assembled boards quoted at about 500 USD shipped, plus about 50 USD for the plate;
