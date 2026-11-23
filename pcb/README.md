@@ -43,7 +43,7 @@ A part-by-part explanation of the circuit is in
 | `plate/plate_features.json` | mounting holes, locating holes, tab slots and stabilizer cutouts in PCB coordinates, for the layout |
 | `tools/plate_step.py`, `tools/gen_plate.py` | STEP reader and plate-board generator |
 | `liner/` | the bottom liner: die-cut DXF, 1:1 drawing and how it fits ([liner/README.md](liner/README.md)) |
-| `tools/gen_liner.py` | writes the liner from the board: outline, windows over the tall back-side parts, tape pads on bare board |
+| `tools/gen_liner.py` | writes the liner from the board: outline, windows over the tall back-side parts, tape strips on bare board |
 | `tools/plate_header.kicad_pcb` | the plate boards' layer stack and setup block, copied into every generated board |
 | `tools/extract_layout.py`, `tools/layout.py` | write and read `../layout/`, the measurements every generator works from |
 

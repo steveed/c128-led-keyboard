@@ -235,8 +235,9 @@ fits), generated from the board by `pcb/tools/gen_liner.py`.
   at the Z row; at its front edge there is still about 6 mm.
 - Material: Formex GK-17 (0.43 mm polypropylene) or 0.4 mm fish paper, die cut or cut by
   hand from the 1:1 drawing.
-- Fixing: 35 pads of 2.3 mm double-sided foam tape on bare board, in the lanes between the
-  switch rows, between the function keys and in the rear band.  The foam holds the sheet
+- Fixing: five strips of 2.3 mm double-sided foam tape on bare board, as on the A1000: two
+  in the rear band, one full width behind the number row, one before the front edge and a
+  short one for the front-right corner, where the stabilizers break up the front lane.  The foam holds the sheet
   clear of the 1.7 mm switch pins, so only the tape touches the PCB; 2.7 mm in all.
 - Windows for every back-side part taller than 1.9 mm (the ESP32, USB-C, cable header, C5,
   J3/J4, the tact switches, U6, D1/D2).  Those at the rear edge open into notches for the

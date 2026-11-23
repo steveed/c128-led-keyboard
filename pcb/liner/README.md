@@ -7,7 +7,7 @@ the tray already does this job, so the liner is for flat builds and bare keyboar
 
 | File | What |
 | --- | --- |
-| `liner.dxf` | For the cutter: mm, origin at the liner's front left corner.  Layer `CUT` is the die line, layer `TAPE` the foam pads, one closed polyline per contour |
+| `liner.dxf` | For the cutter: mm, origin at the liner's front left corner.  Layer `CUT` is the die line, layer `TAPE` the foam strips, one closed polyline per contour |
 | `liner.pdf` | Dimensioned drawing with the PCB's back-side parts behind it for reference.  1:1 on A3, so a print at 100 % is also a hand-cutting template |
 | `liner.kicad_pcb` | The source of both, in the PCB's coordinates |
 
@@ -16,7 +16,7 @@ the tray already does this job, so the liner is for flat builds and bare keyboar
 - **Sheet:** Formex GK-17 (0.43 mm polypropylene).  0.4 mm fish paper also works, and
   GK-10 (0.25 mm) if it's stiff enough on the bench.  393.3 x 92.9 mm, corners R3, window
   corners R1, ±0.3 mm.
-- **Tape:** 35 pads of double-sided foam tape, 2.3 mm thick and 4 mm wide (728 mm in all),
+- **Tape:** 5 strips of double-sided foam tape, 2.3 mm thick and 4 mm wide (985 mm in all),
   laminated to the face that goes against the PCB, with the release liner left on.  3M VHB
   4991 is the reference.  Any 2–2.5 mm foam tape works, and a PE foam mounting tape is
   easier to peel off later than VHB.
@@ -28,9 +28,12 @@ the tray already does this job, so the liner is for flat builds and bare keyboar
 The sheet hangs 2.3 mm below the board on the tape.  That clears the 1.7 mm of switch pins,
 so only the tape touches the PCB.
 
-- **Tape:** the strips sit on bare board in the lanes between the switch rows, between the
-  function keys, and in the rear band.  Each one is clear of every pin, pad and back-side
-  part by at least 0.6 mm.
+- **Tape:** a few long strips on bare board, as on the A1000.  There are two in the rear
+  band, one on each side of the cable header, and one the full width behind the number row.
+  One more runs along the last gap before the front edge.  The Return and keypad
+  stabilizers break that gap up on the right, so a 92 mm strip one row back carries the
+  front-right corner.  Each strip is clear of every pin, pad and back-side part by at least
+  0.6 mm.
 - **Windows:** every back-side part taller than 1.9 mm gets a window, which leaves at least
   0.4 mm under the sheet for everything else.  Those parts are U1 (the ESP32 and its U.FL
   lead), J1 (USB-C), J2 (the cable header), C5, J3 and J4, SW93 and SW94 (reset and boot,
@@ -47,7 +50,7 @@ so only the tape touches the PCB.
    press it down along each strip.
 
 Hand cut: print `liner.pdf` at 100 % on A3 and check the 393.3 mm dimension.  Tape it to the
-sheet, cut along the die line, and stick tape strips on where the gray pads are.
+sheet, cut along the die line, and stick the tape on where the gray strips are.
 
 ## Regenerating
 
@@ -58,5 +61,5 @@ Everything comes from the board, so after a layout change:
 make liner
 ```
 
-The generator checks that every pad is clear of every obstacle.  Part heights, tape
-thickness, margins and the pad sizes are constants at the top of `pcb/tools/gen_liner.py`.
+The generator checks that every strip is clear of every obstacle.  Part heights, tape
+thickness, width and margins are constants at the top of `pcb/tools/gen_liner.py`.
