@@ -1399,7 +1399,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C13758"
 			(at 59.69 80.01 0)
 			(effects
 				(font

@@ -4447,7 +4447,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2980299"
 			(at 134.62 124.46 0)
 			(effects
 				(font
@@ -6084,7 +6084,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C221880"
 			(at 44.45 91.44 270)
 			(effects
 				(font
@@ -6685,7 +6685,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C221880"
 			(at 74.93 91.44 270)
 			(effects
 				(font
@@ -8864,7 +8864,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C142746"
 			(at 209.55 185.42 0)
 			(effects
 				(font
@@ -9361,7 +9361,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C125979"
 			(at 265.43 209.55 0)
 			(effects
 				(font
@@ -9865,7 +9865,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C13585"
 			(at 284.48 209.55 0)
 			(effects
 				(font
@@ -10129,7 +10129,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C13585"
 			(at 345.44 209.55 0)
 			(effects
 				(font

@@ -58,15 +58,26 @@ def uid(key):
     return str(uuid.uuid5(UUID_NS, key))
 
 
-# JLCPCB/LCSC part numbers for the parts that are stock "basic" or common "extended" items.
-# Verify each against the LCSC site before ordering; blanks are to be filled in at layout time.
+# JLCPCB/LCSC part numbers.  The first lines are basic or common stock items; the second
+# block was filled in at layout time (2026-11-22).  Verify each against the LCSC site before
+# ordering: part numbers rotate.  Through-hole parts (key switches, J2-J4) are left blank: the
+# builder solders them, and a blank keeps them out of the fab's BOM.
 LCSC = {
     ("Device:R", "10k"): "C25804", ("Device:R", "1k"): "C21190", ("Device:R", "100k"): "C25803",
     ("Device:R", "5k1"): "C23186", ("Device:R", "20k"): "C4184",
     ("Device:C", "100n"): "C14663", ("Device:C", "10u"): "C19702",
     ("Diode:SS34", None): "C8678", ("Diode:1N4148W", None): "C81598", ("Transistor_FET:2N7002", None): "C8545",
     ("Power_Protection:USBLC6-2SC6", None): "C7519",
+    ("RF_Module:ESP32-S3-MINI-1U", None): "C2980299",     # ESP32-S3-MINI-1U-N8
+    ("c128rev3:CH446Q", None): "C109471",                # WCH CH446Q, LQFP-44
+    ("74xx:74LS154", "74HC154"): "C13758",               # Nexperia 74HC154D, SOIC-24 300 mil
+    ("74xGxx:74AHCT1G125", None): "C7484",               # TI SN74AHCT1G125DBVR, SOT-23-5
+    ("LED:SK6812MINI", None): "C5183448",                # OPSCO SK6812MINI-B-012, 3535
+    ("Device:Polyfuse", "1.1A"): "C142746",              # Littelfuse 1812L110/16DR, 16 V
+    ("Device:C_Polarized", "220u"): "C125979",           # Nichicon UWT1C221MCL1GS, 16 V, 6.3x7.7
 }
+TACT_LCSC = "C221880"                                    # C&K PTS645SM43SMTR92 LFS
+C_10U_1206_LCSC = "C13585"                               # Samsung CL31A106KBHNNNE, 50 V X5R
 
 
 def mm(v):
@@ -475,7 +486,7 @@ def build_mcu(sh):
         node = (x, 80)
         sh.path(r.pin_end(2)[0], node)
         sw = sh.symbol("Switch:SW_Push", swname, swval, (x, 92), rot=90,
-                       footprint="Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+                       footprint="Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92", fields={"LCSC": TACT_LCSC})
         sh.path(sw.pin_end(2)[0], node)   # rot 90 puts pin 2 on top
         sh.connect(sw, 1, "GND")
         if cname:
@@ -527,9 +538,9 @@ def build_mcu(sh):
                    fields={"LCSC": "C500795"})
     n2 = u2.pins_named()
     sh.connect(u2, n2["VI"], "+5V_SYS"); sh.connect(u2, n2["VO"], "+3V3"); sh.connect(u2, n2["GND"], "GND")
-    c6 = sh.symbol("Device:C", "C6", "10u", (285, 210), footprint=C_FP_1206, fields={"LCSC": ""})
+    c6 = sh.symbol("Device:C", "C6", "10u", (285, 210), footprint=C_FP_1206, fields={"LCSC": C_10U_1206_LCSC})
     sh.connect(c6, 1, "+5V_SYS"); sh.connect(c6, 2, "GND")
-    c7 = sh.symbol("Device:C", "C7", "10u", (345, 210), footprint=C_FP_1206, fields={"LCSC": ""})
+    c7 = sh.symbol("Device:C", "C7", "10u", (345, 210), footprint=C_FP_1206, fields={"LCSC": C_10U_1206_LCSC})
     sh.connect(c7, 1, "+3V3"); sh.connect(c7, 2, "GND")
     # power flags
     for i, (net, x) in enumerate((("+5V_KB", 150), ("+5V_SYS", 180), ("GND", 210), ("VBUS", 240))):
