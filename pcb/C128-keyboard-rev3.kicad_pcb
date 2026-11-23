@@ -148,6 +148,7 @@
 		(property "Key" "R-Shift"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1d84e19b-d163-4e7f-b6a5-fd79ba2a57f2")
 			(effects
 				(font
@@ -159,6 +160,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4bc05f8d-eaac-4d5b-ae9c-c776489f21ff")
 			(effects
 				(font
@@ -311,6 +313,7 @@
 		(property "Key" "N"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "aeef739a-c48e-4b0b-80b1-a386aa4f5b27")
 			(effects
 				(font
@@ -322,6 +325,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5474348f-2e91-4a68-b024-787cbc44873c")
 			(effects
 				(font
@@ -577,6 +581,7 @@
 		(property "Key" "Run/Stop"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3a7b841d-0fdd-426d-aadb-7fca045fd404")
 			(effects
 				(font
@@ -588,6 +593,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "daef1b6e-8122-4ba6-a203-cb5c93f52fe2")
 			(effects
 				(font
@@ -843,6 +849,7 @@
 		(property "Key" "Run/Stop"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f92498cb-8da6-4863-9c2b-c93618ceebe0")
 			(effects
 				(font
@@ -854,6 +861,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9c422ba5-c26c-4ea8-a1c1-6ac74e472b22")
 			(effects
 				(font
@@ -1006,6 +1014,7 @@
 		(property "Key" "Y"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6ad83763-fcb1-4603-972b-86d81d765c0a")
 			(effects
 				(font
@@ -1017,6 +1026,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b2b2a5dc-2fc4-4082-9aeb-6804f9d312f9")
 			(effects
 				(font
@@ -1169,6 +1179,7 @@
 		(property "Key" ";"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0f51320b-cd1e-4fec-b349-383ff9858dc7")
 			(effects
 				(font
@@ -1180,6 +1191,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6c168ce6-6441-4ad1-b661-fce0b152ea03")
 			(effects
 				(font
@@ -1435,6 +1447,7 @@
 		(property "Key" "P"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "01618b35-7ad1-42f0-a7e8-9c10383c2e0d")
 			(effects
 				(font
@@ -1446,6 +1459,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "03f6e358-aef1-4262-96ae-916f68e541d5")
 			(effects
 				(font
@@ -1598,6 +1612,7 @@
 		(property "Key" "L-Shift"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "90c20af7-4115-4253-90f1-8382e7fce3a5")
 			(effects
 				(font
@@ -1609,6 +1624,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9e6700c0-9276-4c29-a688-b5c0d8c860d7")
 			(effects
 				(font
@@ -1761,6 +1777,7 @@
 		(property "Key" "+"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c4be6d2e-0dad-4c8a-b426-1c012eddddac")
 			(effects
 				(font
@@ -1772,6 +1789,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d84f8be3-b669-48ce-b715-7af40f448a76")
 			(effects
 				(font
@@ -1924,6 +1942,7 @@
 		(property "Key" "NumEnter"
 			(at 0 0 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "032640b2-7057-4418-8d54-f8ffd20a043b")
 			(effects
 				(font
@@ -1935,6 +1954,7 @@
 		(property "LCSC" ""
 			(at 0 0 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fd95b69a-c459-44a8-be22-57cea9257d9f")
 			(effects
 				(font
@@ -2087,6 +2107,7 @@
 		(property "Key" "."
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3531e945-985e-42ba-9d88-ddf89e63c66f")
 			(effects
 				(font
@@ -2098,6 +2119,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "34d61c6d-1aa8-4eb9-901a-f8e135f6a959")
 			(effects
 				(font
@@ -2250,6 +2272,7 @@
 		(property "Key" "R"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0cec2e0f-846c-42d8-b799-b1be39468020")
 			(effects
 				(font
@@ -2261,6 +2284,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4c9322b3-d4e3-4e4f-9070-49d46dc97f73")
 			(effects
 				(font
@@ -2413,6 +2437,7 @@
 		(property "Key" "Q"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a75e364d-dc63-4fbc-b76c-0790fb6298c8")
 			(effects
 				(font
@@ -2424,6 +2449,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "2031362c-c4ac-4db8-99f2-d2b3eda6761e")
 			(effects
 				(font
@@ -2679,6 +2705,7 @@
 		(property "Key" "Restore"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "dc5aee5d-fef0-42ac-b8ee-63df28dca1ec")
 			(effects
 				(font
@@ -2690,6 +2717,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "068806a8-cb3e-4e56-9e77-4ab7572890ec")
 			(effects
 				(font
@@ -2945,6 +2973,7 @@
 		(property "Key" "£"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ac437ac9-3375-496d-a6f8-d2ef37c45f98")
 			(effects
 				(font
@@ -2956,6 +2985,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e8f8d348-40a2-4200-8d5e-4ca8d2c0e427")
 			(effects
 				(font
@@ -3211,6 +3241,7 @@
 		(property "Key" ","
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "624b8e34-be12-42e7-a99d-f14dc7fc0537")
 			(effects
 				(font
@@ -3222,6 +3253,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "743c300e-93d7-4f7e-bf83-1072c76781d8")
 			(effects
 				(font
@@ -3374,6 +3406,7 @@
 		(property "Key" "Esc"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9613f1b9-7c0d-4270-b1ee-aef759c2f3ed")
 			(effects
 				(font
@@ -3385,6 +3418,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5ca37c24-d7ad-4b62-8636-a0c081202b27")
 			(effects
 				(font
@@ -3640,6 +3674,7 @@
 		(property "Key" "F1"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e69b367a-0cfc-4e44-97a0-4652bc8988fa")
 			(effects
 				(font
@@ -3651,6 +3686,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e73b0dc4-6fcf-4ebf-882e-86427349aa01")
 			(effects
 				(font
@@ -3906,6 +3942,7 @@
 		(property "Key" "J"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5a8949dc-33f1-4de3-b4cf-8702e44843df")
 			(effects
 				(font
@@ -3917,6 +3954,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e7725693-8d60-4afa-98fa-faf467faf996")
 			(effects
 				(font
@@ -4069,6 +4107,7 @@
 		(property "Key" "L-Shift"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "34c977de-9b0e-4cea-9beb-e52ea526a590")
 			(effects
 				(font
@@ -4080,6 +4119,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1822945b-7ba7-4e06-85be-d90bbe808361")
 			(effects
 				(font
@@ -4335,6 +4375,7 @@
 		(property "Key" "Inst/Del"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "dbc9a336-86b8-4fd3-9bd6-423150cddfb3")
 			(effects
 				(font
@@ -4346,6 +4387,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "be68b9a4-7e49-4068-88e8-3223c350adf5")
 			(effects
 				(font
@@ -4498,6 +4540,7 @@
 		(property "Key" "3"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e69d32a6-24c8-4b15-a370-0e8c9b4ca532")
 			(effects
 				(font
@@ -4509,6 +4552,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7c6e1ce2-66b3-4b70-9ab4-af4202822ed5")
 			(effects
 				(font
@@ -4661,6 +4705,7 @@
 		(property "Key" "Restore"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "da8d7940-c072-4cda-b80b-d152de5b8e61")
 			(effects
 				(font
@@ -4672,6 +4717,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3f7b9206-9cb3-46eb-a7ab-dfbf7c39fc41")
 			(effects
 				(font
@@ -4824,6 +4870,7 @@
 		(property "Key" "/"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5fad2a72-dc35-405b-998f-af6cead160ac")
 			(effects
 				(font
@@ -4835,6 +4882,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "66060ef2-38b1-473c-b9d8-dae1b41717a0")
 			(effects
 				(font
@@ -5090,6 +5138,7 @@
 		(property "Key" "5"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6d903b3c-6b09-4ecc-ad85-22461b8c7cc6")
 			(effects
 				(font
@@ -5101,6 +5150,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5016a71f-a010-4223-a5a2-b082179c05da")
 			(effects
 				(font
@@ -5356,6 +5406,7 @@
 		(property "Key" "B"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b3e452f2-e5b2-4622-8aea-9a5073457072")
 			(effects
 				(font
@@ -5367,6 +5418,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ecb1a4d3-e869-46a5-b971-00582beb02de")
 			(effects
 				(font
@@ -5622,6 +5674,7 @@
 		(property "Key" "8"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "26faf528-315e-4728-a7c7-3c47a832dc93")
 			(effects
 				(font
@@ -5633,6 +5686,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d23c4f3e-6132-4a4b-b881-f322cc3a7807")
 			(effects
 				(font
@@ -5888,6 +5942,7 @@
 		(property "Key" "-"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5c9e0af2-eae8-432f-ab15-22732c8c0580")
 			(effects
 				(font
@@ -5899,6 +5954,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "25478574-19b7-419f-9dd5-199850f727b2")
 			(effects
 				(font
@@ -6051,6 +6107,7 @@
 		(property "Key" "Num+"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3add4bff-b687-4c9a-b684-07c5afb13d83")
 			(effects
 				(font
@@ -6062,6 +6119,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d21092e8-6964-4522-b4de-b5659205e8fd")
 			(effects
 				(font
@@ -6317,6 +6375,7 @@
 		(property "Key" "C="
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7b1318be-48dd-45c5-a2ec-50829958be64")
 			(effects
 				(font
@@ -6328,6 +6387,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "faa8d771-ee22-4a55-b903-34f810ec574c")
 			(effects
 				(font
@@ -6583,6 +6643,7 @@
 		(property "Key" "40_80"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e9b3ebe9-48dc-4022-ac61-4f11bbba665f")
 			(effects
 				(font
@@ -6594,6 +6655,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8f196220-f93f-4321-9f60-f9455e46eb8c")
 			(effects
 				(font
@@ -6746,6 +6808,7 @@
 		(property "Key" "Clr/Home"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f161814a-8f07-4aa9-91ec-ee8fd8fa713f")
 			(effects
 				(font
@@ -6757,6 +6820,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8db531e7-3487-45c8-accb-4eb6a7fb24e1")
 			(effects
 				(font
@@ -6909,6 +6973,7 @@
 		(property "Key" "L"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3bbf3647-7eda-4d3b-814d-ae376910cc7c")
 			(effects
 				(font
@@ -6920,6 +6985,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "67d3bae2-80e3-4c2f-b08c-10a26ee0bd01")
 			(effects
 				(font
@@ -7072,6 +7138,7 @@
 		(property "Key" ";"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ca525d4e-1057-4bd7-8302-af63a63da646")
 			(effects
 				(font
@@ -7083,6 +7150,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "41fac2b8-8d5e-4995-b773-72e3a8cd1606")
 			(effects
 				(font
@@ -7235,6 +7303,7 @@
 		(property "Key" "O"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "61543f55-8399-4d5b-a252-5008b30a8684")
 			(effects
 				(font
@@ -7246,6 +7315,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "98b9def8-5893-4376-b099-d3bc38a59422")
 			(effects
 				(font
@@ -7398,6 +7468,7 @@
 		(property "Key" "@"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ef9a2717-f1e1-47d1-a913-bba4e6698eed")
 			(effects
 				(font
@@ -7409,6 +7480,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1f11b8f3-e5b7-412f-9133-4b4d6a5e8e49")
 			(effects
 				(font
@@ -7561,6 +7633,7 @@
 		(property "Key" "R"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e26d0f49-1b2a-44b1-b530-f06c44bf0b24")
 			(effects
 				(font
@@ -7572,6 +7645,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fc807e4a-446d-4209-8443-0ca71f0838e4")
 			(effects
 				(font
@@ -7827,6 +7901,7 @@
 		(property "Key" "M"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "2b7f86f5-a93d-4274-9a16-d90f62a8075e")
 			(effects
 				(font
@@ -7838,6 +7913,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "00442a61-5cd9-4e33-8d5e-c15db6a18c91")
 			(effects
 				(font
@@ -7990,6 +8066,7 @@
 		(property "Key" "Esc"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "38a04f27-9cec-4fa7-805c-944905bf7fca")
 			(effects
 				(font
@@ -8001,6 +8078,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6c38b50e-c1df-4d6c-a2bb-28f42b59bb56")
 			(effects
 				(font
@@ -8153,6 +8231,7 @@
 		(property "Key" "1"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bd57ef15-ce62-43a2-ab53-22082bbfde7a")
 			(effects
 				(font
@@ -8164,6 +8243,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9a63d501-a5fd-40da-9863-c8ee3abbbe24")
 			(effects
 				(font
@@ -8316,6 +8396,7 @@
 		(property "Key" "Crsr-Down"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fe80eb39-c871-46c3-8207-88e7ddfd3ac8")
 			(effects
 				(font
@@ -8327,6 +8408,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c31682db-260e-4213-ace8-cf3cc992800f")
 			(effects
 				(font
@@ -8582,6 +8664,7 @@
 		(property "Key" "F5"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7cdbe96b-59ad-4eaf-97d1-581e5f13a1e5")
 			(effects
 				(font
@@ -8593,6 +8676,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8c8b93dc-1bb9-493d-9157-14dee9e7c05f")
 			(effects
 				(font
@@ -8745,6 +8829,7 @@
 		(property "Key" "="
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "323cb590-226a-463c-87e5-2b90cbf3e415")
 			(effects
 				(font
@@ -8756,6 +8841,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4921c9fa-917f-4fd6-b47d-040b4b113bc8")
 			(effects
 				(font
@@ -8908,6 +8994,7 @@
 		(property "Key" "ShiftLock"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "000411de-8e83-48f8-bfe8-ce24577e2e6a")
 			(effects
 				(font
@@ -8919,6 +9006,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0cea2de9-3e43-41c6-8807-15f22c4160fb")
 			(effects
 				(font
@@ -9071,6 +9159,7 @@
 		(property "Key" "Crsr-Up"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bcfa6fda-f38e-42ec-bef4-400b5bf08dac")
 			(effects
 				(font
@@ -9082,6 +9171,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a054c8ec-a824-42e9-926c-c44ecf57226f")
 			(effects
 				(font
@@ -9337,6 +9427,7 @@
 		(property "Key" "Num5"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "12ce05e3-2ef9-4c07-b3db-f1c559e266cd")
 			(effects
 				(font
@@ -9348,6 +9439,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e53e20ae-1c9f-4429-a370-7e6237796a65")
 			(effects
 				(font
@@ -9500,6 +9592,7 @@
 		(property "Key" "F1"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "292c57e5-dacc-406e-a749-c12e9c81f55a")
 			(effects
 				(font
@@ -9511,6 +9604,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "45581ef9-9eec-4e28-982e-b82e4ec22c7a")
 			(effects
 				(font
@@ -9663,6 +9757,7 @@
 		(property "Key" "S"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "80feb867-1bc3-41c8-9fca-ab9892cce0f6")
 			(effects
 				(font
@@ -9674,6 +9769,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "88e4af57-86b2-4a0a-86ff-0b44d7cdc504")
 			(effects
 				(font
@@ -9929,6 +10025,7 @@
 		(property "Key" "8"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5dbe6c31-69cc-4812-a8d5-f9af7b4d3b40")
 			(effects
 				(font
@@ -9940,6 +10037,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "876b1d5c-b320-4dbc-865a-6aa94afe8ad2")
 			(effects
 				(font
@@ -10092,6 +10190,7 @@
 		(property "Key" "Crsr-Down"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9bab2e3e-b0cd-46b8-ada1-778f13be78af")
 			(effects
 				(font
@@ -10103,6 +10202,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6cf00bf9-5d9f-4790-83c8-e8505ae7862f")
 			(effects
 				(font
@@ -10255,6 +10355,7 @@
 		(property "Key" "9"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "202ed34e-86e5-47c8-a21b-6c11d336282d")
 			(effects
 				(font
@@ -10266,6 +10367,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e21be05c-bb4b-406f-a160-a6c01ae93d44")
 			(effects
 				(font
@@ -10418,6 +10520,7 @@
 		(property "Key" "40_80"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f6350dbc-0712-4fd7-b03a-1e00aed15bf2")
 			(effects
 				(font
@@ -10429,6 +10532,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "98c22f56-f3e6-4875-8cd9-bce929e92c9d")
 			(effects
 				(font
@@ -10684,6 +10788,7 @@
 		(property "Key" "K"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8685fa43-2779-4d0e-8bc6-7b76ea0ef701")
 			(effects
 				(font
@@ -10695,6 +10800,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "be53234e-9735-4646-a7d6-1df4ab27d528")
 			(effects
 				(font
@@ -10950,6 +11056,7 @@
 		(property "Key" "CapsLk"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "de24dc89-1339-4d28-8db0-0f95a74f4bef")
 			(effects
 				(font
@@ -10961,6 +11068,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "76260aff-0027-4408-b87e-60ab24ce97d3")
 			(effects
 				(font
@@ -11113,6 +11221,7 @@
 		(property "Key" "C"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b64f7ece-a9d9-4102-9731-4cba2f16d5d1")
 			(effects
 				(font
@@ -11124,6 +11233,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "298a6b1a-73ef-4a67-bb4f-115b0d0facf7")
 			(effects
 				(font
@@ -11379,6 +11489,7 @@
 		(property "Key" "LeftArrow"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5fb05df7-84f2-469a-a3c4-b786e910046d")
 			(effects
 				(font
@@ -11390,6 +11501,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f497085f-467a-4f2e-a392-911885a50d71")
 			(effects
 				(font
@@ -11645,6 +11757,7 @@
 		(property "Key" "I"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1e1071c9-6c47-47e6-b9fa-cd4bb4a8f5a5")
 			(effects
 				(font
@@ -11656,6 +11769,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "176b5431-706d-419c-a38e-60f243387d63")
 			(effects
 				(font
@@ -11911,6 +12025,7 @@
 		(property "Key" "A"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "83c88181-16a6-432b-afa4-bfe9fc248be4")
 			(effects
 				(font
@@ -11922,6 +12037,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "60a28fe8-4793-4000-9212-0cf72cb74748")
 			(effects
 				(font
@@ -12177,6 +12293,7 @@
 		(property "Key" "G"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "cfd8d6f0-3308-4a37-8d8a-dd58b3326134")
 			(effects
 				(font
@@ -12188,6 +12305,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "78632d3a-93e4-415a-b891-8fc5ca720e1b")
 			(effects
 				(font
@@ -12443,6 +12561,7 @@
 		(property "Key" "D"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "34c4c59d-3185-4589-888b-cf7cc80adceb")
 			(effects
 				(font
@@ -12454,6 +12573,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "cb8b9f29-73f1-4e65-9d4b-81638ab83f0c")
 			(effects
 				(font
@@ -12709,6 +12829,7 @@
 		(property "Key" "V"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e3e41eb4-1ba8-43b3-952c-f8d147febaff")
 			(effects
 				(font
@@ -12720,6 +12841,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "30098a5b-0ee4-40aa-a6dc-5badc8929053")
 			(effects
 				(font
@@ -12975,6 +13097,7 @@
 		(property "Key" "Num+"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9718b0a7-79d2-4a6e-a2d5-27ca5a958ebf")
 			(effects
 				(font
@@ -12986,6 +13109,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "17a02c95-2e17-4e2e-8310-0611659c9d07")
 			(effects
 				(font
@@ -13138,6 +13262,7 @@
 		(property "Key" "-"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b55af3cf-7e1a-44e4-9029-d5e15da380f1")
 			(effects
 				(font
@@ -13149,6 +13274,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "275c8851-ba53-4808-a79c-b2ab9e1a95a6")
 			(effects
 				(font
@@ -13404,6 +13530,7 @@
 		(property "Key" "Num3"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "da60ebea-ffa8-4087-9ab4-0d083ece54f7")
 			(effects
 				(font
@@ -13415,6 +13542,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "57d1420d-330a-4e4c-b99b-84614b80f2b8")
 			(effects
 				(font
@@ -13670,6 +13798,7 @@
 		(property "Key" "4"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1bae0f7e-0794-48cf-8f9d-c8bad67bc5d8")
 			(effects
 				(font
@@ -13681,6 +13810,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "06d3182f-71c1-4232-80d1-2c8c707492f3")
 			(effects
 				(font
@@ -13936,6 +14066,7 @@
 		(property "Key" "Return"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f9a445c2-7986-47c0-8ae8-ed3d18ea8c57")
 			(effects
 				(font
@@ -13947,6 +14078,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4900f368-efa4-4111-b96c-bcca7c811e84")
 			(effects
 				(font
@@ -14099,6 +14231,7 @@
 		(property "Key" "Ctrl"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "630f7355-f4e5-4416-8cf4-79907da7404e")
 			(effects
 				(font
@@ -14110,6 +14243,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8fbf76c9-9e00-4458-9ec8-4e637f1a62ed")
 			(effects
 				(font
@@ -14262,6 +14396,7 @@
 		(property "Key" ":"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bac4b4da-0a14-4f6c-975c-e3d7c02d592e")
 			(effects
 				(font
@@ -14273,6 +14408,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "392f07e5-1975-4565-b922-743003c500c9")
 			(effects
 				(font
@@ -14528,6 +14664,7 @@
 		(property "Key" "Num2"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "2e3ce309-8b56-4a98-90d8-9374ab8edecf")
 			(effects
 				(font
@@ -14539,6 +14676,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "045b6ec4-6f93-4f92-86af-67b3179d77ca")
 			(effects
 				(font
@@ -14794,6 +14932,7 @@
 		(property "Key" "P"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5280da3c-9481-48ba-af1b-5d7b7045a006")
 			(effects
 				(font
@@ -14805,6 +14944,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1c7e9176-cd0d-4fbb-808f-6941be1ab24c")
 			(effects
 				(font
@@ -15060,6 +15200,7 @@
 		(property "Key" "Num0"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "25758793-586b-4318-a2da-e0a7b65b6a63")
 			(effects
 				(font
@@ -15071,6 +15212,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "07263dc8-4788-4f1b-a798-9aa6b45ed7ce")
 			(effects
 				(font
@@ -15398,6 +15540,7 @@
 		(property "Key" "Help"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c38440d1-8ba8-4f4b-adff-11691c62aa3d")
 			(effects
 				(font
@@ -15409,6 +15552,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c2115bd7-0faa-4ffa-b66f-839d1e2c0d0a")
 			(effects
 				(font
@@ -15561,6 +15705,7 @@
 		(property "Key" "LeftArrow"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bcfa01bd-6352-4cb7-85e3-1e6a75cedbd5")
 			(effects
 				(font
@@ -15572,6 +15717,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "98247f2c-ee6c-4426-bbc2-5d60174829be")
 			(effects
 				(font
@@ -15724,6 +15870,7 @@
 		(property "Key" "Help"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fc8e3a9c-1496-4251-9c7e-20ca0cacdd86")
 			(effects
 				(font
@@ -15735,6 +15882,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "48e88d64-4377-4114-af99-c2efa5f73b99")
 			(effects
 				(font
@@ -15990,6 +16138,7 @@
 		(property "Key" "F3"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d6d228a3-ee7b-4226-9246-25d90692ef94")
 			(effects
 				(font
@@ -16001,6 +16150,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e0b609dc-5401-48fa-b5ca-5c91844b150f")
 			(effects
 				(font
@@ -16256,6 +16406,7 @@
 		(property "Key" "F"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d537e187-ba05-4321-ab5e-5d302a2972f4")
 			(effects
 				(font
@@ -16267,6 +16418,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "99555c0d-7134-4aa8-a196-6e1e45c3b3e3")
 			(effects
 				(font
@@ -16419,6 +16571,7 @@
 		(property "Key" "Num."
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "224c4215-9cc2-4d3c-b13e-2be126bf1c43")
 			(effects
 				(font
@@ -16430,6 +16583,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "563cd963-3d81-4493-82e5-e3b260aa42c3")
 			(effects
 				(font
@@ -16685,6 +16839,7 @@
 		(property "Key" "Num9"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "256023f4-c22d-46e8-aee1-1c22bcecf218")
 			(effects
 				(font
@@ -16696,6 +16851,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b86c0c08-52ab-4c8f-aca6-0795f6198f24")
 			(effects
 				(font
@@ -16848,6 +17004,7 @@
 		(property "Key" "Crsr Horiz"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b4b18739-1fe8-4ecc-a11e-995b8d069d49")
 			(effects
 				(font
@@ -16859,6 +17016,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9200f0bd-af15-40e1-ab9e-e59e8da914d1")
 			(effects
 				(font
@@ -17011,6 +17169,7 @@
 		(property "Key" "*"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "afdbcc3d-e762-44e3-97fb-786801bcdffe")
 			(effects
 				(font
@@ -17022,6 +17181,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0d1d6f5c-3bfd-4dc8-b8b1-242363f2b724")
 			(effects
 				(font
@@ -17174,6 +17334,7 @@
 		(property "Key" "Inst/Del"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "efe270aa-6587-4bcd-ab8e-8bae396310fc")
 			(effects
 				(font
@@ -17185,6 +17346,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c52f9885-f343-4187-8c82-9a61d169aab0")
 			(effects
 				(font
@@ -17440,6 +17602,7 @@
 		(property "Key" "ShiftLock"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "afe95418-879c-4b1b-9dd9-0fdbd65d1bfb")
 			(effects
 				(font
@@ -17451,6 +17614,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f87a7451-33d8-4e54-91ac-f194c924af20")
 			(effects
 				(font
@@ -17706,6 +17870,7 @@
 		(property "Key" "W"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9b31c96f-7fda-4056-81c0-e36766b9a4ed")
 			(effects
 				(font
@@ -17717,6 +17882,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e5da29b5-3421-40c3-b629-d6660b0554d1")
 			(effects
 				(font
@@ -17972,6 +18138,7 @@
 		(property "Key" "CapsLk"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5a1af031-b43c-4b84-91c1-0d43e42c03e5")
 			(effects
 				(font
@@ -17983,6 +18150,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "79442af2-e3ff-413b-a09c-a9357347c18a")
 			(effects
 				(font
@@ -18238,6 +18406,7 @@
 		(property "Key" ":"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "624df3b4-bbae-4758-8c7c-0e1bf33bac33")
 			(effects
 				(font
@@ -18249,6 +18418,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6394ab65-0e25-4f5d-8d39-f124e7e5d657")
 			(effects
 				(font
@@ -18401,6 +18571,7 @@
 		(property "Key" "U"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7624836b-5d02-4502-8fb4-505673cdefcb")
 			(effects
 				(font
@@ -18412,6 +18583,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b8e8fac3-fb9d-400e-b554-38bd88eb5e48")
 			(effects
 				(font
@@ -18667,6 +18839,7 @@
 		(property "Key" "E"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c544d0bd-b405-4fa1-bdb5-eaa24da25864")
 			(effects
 				(font
@@ -18678,6 +18851,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e6dfc6e3-8aa4-4981-a687-7bb22654754d")
 			(effects
 				(font
@@ -18933,6 +19107,7 @@
 		(property "Key" "Space"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ececa18c-27ed-41fc-8275-82067ee4e18c")
 			(effects
 				(font
@@ -18944,6 +19119,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "33dd7601-e968-43a3-8738-1dc36f85cb8e")
 			(effects
 				(font
@@ -19343,6 +19519,7 @@
 		(property "Key" "C="
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "410da28b-f36e-4ce8-a9ab-e7d72d8bdfb4")
 			(effects
 				(font
@@ -19354,6 +19531,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "cb69bed7-0a01-42e7-824e-a4d0876b6b52")
 			(effects
 				(font
@@ -19506,6 +19684,7 @@
 		(property "Key" "F7"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ba2d435e-fa19-4901-b00a-35c6c95b0ef8")
 			(effects
 				(font
@@ -19517,6 +19696,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "16e125ad-9f40-4b80-a190-b881927bb808")
 			(effects
 				(font
@@ -19772,6 +19952,7 @@
 		(property "Key" "F3"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6d887eab-4d96-45fb-a4bc-bc790c73a865")
 			(effects
 				(font
@@ -19783,6 +19964,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "06e4761a-506f-43fd-a4a4-dfe5dc1041b5")
 			(effects
 				(font
@@ -19935,6 +20117,7 @@
 		(property "Key" "O"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "97f911fd-2f99-4217-89b0-7cb2408dac82")
 			(effects
 				(font
@@ -19946,6 +20129,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8eb87f85-11f4-4200-ada8-e35b7138bc13")
 			(effects
 				(font
@@ -20201,6 +20385,7 @@
 		(property "Key" "0"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4dd95e84-8b2e-4dc3-a402-ca49cc6d55b4")
 			(effects
 				(font
@@ -20212,6 +20397,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7c30d9b1-d1ce-4056-aea6-44f858cda84d")
 			(effects
 				(font
@@ -20467,6 +20653,7 @@
 		(property "Key" "R-Shift"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d2e0c092-c34b-4fc9-a757-2c52433bb9d9")
 			(effects
 				(font
@@ -20478,6 +20665,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8ac37a17-f2c9-41ba-9750-e399cdf58b22")
 			(effects
 				(font
@@ -20733,6 +20921,7 @@
 		(property "Key" "Q"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3bf20865-6df3-409c-8ecb-45e9e039e102")
 			(effects
 				(font
@@ -20744,6 +20933,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "81cb2c82-31e7-4d54-a95d-57dccea6460b")
 			(effects
 				(font
@@ -20896,6 +21086,7 @@
 		(property "Key" "Return"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "232a8ef2-dedf-4ff0-a217-d7c67df20ba2")
 			(effects
 				(font
@@ -20907,6 +21098,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a8957c03-b2b7-4d16-9563-dbdb9472e92f")
 			(effects
 				(font
@@ -21234,6 +21426,7 @@
 		(property "Key" "1"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1aa9355b-7511-4b48-af34-59d9b1e0ae49")
 			(effects
 				(font
@@ -21245,6 +21438,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c24dc63f-ce00-4575-bf4a-6e28dcb2fecf")
 			(effects
 				(font
@@ -21500,6 +21694,7 @@
 		(property "Key" "F"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f262a418-8b68-4ad2-b0e7-075ecc8cd127")
 			(effects
 				(font
@@ -21511,6 +21706,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4f8ceb29-0639-4258-bedd-953505529f96")
 			(effects
 				(font
@@ -21766,6 +21962,7 @@
 		(property "Key" "Ctrl"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "56e03da3-245b-4fdb-b446-815c6b9b334b")
 			(effects
 				(font
@@ -21777,6 +21974,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fe98d13c-6928-4ee6-96ca-58e0381488ed")
 			(effects
 				(font
@@ -22032,6 +22230,7 @@
 		(property "Key" "F5"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1490b56d-8702-4fae-b58a-d19e9de6a1e2")
 			(effects
 				(font
@@ -22043,6 +22242,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3e3e7bdc-4604-41fc-a9f2-4f24f855b190")
 			(effects
 				(font
@@ -22298,6 +22498,7 @@
 		(property "Key" "Z"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1a5830c3-76d9-4f70-aaae-e1ce74877071")
 			(effects
 				(font
@@ -22309,6 +22510,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a7f7e13c-936f-46fc-ab4f-86c6ddb5fc13")
 			(effects
 				(font
@@ -22461,6 +22663,7 @@
 		(property "Key" "H"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5ce4aeeb-e40f-4d07-a9a9-7efb9aa7537f")
 			(effects
 				(font
@@ -22472,6 +22675,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d42e36af-68d5-4ebf-9890-b94098498037")
 			(effects
 				(font
@@ -22624,6 +22828,7 @@
 		(property "Key" "D"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "790de0c0-388d-46fc-b1f3-0505f2582a2e")
 			(effects
 				(font
@@ -22635,6 +22840,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "13e2d7f6-2198-41ad-8061-5707ddd9cb90")
 			(effects
 				(font
@@ -22787,6 +22993,7 @@
 		(property "Key" "LineFeed"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fb145b95-ba8e-428f-a432-c7efd6c853f2")
 			(effects
 				(font
@@ -22798,6 +23005,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "49264486-ad69-49d9-b67b-c5c0ee029f4d")
 			(effects
 				(font
@@ -22950,6 +23158,7 @@
 		(property "Key" "+"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d892d007-6125-4e3d-a0b2-658cfd8a6a20")
 			(effects
 				(font
@@ -22961,6 +23170,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "19b2b947-c21c-4fe4-b153-402b99023cb8")
 			(effects
 				(font
@@ -23216,6 +23426,7 @@
 		(property "Key" "B"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "332c3dd2-de04-4b21-a060-76923cda0a6a")
 			(effects
 				(font
@@ -23227,6 +23438,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c9b28aeb-104a-4155-b157-eefe4b5d3a1b")
 			(effects
 				(font
@@ -23379,6 +23591,7 @@
 		(property "Key" "Num5"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bbed115a-ce8a-45b6-8ff9-6b2a251654b1")
 			(effects
 				(font
@@ -23390,6 +23603,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9d5099ca-f8b6-4926-b577-39eb8ed6f04d")
 			(effects
 				(font
@@ -23645,6 +23859,7 @@
 		(property "Key" "@"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "116a09d4-27b1-4e13-b5d1-3cb0ccc76d6a")
 			(effects
 				(font
@@ -23656,6 +23871,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "09c993b4-9bd2-4785-ab30-9f92922fc30f")
 			(effects
 				(font
@@ -23911,6 +24127,7 @@
 		(property "Key" "LineFeed"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "167a7526-a6cd-4a65-ba20-102fa828c7c0")
 			(effects
 				(font
@@ -23922,6 +24139,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5b2c6dea-6cf8-47fe-9819-534b37c3f6d3")
 			(effects
 				(font
@@ -24177,6 +24395,7 @@
 		(property "Key" "7"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ed4623df-5e0e-458a-a2bd-dafbc604227a")
 			(effects
 				(font
@@ -24188,6 +24407,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "56e59b00-067c-448f-8670-713e08c343a9")
 			(effects
 				(font
@@ -24443,6 +24663,7 @@
 		(property "Key" "T"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "93b32261-c80d-4a7a-b3c2-fe87c0207bf7")
 			(effects
 				(font
@@ -24454,6 +24675,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7ee98c17-6a85-4709-9d94-5e21fd3e12f0")
 			(effects
 				(font
@@ -24709,6 +24931,7 @@
 		(property "Key" "NoScroll"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ac982afd-705e-4fd4-b473-eeed9170126a")
 			(effects
 				(font
@@ -24720,6 +24943,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "88d4c35a-f068-468f-8960-ab44cb80aaa3")
 			(effects
 				(font
@@ -24872,6 +25096,7 @@
 		(property "Key" "9"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "435ef89b-f93c-4714-b599-d8eacef1422d")
 			(effects
 				(font
@@ -24883,6 +25108,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e948f740-0b0f-4b90-886e-631fd0d61ef4")
 			(effects
 				(font
@@ -25138,6 +25364,7 @@
 		(property "Key" "Num-"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "49a70808-0954-41c6-ab1c-73c97dd90395")
 			(effects
 				(font
@@ -25149,6 +25376,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "532a916d-db1c-49d4-94da-56cd08473af4")
 			(effects
 				(font
@@ -25301,6 +25529,7 @@
 		(property "Key" "W"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fb306ea0-f740-42f3-8c5e-da178a32a9de")
 			(effects
 				(font
@@ -25312,6 +25541,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "674b7cc7-8f84-452b-8441-ac72a4c1ccd0")
 			(effects
 				(font
@@ -25464,6 +25694,7 @@
 		(property "Key" "*"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d335c6f6-ed9e-4a44-ab13-4acaa9135fdb")
 			(effects
 				(font
@@ -25475,6 +25706,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c787b516-5f72-4587-8c40-b66477b93597")
 			(effects
 				(font
@@ -25730,6 +25962,7 @@
 		(property "Key" "Num6"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ad880111-006e-4573-b914-eacba0abf96c")
 			(effects
 				(font
@@ -25741,6 +25974,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ab9da6b4-4050-42fd-bfb2-fe8a2ced2e91")
 			(effects
 				(font
@@ -25996,6 +26230,7 @@
 		(property "Key" "Num-"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "81777018-ac8b-47b6-8ada-dd136540f55e")
 			(effects
 				(font
@@ -26007,6 +26242,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b2733594-b827-473f-abff-d49765683eec")
 			(effects
 				(font
@@ -26262,6 +26498,7 @@
 		(property "Key" "Crsr Vert"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a8c2471a-1f88-41bb-96ba-32807c0dcab2")
 			(effects
 				(font
@@ -26273,6 +26510,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6356409a-8efb-46a5-bf6b-302b6cc28737")
 			(effects
 				(font
@@ -26425,6 +26663,7 @@
 		(property "Key" "6"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b806ddcf-071d-4342-88dd-efbfe33a7314")
 			(effects
 				(font
@@ -26436,6 +26675,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5317fd41-c865-4903-901e-6e283c67a6ca")
 			(effects
 				(font
@@ -26588,6 +26828,7 @@
 		(property "Key" "."
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "52e3e589-428f-4ca9-a1d0-ff9577c62fb9")
 			(effects
 				(font
@@ -26599,6 +26840,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5853ee6b-aa1b-4116-a9d1-6d315c679c1b")
 			(effects
 				(font
@@ -26854,6 +27096,7 @@
 		(property "Key" "Tab"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7e53b59f-ed10-452c-8775-d50ad975a79d")
 			(effects
 				(font
@@ -26865,6 +27108,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4a9928d2-b68b-4ae2-8a19-0ba2677bfd27")
 			(effects
 				(font
@@ -27120,6 +27364,7 @@
 		(property "Key" "Num8"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0f13a267-eb37-4116-9737-20d406b60016")
 			(effects
 				(font
@@ -27131,6 +27376,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "150a2b2c-c8f7-4cf3-a85f-dc82dc105ed2")
 			(effects
 				(font
@@ -27283,6 +27529,7 @@
 		(property "Key" "L"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "45884bd8-64ec-44c6-b472-9c8a6cd5560a")
 			(effects
 				(font
@@ -27294,6 +27541,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "987dce83-56be-4cb2-88c6-1ef6e984c396")
 			(effects
 				(font
@@ -27549,6 +27797,7 @@
 		(property "Key" "UpArrow"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "266321e1-c9dd-4711-b8cf-cb953953815c")
 			(effects
 				(font
@@ -27560,6 +27809,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "066001d8-4416-46da-a9ca-9750216f16fa")
 			(effects
 				(font
@@ -27815,6 +28065,7 @@
 		(property "Key" "Alt"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1c23cd6d-1598-49af-9df9-31e16c574a75")
 			(effects
 				(font
@@ -27826,6 +28077,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0afe9fe9-b325-49f1-9565-3eedb89f0bf7")
 			(effects
 				(font
@@ -27978,6 +28230,7 @@
 		(property "Key" "Num2"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a8835ab3-bf17-4aa5-a6f4-a522f2afba4f")
 			(effects
 				(font
@@ -27989,6 +28242,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "97094752-4ad9-49a1-901f-3d2717c02461")
 			(effects
 				(font
@@ -28141,6 +28395,7 @@
 		(property "Key" "2"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "638d4dde-2694-441e-ad6c-24291f17d77b")
 			(effects
 				(font
@@ -28152,6 +28407,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0243f67c-0276-4254-b1cb-460fc9c0dd8d")
 			(effects
 				(font
@@ -28304,6 +28560,7 @@
 		(property "Key" "Num8"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a6c4af3c-a03c-4e63-8db9-599a896fbdac")
 			(effects
 				(font
@@ -28315,6 +28572,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "473cfe6b-ac39-4504-b91d-62a54756ad03")
 			(effects
 				(font
@@ -28570,6 +28828,7 @@
 		(property "Key" "Space"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "28d21fdf-e7db-4a1a-9842-fe0744ce1411")
 			(effects
 				(font
@@ -28581,6 +28840,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ca0bfbdf-acc6-43e3-8513-62542998d2aa")
 			(effects
 				(font
@@ -28733,6 +28993,7 @@
 		(property "Key" "Num1"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "142d8986-1e3c-443f-b295-240cb2fb9bb1")
 			(effects
 				(font
@@ -28744,6 +29005,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7402700d-01d9-4441-8020-2cd6c5dfaee1")
 			(effects
 				(font
@@ -28999,6 +29261,7 @@
 		(property "Key" "Crsr-Right"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4bf4b73b-318d-4303-8faf-d8b14a19d4e1")
 			(effects
 				(font
@@ -29010,6 +29273,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "74f0a7d3-35cb-497d-9ea6-1d95b2b2e907")
 			(effects
 				(font
@@ -29162,6 +29426,7 @@
 		(property "Key" "Y"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3f80c009-3c85-49da-b120-fc17c00c65fb")
 			(effects
 				(font
@@ -29173,6 +29438,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "71c4118b-8554-49e2-9539-b249115b3fe1")
 			(effects
 				(font
@@ -29428,6 +29694,7 @@
 		(property "Key" "A"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5a80eb14-6965-4023-bb8c-b90d59e4b1f0")
 			(effects
 				(font
@@ -29439,6 +29706,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e7e402be-b574-45ce-9551-e1c0335f2b40")
 			(effects
 				(font
@@ -29591,6 +29859,7 @@
 		(property "Key" "G"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4739dcc3-ea4a-4cd7-a861-103348ce3f7f")
 			(effects
 				(font
@@ -29602,6 +29871,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8d8e288b-0b14-4e8c-b313-c6a9a1e4c99e")
 			(effects
 				(font
@@ -29754,6 +30024,7 @@
 		(property "Key" "Crsr-Left"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fef1f15a-bf20-4596-892b-85e53aae0ae8")
 			(effects
 				(font
@@ -29765,6 +30036,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "419d2340-5630-48ef-baeb-c3a3b7a5d4eb")
 			(effects
 				(font
@@ -30020,6 +30292,7 @@
 		(property "Key" "M"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "403d414b-3e1d-4b60-b47c-7eee147f4f18")
 			(effects
 				(font
@@ -30031,6 +30304,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a8e72ea1-c820-444a-b377-cf17931881f5")
 			(effects
 				(font
@@ -30286,6 +30560,7 @@
 		(property "Key" "7"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d1062b72-d4da-4abc-9b9b-81362495e921")
 			(effects
 				(font
@@ -30297,6 +30572,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "dd33423d-0c09-4795-b1fb-7384131d9819")
 			(effects
 				(font
@@ -30449,6 +30725,7 @@
 		(property "Key" "UpArrow"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b1e26ab6-3bad-496f-a384-188b30dea728")
 			(effects
 				(font
@@ -30460,6 +30737,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "76b0ebda-fa9e-46c0-8579-08110b72b216")
 			(effects
 				(font
@@ -30612,6 +30890,7 @@
 		(property "Key" "NumEnter"
 			(at 0 0 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7a60baf9-ca63-4c27-8bd4-67e2fb767c55")
 			(effects
 				(font
@@ -30623,6 +30902,7 @@
 		(property "LCSC" ""
 			(at 0 0 270)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "35e6f491-87c2-4044-8ce5-b7a6bdfdc373")
 			(effects
 				(font
@@ -30950,6 +31230,7 @@
 		(property "Key" "Num3"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9d35aaf5-51cc-4feb-864c-9805cd95a393")
 			(effects
 				(font
@@ -30961,6 +31242,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e886f25c-d652-46ca-81c0-a1fa675ca7d7")
 			(effects
 				(font
@@ -31113,6 +31395,7 @@
 		(property "Key" "U"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "87671630-177e-4376-9243-290a9a3f602c")
 			(effects
 				(font
@@ -31124,6 +31407,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ecd39ace-b487-4f34-867f-475bbe5a9e3e")
 			(effects
 				(font
@@ -31276,6 +31560,7 @@
 		(property "Key" "5"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3afe5ad7-e2b0-4bf7-87c8-61552dc56428")
 			(effects
 				(font
@@ -31287,6 +31572,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1a1e9032-9499-4dee-bba3-edaf7a0e1f77")
 			(effects
 				(font
@@ -31439,6 +31725,7 @@
 		(property "Key" "X"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "319350f8-56b8-41db-a5d9-9a856aa71518")
 			(effects
 				(font
@@ -31450,6 +31737,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a9a5375f-504d-4cf0-b98f-a8fc86a78bd7")
 			(effects
 				(font
@@ -31705,6 +31993,7 @@
 		(property "Key" "="
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "cb05eb1c-6808-4ba7-b791-34e7425cacb4")
 			(effects
 				(font
@@ -31716,6 +32005,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8d019604-2d9e-4385-b897-94351b4ea8ce")
 			(effects
 				(font
@@ -31971,6 +32261,7 @@
 		(property "Key" "Clr/Home"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0d03b51a-0fc5-4143-ba8f-0009f3f4c8b5")
 			(effects
 				(font
@@ -31982,6 +32273,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b03af8f1-2151-41b3-b75f-a0ff3f69fc0e")
 			(effects
 				(font
@@ -32237,6 +32529,7 @@
 		(property "Key" "Crsr-Left"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5ca4da19-6bc3-44ed-93fc-75c52a3b7ac8")
 			(effects
 				(font
@@ -32248,6 +32541,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1e419fb4-597b-4760-93b8-254a9dd4f2d8")
 			(effects
 				(font
@@ -32400,6 +32694,7 @@
 		(property "Key" "Num6"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e2dadd29-3e20-4547-9d61-f870eb109573")
 			(effects
 				(font
@@ -32411,6 +32706,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "10dc7373-f4a7-44f6-b39a-2250aa6cf9d3")
 			(effects
 				(font
@@ -32563,6 +32859,7 @@
 		(property "Key" "K"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0d5c146e-6a20-4e7b-82eb-e401ab88385f")
 			(effects
 				(font
@@ -32574,6 +32871,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f93560d6-10a5-4133-9b48-e05f596cad5e")
 			(effects
 				(font
@@ -32726,6 +33024,7 @@
 		(property "Key" "Num0"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "66363f69-e780-4d90-ae32-61663471a616")
 			(effects
 				(font
@@ -32737,6 +33036,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "50690c3b-1831-4283-9a5c-b3c80ad1143d")
 			(effects
 				(font
@@ -32889,6 +33189,7 @@
 		(property "Key" "Crsr-Up"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8eaafaac-d79b-46d4-bbe9-d2b7f9d70e8b")
 			(effects
 				(font
@@ -32900,6 +33201,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9feada16-3b3a-4d8e-ad31-ebb91029267f")
 			(effects
 				(font
@@ -33052,6 +33354,7 @@
 		(property "Key" "Crsr-Right"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "92779725-95c7-491f-aaa8-22d2adc0a93b")
 			(effects
 				(font
@@ -33063,6 +33366,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4c688274-b962-438b-8c62-b64e1ea00cb1")
 			(effects
 				(font
@@ -33318,6 +33622,7 @@
 		(property "Key" "Num4"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "dd9b652d-9e2b-4182-86db-ae796f27e505")
 			(effects
 				(font
@@ -33329,6 +33634,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "99bf4d8d-56e9-41f9-9a36-1796bfba6760")
 			(effects
 				(font
@@ -33481,6 +33787,7 @@
 		(property "Key" "Num."
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bbb336af-1c53-4b93-8ce2-baf7b1f5da3d")
 			(effects
 				(font
@@ -33492,6 +33799,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c0a02295-6c20-4294-8bfe-9a6aab0beb5b")
 			(effects
 				(font
@@ -33644,6 +33952,7 @@
 		(property "Key" "2"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "38210c72-85a5-45cf-ab7c-a8c8f2259415")
 			(effects
 				(font
@@ -33655,6 +33964,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "96d0ad5c-3d78-45d7-a34d-e21941a36457")
 			(effects
 				(font
@@ -33910,6 +34220,7 @@
 		(property "Key" "I"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5501c264-9489-4b1e-98b0-2e0043165010")
 			(effects
 				(font
@@ -33921,6 +34232,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "14c28cc6-2080-4bb8-a7f9-eefabffa643e")
 			(effects
 				(font
@@ -34073,6 +34385,7 @@
 		(property "Key" "Crsr Vert"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "30f9278c-3064-45e6-aa68-02f91b14b107")
 			(effects
 				(font
@@ -34084,6 +34397,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "32a10b92-218d-4043-bde6-480d0627d38c")
 			(effects
 				(font
@@ -34339,6 +34653,7 @@
 		(property "Key" "Num4"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "609d08c9-68d8-457a-95b9-1e21483dbd2c")
 			(effects
 				(font
@@ -34350,6 +34665,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a0b5bd5e-3788-4597-9f12-8df87b72d539")
 			(effects
 				(font
@@ -34605,6 +34921,7 @@
 		(property "Key" "£"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "acb732cb-a7f5-4ccb-8041-a9e7457a50fd")
 			(effects
 				(font
@@ -34616,6 +34933,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "dbaca423-67e0-458f-bd4e-2f1b88c4ca71")
 			(effects
 				(font
@@ -34768,6 +35086,7 @@
 		(property "Key" "C"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6b5dce62-a709-455e-8675-e463f7e0b348")
 			(effects
 				(font
@@ -34779,6 +35098,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a65f9f7f-685d-4315-86e0-62e85575eb1d")
 			(effects
 				(font
@@ -34931,6 +35251,7 @@
 		(property "Key" "Num7"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a0fc00cc-3ee7-485d-9693-8abc27ff1795")
 			(effects
 				(font
@@ -34942,6 +35263,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c7a26427-ac18-4155-87c2-0ed598595abf")
 			(effects
 				(font
@@ -35197,6 +35519,7 @@
 		(property "Key" "N"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4341317a-64b0-4f2f-8f83-ab5dbcaf70f6")
 			(effects
 				(font
@@ -35208,6 +35531,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ac9c7aea-61d3-4b82-819f-7c805097addd")
 			(effects
 				(font
@@ -35360,6 +35684,7 @@
 		(property "Key" ","
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7d6a9968-c5f9-49aa-b535-d836f7f7b933")
 			(effects
 				(font
@@ -35371,6 +35696,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ca64889a-c891-4b49-8c68-3790faedf82f")
 			(effects
 				(font
@@ -35626,6 +35952,7 @@
 		(property "Key" "E"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fd5ee3ad-c702-4997-9885-6c1b1b77b591")
 			(effects
 				(font
@@ -35637,6 +35964,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "856c18db-4434-4564-90c5-341bac982281")
 			(effects
 				(font
@@ -35789,6 +36117,7 @@
 		(property "Key" "X"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "57f5f139-b950-46f9-b818-8ea7d6dc9a06")
 			(effects
 				(font
@@ -35800,6 +36129,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d8768ac8-691d-4e2d-a543-d6414f319a99")
 			(effects
 				(font
@@ -35952,6 +36282,7 @@
 		(property "Key" "4"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ea86fdf7-31df-42e7-b7fc-413d56add4a0")
 			(effects
 				(font
@@ -35963,6 +36294,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a9f54311-ae25-4f24-bfd8-ba8ecb421f8e")
 			(effects
 				(font
@@ -36115,6 +36447,7 @@
 		(property "Key" "/"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a6921868-f12a-445e-844e-50d467a153dd")
 			(effects
 				(font
@@ -36126,6 +36459,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "59997d9c-49c1-4f8a-9901-73270002117d")
 			(effects
 				(font
@@ -36278,6 +36612,7 @@
 		(property "Key" "6"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0ace63d7-00f1-4d6f-ac7e-97ef81fe31c6")
 			(effects
 				(font
@@ -36289,6 +36624,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "065db48f-9396-4f22-9305-bb6e6b949eb6")
 			(effects
 				(font
@@ -36544,6 +36880,7 @@
 		(property "Key" "H"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ad8bd9c8-f02a-49bf-97cf-27f599f99d61")
 			(effects
 				(font
@@ -36555,6 +36892,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "748870d3-1e44-41d7-b0ce-fc4487c3311b")
 			(effects
 				(font
@@ -36810,6 +37148,7 @@
 		(property "Key" "Z"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "13eaef10-53b7-4676-96e1-c01a5049a570")
 			(effects
 				(font
@@ -36821,6 +37160,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "36f959e2-1cb9-4fc6-b3bc-caee2d5111b8")
 			(effects
 				(font
@@ -37076,6 +37416,7 @@
 		(property "Key" "J"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d4bec171-7764-47bd-9024-cc639289642f")
 			(effects
 				(font
@@ -37087,6 +37428,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a1a89a88-47a9-4e53-bd59-0425f5f9de83")
 			(effects
 				(font
@@ -37342,6 +37684,7 @@
 		(property "Key" "3"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5c096659-1eb7-434a-9a3c-906b15400825")
 			(effects
 				(font
@@ -37353,6 +37696,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ff289433-f790-4b7a-a2f6-5f869207b028")
 			(effects
 				(font
@@ -37608,6 +37952,7 @@
 		(property "Key" "Num9"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3262cc44-8952-431d-8543-0ba77ebaa565")
 			(effects
 				(font
@@ -37619,6 +37964,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ea27898f-fbbb-4c01-a063-5c5cfda6032f")
 			(effects
 				(font
@@ -37874,6 +38220,7 @@
 		(property "Key" "V"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8892136b-8ba9-4f2d-a16c-fb9e2fde2c44")
 			(effects
 				(font
@@ -37885,6 +38232,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "268ea7fa-b91d-4982-be8a-970000e3cbc1")
 			(effects
 				(font
@@ -38037,6 +38385,7 @@
 		(property "Key" "Crsr Horiz"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "bc714c28-6aa9-4267-a8a1-90e8cb542c4b")
 			(effects
 				(font
@@ -38048,6 +38397,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "627869e4-7dae-4ee5-809f-e8fded03f45f")
 			(effects
 				(font
@@ -38303,6 +38653,7 @@
 		(property "Key" "S"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9e082b4b-a342-4180-9c87-72e602c801ce")
 			(effects
 				(font
@@ -38314,6 +38665,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3be426a5-4c42-4508-9aba-b5d5fe850d86")
 			(effects
 				(font
@@ -38466,6 +38818,7 @@
 		(property "Key" "Num1"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f0296379-9757-4ec6-ae59-4abd8b615957")
 			(effects
 				(font
@@ -38477,6 +38830,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "fffe89b8-dc36-4c9b-bcf4-3364b4333e50")
 			(effects
 				(font
@@ -38629,6 +38983,7 @@
 		(property "Key" "Num7"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "769c4828-4fdf-40f8-a6fc-2f2e0c91ecb5")
 			(effects
 				(font
@@ -38640,6 +38995,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "16b576c3-36f2-4dda-a7df-68a07903c94d")
 			(effects
 				(font
@@ -38792,6 +39148,7 @@
 		(property "Key" "Alt"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a0ebcd2a-94d4-41f8-b3c4-79c7b035e6e1")
 			(effects
 				(font
@@ -38803,6 +39160,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "1466b388-929f-4924-a97f-bdb2a06bc4db")
 			(effects
 				(font
@@ -39058,6 +39416,7 @@
 		(property "Key" "F7"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "52c3bc78-67f5-4fa3-8cef-77e6e4c0771c")
 			(effects
 				(font
@@ -39069,6 +39428,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b2293cea-acb2-43d6-996f-0a316e9f8cf5")
 			(effects
 				(font
@@ -39221,6 +39581,7 @@
 		(property "Key" "Tab"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "a68c2d0e-9d88-4036-b9c4-c98ceaf42ae9")
 			(effects
 				(font
@@ -39232,6 +39593,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "2495ae95-e753-4dbc-88e4-48577eb542bd")
 			(effects
 				(font
@@ -39384,6 +39746,7 @@
 		(property "Key" "0"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c9890536-66dc-4889-aac8-cf923d06201f")
 			(effects
 				(font
@@ -39395,6 +39758,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b4b20fa7-8127-4c10-8a10-794d290ed961")
 			(effects
 				(font
@@ -39547,6 +39911,7 @@
 		(property "Key" "NoScroll"
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "779d4a9f-08d6-4643-a231-9fdc276ecb8f")
 			(effects
 				(font
@@ -39558,6 +39923,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "520eaa3a-fbfa-4178-ab82-2860da95d9b1")
 			(effects
 				(font
@@ -39813,6 +40179,7 @@
 		(property "Key" "T"
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9664685e-53b5-4051-8ddd-53ff143f8cbe")
 			(effects
 				(font
@@ -39824,6 +40191,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "f5885cd1-c2ba-4be5-b9f7-ba180957dab1")
 			(effects
 				(font
@@ -39991,6 +40359,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "abdd449a-e1ec-4839-bb9b-ce268ddf69c6")
 			(effects
 				(font
@@ -40149,6 +40518,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "407b5acf-098d-452f-af18-98456db3102f")
 			(effects
 				(font
@@ -40391,7 +40761,7 @@
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q3"
-			(at 0 2.4 180)
+			(at -3.25 0 0)
 			(layer "B.SilkS")
 			(uuid "6197becb-2d4f-43c5-b3d6-16befb57618a")
 			(effects
@@ -40454,6 +40824,7 @@
 		(property "LCSC" "C8545"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b192edcb-c195-416f-acf1-25943e1739ca")
 			(effects
 				(font
@@ -40832,6 +41203,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "964d5fb5-e677-45b7-9a10-21397cb018ac")
 			(effects
 				(font
@@ -41128,6 +41500,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "35ce145e-b2fc-44c8-8c75-12cce7e41e3f")
 			(effects
 				(font
@@ -41370,7 +41743,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R1"
-			(at 0 1.43 180)
+			(at -2.94619 0 0)
 			(layer "B.SilkS")
 			(uuid "24d7fe7a-b48d-49b5-927f-ca6ad0d0cfff")
 			(effects
@@ -41433,6 +41806,7 @@
 		(property "LCSC" "C25804"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e0213acb-5afd-4e0c-9ea5-c44bf5089c88")
 			(effects
 				(font
@@ -41537,7 +41911,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C3"
-			(at 0 1.43 270)
+			(at 2.69325 0 0)
 			(layer "B.SilkS")
 			(uuid "b4ca2668-a220-4ab1-8d13-57420a67cedf")
 			(effects
@@ -41600,6 +41974,7 @@
 		(property "LCSC" "C19702"
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "410880e0-1333-4a5d-bfca-ea879f508627")
 			(effects
 				(font
@@ -41758,6 +42133,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e578428f-022b-4ee3-921a-925047f1cd95")
 			(effects
 				(font
@@ -42054,6 +42430,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "d6b44ef7-27af-4a78-8307-c8575c171ef4")
 			(effects
 				(font
@@ -42350,6 +42727,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "0aaa7a97-abaf-4128-9ace-d81c82eff4e3")
 			(effects
 				(font
@@ -42655,6 +43033,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "280f0558-a2c9-4d58-bbd6-fa3f4b77aa45")
 			(effects
 				(font
@@ -42822,6 +43201,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "0e4321a9-b57f-43c6-a0f4-63da0051b3f4")
 			(effects
 				(font
@@ -42980,6 +43360,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "41edef52-917a-47ad-8b71-c1ad760d42a4")
 			(effects
 				(font
@@ -43285,6 +43666,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "06431d2b-c148-4bd5-9e9e-4281fbb1b8bb")
 			(effects
 				(font
@@ -43452,6 +43834,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "80bd7052-fb8d-4092-94d2-3d21755f8968")
 			(effects
 				(font
@@ -43610,6 +43993,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "dff2be09-d922-4c58-b9d5-b036e05181a7")
 			(effects
 				(font
@@ -43852,7 +44236,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C2"
-			(at 0 1.43 270)
+			(at -2.69325 0 0)
 			(layer "B.SilkS")
 			(uuid "2ec4acfd-9c42-44e0-9f4a-114f4b64a63d")
 			(effects
@@ -43915,6 +44299,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "64873d72-67a5-4ef8-92d9-7d1652410d67")
 			(effects
 				(font
@@ -44073,6 +44458,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c6b9f07e-b939-4445-aa9e-700d474cac31")
 			(effects
 				(font
@@ -44378,6 +44764,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "622c841c-1988-4472-80af-7bc5bbb3339d")
 			(effects
 				(font
@@ -44545,6 +44932,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "71eaab93-4632-417a-87b1-2a3386270ba5")
 			(effects
 				(font
@@ -44712,6 +45100,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "0e0eb873-d4bb-4ed8-951d-b7b4542060dc")
 			(effects
 				(font
@@ -44879,6 +45268,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5f70d50e-84a1-494c-9c06-43bf9c3c9ef3")
 			(effects
 				(font
@@ -45037,6 +45427,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "4b4fece7-1799-49b2-8c75-3eeb628c65c8")
 			(effects
 				(font
@@ -45333,6 +45724,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "de32779a-fb82-48b6-b948-b0030858bffd")
 			(effects
 				(font
@@ -45629,6 +46021,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a3e672af-4b96-4764-8cd4-845bb2b2ff4f")
 			(effects
 				(font
@@ -45934,6 +46327,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "89fecbfe-e9b9-47c9-8842-16049a73ca24")
 			(effects
 				(font
@@ -46101,6 +46495,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "724be734-b897-4bdd-ae5a-3705245ec2cb")
 			(effects
 				(font
@@ -46205,7 +46600,7 @@
 		(descr "Fuse SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf)")
 		(tags "fuse")
 		(property "Reference" "F1"
-			(at 0 2.65 180)
+			(at 0 2.99325 0)
 			(layer "B.SilkS")
 			(uuid "86550601-aeec-4ee2-9c48-9608c8353ca2")
 			(effects
@@ -46268,6 +46663,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "149d18aa-1652-4895-8dda-c0feb62e1b82")
 			(effects
 				(font
@@ -46426,6 +46822,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "0f587abd-b043-4ce9-93f4-5bc479ef45d1")
 			(effects
 				(font
@@ -46731,6 +47128,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "0b41f135-272a-4325-abac-687bbc8425b8")
 			(effects
 				(font
@@ -46891,6 +47289,7 @@
 		(property "LCSC" ""
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "536e7c99-69cd-48aa-a5b0-94d01472960f")
 			(effects
 				(font
@@ -47727,6 +48126,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a9655c83-261b-46cb-976f-307ca7922c6e")
 			(effects
 				(font
@@ -47885,6 +48285,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b897ad41-fc4a-403a-8cc5-fa51232b9307")
 			(effects
 				(font
@@ -48181,6 +48582,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2d8212d2-6681-4376-a083-a9609e9db8b8")
 			(effects
 				(font
@@ -48486,6 +48888,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "99a60fa8-36fa-4e85-9381-c5885ea0ea0a")
 			(effects
 				(font
@@ -48644,6 +49047,7 @@
 		(property "LCSC" "C500795"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "29ba8f12-706e-456f-afa0-fc15ed89c104")
 			(effects
 				(font
@@ -48927,6 +49331,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "f117e943-f086-49e2-ac0b-e5b5c2dbf880")
 			(effects
 				(font
@@ -49031,7 +49436,7 @@
 		(descr "SOIC, 24 Pin (JEDEC MS-013AD, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/soic_wide-rw/RW_24.pdf)")
 		(tags "SOIC SO")
 		(property "Reference" "U6"
-			(at 0 8.65 270)
+			(at 6.97325 0 0)
 			(layer "B.SilkS")
 			(uuid "05609536-8ef5-46db-9864-e9d6ea91cc11")
 			(effects
@@ -49094,6 +49499,7 @@
 		(property "LCSC" ""
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "70593c72-ae9f-4311-8b45-bf79987c0a05")
 			(effects
 				(font
@@ -49535,7 +49941,7 @@
 		(descr "Diode SMA (DO-214AC)")
 		(tags "Diode SMA (DO-214AC)")
 		(property "Reference" "D1"
-			(at 0 2.5 180)
+			(at 0 2.79325 0)
 			(layer "B.SilkS")
 			(uuid "e1a99cee-d103-44fe-aee0-3a8f7729e01a")
 			(effects
@@ -49589,6 +49995,7 @@
 		(property "LCSC" "C8678"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "f663b3a4-ceee-4a46-9443-db2b5bed5c78")
 			(effects
 				(font
@@ -49821,7 +50228,7 @@
 		(descr "SOT, 5 Pin (JEDEC MO-178 Var AA https://www.jedec.org/document_search?search_api_views_fulltext=MO-178)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U4"
-			(at 0 2.4 180)
+			(at 0 -2.74325 0)
 			(layer "B.SilkS")
 			(uuid "a72192e9-180b-4d41-aac8-8693df581c62")
 			(effects
@@ -49884,6 +50291,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5dd5392a-bd77-4ad8-b5fa-d3ec07d66910")
 			(effects
 				(font
@@ -50287,6 +50695,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "04c277b0-33d0-48b5-97a3-14549d959038")
 			(effects
 				(font
@@ -50454,6 +50863,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1c5a0eb5-0c07-4181-a6fd-250261b6ca82")
 			(effects
 				(font
@@ -50621,6 +51031,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "291b351f-84c8-4874-9875-a4922d252022")
 			(effects
 				(font
@@ -50788,6 +51199,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5d74ff8f-0132-4815-83a0-5fc8c0f6ffb2")
 			(effects
 				(font
@@ -50946,6 +51358,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "89b150f0-7cca-459d-9949-294dbb0d23f8")
 			(effects
 				(font
@@ -51251,6 +51664,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "98eae7e4-f214-4a74-8f64-f3e30b441e3c")
 			(effects
 				(font
@@ -51418,6 +51832,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5bb4904b-ddc2-4aac-98a7-6b93cccf95f4")
 			(effects
 				(font
@@ -51585,6 +52000,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "cbcb3793-fa5d-4661-b7bc-3476316863e1")
 			(effects
 				(font
@@ -51689,7 +52105,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R3"
-			(at 0 1.43 270)
+			(at 2.69325 0 0)
 			(layer "B.SilkS")
 			(uuid "6aaf2ab7-71d9-40fe-acf4-0c709934aeb7")
 			(effects
@@ -51752,6 +52168,7 @@
 		(property "LCSC" "C23186"
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "51e1d5e5-ca74-42c7-9778-ba7a150dfd9d")
 			(effects
 				(font
@@ -51910,6 +52327,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "fd7c566c-4d90-4f76-b09d-edc461003861")
 			(effects
 				(font
@@ -52206,6 +52624,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c2f00617-2926-4cab-b225-547a1577ef1b")
 			(effects
 				(font
@@ -52502,6 +52921,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c10faf94-bfbf-4213-9e82-276889d00d69")
 			(effects
 				(font
@@ -52798,6 +53218,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "bd8f0a41-70bc-4929-bf91-dbb71e4d0767")
 			(effects
 				(font
@@ -53094,6 +53515,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1907f5f3-614f-44e5-ae5a-88a651394bd0")
 			(effects
 				(font
@@ -53390,6 +53812,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9b35c3bf-a731-4fe1-bcb8-7486f9e2bbae")
 			(effects
 				(font
@@ -53686,6 +54109,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "ec76871a-9033-43b2-adf4-c3d8d00ec530")
 			(effects
 				(font
@@ -53982,6 +54406,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1d5d1173-414c-4c20-96d0-1e508a590745")
 			(effects
 				(font
@@ -54287,6 +54712,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "86d72c7a-094c-47a0-b51b-1fa9cdb643c9")
 			(effects
 				(font
@@ -54454,6 +54880,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "ad97f7f2-e8d2-4f8c-9ce6-6baa361297c1")
 			(effects
 				(font
@@ -54612,6 +55039,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5b6969a6-6e68-47ed-aef9-adba68a3591f")
 			(effects
 				(font
@@ -54917,6 +55345,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2908b5f9-a94a-4b21-a8fc-cdbe8f2eabbc")
 			(effects
 				(font
@@ -55075,6 +55504,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "8c094bae-f732-45ca-ae87-ddd643680f71")
 			(effects
 				(font
@@ -55317,7 +55747,7 @@
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q2"
-			(at 0 2.4 180)
+			(at -3.25 0 0)
 			(layer "B.SilkS")
 			(uuid "36bf6545-107d-476f-80ff-1aa0db9c9bae")
 			(effects
@@ -55380,6 +55810,7 @@
 		(property "LCSC" "C8545"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "725ddf2e-654f-40fb-b00f-8f253ad38bfb")
 			(effects
 				(font
@@ -55758,6 +56189,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a58fdaf1-3fdf-4300-9473-83f6d999bc57")
 			(effects
 				(font
@@ -56054,6 +56486,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "02097084-39a9-418a-9620-89ddd115e565")
 			(effects
 				(font
@@ -56350,6 +56783,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "50b5eb95-6fff-4a76-932c-1545bc00ea91")
 			(effects
 				(font
@@ -56655,6 +57089,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c37ab9aa-cb5c-49d3-8921-b6f25be0a4ad")
 			(effects
 				(font
@@ -56813,6 +57248,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "3eac9bd2-dc45-4c02-b030-722b1d2128e4")
 			(effects
 				(font
@@ -57109,6 +57545,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "d8a7fe8e-ba25-462e-8bd9-edab5e2d593e")
 			(effects
 				(font
@@ -57405,6 +57842,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9b745f5f-411e-421a-9b2b-b0a9e9734f97")
 			(effects
 				(font
@@ -57647,7 +58085,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C11"
-			(at 0 1.43 180)
+			(at 0 -1.77325 0)
 			(layer "B.SilkS")
 			(uuid "a80fe262-9159-44e5-a05c-8ef7ae474052")
 			(effects
@@ -57710,6 +58148,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "def69ca2-2b96-4efb-8d02-bc2ed1adf95a")
 			(effects
 				(font
@@ -57877,6 +58316,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5fd26c89-2e18-4fed-a9f0-7130dd75b797")
 			(effects
 				(font
@@ -58035,6 +58475,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "23b66cff-f867-4997-a002-5766b023fba7")
 			(effects
 				(font
@@ -58331,6 +58772,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b75c3b65-df3b-47be-a566-49288f4f3590")
 			(effects
 				(font
@@ -58573,7 +59015,7 @@
 		(descr "Through hole straight pin header, 1x03, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x03 2.54mm single row")
 		(property "Reference" "J4"
-			(at 0 2.38 270)
+			(at 0 -8.027143 0)
 			(layer "B.SilkS")
 			(uuid "cb79f7f6-ee91-4887-91c2-e0bcc228bc2e")
 			(effects
@@ -58636,6 +59078,7 @@
 		(property "LCSC" ""
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9f46467d-7497-4f45-be49-f959fb42a2e5")
 			(effects
 				(font
@@ -58884,6 +59327,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "25d99a85-8ecb-4b7a-a91e-1046c1e22379")
 			(effects
 				(font
@@ -59189,6 +59633,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a113c32f-9ef0-4414-b8b8-c2f8467152fc")
 			(effects
 				(font
@@ -59293,7 +59738,7 @@
 		(descr "SOD-123")
 		(tags "SOD-123")
 		(property "Reference" "D3"
-			(at 0 2 180)
+			(at 0 -2.19325 0)
 			(layer "B.SilkS")
 			(uuid "614b95cf-41f4-4ab0-b203-137ee348a415")
 			(effects
@@ -59347,6 +59792,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "0f60e203-75db-4965-b3be-767a642795d5")
 			(effects
 				(font
@@ -59652,6 +60098,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "0ebfc4d9-0976-4d0d-8574-fdfbdfd5f5b9")
 			(effects
 				(font
@@ -59819,6 +60266,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2415bf56-ed6f-4e57-917e-1d460bcdce62")
 			(effects
 				(font
@@ -59986,6 +60434,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "fba19b82-6d84-4340-b570-fadf8092ce2b")
 			(effects
 				(font
@@ -60144,6 +60593,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6e50586f-8178-49f1-bfa6-26c3d8bf654f")
 			(effects
 				(font
@@ -60449,6 +60899,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5b45dc4e-aebe-47f7-8499-fbd755866379")
 			(effects
 				(font
@@ -60616,6 +61067,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "71fd5586-24f3-4cb2-8a2d-86e991ff0c3e")
 			(effects
 				(font
@@ -60774,6 +61226,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1823eeef-897a-4667-a404-563c3f473283")
 			(effects
 				(font
@@ -61070,6 +61523,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "3c6747b1-c11c-4bd1-bda2-73828233659d")
 			(effects
 				(font
@@ -61375,6 +61829,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "d941a4a2-9444-46ff-a1e8-ec8242e25493")
 			(effects
 				(font
@@ -61542,6 +61997,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "4a3177e1-caef-475a-87be-1ef803d4f1eb")
 			(effects
 				(font
@@ -61709,6 +62165,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "04ca84cf-e960-413d-a976-929598040c8b")
 			(effects
 				(font
@@ -61813,7 +62270,7 @@
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, gullwing terminals, https://www.ckswitches.com/media/1471/pts645.pdf")
 		(tags "SPST Button Switch CK C&K")
 		(property "Reference" "SW93"
-			(at 0 4.05 180)
+			(at 0 4.44325 0)
 			(layer "B.SilkS")
 			(uuid "e7fed4a4-273a-4cce-84f6-026b1d2ddd60")
 			(effects
@@ -61867,6 +62324,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "591b3c66-dfb1-4807-b3dd-8896f248d6a4")
 			(effects
 				(font
@@ -62170,6 +62628,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a935cfaa-e4b5-4be5-aad7-fab135bf435e")
 			(effects
 				(font
@@ -62466,6 +62925,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "66806186-dcef-475f-addb-3e4c24e2711b")
 			(effects
 				(font
@@ -62762,6 +63222,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "4335541e-f09c-4332-bfe4-7318e7bf4c12")
 			(effects
 				(font
@@ -63067,6 +63528,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "818b0dfa-0ef0-4d0a-bacf-a0c54ca3a660")
 			(effects
 				(font
@@ -63225,6 +63687,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "caee0894-1320-432c-83cd-eac097bac8d4")
 			(effects
 				(font
@@ -63530,6 +63993,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "50ea52da-f024-4f64-a4d9-03f60acce9c4")
 			(effects
 				(font
@@ -63697,6 +64161,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a9b3805d-6360-418e-939e-c7f6e9cfb04c")
 			(effects
 				(font
@@ -63864,6 +64329,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "cda8c30b-7ba8-4ddb-9dd6-ac61146b5079")
 			(effects
 				(font
@@ -64031,6 +64497,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e685daaa-f6bc-4b75-a686-76a2f5267757")
 			(effects
 				(font
@@ -64189,6 +64656,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "afea432e-078d-4baa-b3e3-362f8ad29c6e")
 			(effects
 				(font
@@ -64431,7 +64899,7 @@
 		(descr "SOT, 6 Pin (JEDEC MO-178 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=MO-178)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U7"
-			(at 0 2.4 180)
+			(at 4.19 -2.74325 0)
 			(layer "B.SilkS")
 			(uuid "95970c49-7b59-4665-9f0c-44df75a12e66")
 			(effects
@@ -64494,6 +64962,7 @@
 		(property "LCSC" "C7519"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c7ecbc0e-b355-4e74-89b7-917654ee9bdb")
 			(effects
 				(font
@@ -64855,6 +65324,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "84fa1987-97f6-4e5e-ad19-0543b8413021")
 			(effects
 				(font
@@ -65022,6 +65492,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "f9852ad0-c8ce-4a26-b153-11a255cfa351")
 			(effects
 				(font
@@ -65126,7 +65597,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C8"
-			(at 0 1.43 180)
+			(at 0 1.77325 0)
 			(layer "B.SilkS")
 			(uuid "1eb331bb-4d54-4527-90f7-d1c428f9753a")
 			(effects
@@ -65189,6 +65660,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "ae381a9e-3d59-4809-8b95-d8984bf40077")
 			(effects
 				(font
@@ -65293,7 +65765,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R12"
-			(at 0 1.43 180)
+			(at 0 1.77325 0)
 			(layer "B.SilkS")
 			(uuid "88cdc72d-d146-416c-b81b-c5ab1e871a12")
 			(effects
@@ -65356,6 +65828,7 @@
 		(property "LCSC" "C25803"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e652f511-e058-4400-a1c9-a62a4fcb1da8")
 			(effects
 				(font
@@ -65514,6 +65987,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "36b265ba-400c-4253-81fe-6bb43c8aecc8")
 			(effects
 				(font
@@ -65819,6 +66293,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2b6bc45c-3b54-416f-b4c0-897f87178243")
 			(effects
 				(font
@@ -65977,6 +66452,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "067a8651-17e7-4275-8c7b-e0c594960135")
 			(effects
 				(font
@@ -66273,6 +66749,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "43a2936e-05da-40a4-b03c-4e365ec32d03")
 			(effects
 				(font
@@ -66569,6 +67046,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c8eafea4-4745-4d20-8fb0-62ca4a8bcbbc")
 			(effects
 				(font
@@ -66874,6 +67352,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a7273abd-823b-411d-a393-0543b1144ab0")
 			(effects
 				(font
@@ -67041,6 +67520,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "134d1b72-2df7-446e-8c83-ff66202eb6e3")
 			(effects
 				(font
@@ -67145,7 +67625,7 @@
 		(descr "LQFP, 44 Pin (JEDEC MS-026 variation BCB, 1.40mm body thickness, https://www.jedec.org/document_search?search_api_views_fulltext=MS-026, https://www.nxp.com.cn/docs/en/package-information/98ASS23225W.pdf)")
 		(tags "LQFP QFP NXP_SOT389-2 Onsemi_CASE-561AA Renesas_44-TQFP Renesas_PPG44D1 Infineon_PG-TQFP-44-801 Analog_ST-44-1")
 		(property "Reference" "U3"
-			(at 0 7.35 180)
+			(at 0 7.69325 0)
 			(layer "B.SilkS")
 			(uuid "2c4690dd-c7f1-4c5a-94c3-331cd1e6b0e7")
 			(effects
@@ -67208,6 +67688,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1dd2a64b-5c3d-4a9d-9d84-f1ba1f0ed2d2")
 			(effects
 				(font
@@ -67954,6 +68435,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "7b8a8887-feff-478c-89dd-9e53fb1d3a59")
 			(effects
 				(font
@@ -68259,6 +68741,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "054f27ab-5c5b-453d-84c4-d62f793d6070")
 			(effects
 				(font
@@ -68426,6 +68909,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "85406380-6f79-4005-94ff-0d63fabd46ca")
 			(effects
 				(font
@@ -68584,6 +69068,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "960a69f4-f625-466d-bffe-251877eb46fd")
 			(effects
 				(font
@@ -68889,6 +69374,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e4a48795-231d-4437-acf8-67fe60ade693")
 			(effects
 				(font
@@ -69056,6 +69542,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "966aa6d3-36d6-4e31-b537-832860dea7e5")
 			(effects
 				(font
@@ -69223,6 +69710,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "00278615-8771-44fa-afc3-5740494f6315")
 			(effects
 				(font
@@ -69327,7 +69815,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R2"
-			(at 0 1.43 180)
+			(at 3.39 -1.77325 0)
 			(layer "B.SilkS")
 			(uuid "8888251c-f019-45d3-a4cd-a7c93e37edb3")
 			(effects
@@ -69390,6 +69878,7 @@
 		(property "LCSC" "C25804"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5a654fc6-1e1e-4269-a609-170320cacdf6")
 			(effects
 				(font
@@ -69548,6 +70037,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "423ae4c5-689a-41e8-ae48-5903dd1e23ab")
 			(effects
 				(font
@@ -69853,6 +70343,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b747de98-8051-41ed-8d40-2c1baf068dc6")
 			(effects
 				(font
@@ -70020,6 +70511,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6f95a7fb-e464-446d-9e6a-71ea40ac0146")
 			(effects
 				(font
@@ -70124,7 +70616,7 @@
 		(descr "Diode SMA (DO-214AC)")
 		(tags "Diode SMA (DO-214AC)")
 		(property "Reference" "D2"
-			(at 0 2.5 180)
+			(at 0 2.79325 0)
 			(layer "B.SilkS")
 			(uuid "b16dca35-7765-4c18-a118-7898d6c5b198")
 			(effects
@@ -70178,6 +70670,7 @@
 		(property "LCSC" "C8678"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "4d9c819d-c271-4007-9193-8f2f5b2b49ac")
 			(effects
 				(font
@@ -70473,6 +70966,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c4f6f9f6-9873-4f8d-a5e3-39dd5770e509")
 			(effects
 				(font
@@ -70631,6 +71125,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "3c4357db-96f5-4d29-b8ac-52bdec605ad2")
 			(effects
 				(font
@@ -70927,6 +71422,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "be6e744c-7468-42be-aa5f-3b01f3c91f15")
 			(effects
 				(font
@@ -71223,6 +71719,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5c1076be-cdba-4f12-b687-ec49e3d6ac53")
 			(effects
 				(font
@@ -71465,7 +71962,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R4"
-			(at 0 1.43 270)
+			(at 0 2.02619 0)
 			(layer "B.SilkS")
 			(uuid "863e64f5-2a9e-4ff3-9cb7-9d3cd03a5bb6")
 			(effects
@@ -71528,6 +72025,7 @@
 		(property "LCSC" "C23186"
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "45085fc7-8bf5-45d1-a573-858713aab3fc")
 			(effects
 				(font
@@ -71695,6 +72193,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5aedb0c1-40a9-4bfb-8dff-a2b9aaacf465")
 			(effects
 				(font
@@ -71862,6 +72361,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "35f97814-e2a7-4e95-9d4b-5539d4bd1cec")
 			(effects
 				(font
@@ -72020,6 +72520,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2654f976-d51f-41e6-9cba-0d828d2b556b")
 			(effects
 				(font
@@ -72325,6 +72826,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "97f60835-14a9-47c5-a271-b78d7ea5146b")
 			(effects
 				(font
@@ -72429,7 +72931,7 @@
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C7"
-			(at 0 1.85 180)
+			(at 0 2.19325 0)
 			(layer "B.SilkS")
 			(uuid "fe3ae091-98b1-418c-879a-a61369e397c3")
 			(effects
@@ -72492,6 +72994,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6ec21e6f-ade9-4700-8262-cc64ebfb3ee4")
 			(effects
 				(font
@@ -72659,6 +73162,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "3a192fec-9f74-4134-b5e5-416459e5ac88")
 			(effects
 				(font
@@ -72763,7 +73267,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C1"
-			(at 0 1.43 180)
+			(at -2.94619 0 0)
 			(layer "B.SilkS")
 			(uuid "1f8717cf-2eb7-4f1f-a308-5c6f79db9a62")
 			(effects
@@ -72826,6 +73330,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c4b557b6-4f6f-4fdd-9030-03d6345fcddb")
 			(effects
 				(font
@@ -72993,6 +73498,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "19d42935-a866-4359-bfe5-aaaed3607d2d")
 			(effects
 				(font
@@ -73160,6 +73666,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "11f584dd-0a00-4263-9f90-4b662638a5f7")
 			(effects
 				(font
@@ -73327,6 +73834,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "7f0e87c7-19b0-4edc-b256-4925a50c1952")
 			(effects
 				(font
@@ -73485,6 +73993,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6a1e3849-2b39-457c-bb7d-fbe035e98cc9")
 			(effects
 				(font
@@ -73727,7 +74236,7 @@
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q1"
-			(at 0 2.4 180)
+			(at -3.25 0 0)
 			(layer "B.SilkS")
 			(uuid "dd3ed30a-57a9-4ad3-94ac-04fd3d01fe38")
 			(effects
@@ -73790,6 +74299,7 @@
 		(property "LCSC" "C8545"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c94dc750-eb11-4a84-8cf2-3fdca56895e1")
 			(effects
 				(font
@@ -74168,6 +74678,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e676aa99-c4d2-4410-8e63-4eec69df12cf")
 			(effects
 				(font
@@ -74410,7 +74921,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R7"
-			(at 0 1.43 180)
+			(at 0 1.77325 0)
 			(layer "B.SilkS")
 			(uuid "9b4e3b90-dddc-44c5-b611-8bb041ff64bd")
 			(effects
@@ -74473,6 +74984,7 @@
 		(property "LCSC" "C25803"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a5ab09d9-c85c-47a1-822b-9818b90b71ac")
 			(effects
 				(font
@@ -74577,7 +75089,7 @@
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, gullwing terminals, https://www.ckswitches.com/media/1471/pts645.pdf")
 		(tags "SPST Button Switch CK C&K")
 		(property "Reference" "SW94"
-			(at 0 4.05 180)
+			(at 7.37 0 0)
 			(layer "B.SilkS")
 			(uuid "514d2ea1-6c08-47a5-aae6-888f9027aeea")
 			(effects
@@ -74631,6 +75143,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9d00dc85-51b8-45ee-9753-dd64c5411b41")
 			(effects
 				(font
@@ -74934,6 +75447,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6dcdf82c-52e9-4958-9ae9-ed077216605d")
 			(effects
 				(font
@@ -75230,6 +75744,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "212eb627-8d01-4eec-a8f9-313d76438bc6")
 			(effects
 				(font
@@ -75526,6 +76041,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5c006d9c-30cc-4013-a101-5b08712a8217")
 			(effects
 				(font
@@ -75831,6 +76347,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "808f4612-0896-48b9-a4dd-ed47b7167ce5")
 			(effects
 				(font
@@ -75998,6 +76515,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "44dbc743-5e15-468f-8c0f-90eff5b08b62")
 			(effects
 				(font
@@ -76156,6 +76674,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "34bf24ce-e071-41bb-ad59-fb713ffc7c69")
 			(effects
 				(font
@@ -76461,6 +76980,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b8041fd9-c987-4474-8cad-7a5689ca5c7e")
 			(effects
 				(font
@@ -76565,7 +77085,7 @@
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C6"
-			(at 0 1.85 180)
+			(at -3.77619 0 0)
 			(layer "B.SilkS")
 			(uuid "cdfff423-e31c-44ab-a758-591e8640efa5")
 			(effects
@@ -76628,6 +77148,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "f6a19480-a63f-4c68-9052-7c3c9e0d5d40")
 			(effects
 				(font
@@ -76786,6 +77307,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e128917f-6c8f-4c50-91eb-04c4874d8e3f")
 			(effects
 				(font
@@ -77091,6 +77613,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "546b3833-5278-4f10-ae82-1db0644c25c1")
 			(effects
 				(font
@@ -77258,6 +77781,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "17799ca8-6f5b-4a16-8ef4-ce537b2ff727")
 			(effects
 				(font
@@ -77425,6 +77949,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "fbf6727f-0402-4f7d-b965-fa97fac0983a")
 			(effects
 				(font
@@ -77583,6 +78108,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 90)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "71d68481-e6b2-4fae-be65-49d771f4bf7c")
 			(effects
 				(font
@@ -77888,6 +78414,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6480efe3-0a91-49ab-835d-ae67509f3ec1")
 			(effects
 				(font
@@ -78055,6 +78582,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9c77dd63-4a08-4fb6-9771-922f5be47d47")
 			(effects
 				(font
@@ -78213,6 +78741,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e055bfd5-8fb9-44ba-a5ce-9c18d4cafb76")
 			(effects
 				(font
@@ -78455,7 +78984,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R10"
-			(at 0 1.43 180)
+			(at 3.422381 0 0)
 			(layer "B.SilkS")
 			(uuid "894214a3-14c1-403e-9ac6-d6a00cbe0e84")
 			(effects
@@ -78518,6 +79047,7 @@
 		(property "LCSC" "C25804"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1b4b7cac-82cc-4fc8-958d-a34f588e2ad7")
 			(effects
 				(font
@@ -78622,7 +79152,7 @@
 		(descr "SMD capacitor, aluminum electrolytic, Nichicon, 6.3x7.7mm")
 		(tags "capacitor electrolytic")
 		(property "Reference" "C5"
-			(at 0 4.35 180)
+			(at 0 4.59325 0)
 			(layer "B.SilkS")
 			(uuid "92c5a076-b5e6-46fd-951b-85b185a0ecb7")
 			(effects
@@ -78685,6 +79215,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b682ed07-eb60-47ea-82c4-71698aaf05d7")
 			(effects
 				(font
@@ -79078,7 +79609,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C9"
-			(at 0 1.43 180)
+			(at 0 1.77325 0)
 			(layer "B.SilkS")
 			(uuid "0f0d38db-6cc3-4fb2-b43d-3febd9d14921")
 			(effects
@@ -79141,6 +79672,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2f0734b3-9fe5-4ca9-92b7-83890cefd84e")
 			(effects
 				(font
@@ -79299,6 +79831,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "45604875-8d19-466c-98d9-34fd7752c878")
 			(effects
 				(font
@@ -79604,6 +80137,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "7ceff3df-74c8-4008-9c13-ccb42dd01d02")
 			(effects
 				(font
@@ -79762,6 +80296,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9446b987-715f-4f3b-9651-0118d327f3eb")
 			(effects
 				(font
@@ -80058,6 +80593,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b99216e6-8d6c-41c5-b834-499a3b8b6ea9")
 			(effects
 				(font
@@ -80363,6 +80899,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "62eabb8a-5283-45e5-b25b-46e9afcfed50")
 			(effects
 				(font
@@ -80521,6 +81058,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "fbd4a7ed-09c8-420e-a91f-53182ce15cdc")
 			(effects
 				(font
@@ -80817,6 +81355,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e9e9eadf-b613-42e4-b67a-3b014869e25a")
 			(effects
 				(font
@@ -81122,6 +81661,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "08098771-77c3-4e80-9a76-a9368ed453a6")
 			(effects
 				(font
@@ -81280,6 +81820,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9bd374b1-a657-4262-8070-6c6893d13555")
 			(effects
 				(font
@@ -81522,7 +82063,7 @@
 		(descr "SMD Solder Jumper, 1x1.5mm, rounded Pads, 0.3mm gap, open")
 		(tags "solder jumper open")
 		(property "Reference" "JP1"
-			(at 0 1.8 180)
+			(at -3.327143 0 0)
 			(layer "B.SilkS")
 			(uuid "ddcdbf97-e140-4d33-ab83-d6df4145db31")
 			(effects
@@ -81576,6 +82117,7 @@
 		(property "LCSC" ""
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9152c4f6-1d46-4ab3-bbf6-0b682d7ef28e")
 			(effects
 				(font
@@ -81857,6 +82399,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "73ce7c4f-5ed4-448f-ba4c-07072b0a604d")
 			(effects
 				(font
@@ -82153,6 +82696,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "cabfcdfb-3c60-473f-aaed-69c86cc2c6d1")
 			(effects
 				(font
@@ -82395,7 +82939,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R5"
-			(at 0 1.43 180)
+			(at -2.94619 0 0)
 			(layer "B.SilkS")
 			(uuid "9e059348-c43e-478b-8002-12c6f7be8dea")
 			(effects
@@ -82458,6 +83002,7 @@
 		(property "LCSC" "C25803"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "a6fe0c54-dbb9-4520-80cf-91e70404b21f")
 			(effects
 				(font
@@ -82616,6 +83161,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "f492be23-b8a2-4265-adf4-090ac33301f2")
 			(effects
 				(font
@@ -82912,6 +83458,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1e795eac-f534-41c7-81fb-630477c06a80")
 			(effects
 				(font
@@ -83154,7 +83701,7 @@
 		(descr "Through hole IDC box header, 2x13, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0")
 		(tags "Through hole vertical IDC box header THT 2x13 2.54mm double row")
 		(property "Reference" "J2"
-			(at 1.27 6.1 270)
+			(at 1.27 -37.257143 0)
 			(layer "B.SilkS")
 			(uuid "077f6f66-3ee9-4c5b-9385-5cd889b34579")
 			(effects
@@ -83217,6 +83764,7 @@
 		(property "LCSC" ""
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c730eeaa-3093-42ae-8b0d-fd8a6f9f4722")
 			(effects
 				(font
@@ -83830,6 +84378,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b36a787b-e3d0-48a5-a00d-25c3ce17275c")
 			(effects
 				(font
@@ -83988,6 +84537,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c634e770-4fe5-4e6d-8f15-5615a705c0af")
 			(effects
 				(font
@@ -84230,7 +84780,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R11"
-			(at 0 1.43 180)
+			(at 0 1.77325 0)
 			(layer "B.SilkS")
 			(uuid "56d92943-894a-49ff-adc5-33dfe263849e")
 			(effects
@@ -84293,6 +84843,7 @@
 		(property "LCSC" "C25804"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "50188d3f-51c2-47e5-95d0-f8f433313852")
 			(effects
 				(font
@@ -84460,6 +85011,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c79ae855-43f1-453e-b788-283c6fe2cc5b")
 			(effects
 				(font
@@ -84618,6 +85170,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "07211cea-1464-47af-835a-cccc71fe2f91")
 			(effects
 				(font
@@ -84914,6 +85467,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "58f4575c-e3f7-43c3-ac8b-c80e005ff5f5")
 			(effects
 				(font
@@ -85156,7 +85710,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R6"
-			(at 0 1.43 180)
+			(at -2.94619 0 0)
 			(layer "B.SilkS")
 			(uuid "63184f66-22af-4b00-9070-f14dd9f84e0c")
 			(effects
@@ -85219,6 +85773,7 @@
 		(property "LCSC" "C25804"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "da4beacf-cdb2-4772-b5a8-4397357a3e7b")
 			(effects
 				(font
@@ -85386,6 +85941,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b08ef68e-b35c-46ba-b0ef-c9fe56e153be")
 			(effects
 				(font
@@ -85553,6 +86109,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "4e4b8a38-96a3-4ab2-bf4a-faeef8e34145")
 			(effects
 				(font
@@ -85720,6 +86277,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2a0eae91-ee5f-4025-8dac-03109fab62fc")
 			(effects
 				(font
@@ -85887,6 +86445,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "f322ed21-8bed-486b-aef0-323235cef781")
 			(effects
 				(font
@@ -86045,6 +86604,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "bcb87d83-5382-46d8-843c-82523a8b8a2b")
 			(effects
 				(font
@@ -86341,6 +86901,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "bdb8463b-b82b-4478-8e20-a5949ec36c05")
 			(effects
 				(font
@@ -86637,6 +87198,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "124fc81e-f58f-4cd7-977f-f518020ad9bf")
 			(effects
 				(font
@@ -86933,6 +87495,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2781e12b-af8c-4bcd-a6ff-47048a5a5ebd")
 			(effects
 				(font
@@ -87238,6 +87801,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "fed68d95-318e-426e-b1a6-b3d862123a18")
 			(effects
 				(font
@@ -87405,6 +87969,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6ccb8836-a02e-4366-9c97-1ab4a9f947de")
 			(effects
 				(font
@@ -87572,6 +88137,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "fafbcaf9-ce81-4a03-9cb5-e54e2743da4a")
 			(effects
 				(font
@@ -87739,6 +88305,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "dff88f8e-1ef3-45f9-917b-bd690fdd6933")
 			(effects
 				(font
@@ -87897,6 +88464,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "ac37092b-2e1c-4a4f-bcf1-09b585955e3e")
 			(effects
 				(font
@@ -88193,6 +88761,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "c074ac27-9f17-4865-8c08-52b86ca6fbec")
 			(effects
 				(font
@@ -88498,6 +89067,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b9140c3f-20f9-4135-9d90-2ab3a4856c54")
 			(effects
 				(font
@@ -88656,6 +89226,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "54b160c7-b927-41ac-897c-e8cc0cfcd294")
 			(effects
 				(font
@@ -88961,6 +89532,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6f34b4f0-7523-43d9-9fc4-ef5b16718fb1")
 			(effects
 				(font
@@ -89128,6 +89700,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "1c3f3bc7-1f42-473a-bd6e-f063bf589886")
 			(effects
 				(font
@@ -89295,6 +89868,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "4ef90ee5-16f4-4478-90b5-fcd0e0192c81")
 			(effects
 				(font
@@ -89453,6 +90027,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "93fdef0a-d34c-4ff8-a50b-ed85f77280fe")
 			(effects
 				(font
@@ -89749,6 +90324,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "194f7c61-efc4-4759-b698-11e43473bda4")
 			(effects
 				(font
@@ -90054,6 +90630,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "aea5e7d6-0109-4fb8-8950-7362a2e648c6")
 			(effects
 				(font
@@ -90212,6 +90789,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "ed0fe41d-3053-4912-87ca-5b8a232461ee")
 			(effects
 				(font
@@ -90508,6 +91086,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "47280475-6894-443f-b3d3-e33175f40453")
 			(effects
 				(font
@@ -90813,6 +91392,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "d551bec7-65fd-463c-ba67-330b67cfbc26")
 			(effects
 				(font
@@ -90980,6 +91560,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "dc5b655c-c620-4720-ad11-9d20a866e94c")
 			(effects
 				(font
@@ -91138,6 +91719,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "b7224bda-827d-47a3-afcd-849cbc00c801")
 			(effects
 				(font
@@ -91443,6 +92025,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "6c0626f1-a47f-433d-b720-6f0c6705d785")
 			(effects
 				(font
@@ -91601,6 +92184,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "79063c60-4244-4285-9314-741324318670")
 			(effects
 				(font
@@ -91896,6 +92480,7 @@
 		(property "LCSC" "C41417453"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "5edfe2bf-ac2f-46b9-9824-c8bea6f18db1")
 			(effects
 				(font
@@ -92228,6 +92813,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "9b3374f8-d797-4887-bbd7-ad9061037ed5")
 			(effects
 				(font
@@ -92533,6 +93119,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2ffc43b3-8d2e-4b46-a3de-3ee4339dfd53")
 			(effects
 				(font
@@ -92637,7 +93224,7 @@
 		(descr "Through hole straight pin header, 1x03, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x03 2.54mm single row")
 		(property "Reference" "J3"
-			(at 0 2.38 270)
+			(at 2.81325 -2.54 0)
 			(layer "B.SilkS")
 			(uuid "c2922c25-c28b-4e54-9ed0-8fd6b266adf2")
 			(effects
@@ -92700,6 +93287,7 @@
 		(property "LCSC" ""
 			(at 0 0 270)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "dc85295f-5e9f-4159-b425-499b004fd8c5")
 			(effects
 				(font
@@ -92948,6 +93536,7 @@
 		(property "LCSC" "C81598"
 			(at 0 0 180)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "570cac46-5db7-430e-9fb5-f264fc190c9c")
 			(effects
 				(font
@@ -93253,6 +93842,7 @@
 		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "e03f0104-fc4e-4876-8fa9-80ce5a3547c3")
 			(effects
 				(font
