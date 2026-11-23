@@ -66,6 +66,13 @@ MODEL_ROT = {
     # preview, the band sat on the anode (the open end of the silk box) at KiCad's 0
     "D_SOD-123": 0,
     "D_SMA": 0,
+    # CD74HC154M96 (C2832236.pdf): pin 1 top left, pins down the left side, as KiCad's
+    "SOIC-24W_7.5x15.4mm_P1.27mm": 0,
+    # USBLC6-2SC6 (C7519.pdf, land pattern and marking): pins along the top and bottom,
+    # pin 1 bottom left; KiCad's has pin 1 top left, pins down the left side
+    "SOT-23-6": 270,
+    # Nichicon UWT 6.3x7.7 (C125979.pdf): + terminal at the top; KiCad's + pad is on the left
+    "CP_Elec_6.3x7.7": 90,
 }
 
 
