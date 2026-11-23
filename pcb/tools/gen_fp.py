@@ -204,7 +204,7 @@ def led():
     # lined up with a dot on pad 1 would put every LED in turned 180 degrees
     fp.circle(2.95, 0.875, 0.15, "F.SilkS", 0.12, fill=True)
     fp.text("${REFERENCE}", 0, 0, "F.Fab", 0.5)
-    fp.model("${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm.step", (0, 0))
+    fp.model("${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_WS2812B-Mini_PLCC4_3.5x3.5mm.step", (0, 0))
     fp.write()
 
 
