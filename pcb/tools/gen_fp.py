@@ -190,10 +190,10 @@ def led():
     fp.prop("Value", name, (0, 2.5), "F.Fab", 0.5)
     fp.prop("Datasheet", "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf", (0, 0), "F.Fab", hide=True)
     fp.prop("Description", "", (0, 0), "F.Fab", hide=True)
-    # numbering as KiCad's LED:SK6812MINI symbol.  The part fitted (OPSCO SK6812MINI-B-012, LCSC
-    # C5183448, pcb/datasheets/C5183448.pdf) numbers its pins differently (1 DIN, 2 VDD, 3 DOUT,
-    # 4 GND) but puts each in the same place, so the pads hold; its pin 1 and chamfered corner
-    # are our pad 3, DIN.
+    # numbering as KiCad's LED:SK6812MINI symbol.  The part fitted (OPSCO SK6812MINI-012, LCSC
+    # C2886570, pcb/datasheets/C2886570.pdf; the -B-012, C5183448, has the same pins and lands)
+    # numbers its pins differently (1 DIN, 2 VDD, 3 DOUT, 4 GND) but puts each in the same
+    # place, so the pads hold; its pin 1 and chamfered corner are our pad 3, DIN.
     fp.smd("1", -1.75, -0.875, 1.6, 0.85)    # DOUT
     fp.smd("2", -1.75, 0.875, 1.6, 0.85)     # VSS
     fp.smd("3", 1.75, 0.875, 1.6, 0.85)      # DIN
