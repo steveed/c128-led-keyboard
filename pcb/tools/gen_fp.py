@@ -246,6 +246,9 @@ def usb_c():
     fp.line(4.95, y(6.3), 4.95, -0.3, "F.SilkS", 0.12)
     fp.rect(-5.2, y(-0.5), 5.2, 0.0, "F.CrtYd", 0.05)
     fp.text("${REFERENCE}", 0, -3.5, "F.Fab", 0.8)
+    # No ShouHan model exists; GCT's USB4105 has the same land pattern, 3.65 mm nearer the
+    # edge, so it stands in for the 3D view (renders only; the copper is the ShouHan's).
+    fp.model("${KICAD10_3DMODEL_DIR}/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step", (0, 3.65))
     fp.write()
 
 

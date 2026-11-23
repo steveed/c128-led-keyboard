@@ -119,6 +119,8 @@ Placeholders to resolve during layout:
   in four plated slots.  It is on the back at the rear edge, where the case leaves about
   17 mm under the board, so a mid-mount part is not needed.  The footprint is drawn from the
   datasheet's recommended layout (`usb_c()` in `gen_fp.py`), front flush with the board edge.
+  KiCad has no 3D model for it; the footprint shows GCT's USB4105 instead, which has the
+  same land pattern 3.65 mm nearer the edge, so the renders look right.
 - The CH446Q footprint is KiCad's generic LQFP-44 10 x 10 mm; check it against the WCH drawing.
 
 ## The board
