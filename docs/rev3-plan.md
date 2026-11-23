@@ -2,7 +2,9 @@
 
 Status: schematic drafted 2026-09-17 in `pcb/`, revised 2026-09-18 (CH446Q in serial
 mode, per-key diodes, top-mount LEDs, RESTORE sense diode, fab assembly, aluminum plate
-boards generated); bench proofs and layout not started.  Decisions taken 2026-09-17/18.  Background and the reasoning
+boards generated); board file created and placed 2026-11-21, routed and DRC clean
+2026-11-23, with the JLCPCB order files checked in the fab's preview and the dual-spacebar
+plate ready (see `pcb/README.md`); nothing ordered yet; bench proofs not started.  Decisions taken 2026-09-17/18.  Background and the reasoning
 behind each change is in [pcb-issues-and-plans.md](pcb-issues-and-plans.md), and a part-by-part
 explanation of the schematic is in [rev3-circuit-walkthrough.md](rev3-circuit-walkthrough.md);
 this document is
@@ -39,14 +41,22 @@ and what has to be proven on the bench before copper is ordered.
 - Stabilizers: **PCB-mount screw-in** on every stabilized key (spacebar, Return, keypad 0,
   keypad Enter).  The plate carries clearance slots for the stabilizer housings and wires,
   not stabilizer mounting cutouts.
-- MCU: ESP32-S3-WROOM-1-N8 module (no PSRAM, so GPIO 35..37 stay free).  RP2040 is the
-  fallback only if the ESP32 fails bring-up on power or timing.
+- MCU: ESP32-S3-MINI-1U-N8 module (no PSRAM, so GPIO 35..37 stay free).  Changed from the
+  WROOM-1 on 2026-11-21: the whole PCB sits under the plate (PCB rear edge y 80.1, plate to
+  y 70), so an on-board antenna would be under metal, and the MINI is 2.4 mm tall against the
+  WROOM's 3.2 mm, which matters on the flat 128's underside.  The antenna is external on the
+  U.FL; with no WiFi wanted, nothing is fitted.  Same GPIO map.  RP2040 is the fallback only
+  if the ESP32 fails bring-up on power or timing.
 - Board outline, plate-ground pad and switch positions do **not** move, so the existing
-  plate, printed case and printables keep fitting.  The PCB gains mounting holes (it has
-  none today) for a thin insulating bottom cover.
+  plate, printed case and printables keep fitting.  A thin insulating liner taped to the
+  underside protects flat builds, as on the Amiga 1000 keyboard; the PCB needs no holes.
 - One 1N4148W diode per scanned key, on the back with the other SMD parts, so the board also
   works as a ghost-free USB keyboard.
 - Every SMD part is placed by the fab; builders solder through-hole only (see Assembly).
+- Four copper layers (decided 2026-11-21): signals on F.Cu and B.Cu, a GND plane on In1.Cu
+  and a 5V_SYS plane on In2.Cu.  On two layers the matrix rows and LED chain (horizontal, F.Cu)
+  and columns (vertical, B.Cu) cut any 5 V or GND pour into strips, and 92 LEDs at full white
+  draw several amps; the planes give every LED's power vias a solid return and supply.
 - The firmware also gives the board a USB keyboard mode for emulators and a network keyboard
   (see Firmware).
 
@@ -54,7 +64,7 @@ and what has to be proven on the bench before copper is ordered.
 
 ```
                  ┌──────────── physical side (3.3 V) ────────────┐   ┌──── host side (5 V) ────┐
- 92 switches ──► 8 rows x 11 cols ──► ESP32-S3 ──► CH446Q 8x16 crosspoint ──► ROW0-7, COL0-10
+ 92 switches ──► 6 rows x 20 cols ──► ESP32-S3 ──► CH446Q 8x16 crosspoint ──► ROW0-7, COL0-10
                                           │        (serial: DAT, CK, STB, RST, 3.3 V direct)
    (1 diode per key) (74HC154 selects      │   └─► 2N7002 open-drain ──────────► 40/80 (default-assert)
                     the column)           │   └─► 2N7002 open-drain ──────────► CAPS LOCK
@@ -95,34 +105,35 @@ and what has to be proven on the bench before copper is ordered.
 
 | Block | Parts | Notes |
 |---|---|---|
-| MCU | ESP32-S3-WROOM-1-N8, BOOT and RESET tact switches, 10 k pull-ups, 100 nF | strapping pins (GPIO0, 3, 45, 46) left free or used only for outputs that are safe at boot |
+| MCU | ESP32-S3-MINI-1U-N8 (U.FL antenna), BOOT and RESET tact switches, 10 k pull-ups, 100 nF | strapping pins (GPIO0, 3, 45, 46) left free or used only for outputs that are safe at boot |
 | 3.3 V supply | AP7361C-33E low-dropout LDO (SOT-223, 1 A, 0.36 V dropout, LCSC C500795), 10 uF in/out | fed from the OR'd 5 V rail, about 4.55 V; the AMS1117 originally planned had no headroom there |
 | 5 V OR-ing | 2 x SS34 Schottky (keyboard +5 V, USB VBUS) into 5V_SYS, PTC fuse 1.1 A on the keyboard side, 220 uF bulk | the CH446Q and lock FETs are referenced to the keyboard rail; everything else runs from 5V_SYS |
 | USB-C | 16-pin receptacle, 5.1 k CC pull-downs, ESD array | native USB on GPIO19/20 for flashing, serial config and the web flasher |
-| Crosspoint | CH446Q LQFP-44 at 5 V (VDD = +5V_KB, VEE = GND), 100 nF | Y0..Y7 = host ROW0..7, X0..X10 = host COL0..COL10, X11..X15 unused.  Serial mode: P/S and AX0-3/AY0-2 to GND; DAT, CS/CK, STB, RST direct from the ESP32.  10k pull-up on RST (crosspoint stays cleared until the MCU boots), 10k pull-down on STB |
-| Column select | 74HC154 4-to-16 decoder, 11 x 1 k series resistors | 4 GPIO drive 11 columns low one at a time; the resistors bound the current when two keys in one row are pressed |
+| Crosspoint | CH446Q LQFP-44 at 5 V (VDD = +5V_KB, VEE = GND), 100 nF | Y pins carry host ROW0..7 and eleven of the X pins host COL0..10, in the order that routes cleanly from J2 (`XP_X_OF_COL` / `XP_Y_OF_ROW` in `gen_sch.py`; the firmware addresses through the same table); five X pins unused.  Serial mode: P/S and AX0-3/AY0-2 to GND; DAT, CS/CK, STB, RST direct from the ESP32.  10k pull-up on RST (crosspoint stays cleared until the MCU boots), 10k pull-down on STB |
+| Column select | 74HC154 4-to-16 decoder for columns 0-14, five GPIO for columns 15-19, driven directly | the scanned matrix follows the board (6 key rows x 20 columns, decided 2026-11-21), not the C128's assignment, which keeps the matrix copper short; the firmware maps each position to its host position.  Columns go low one at a time; no series resistors, since the per-key diodes already stop two pressed keys in one row from joining a high column to a low one |
 | Rows | 8 GPIO inputs with internal pull-ups | ROW0..7 physical |
 | Matrix diodes | 91 x 1N4148W SOD-123 (D101..D192, one per scanned key; RESTORE has none) | row -> switch -> diode -> column; any chord reads without ghosting, which USB keyboard mode needs |
-| RESTORE sense | D3 1N4148W, cathode to H_RESTORE, anode to IO1 with the internal pull-up on | reads the key with or without a Commodore attached; replaces the 10k/20k divider |
-| RESTORE driver | Q3 2N7002 open-drain on H_RESTORE, 100 k gate pull-down (R12), gate on IO13 | lets the firmware press RESTORE (RUN/STOP + RESTORE from the network keyboard, macros); the physical switch stays hard-wired in parallel |
+| RESTORE sense | D3 1N4148W, cathode to H_RESTORE, anode to IO14 with the internal pull-up on | reads the key with or without a Commodore attached; replaces the 10k/20k divider |
+| RESTORE driver | Q3 2N7002 open-drain on H_RESTORE, 100 k gate pull-down (R12), gate on IO9 | lets the firmware press RESTORE (RUN/STOP + RESTORE from the network keyboard, macros); the physical switch stays hard-wired in parallel |
 | Lock drivers | 2 x 2N7002 | 40/80 gate has a 10 k pull-up to 3.3 V behind a solder jumper (closed = asserts 80 columns from the instant power arrives, before the MCU boots); the MCU drives the gate low to release.  CAPS LOCK is plain open-drain |
 | LEDs | 92 x SK6812 MINI (top mount), 92 x 100 nF, 74AHCT1G125 single-gate level shifter, 3-pin external LED header | chain order: SHIFT LOCK, CAPS LOCK, 40/80, then row by row.  Data out of the last LED to the header for a "Razzle"-style power LED or an underglow strip |
 | Connector | 2 x 13 0.1" footprint on B.Cu in D-sub IDC pin order.  Populate a shrouded IDC box header (vertical or right-angle, both ~9 mm mated) where height allows, otherwise leave it empty and solder the ribbon into the pads | pinout below.  Replaces the FFC |
 | Test | 0.1" test points on 5V_SYS, 3V3, LED data, one row, one column | layout item; not in the schematic yet |
 
-### GPIO budget (ESP32-S3-WROOM-1-N8)
+### GPIO budget (ESP32-S3-MINI-1U-N8)
 
 | Function | Pins |
 |---|---|
-| Physical rows in | 8 |
+| Physical rows in | 6 |
 | Column select (74HC154 A..D) | 4 |
+| GPIO columns 15-19 (IO1, 2, 4, 5, 6) | 5 |
 | CH446Q DAT, CS/CK, STB, RST (serial mode) | 4 |
 | LED data | 1 |
 | 40/80, CAPS LOCK gates | 2 |
 | RESTORE sense | 1 |
 | RESTORE drive | 1 |
 | USB D+/D- | dedicated (19/20) |
-| **Total** | **21** of ~31 usable (five spare: IO14, 21, 35, 36, 37) |
+| **Total** | **24** of ~31 usable (spare: IO36, 37, and IO26, 33, 34 on the MINI) |
 
 ### Connector pinout (stock C128 order)
 
@@ -157,9 +168,12 @@ no table.
 ## Layout changes
 
 - Keep the rev 2.3 outline, mounting holes, plate-ground pad and every switch center.
-- Screw-in stabilizer holes (3.05 mm screw and 4.0 mm peg) on every stabilized key.  The
-  spacebar footprint already has them at all three spacings; confirm the 2u footprints
-  (Return, keypad 0, the flipped keypad Enter) have both hole sizes and add them if not.
+- Screw-in stabilizer holes (3.05 mm screw and 4.0 mm peg) on every stabilized key.  The 2u
+  footprints (Return, keypad 0, the flipped keypad Enter) had both sizes on rev 2.3 and keep
+  them.  The rev 2.3 spacebar as fabricated has two sets, 99.77 mm and 125.35 mm (not the
+  three spacings its library file suggests); the rev 3 footprint drills the standard MX 100 mm and
+  133.35 mm that the plates and keycap drawing use (decided 2026-11-21: standard MX spacebar;
+  the original spacebar's narrower 125.35 mm is not drilled).  See pcb/README.md.
 - Every switch footprint gains SK6812 MINI pads on the front at the north LED position, where
   the Outemu bottom housing has its SMD LED pocket.  No cutouts, so the rev 2.3 routing
   survives; the LED chain and 5 V feed are new front-side traces.  Front-side SMD means the
@@ -169,54 +183,64 @@ no table.
   shield is the tight dimension, and rev 3 puts taller parts on the back than rev 2.3 ever
   had: the ESP32 module (~3.2 mm), the USB-C receptacle (~3.3 mm), the cable header and the
   CH446Q (LQFP-44, ~1.6 mm, no longer a concern).  A 26-way IDC header is about 9 mm mated
-  whether vertical or right-angle, so on a flat it probably does not fit and the ribbon is
-  soldered into the pads instead; the header is for 128D-case builds and bench boards.  The
-  bottom cover takes about 1 mm more.  Measure the flat's clearance before layout and record
-  it here.  The 1 mm the plate change in issue 4 gives back below the plate counts toward this
-  budget.
+  whether vertical or right-angle.  The 1 mm the plate change in issue 4 gives back below
+  the plate counts toward this budget.
+
+  Measured 2026-11-21 on a flat 128, case top to RF shield: about 25 mm at the rear edge and
+  about 10 mm at the front edge.  Less the 8 mm keyboard stack (plate top to PCB bottom),
+  that leaves **about 17 mm under the PCB at the rear and about 2 mm at the front**, tapering
+  in between (the case angles up toward the rear).  On a straight taper over the 126 mm
+  depth, the rear band (y < 113) has 13 to 17 mm, so the IDC header, the electrolytic and the
+  tact switches all fit there, header included.  The front rows have about 2 mm against
+  1.7 mm of switch pins: rev 3 adds nothing taller than the pins there (only the SOD-123
+  diodes and 0603 capacitors), and nothing tall may move forward of the rear band.
 - Cluster every tall back-side part (module, CH446Q, USB-C, connectors) in a band along the
   rear edge.  The flat 128's wedge is deepest at the rear, and it keeps the bottom cover flat
   over the rest of the board.
-- Add mounting holes for the bottom cover: M3 clearance holes at the plate's six M3
-  positions where they fall inside the outline, plus M2.5 holes in the gaps between switch
-  rows along the front edge and mid-board so the cover cannot bow into the pins.  Keep them
-  clear of the LED pads and stabilizer holes.
+- No mounting holes for a bottom cover: it is a taped liner (decided 2026-11-23, see
+  *Bottom cover*).
 - Connector footprints on B.Cu near the rear edge, at roughly the same X as today's CN2 so the
   printed case's DB25 cutout still lines up.  Confirm clearance to the flat C128's RF shield
   before fixing Y.
-- ESP32-S3 module on B.Cu with the antenna end at the rear board edge, copper keep-out under
-  and beside the antenna on both layers, no plate steel above it (the rear edge is outside the
-  plate).  Distance from the 5 V / LED traces.
+- ESP32-S3-MINI-1U on B.Cu in the rear band.  The rear edge is *not* outside the plate (the
+  plate overhangs it by 10 mm), which is why the module is the U.FL variant: route the
+  antenna lead out of the case rather than keeping copper clear for a trace antenna.  Keep
+  the U.FL reachable and its mated height (about 2 mm above the module) inside the budget.
 - CH446Q on B.Cu next to the connector, so the 19 host lines are short.  Keep its pads clear
   of switch pins.
 - USB-C on the rear edge, accessible with the plate on; on the flat it will be reachable only
   with the case open, which is acceptable.
-- LED chain routed as a single snake; power for the LEDs as a wide 5V_SYS pour with stitching
-  vias.  The chain starts at the three lock keys.
+- LED chain routed as a single snake; power for the LEDs from the 5V_SYS plane on In2.Cu,
+  one via per LED pad.  The chain starts at the three lock keys.
 - The three lock keys keep their positions; only their footprint changes.
 
 ## Bottom cover
 
-A thin insulating sheet under the PCB so the switch pins, solder joints and back-side parts
+A thin insulating liner under the PCB so the switch pins, solder joints and back-side parts
 can never touch the flat 128's RF shield, a bench, or a hand.  In the printed 128D case the
-tray already does this job, so the cover is for flat builds and bare keyboards.
+tray already does this job, so the liner is for flat builds and bare keyboards.
 
-- Two-level shape: a flat floor about 1 mm below the pin tips over the switch field (nearly
-  the whole board), with a raised pocket along the rear band that clears the electronics
-  cluster.  Openings for the cable exit, USB-C, and the ESP32 antenna region (plastic over
-  the antenna is fine, metal is not).
-- Material and thickness: printed PETG with a 0.6 mm floor in two halves for a 256 mm bed,
-  or a 0.5 mm PET/polycarbonate sheet cut by the plate vendor for the flat part with a small
-  printed pocket for the rear band.  Budget about 1 mm of underside height for it beyond the
-  pin tips themselves.
-- Fixing: M3 screws into the plate's existing holes through the PCB clearance holes with
-  spacers, or M2.5 screws into the new PCB holes with heat-set inserts in the cover, so the
-  cover comes off without disturbing the plate.  Adhesive foam pads are the fallback for a
-  sheet with no printed parts.
-- It is a printed part: an OpenSCAD or Fusion model driven by the PCB outline and
-  hole positions, like the case.
+Decided 2026-11-23: do what Commodore did on the Amiga 1000 keyboard, a thin plastic liner
+(the kind under an old computer case) held on with double-sided tape.  No screws, no printed
+part and no mounting holes in the PCB, which rev 3 does not have.
+
+- Coverage: the 128's main board does not reach under the last two key rows (the Z row and
+  the spacebar), which is also where there is only about 2 mm below the PCB.  The liner stops
+  short of them; it only has to cover the area over the main board.
+- Material: a stiff insulating film, about 0.25 to 0.5 mm, cut to the outline by hand or by
+  the plate vendor.  It costs well under the 1 mm the budget allowed for a cover.
+- Fixing: strips of double-sided tape on the bare board between switch rows, where there are
+  no pins.  The liner rests on the pin tips over the switch field.
+- Rear band: the electronics cluster (ESP32, CH446Q, USB-C, connectors) is taller than the
+  pins.  Cut the liner around it, or tape a second piece over its parts.  Keep openings for
+  the cable exit and USB-C.  Plastic over the ESP32's antenna lead is fine; metal is not.
 
 ## Layout tooling: KiCadRoutingTools
+
+**Superseded 2026-11-21:** the regular per-key copper is laid by `pcb/tools/route_keys.py`
+and the rest goes to Freerouting in a Docker container (push-and-shove, and it keeps to the
+containers-only rule; KiCadRoutingTools needs host numpy/scipy/shapely and ships a
+macOS-only router binary).  The review below is kept for reference.
 
 `../KiCadRoutingTools` (v0.22.0, also installed as the KiCad 10 plugin) is the autorouter and
 checker set to use for rev 3.  Reviewed 2026-09-18; the fit for this board:
@@ -362,10 +386,12 @@ solders only through-hole parts: switches, connectors and headers.  Consequences
   Keep every other SMD part off the front so the front side is LEDs only.
 - **Fab-stocked parts first.**  0603 passives, SS34, 2N7002, USBLC6-2SC6 and the
   AP7361C-33E are basic or common stock items and carry their LCSC numbers in the schematic's
-  `LCSC` field (verify each on the LCSC site before ordering).  The ESP32-S3-WROOM-1-N8,
+  `LCSC` field (verify each on the LCSC site before ordering).  The ESP32-S3-MINI-1U-N8,
   SK6812 MINI, CH446Q, 74HC154 and 74AHCT1G125 are stocked in some package; pick the
   stocked package at layout time and fill the field in.  The 220 uF electrolytic, the polyfuse
-  and the USB-C receptacle likewise.
+  and the USB-C receptacle likewise.  **Done 2026-11-22**: every SMD part has an in-stock
+  number (the list and two substitutions are in `pcb/README.md`, *Part numbers for fab
+  assembly*).
 - **CH446Q.**  A WCH part, so LCSC stocks it; confirm the part number and that it is not a
   minimum-order extended part.  LQFP-44 at 0.8 mm pitch is fine for the fab and workable by
   hand with flux if a board ever needs a replacement.
@@ -373,6 +399,7 @@ solders only through-hole parts: switches, connectors and headers.  Consequences
   maximum around 400 x 500 mm for assembly) before layout, and keep 5 mm of clear rail along
   the long edges for their fixtures if they ask for it.
 - **Fiducials and tooling holes** on both sides, three per side, outside the plate footprint.
+  Not added: JLCPCB quoted the board without them; confirm at their order review.
 - **Panelisation is not worth it** at this size; order as single boards.
 - The plate is a separate, unassembled aluminum order from the same fab.
 
@@ -380,7 +407,7 @@ solders only through-hole parts: switches, connectors and headers.  Consequences
 
 | Item | Qty | Approx. cost |
 |---|---|---|
-| ESP32-S3-WROOM-1-N8 | 1 | 3 |
+| ESP32-S3-MINI-1U-N8, U.FL antenna | 1 | 4 |
 | CH446Q LQFP-44 | 1 | 1-2 |
 | SK6812 MINI | 92 | 11 |
 | 74HC154, 74AHCT1G125, AP7361C-33E | 3 | 2 |
@@ -427,15 +454,19 @@ All SMD goes on at the fab (see Assembly); the hand-build path is through-hole o
    reworked to physical + host nets.  **Drafted**: see [pcb/](../pcb/README.md),
    ERC clean; the bench rig and shopping list are in
    [pcb/bench/README.md](../pcb/bench/README.md).
-3. Layout: footprint changes, re-route, DRC clean; kibot outputs.
-4. Plate as an aluminum PCB: **done** (both spacebar variants generated, DRC clean); the
-   stabilizer-clearance change and the bottom cover model remain.
+3. Layout: footprint changes, re-route, DRC clean; kibot outputs.  **Done 2026-11-23**:
+   routed and DRC clean; the fab outputs come from `pcb/tools/fab.py` instead of kibot.
+4. Plate as an aluminum PCB: **done** (both spacebar variants generated, DRC clean, and a
+   dual plate with slots for both spacebars' stabilizers, the one to order); the
+   stabilizer-clearance change remains.  The bottom cover is a taped liner, cut by hand.
 5. Firmware milestones 1 and 2 on a devkit wired to a rev 2.3 board through the breadboarded
    crosspoint, so bring-up of the first rev 3 board is just hardware.  **Started**: the
    ESP-IDF project in [firmware/](../firmware/README.md) has the scan, crosspoint mirror,
    saved lock keys, RESTORE sense/press and a console; it builds in the `idf` container
    (`make -C firmware build`) and flashes from the host.
-6. Order boards: two unlit hand builds, one assembled lit board.
+6. Order boards: two unlit hand builds, one assembled lit board.  **Ready** (2026-11-23):
+   five assembled boards quoted at about 500 USD shipped, plus about 50 USD for the plate;
+   not ordered yet.
 7. Bring-up, then firmware milestones 3 to 8.
 8. VICE positional keymaps for x128 and x64, tested against the shifted-symbol keys.
 9. README: rev 3 configuration table, flashing instructions, command reference page modeled
@@ -451,7 +482,8 @@ All SMD goes on at the fab (see Assembly); the hand-build path is through-hole o
   draw wastes only about a quarter of a watt in a linear part, and a buck adds parts, layout
   rules and switching noise next to the antenna.  If a machine ever measures under 4.7 V, the
   next lever is a P-FET ideal diode in place of D1.
-- Exact connector Y position on the back, and the whole underside height budget, pending
-  the flat-128 clearance measurement.
+- ~~Underside height budget.~~  Measured 2026-11-21: about 17 mm under the PCB at the rear,
+  about 2 mm at the front; see *Layout changes*.  The layout keeps every part taller than the
+  switch pins in the rear band (y < 113); the cover stops before the last two rows.
 - Which system macros beyond UNNEW the community wants.
 - ~~A RESTORE driver?~~  Decided 2026-09-19: added as Q3/R12 on IO13.

@@ -36,8 +36,14 @@ LIB_VERSION = "20251024"
 R_FP = "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 C_FP = "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 C_FP_1206 = "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-SW_FP = "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"   # placeholder; rev 3 footprints get the SK6812 cutout
-LED_FP = "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm"   # top-mount, sits in the switch's SMD LED pocket
+# switch and LED footprints come from the project library, pcb/c128rev3.pretty (tools/gen_fp.py)
+SW_FP = "c128rev3:SW_MX_1u"
+SW_FP_BY_REF = {   # the wider keys, as on the rev 2.3 board; keypad Enter is a 2u placed at -90
+    "SW79": "c128rev3:SW_MX_1.5u", "SW90": "c128rev3:SW_MX_1.5u",
+    "SW12": "c128rev3:SW_MX_2u", "SW22": "c128rev3:SW_MX_2u", "SW54": "c128rev3:SW_MX_2u",
+    "SW52": "c128rev3:SW_MX_Spacebar",
+}
+LED_FP = "c128rev3:LED_SK6812MINI_MX"   # top-mount, sits in the switch's SMD LED pocket
 
 
 # Every UUID is derived from what the object *is*, not from when it was generated, so a
@@ -52,15 +58,26 @@ def uid(key):
     return str(uuid.uuid5(UUID_NS, key))
 
 
-# JLCPCB/LCSC part numbers for the parts that are stock "basic" or common "extended" items.
-# Verify each against the LCSC site before ordering; blanks are to be filled in at layout time.
+# JLCPCB/LCSC part numbers.  The first lines are basic or common stock items; the second
+# block was filled in at layout time (2026-11-22).  Verify each against the LCSC site before
+# ordering: part numbers rotate.  Through-hole parts (key switches, J2-J4) are left blank: the
+# builder solders them, and a blank keeps them out of the fab's BOM.
 LCSC = {
     ("Device:R", "10k"): "C25804", ("Device:R", "1k"): "C21190", ("Device:R", "100k"): "C25803",
     ("Device:R", "5k1"): "C23186", ("Device:R", "20k"): "C4184",
     ("Device:C", "100n"): "C14663", ("Device:C", "10u"): "C19702",
     ("Diode:SS34", None): "C8678", ("Diode:1N4148W", None): "C81598", ("Transistor_FET:2N7002", None): "C8545",
     ("Power_Protection:USBLC6-2SC6", None): "C7519",
+    ("RF_Module:ESP32-S3-MINI-1U", None): "C2980299",     # ESP32-S3-MINI-1U-N8
+    ("c128rev3:CH446Q", None): "C109471",                # WCH CH446Q, LQFP-44
+    ("74xx:74LS154", "74HC154"): "C2832236",             # TI CD74HC154M96, SOIC-24 300 mil
+    ("74xGxx:74AHCT1G125", None): "C7484",               # TI SN74AHCT1G125DBVR, SOT-23-5
+    ("LED:SK6812MINI", None): "C2886570",                # OPSCO SK6812MINI-012, 3535; the -B-012 (C5183448) is MSL 5 at JLCPCB, flagged hard to assemble
+    ("Device:Polyfuse", "1.1A"): "C142746",              # Littelfuse 1812L110/16DR, 16 V
+    ("Device:C_Polarized", "220u"): "C125979",           # Nichicon UWT1C221MCL1GS, 16 V, 6.3x7.7
 }
+TACT_LCSC = "C221880"                                    # C&K PTS645SM43SMTR92 LFS
+C_10U_1206_LCSC = "C13585"                               # Samsung CL31A106KBHNNNE, 50 V X5R
 
 
 def mm(v):
@@ -399,19 +416,38 @@ class Placed:
 
 # --- GPIO plan ---------------------------------------------------------------------------
 
-# ESP32-S3-WROOM-1-N8.  Strapping pins (IO0, IO3, IO45, IO46) are left free.  Six GPIO are
-# spare (IO13, 14, 21, 35, 36, 37) now that the crosspoint is driven serially.
+# ESP32-S3-MINI-1U-N8 (2.4 mm tall, U.FL antenna: the whole PCB sits under the plate, so an
+# on-board antenna would be under metal).  Strapping pins (IO0, IO3, IO45, IO46) are left
+# free.  The scanned matrix is 6 rows x 20 columns: 15 columns through the 74HC154, five
+# straight from GPIO.
+#
+# The pins are chosen for the layout, the way the CH446Q's are.  The module sits on the back
+# turned 180 degrees, so its GND row faces the rear edge and the other three sides face the
+# board.  Everything bound east (the five GPIO columns at the keypad, the lock-line gates, the
+# crosspoint, the decoder address) is on the east side, top to bottom, then along the south
+# side from its east end: that order runs out into the channel under the top row without a
+# crossing.  The matrix rows leave the south side west of USB and drop straight into the main
+# block; the LED data and ROW0 (top row, westward) leave the west side.  USB, UART0, EN and
+# IO0 keep their fixed pins.  The bench rig is wired to its own, older plan (firmware pins.h).
+# Spare: IO21, IO37-42.
 GPIO = {
-    "IO4": "P_ROW0", "IO5": "P_ROW1", "IO6": "P_ROW2", "IO7": "P_ROW3",
-    "IO15": "P_ROW4", "IO16": "P_ROW5", "IO17": "P_ROW6", "IO18": "P_ROW7",
-    "IO8": "MCU_COLSEL0", "IO9": "MCU_COLSEL1", "IO10": "MCU_COLSEL2", "IO11": "MCU_COLSEL3",
-    "IO12": "MCU_XP_CK", "IO38": "MCU_XP_DAT", "IO39": "MCU_XP_STB", "IO40": "MCU_XP_RST",
-    "IO13": "MCU_RESTORE_GATE",
-    "IO14": None, "IO21": None, "IO35": None, "IO36": None, "IO37": None,   # spare
-    "IO41": "MCU_LED_DATA", "IO42": "MCU_4080_GATE", "IO2": "MCU_CAPLK_GATE", "IO1": "MCU_RESTORE_SENSE",
-    "IO0": "MCU_BOOT", "EN": "MCU_EN", "USB_D-": "USB_DN", "USB_D+": "USB_DP",
-    "TXD0": "MCU_TXD0", "RXD0": "MCU_RXD0",
-    "IO3": None, "IO45": None, "IO46": None, "IO47": None, "IO48": None,
+    # east side, top to bottom
+    "IO1": "P_COL15", "IO2": "P_COL16", "IO4": "P_COL17", "IO5": "P_COL18", "IO6": "P_COL19",
+    "IO7": "MCU_4080_GATE", "IO8": "MCU_CAPLK_GATE", "IO9": "MCU_RESTORE_GATE",
+    "IO10": "MCU_XP_STB", "IO11": "MCU_XP_CK",
+    # south side, east to west
+    "IO12": "MCU_XP_DAT", "IO13": "MCU_XP_RST", "IO14": "MCU_RESTORE_SENSE",
+    "IO15": "MCU_COLSEL3", "IO16": "MCU_COLSEL2", "IO17": "MCU_COLSEL1", "IO18": "MCU_COLSEL0",
+    "USB_D-": "USB_DN", "USB_D+": "USB_DP",
+    "IO21": None,
+    "IO26": "P_ROW1", "IO47": "P_ROW2", "IO33": "P_ROW3", "IO34": "P_ROW4", "IO48": "P_ROW5",
+    # west side, bottom to top
+    "IO35": "MCU_LED_DATA", "IO36": "P_ROW0",
+    "IO37": None, "IO38": None, "IO39": None, "IO40": None, "IO41": None, "IO42": None,
+    "TXD0": "MCU_TXD0", "RXD0": "MCU_RXD0", "EN": "MCU_EN",
+    # fixed
+    "IO0": "MCU_BOOT",
+    "IO3": None, "IO45": None, "IO46": None,
 }
 
 # host connector (2x13 in D-sub IDC order): header pin -> net
@@ -429,8 +465,8 @@ def build_mcu(sh):
     sh.text("MCU, USB-C and power.  +5V_KB is the raw keyboard rail from the host connector; +5V_SYS is the\n"
             "OR of the fused keyboard rail and USB VBUS; +3V3 feeds the ESP32, the 74HC154 and the physical matrix.",
             (15, 15), 1.5)
-    u1 = sh.symbol("RF_Module:ESP32-S3-WROOM-1", "U1", "ESP32-S3-WROOM-1-N8", (135, 125),
-                   footprint="RF_Module:ESP32-S3-WROOM-1")
+    u1 = sh.symbol("RF_Module:ESP32-S3-MINI-1U", "U1", "ESP32-S3-MINI-1U-N8", (135, 125),
+                   footprint="RF_Module:ESP32-S2-MINI-1U")   # KiCad's S3-MINI-1U symbol uses this; same land pattern
     for p in sh.pins_cache[u1.lib_id]:
         name, num = p["name"], p["number"]
         if p["hidden"]:
@@ -450,7 +486,7 @@ def build_mcu(sh):
         node = (x, 80)
         sh.path(r.pin_end(2)[0], node)
         sw = sh.symbol("Switch:SW_Push", swname, swval, (x, 92), rot=90,
-                       footprint="Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+                       footprint="Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92", fields={"LCSC": TACT_LCSC})
         sh.path(sw.pin_end(2)[0], node)   # rot 90 puts pin 2 on top
         sh.connect(sw, 1, "GND")
         if cname:
@@ -473,7 +509,8 @@ def build_mcu(sh):
 
     # USB-C
     j1 = sh.symbol("Connector:USB_C_Receptacle_USB2.0_16P", "J1", "USB-C", (260, 120),
-                   footprint="Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal")
+                   footprint="c128rev3:USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040",
+                   fields={"LCSC": "C41417453"})
     sh.connect(j1, "A4", "VBUS"); sh.connect(j1, "A5", "CC1"); sh.connect(j1, "B5", "CC2")
     sh.connect(j1, "A6", "USB_DP_C"); sh.connect(j1, "B6", "USB_DP_C")
     sh.connect(j1, "A7", "USB_DN_C"); sh.connect(j1, "B7", "USB_DN_C")
@@ -501,30 +538,48 @@ def build_mcu(sh):
                    fields={"LCSC": "C500795"})
     n2 = u2.pins_named()
     sh.connect(u2, n2["VI"], "+5V_SYS"); sh.connect(u2, n2["VO"], "+3V3"); sh.connect(u2, n2["GND"], "GND")
-    c6 = sh.symbol("Device:C", "C6", "10u", (285, 210), footprint=C_FP_1206, fields={"LCSC": ""})
+    c6 = sh.symbol("Device:C", "C6", "10u", (285, 210), footprint=C_FP_1206, fields={"LCSC": C_10U_1206_LCSC})
     sh.connect(c6, 1, "+5V_SYS"); sh.connect(c6, 2, "GND")
-    c7 = sh.symbol("Device:C", "C7", "10u", (345, 210), footprint=C_FP_1206, fields={"LCSC": ""})
+    c7 = sh.symbol("Device:C", "C7", "10u", (345, 210), footprint=C_FP_1206, fields={"LCSC": C_10U_1206_LCSC})
     sh.connect(c7, 1, "+3V3"); sh.connect(c7, 2, "GND")
     # power flags
     for i, (net, x) in enumerate((("+5V_KB", 150), ("+5V_SYS", 180), ("GND", 210), ("VBUS", 240))):
         sh.power("PWR_FLAG", (x, 250))
         sh.glabel(net, (x, 250), "D")
-    sh.text("GPIO map: rows IO4-7,15-18; column select IO8-11; CH446Q serial: CK IO12, DAT IO38, STB IO39, RST IO40;\n"
-            "LED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, RESTORE gate IO13.  Spare: IO14,21,35-37.  IO0/IO3/IO45/IO46 strapping.",
+    sh.text("GPIO map: rows IO4-7,15,16; column select IO8-11 (columns 0-14); columns 15-19 IO17,18,14,21,35; CH446Q serial: CK IO12,\n"
+            "DAT IO38, STB IO39, RST IO40; LED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, gate IO13.  Spare: IO36,37.  IO0/IO3/IO45/IO46 strapping.",
             (15, 280), 1.27)
 
 
+# Which crosspoint X pin carries each host column, and which Y pin each host row.  The C128
+# sees the same matrix whatever the order (the firmware addresses the switch by pin number
+# through this table), so the order is chosen for the board: host connector J2's pins, which
+# follow the C128's own connector, then reach their CH446Q pins without crossing.  Columns
+# run on the back into the package's sides, nested so the line nearest the chip takes the
+# pin nearest J2: COL0-2 and COL7-10 the left side (seven lanes fit there, beside R5-R7),
+# COL3-6 the top of the right side (R10/R11 and U4 leave room for four).  Rows run on the top
+# straight down from J2 and drop through vias inside the ring of pins, so their order is
+# J2's, left to right, against the Y pins inside the ring, left to right (route_host.py).
+XP_X_OF_COL = {0: 15, 10: 6, 9: 7, 8: 8, 7: 9, 1: 10, 2: 11, 3: 13, 4: 12, 5: 5, 6: 4}
+XP_Y_OF_ROW = {0: 7, 1: 6, 2: 5, 7: 4, 4: 3, 5: 2, 6: 1, 3: 0}
+assert sorted(XP_X_OF_COL) == list(range(11)) and len(set(XP_X_OF_COL.values())) == 11
+assert sorted(XP_Y_OF_ROW) == list(range(8)) and sorted(XP_Y_OF_ROW.values()) == list(range(8))
+
+
 def build_crosspoint(sh):
-    sh.text("Host side: CH446Q crosspoint mirrors the physical matrix onto the C128 ROW/COL lines.  X = host columns, Y = host rows.\n"
+    sh.text("Host side: CH446Q crosspoint mirrors the physical matrix onto the C128 ROW/COL lines.  X = host columns, Y = host rows,\n"
+            "in the order that routes cleanly from J2 (XP_X_OF_COL / XP_Y_OF_ROW in gen_sch.py); the firmware addresses through the same table.\n"
             "Serial address mode (P/S low): DAT, CS/CK, STB, RST straight from the ESP32 (VIH is 2.0 V at a 5 V supply).\n"
             "Lock lines are open-drain FETs; 40/80 asserts at power-on when JP1 is closed, before the MCU boots.\n"
             "RESTORE is hard-wired to the host; D3 lets the MCU see it, Q3 lets the MCU press it.", (15, 15), 1.5)
     u3 = sh.symbol("c128rev3:CH446Q", "U3", "CH446Q", (110, 110))
     names = u3.pins_named()
+    col_of_x = {x: c for c, x in XP_X_OF_COL.items()}
+    row_of_y = {y: r for r, y in XP_Y_OF_ROW.items()}
     for i in range(16):
-        sh.connect(u3, names[f"X{i}"], f"H_COL{i}" if i <= 10 else None, stub=7.62)
+        sh.connect(u3, names[f"X{i}"], f"H_COL{col_of_x[i]}" if i in col_of_x else None, stub=7.62)
     for i in range(8):
-        sh.connect(u3, names[f"Y{i}"], f"H_ROW{i}", stub=7.62)
+        sh.connect(u3, names[f"Y{i}"], f"H_ROW{row_of_y[i]}", stub=7.62)
     for n in ("AX0", "AX1", "AX2", "AX3", "AY0", "AY1", "AY2", "P/S"):
         sh.connect(u3, names[n], "GND", stub=7.62, kind="label")   # serial mode: unused address pins to GND
     for n, net in (("DAT", "MCU_XP_DAT"), ("CS/CK", "MCU_XP_CK"), ("STB", "MCU_XP_STB"), ("RST", "MCU_XP_RST")):
@@ -590,14 +645,13 @@ def build_crosspoint(sh):
     sh.connect(j3, 1, "+5V_SYS"); sh.connect(j3, 2, "LED_OUT"); sh.connect(j3, 3, "GND", kind="label")
 
 
-LOCK_KEYS = {"SW89": ("P_ROW0", "P_COL11"), "SW91": ("P_ROW1", "P_COL11"), "SW92": ("P_ROW2", "P_COL11")}
-
-
 def build_matrix(sh, switches):
-    sh.text("Physical matrix, scanned by the MCU at 3.3 V.  Same ROW/COL assignment as the C128 (and rev 2.3) so the\n"
-            "firmware mirrors position n to position n.  One diode per key (row -> switch -> diode -> column) so any chord\n"
-            "reads without ghosting: needed for USB keyboard mode.  Lock keys sit on an extra column P_COL11.  RESTORE\n"
-            "bypasses the MCU entirely.  Column select: 74HC154 (3.3 V) through 1k so two keys in one row cannot fight.", (15, 15), 1.5)
+    sh.text("Physical matrix, scanned by the MCU at 3.3 V: 6 rows x 20 columns following the board (pcb/tools/layout.py\n"
+            "physical_matrix), not the C128's assignment; the firmware maps each position to its host position.  One diode per\n"
+            "key (row -> switch -> diode -> column) so any chord reads without ghosting: needed for USB keyboard mode.  RESTORE\n"
+            "bypasses the MCU entirely.  Columns 0-14 straight from the 74HC154 (3.3 V; output 15 is the idle park), 15-19\n"
+            "straight from GPIO.  No series resistors: a column held high reverse-biases its diodes, so two keys in one row\n"
+            "cannot connect two outputs.", (15, 15), 1.5)
     u6 = sh.symbol("74xx:74LS154", "U6", "74HC154", (60, 80), footprint="Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm")
     n6 = u6.pins_named()
     for i in range(4):
@@ -605,21 +659,7 @@ def build_matrix(sh, switches):
     sh.connect(u6, n6["E0"], "GND", kind="label"); sh.connect(u6, n6["E1"], "GND", kind="label")
     sh.connect(u6, n6["VCC"], "+3V3"); sh.connect(u6, n6["GND"], "GND")
     for i in range(16):
-        if i <= 11:
-            # fan the 2.54 mm-pitch outputs out to 7.62 mm so resistors and labels have room
-            p, _ = u6.pin_end(n6[f"S{i}"])
-            p0, _ = u6.pin_end(n6["S0"])
-            xi = p[0] + 5.08 + (11 - i) * 2.54
-            yt = p0[1] + i * 7.62
-            r = sh.symbol("Device:R", f"R{20 + i}", "1k", (p[0] + 44.45, yt), rot=90, footprint=R_FP)
-            pa, _ = r.pin_end(1)
-            pb, _ = r.pin_end(2)
-            sh.path(p, (xi, p[1]), (xi, yt), pa)
-            sh.label(f"S{i}", (p[0] + 1.27, p[1]))
-            sh.wire(pb, (pb[0] + 5.08, pb[1]))
-            sh.glabel(f"P_COL{i}", (pb[0] + 5.08, pb[1]), "R")
-        else:
-            sh.connect(u6, n6[f"S{i}"], None)
+        sh.connect(u6, n6[f"S{i}"], f"P_COL{i}" if i <= 14 else None, stub=7.62)
     c11 = sh.symbol("Device:C", "C11", "100n", (100, 40), footprint=C_FP)
     sh.connect(c11, 1, "+3V3"); sh.connect(c11, 2, "GND")
 
@@ -631,21 +671,20 @@ def build_matrix(sh, switches):
             centers.append(y)
     def row_of(y):
         return min(range(len(centers)), key=lambda i: abs(centers[i] - y))
+    phys = layout.physical_matrix(switches)
     x0 = min(s["x"] for s in switches)
     for s in switches:
         xs = 165 + (s["x"] - x0) * 1.0
         ys = 55 + row_of(s["y"]) * 52
-        sw = sh.symbol("Switch:SW_Push", s["ref"], s["val"], (xs, ys), rot=90, footprint=SW_FP,
+        sw = sh.symbol("Switch:SW_Push", s["ref"], s["val"], (xs, ys), rot=90, footprint=SW_FP_BY_REF.get(s["ref"], SW_FP),
                        fields={"Key": s["val"]})
         if s["val"] == "Restore":
             # hard-wired to the host NMI line, no diode: it must work with the firmware dead
             sh.connect(sw, 1, "H_RESTORE", stub=2.54, kind="label")
             sh.connect(sw, 2, "GND", stub=2.54, kind="label")
             continue
-        if s["ref"] in LOCK_KEYS:
-            row, col = LOCK_KEYS[s["ref"]]
-        else:
-            row, col = "P_" + s["row"], "P_" + s["col"]
+        pr, pc = phys[s["ref"]]
+        row, col = f"P_ROW{pr}", f"P_COL{pc}"
         # row (pulled up) -> switch -> diode anode ... cathode -> column (driven low)
         sh.connect(sw, 1, row, stub=2.54, kind="label")
         top, _ = sw.pin_end(2)
@@ -653,19 +692,21 @@ def build_matrix(sh, switches):
         d = sh.symbol("Diode:1N4148W", "D" + str(100 + int(s["ref"][2:])), "1N4148W", (xs, top[1] - 3.81), rot=270,
                       footprint="Diode_SMD:D_SOD-123")
         assert d.pin_end(2)[0] == top, (d.pin_end(2)[0], top)   # pin 2 = anode, bottom after rot 270
+        # pins that merely touch are not connected in the netlist; a label on the point is
+        sh.label(f"KEY{s['ref'][2:]}", top)
         sh.connect(d, 1, col, stub=2.54, kind="label")          # pin 1 = cathode, top
 
 
 def led_chain_order(switches):
-    first = ["SW89", "SW91", "SW92"]
-    rest = sorted((s for s in switches if s["ref"] not in first), key=lambda s: (round(s["y"], 0), s["x"]))
+    """Lock keys first, then a snake through the rows (layout.led_chain)."""
+    order, _ = layout.led_chain(switches)
     by = {s["ref"]: s for s in switches}
-    return [by[r] for r in first] + rest
+    return [by[r] for r in order]
 
 
 def build_leds(sh, chain):
     sh.text("Per-key RGB: SK6812 MINI (3.5 x 3.5 top mount, in the switch's SMD LED pocket), one per switch, 100n each.  Chain starts at the three lock keys\n"
-            "(SHIFT LOCK, CAPS LOCK, 40/80) so a minimal build with three LEDs still has indicators, then runs row by row.\n"
+            "(SHIFT LOCK, CAPS LOCK, 40/80) so a minimal build with three LEDs still has indicators, then snakes through the rows.\n"
             "LED refs match switch refs (LED89 sits under SW89).  Data in from U5 (5 V), data out to J3.", (15, 15), 1.5)
     per_row = 12
     pitch_x, pitch_y = 40, 46
@@ -704,7 +745,7 @@ def build_root(root, sheets):
         root.sheet_ref(sub, (x, 50), (70, 30))
         x += 90
     root.text("Nets between sheets are global labels:\n"
-              "  P_ROW0-7, P_COL0-11      physical matrix (3.3 V), MCU <-> matrix sheet\n"
+              "  P_ROW0-5, P_COL0-19      physical matrix (3.3 V), MCU <-> matrix sheet\n"
               "  MCU_COLSEL0-3            74HC154 address\n"
               "  MCU_XP_DAT/CK/STB/RST    CH446Q serial control, driven directly at 3.3 V\n"
               "  H_ROW0-7, H_COL0-10, H_RESTORE, H_4080, H_CAPLK   host (C128) lines\n"
@@ -729,7 +770,9 @@ def main():
         sh.emit()
     root.emit(is_root=True)
     # bench notes want the DIP numbering
-    json.dump({"ch446q_lqfp44": CH446Q_LQFP, "gpio": GPIO, "host_pins": HOST_PINS},
+    json.dump({"ch446q_lqfp44": CH446Q_LQFP, "gpio": GPIO, "host_pins": HOST_PINS,
+               "crosspoint_rev3": {"x_of_col": [XP_X_OF_COL[c] for c in range(11)],
+                                   "y_of_row": [XP_Y_OF_ROW[r] for r in range(8)]}},
               open(os.path.join(OUT_DIR, "tools", "pinmaps.json"), "w"), indent=1)
     # project symbol library holding the custom CH446Q, plus the table that registers it
     S = K.Sym

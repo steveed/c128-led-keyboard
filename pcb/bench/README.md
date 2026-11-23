@@ -5,8 +5,12 @@ rev 2.3 keyboard is the physical switch matrix, an ESP32-S3 devkit scans it, a C
 LQFP-44 adapter mirrors it onto a real C128, and the lock lines, LEDs and power get measured.  This
 covers bench proofs 1 to 6 in [docs/rev3-plan.md](../../docs/rev3-plan.md).
 
-Everything below uses the same nets and GPIOs as the rev 3 schematic in the folder above,
-so firmware written on the bench moves to the real board unchanged.  The firmware itself is in
+Everything below uses the same nets as the rev 3 schematic in the folder above.  The GPIOs
+are the rig's own: the board's were later re-picked for its layout (firmware `main/pins.h`
+keeps both).  The matrix differs too: the rev 2.3 board is wired in the C128's order (8 rows, IO17/18 as rows 6
+and 7), while rev 3 scans a 6 x 20 matrix that follows its own layout.  The firmware builds
+for either (`make build` here, `make build-rev3` for the board); everything else carries
+over unchanged.  The firmware itself is in
 [`firmware/`](../../firmware/README.md).  While waiting for parts, the measurements in
 [before-parts-arrive.md](before-parts-arrive.md) need only the 128 and the rev 2.3 keyboard.
 

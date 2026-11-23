@@ -91,12 +91,14 @@ nothing on the board.
 
 ## Sheet: MCU and power
 
-### U1, ESP32-S3-WROOM-1-N8
+### U1, ESP32-S3-MINI-1U-N8
 
 The microcontroller, bought as a module rather than a bare chip.  The module includes the
 ESP32-S3 die, 8 MB of flash for the firmware and settings, the crystal, the RF matching
-network and a PCB-trace antenna, all under a metal can, and it comes with regulatory
-certification for the radio.  Designing that from parts is a project in itself; the module
+network and a U.FL socket for an external antenna, all under a metal can, and it comes with
+regulatory certification for the radio.  The U variant (no PCB-trace antenna) is used because
+the whole keyboard PCB sits under the metal plate, where an on-board antenna would barely
+radiate; it is also only 2.4 mm tall, which helps under a flat 128.  Designing that from parts is a project in itself; the module
 costs about three dollars.  Why this MCU: it has WiFi (for the configuration web page),
 native USB (for flashing and a serial console), enough GPIO, and a peripheral (RMT) that
 generates the LED data stream in hardware.
@@ -104,7 +106,10 @@ generates the LED data stream in hardware.
 The `-N8` suffix means 8 MB flash, no PSRAM.  That matters because the PSRAM versions steal
 GPIO 35, 36 and 37 for the memory chip; the N8 leaves them free.
 
-The GPIO assignments are printed on the sheet.  Four pins are avoided on purpose: IO0, IO3,
+The GPIO assignments are printed on the sheet.  They are picked for the layout rather than
+in any logical order: the module sits on the back turned so its row of ground pins faces the
+rear edge, and each signal uses a pin on the side facing where it goes (the S3 can route any
+peripheral to almost any pin, so this costs nothing).  Four pins are avoided on purpose: IO0, IO3,
 IO45 and IO46 are *strapping pins*, which the chip reads at the instant of reset to decide how
 to boot, and driving them from external circuitry can put it into the wrong mode.
 
@@ -193,8 +198,17 @@ Things on the sheet that need explaining:
   of ground labels.
 - **On-resistance.**  A closed switch is about 120 to 185 ohm at 5 V.  The Commodore's row
   inputs are pulled up through a few kilohms, so a few hundred ohms in the path is nothing.
-- **X11..X15 unused.**  The Commodore has eleven columns; the chip has sixteen X lines.  The
-  extras are marked no-connect.
+- **Which pin carries which line.**  The Commodore has eleven columns and eight rows; the chip
+  has sixteen X lines and eight Y lines, and any X/Y pair can be closed.  So which X pin
+  carries which column, and which Y pin which row, is free: the firmware addresses a switch
+  through a table (`firmware/main/crosspoint_map.h`), and the Commodore sees the same matrix
+  either way.  The order is chosen for the board.  The host connector's pins follow the
+  C128's own connector, which scatters the lines; taken in order (column n on X n) they all
+  cross between J2 and the chip.  Instead each column goes to the X pin on the side of the
+  package it can reach without crossing, and each row to the Y pin whose via sits in the
+  same left-to-right order as its J2 pin (`XP_X_OF_COL` and `XP_Y_OF_ROW` in
+  `pcb/tools/gen_sch.py`).  Five X pins are left over and marked no-connect.  The bench rig
+  wires the chip in plain order, and its build uses the plain table.
 - **C8, 100 nF.**  Decoupling, as always.
 
 ### R10 and R11: what the crosspoint does while the ESP32 is still asleep
@@ -311,25 +325,31 @@ there is.
 
 ### U6, 74HC154: column select
 
-To scan, the ESP32 has to pull one of twelve columns low at a time.  Twelve GPIO would do it,
-but a 4-to-16 decoder does the same with four: give it a 4-bit number and exactly one of its
-sixteen outputs goes low.  Twelve outputs are used, four are no-connect.  The two enable
+To scan, the ESP32 has to pull one of twenty columns low at a time.  The scanned matrix
+follows the board, six key rows by twenty columns (one per key of the number row), rather
+than the C128's own assignment; the firmware knows which C128 position each key stands for.
+Twenty GPIO would do it, but a 4-to-16 decoder covers fifteen of them with four: give it a
+4-bit number and exactly one of its sixteen outputs goes low.  Outputs 0-14 are columns 0-14;
+output 15 has nothing on it, and the firmware selects it between scans so no column sits
+low.  Columns 15-19 come straight from five GPIO.  The two enable
 inputs are grounded so it is always active.  It runs from 3.3 V (the HC family works from 2
 to 6 V) because everything on this sheet is on the ESP32's side of the fence.  C11 is its
 decoupling capacitor.
 
-### R20 to R31, 1 k in each column
+### No resistors in the columns
 
 Imagine two keys pressed in the same row but different columns.  The scan pulls one column
-low while the decoder holds the other high, and the two pressed switches connect those two
-columns together through the row wire.  Without resistors the decoder's two outputs would
-fight each other directly.  1 k in each column limits that to about 3 mA, harmless, while
-still letting a pressed key pull its row input firmly low (the ESP32's internal pull-ups on
-the row pins are about 45 k, so 1 k in series barely dents the low level).
+low while the decoder holds the other high, and the two pressed switches join those two
+columns through the row wire.  In a matrix without diodes that would short the decoder's two
+outputs together, and the usual fix is a resistor in each column (the rev 2.3 bench rig has
+them for that reason).  Here every key has its diode, cathode toward the column: a column
+held high only reverse-biases its diodes, so no current can flow from it into the row, and
+the only path is the one being read, from the pulled-up row down into the low column.  The
+outputs drive the columns directly, decoder and GPIO alike.
 
 ### The rows
 
-The eight row lines go straight to ESP32 inputs with the chip's internal pull-ups enabled.
+The six row lines go straight to ESP32 inputs with the chip's internal pull-ups enabled.
 A pressed key connects a row to the selected (low) column and the input reads low.
 
 ### RESTORE

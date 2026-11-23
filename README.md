@@ -6,14 +6,17 @@ computer sees an ordinary keyboard matrix while the board adds per-key RGB light
 keys that remember their state, a rear-exit connector in stock C128 pin order and, later, a
 command layer, USB keyboard mode and a network keyboard.
 
-Status: schematic drafted and passing ERC, bench firmware running on a devkit, **no board
-layout yet**.  The plan and its reasoning are in [docs/rev3-plan.md](docs/rev3-plan.md).
+Status (2026-11-23): schematic passing ERC; **board laid out, fully routed and DRC clean**,
+with the JLCPCB order files (gerbers, BOM, placement) generated and checked in the fab's
+placement preview; plate ready as one aluminum board that takes either spacebar.  Quoted at
+about 500 USD for five assembled boards shipped, plus about 50 USD for the plate; not ordered
+yet.  Bench firmware runs on a devkit; the bench proofs have not started.  The plan and its reasoning are in [docs/rev3-plan.md](docs/rev3-plan.md).
 
 ## What is here
 
 | folder | what |
 |---|---|
-| [`pcb/`](pcb/README.md) | KiCad 10 project for the board (generated schematic, BOM), the plate as aluminum-PCB boards (9u and 6.25u spacebar), bench notes for proving the circuit |
+| [`pcb/`](pcb/README.md) | KiCad 10 project for the board (generated schematic, BOM), the plate as an aluminum-PCB board (takes a 9u or a 6.25u spacebar), JLCPCB order files, bench notes for proving the circuit |
 | [`layout/`](pcb/README.md#layout-data) | the switch positions, matrix nets and plate outline every generator reads |
 | [`firmware/`](firmware/README.md) | ESP-IDF project for the ESP32-S3, built in Docker, with a Wokwi simulation |
 | [`keycaps/`](keycaps/README.md) | legend map, front-legend artwork and vendor notes for an MX keycap set, and the 9u spacebar drawing |
@@ -49,6 +52,8 @@ Some pieces are used as they are and are not copied here:
 - CH446Q analog crosspoint (WCH): <https://www.wch-ic.com/downloads/CH446DS1_PDF.html>
 - M5Stack NeoPixel / RGB LED units (SK6812), used on the bench:
   <https://docs.m5stack.com/en/unit/neopixel>, <https://docs.m5stack.com/en/unit/rgb>
+- Every part the board's footprints, pinouts and fab placement were checked against:
+  [pcb/datasheets/README.md](pcb/datasheets/README.md)
 
 ## License and credits
 

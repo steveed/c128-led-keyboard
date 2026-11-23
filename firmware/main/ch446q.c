@@ -1,4 +1,5 @@
 #include "ch446q.h"
+#include "crosspoint_map.h"
 #include "pins.h"
 #include "driver/gpio.h"
 #include "esp_rom_sys.h"
@@ -38,10 +39,13 @@ void ch446q_reset(void)
     gpio_set_level(PIN_XP_RST, 0);
 }
 
-void ch446q_set(int y, int x, bool on)
+void ch446q_set(int row, int col, bool on)
 {
-    // 7-bit address, MSB first: AY2 AY1 AY0 AX3 AX2 AX1 AX0 = y * 16 + x
-    int addr = ((y & 7) << 4) | (x & 15);
+    if (row < 0 || row > 7 || col < 0 || col > 10)
+        return;
+    // host line to the chip pin that carries it, then the 7-bit address, MSB first:
+    // AY2 AY1 AY0 AX3 AX2 AX1 AX0 = y * 16 + x
+    int addr = (XP_Y_OF_ROW[row] << 4) | XP_X_OF_COL[col];
     for (int bit = 6; bit >= 0; bit--) {
         gpio_set_level(PIN_XP_DAT, (addr >> bit) & 1);
         esp_rom_delay_us(T_US);

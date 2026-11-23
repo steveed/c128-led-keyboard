@@ -1,5 +1,7 @@
 # Containers for this repo's tooling.
 #
+#   freerouting  the Freerouting autorouter for the rev 3 board (pcb/freerouting/Dockerfile)
+#
 #   idf   ESP-IDF (Espressif's official image) for building the rev 3 keyboard firmware.
 #         Build:      docker compose run --rm idf idf.py build
 #         Configure:  docker compose run --rm idf idf.py menuconfig
@@ -20,6 +22,15 @@ services:
       - IDF_CCACHE_ENABLE=1
       - IDF_TARGET=esp32s3
     command: idf.py build
+
+  freerouting:
+    # Freerouting 2.5.0 autorouter, headless.  Run from pcb/tools/freeroute.py, which exports
+    # the board to Specctra DSN, runs this, and imports the session back:
+    #   docker compose run --rm freerouting -de out/board.dsn -do out/board.ses -mp 30
+    build: pcb/freerouting
+    working_dir: /work
+    volumes:
+      - ./pcb:/work
 
 volumes:
   idf-ccache:

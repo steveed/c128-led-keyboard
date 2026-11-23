@@ -31,8 +31,10 @@ Facts pulled from [`pcb/C128-keyboard.kicad_pcb`](https://codeberg.org/jflitton/
   understands.  The `c128-mech-keyboard-adapter` project next door exists purely to remap those
   26 pins onto the stock DB25 order.  +5 V and GND each get one or two pins.
 - **Spacebar.**  SW52 uses a custom footprint, `MX-6.25_7_9U-ReversedStabilizers-NoLED`, centerd
-  under N with stabilizer holes at +/-49.9 mm (6.25u, 100 mm), +/-57.15 mm (7u, 114.3 mm) and
-  +/-66.7 mm (9u, 133.35 mm), with both the 3.05 mm and 4.0 mm holes for screw-in stabs.  The
+  under N.  Its library file has stabilizer holes at +/-49.9 mm (6.25u, 100 mm), +/-57.15 mm
+  (7u, 114.3 mm) and +/-66.7 mm (9u, 133.35 mm), but the copy on the board, and the NPTH
+  drill file it was fabricated from, has only +/-49.886 and +/-62.675 mm (125.35 mm), with
+  both the 3.05 mm and 4.0 mm holes for screw-in stabs.  The
   stock C128 spacebar is 9u (the keycap legend map lists it as width 9), and the plate STEP is
   cut for that.
 - **Per-key printed parts** when reusing Mitsumi keycaps: one stem adapter per key
@@ -255,7 +257,8 @@ can stay.
 **Work items.**
 
 1. Plate: **done** as KiCad boards for aluminum-PCB fabrication, `pcb/plate/plate-9u.kicad_pcb`
-   and `plate-6.25u.kicad_pcb`, generated from the STEP model (see the rev 3 plan).  Stabilizers
+   and `plate-6.25u.kicad_pcb`, generated from the STEP model (see the rev 3 plan), and
+   `plate-dual.kicad_pcb`, which has the stabilizer slots of both and is the one to order.  Stabilizers
    are PCB-mount screw-in (decided), so the plate only needs clearance slots for the housings and
    wires and the PCB carries the 3.05 mm and 4.0 mm holes, which the spacebar footprint already has.
 2. Cosmetics: a 6.25u bar leaves about 1.4u of empty plate on each side of the spacebar
@@ -274,8 +277,9 @@ can stay.
 - Stabilizers: PCB-mount screw-in everywhere; the plate carries clearance only.
 - Plate: order it as a 1.5 mm aluminum-core PCB from the board fab instead of laser-cut
   steel, generated from the same switch positions as the PCB.  Details in the rev 3 plan.
-- A thin insulating bottom cover for flat builds, with mounting holes added to the PCB for it
-  (rev 2.3 has none).  Specified in the rev 3 plan.
+- A thin insulating liner under the PCB for flat builds, held with double-sided tape as on
+  the Amiga 1000 keyboard, so the PCB needs no mounting holes (rev 2.3 has none either).
+  Specified in the rev 3 plan.
 - Shim: drop it by enlarging the plate's stabilizer clearance so the plate sits 1 mm lower
   on mid-height builds, and deepen the stabilizer adapters 1 mm.  Tracked here and in the
   rev 3 plate section, since it is a plate/printables change.

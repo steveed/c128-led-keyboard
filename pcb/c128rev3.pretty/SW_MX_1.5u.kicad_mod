@@ -1,0 +1,240 @@
+(footprint "SW_MX_1.5u"
+	(version 20260206)
+	(generator "gen_fp")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "MX PCB-mount keyswitch, 1.5u; SK6812 MINI pocket at 0,5.08 (LED is a separate footprint, LED_SK6812MINI_MX)")
+	(tags "Cherry MX keyswitch 1.5u c128 rev3")
+	(property "Reference" "REF**"
+		(at -4.6 -5.9 0)
+		(layer "F.SilkS")
+		(uuid "922d9b97-005a-568a-b16a-88ad3d261fd6")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "SW_MX_1.5u"
+		(at 0 7.9 0)
+		(layer "F.Fab")
+		(uuid "cd8a30cd-0274-50b6-b835-2e8dd60167a8")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9a02e04c-4f21-522a-9708-504169a78627")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "59be07b2-844f-5f05-9452-d29274ea2c6e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -7 -7)
+		(end -5.5 -7)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d5962e37-c6d4-56fb-8fc6-878a8cdc1bd4")
+	)
+	(fp_line
+		(start -7 -7)
+		(end -7 -5.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "38d9ea28-c2c7-5c68-9c0b-099522bf3efa")
+	)
+	(fp_line
+		(start -7 7)
+		(end -5.5 7)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "44f5b783-2d69-5a79-be6e-562a6db36ede")
+	)
+	(fp_line
+		(start -7 7)
+		(end -7 5.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1687bbc0-ddad-5241-95dd-d9efd035ab36")
+	)
+	(fp_line
+		(start 7 -7)
+		(end 5.5 -7)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3275a53d-e709-5fce-9dc9-951bff10adac")
+	)
+	(fp_line
+		(start 7 -7)
+		(end 7 -5.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cdd6ab2d-e0bd-51e9-aa22-bc5ca529b6a4")
+	)
+	(fp_line
+		(start 7 7)
+		(end 5.5 7)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "58c7fdc5-2b5d-5ac9-b927-9f6d50924eac")
+	)
+	(fp_line
+		(start 7 7)
+		(end 7 5.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "86766082-b56e-5f65-a7f3-d57507d2dc30")
+	)
+	(fp_rect
+		(start -7.25 -7.25)
+		(end 7.25 7.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "02826405-efbf-5a6c-8fa8-a1ee46d6d91c")
+	)
+	(fp_rect
+		(start -7 -7)
+		(end 7 7)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "979eaa9b-56bc-51cb-832a-dac9e0e4ca5f")
+	)
+	(fp_rect
+		(start -14.2875 -9.525)
+		(end 14.2875 9.525)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "4462c6cf-3fb8-5f72-8265-f29a86737129")
+	)
+	(fp_rect
+		(start -1.75 3.33)
+		(end 1.75 6.83)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "fead0581-65bf-5775-98c9-6444cd61fd89")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -2.2 0)
+		(layer "F.Fab")
+		(uuid "6c950801-0d79-5cc6-94cf-16da8c5fb96b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 3.9878 3.9878)
+		(drill 3.9878)
+		(layers "*.Cu" "*.Mask")
+		(uuid "fd548282-48a9-54f7-9c79-9cc0e62fab0a")
+	)
+	(pad "" np_thru_hole circle
+		(at -5.08 0)
+		(size 1.75 1.75)
+		(drill 1.75)
+		(layers "*.Cu" "*.Mask")
+		(uuid "8aa4ef84-227e-5da4-a43f-8126946986f8")
+	)
+	(pad "" np_thru_hole circle
+		(at 5.08 0)
+		(size 1.75 1.75)
+		(drill 1.75)
+		(layers "*.Cu" "*.Mask")
+		(uuid "fcea9dc5-0fff-5e18-b119-906055d49120")
+	)
+	(pad "1" thru_hole circle
+		(at -3.81 -2.54)
+		(size 2.2 2.2)
+		(drill 1.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dc02c370-626b-5449-9106-4dfa84dafbde")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 -5.08)
+		(size 2.2 2.2)
+		(drill 1.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "46db78ba-23a0-5b62-bc62-2ee1fac34559")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Button_Switch_Keyboard.3dshapes/SW_Cherry_MX_1.00u_PCB.step"
+		(offset
+			(xyz 2.54 5.08 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

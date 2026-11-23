@@ -1,7 +1,8 @@
 # Rev 3 firmware.  Builds run in the ESP-IDF container (see ../docker-compose.yml);
 # flashing and the monitor need the USB port and run a small host-side esptool.
 #
-#   make build        compile (first run pulls the ~2 GB image and takes a few minutes)
+#   make build        compile for the bench rig (first run pulls the ~2 GB image, a few minutes)
+#   make build-rev3   compile for the rev 3 board (6 x 20 matrix) into build-rev3/
 #   make build-wokwi  compile the simulator variant into build-wokwi/ (see wokwi/README.md)
 #   make sim          run the simulator build headless in wokwi-cli, console on this terminal
 #   make sim-test     run wokwi/smoke.scenario.yaml against the simulator build (CI-style pass/fail)
@@ -20,6 +21,9 @@ WOKWI   ?= $(firstword $(wildcard $(HOME)/.wokwi/bin/wokwi-cli) wokwi-cli)
 
 build:
 	$(COMPOSE) run --rm idf idf.py build
+
+build-rev3:
+	$(COMPOSE) run --rm idf idf.py -B build-rev3 -DSDKCONFIG=build-rev3/sdkconfig -DBOARD_REV3=1 build
 
 # simulator build: UART console, columns driven straight from GPIO (no decoder), own build dir
 build-wokwi:
@@ -55,4 +59,4 @@ monitor:
 keymap:
 	python3 tools/gen_keymap.py
 
-.PHONY: build build-wokwi sim sim-test menuconfig clean flash monitor keymap
+.PHONY: build build-rev3 build-wokwi sim sim-test menuconfig clean flash monitor keymap

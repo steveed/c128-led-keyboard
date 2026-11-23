@@ -9,3 +9,5 @@ __pycache__/
 .history/
 fp-info-cache
 pcb/plate/gerbers/
+pcb/fab/
+pcb/datasheets/*.pdf
