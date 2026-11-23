@@ -28,7 +28,8 @@ drawing (read off the datasheets in pcb/datasheets), and is applied as
 The bottom rule is because KiCad flips a part to the back top-to-bottom and JLCPCB mirrors it
 left-to-right: the same mirror plus a half turn, with the turn's sense reversed.  It is what
 the first upload showed: J1 (correction 0) came out flipped at KiCad's 0, U1 (correction 0)
-turned at KiCad's 180, U3 (LQFP, correction 270) turned at 0.  Footprints not listed pass
+turned at KiCad's 180, U3 (LQFP, correction 270) turned at 0, and the SOD-123 diodes
+(correction 0) had the band on the anode at 0.  Footprints not listed pass
 KiCad's rotation through; they looked right in that preview.  Check pin 1 of every part in
 the placement preview anyway.
 """
@@ -61,6 +62,10 @@ MODEL_ROT = {
     # USB-C (C41417453.pdf): recommended layout with the pad row at the top, opening down,
     # as ours
     "USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040": 0,
+    # diodes: the model's band is on KiCad's pad 1 (cathode) at the same turn; seen in the
+    # preview, the band sat on the anode (the open end of the silk box) at KiCad's 0
+    "D_SOD-123": 0,
+    "D_SMA": 0,
 }
 
 
