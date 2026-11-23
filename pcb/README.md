@@ -246,10 +246,12 @@ $PY pcb/tools/silk.py
 
 `tools/gen_plate.py` reads the plate's loops from `layout/plate.json` (see *Layout data*
 below), fits the 88 switch openings onto the switch centers in `layout/switches.json` to get the plate-to-PCB transform (RMS 0.06 mm, so plate and PCB agree
-exactly), and writes the loops to Edge.Cuts.  The 6.25u variant is the same plate with the
-spacebar's stabilizer boxes slid in from 133.35 mm to 100 mm spacing; `plate-dual` has both
-pairs of boxes (the union of the two cutouts), so it takes either spacebar's stabilizers, as
-the PCB's spacebar footprint already does.  Order the dual plate.  Silkscreen text is on
+exactly), and writes the loops to Edge.Cuts.  The original plate's spacebar stabilizer boxes
+sit 125.35 mm apart, rev 2.3's spacing; rev 3 drills 133.35 and 100 mm (`SPACEBAR_STABS` in
+`gen_fp.py`), so the generator moves the boxes onto the PCB's holes: 133.35 mm in `plate-9u`,
+100 mm in `plate-6.25u`, and both pairs in `plate-dual` (the union of the two cutouts), which
+takes either spacebar's stabilizers as the PCB's spacebar footprint does.  It checks every
+plate has a box centered on each hole pair before writing.  Order the dual plate.  Silkscreen text is on
 F.SilkS; add legends there if wanted.  Order as 1.5 mm single-layer aluminum PCB.
 
 Every loop is written as one closed polygon with arcs flattened to chords (error under
