@@ -227,16 +227,21 @@ Decided 2026-11-23: do what Commodore did on the Amiga 1000 keyboard, a thin pla
 (the kind under an old computer case) held on with double-sided tape.  No screws, no printed
 part and no mounting holes in the PCB, which rev 3 does not have.
 
+Drawn 2026-11-23 as a die-cut Formex part: `pcb/liner/` (DXF, dimensioned PDF, and how it
+fits), generated from the board by `pcb/tools/gen_liner.py`.
+
 - Coverage: the 128's main board does not reach under the last two key rows (the Z row and
   the spacebar), which is also where there is only about 2 mm below the PCB.  The liner stops
-  short of them; it only has to cover the area over the main board.
-- Material: a stiff insulating film, about 0.25 to 0.5 mm, cut to the outline by hand or by
-  the plate vendor.  It costs well under the 1 mm the budget allowed for a cover.
-- Fixing: strips of double-sided tape on the bare board between switch rows, where there are
-  no pins.  The liner rests on the pin tips over the switch field.
-- Rear band: the electronics cluster (ESP32, CH446Q, USB-C, connectors) is taller than the
-  pins.  Cut the liner around it, or tape a second piece over its parts.  Keep openings for
-  the cable exit and USB-C.  Plastic over the ESP32's antenna lead is fine; metal is not.
+  at the Z row; at its front edge there is still about 6 mm.
+- Material: Formex GK-17 (0.43 mm polypropylene) or 0.4 mm fish paper, die cut or cut by
+  hand from the 1:1 drawing.
+- Fixing: 35 pads of 2.3 mm double-sided foam tape on bare board, in the lanes between the
+  switch rows, between the function keys and in the rear band.  The foam holds the sheet
+  clear of the 1.7 mm switch pins, so only the tape touches the PCB; 2.7 mm in all.
+- Windows for every back-side part taller than 1.9 mm (the ESP32, USB-C, cable header, C5,
+  J3/J4, the tact switches, U6, D1/D2).  Those at the rear edge open into notches for the
+  USB-C plug, the ribbon and the antenna lead.  Plastic over the antenna lead is fine; metal
+  is not.
 
 ## Layout tooling: KiCadRoutingTools
 
@@ -461,7 +466,7 @@ All SMD goes on at the fab (see Assembly); the hand-build path is through-hole o
    routed and DRC clean; the fab outputs come from `pcb/tools/fab.py` instead of kibot.
 4. Plate as an aluminum PCB: **done** (both spacebar variants generated, DRC clean, and a
    dual plate with slots for both spacebars' stabilizers, the one to order); the
-   stabilizer-clearance change remains.  The bottom cover is a taped liner, cut by hand.
+   stabilizer-clearance change remains.  The bottom cover is a taped liner (`pcb/liner/`), die cut or cut by hand.
 5. Firmware milestones 1 and 2 on a devkit wired to a rev 2.3 board through the breadboarded
    crosspoint, so bring-up of the first rev 3 board is just hardware.  **Started**: the
    ESP-IDF project in [firmware/](../firmware/README.md) has the scan, crosspoint mirror,
