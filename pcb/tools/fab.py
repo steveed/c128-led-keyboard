@@ -107,6 +107,17 @@ def bom(tmp):
     return rows, skipped, lcsc_of
 
 
+def pad_center(fp):
+    bb = None
+    for p in fp.Pads():
+        pb = p.GetBoundingBox()
+        if bb is None:
+            bb = pcbnew.BOX2I(pb.GetPosition(), pb.GetSize())
+        else:
+            bb.Merge(pb)
+    return bb.GetCenter()
+
+
 def cpl(b, tmp, placed, board):
     raw = os.path.join(tmp, "pos-raw.csv")
     run("pcb", "export", "pos", "--format", "csv", "--units", "mm", "--side", "both", "-o", raw, b)
@@ -116,10 +127,18 @@ def cpl(b, tmp, placed, board):
         ref = r["Ref"]
         if ref not in placed:
             continue
-        name = fps[ref].GetFPID().GetLibItemName().wx_str() if ref in fps else ""
+        fp = fps[ref]
+        name = fp.GetFPID().GetLibItemName().wx_str()
         rot = (float(r["Rot"]) + ROT_FIX.get(name, 0)) % 360
-        rows.append({"Designator": ref, "Mid X": f"{float(r['PosX']):.4f}mm",
-                     "Mid Y": f"{float(r['PosY']):.4f}mm",
+        x, y = float(r["PosX"]), float(r["PosY"])
+        # the fab turns a part about the point given here, and its models sit on the middle of
+        # their pads.  Most footprints have their origin there; J1's is at the pad row's edge,
+        # 4.8 mm off, so a turn at the fab swings it off the board.  Give the pads' center.
+        c = pad_center(fp)
+        dx, dy = pcbnew.ToMM(c.x - fp.GetPosition().x), pcbnew.ToMM(c.y - fp.GetPosition().y)
+        if abs(dx) > 0.01 or abs(dy) > 0.01:
+            x, y = x + dx, y - dy                # the position file's y runs up
+        rows.append({"Designator": ref, "Mid X": f"{x:.4f}mm", "Mid Y": f"{y:.4f}mm",
                      "Layer": "Top" if r["Side"] == "top" else "Bottom", "Rotation": f"{rot:g}"})
     return rows
 
