@@ -6,6 +6,7 @@
 #   make build-wokwi  compile the simulator variant into build-wokwi/ (see wokwi/README.md)
 #   make sim          run the simulator build headless in wokwi-cli, console on this terminal
 #   make sim-test     run wokwi/smoke.scenario.yaml against the simulator build (CI-style pass/fail)
+#   make test         host tests for the LED engine (both boards), with the container's gcc
 #   make menuconfig   ESP-IDF configuration UI
 #   make flash        write bootloader + partitions + app over the devkit's USB port
 #   make monitor      serial console at 115200 (quit: ctrl-a then k)
@@ -35,6 +36,13 @@ sim: build-wokwi
 sim-test: build-wokwi
 	$(WOKWI) --timeout 30000 --scenario smoke.scenario.yaml wokwi/
 
+# The LED engine's frame maths has no ESP-IDF calls, so it is tested on the host.
+TEST_CC := gcc -std=c11 -O1 -Wall -Wextra -Werror -Imain -o /tmp/led_test test/test_led_engine.c main/led_engine.c -lm
+test:
+	$(COMPOSE) run --rm --entrypoint sh idf -c '\
+		$(TEST_CC) -DBOARD_REV3=1 -DBOARD_NAME=\"rev3\" && /tmp/led_test && \
+		$(TEST_CC) -DBOARD_NAME=\"bench\" && /tmp/led_test'
+
 menuconfig:
 	$(COMPOSE) run --rm idf idf.py menuconfig
 
@@ -59,4 +67,4 @@ monitor:
 keymap:
 	python3 tools/gen_keymap.py
 
-.PHONY: build build-rev3 build-wokwi sim sim-test menuconfig clean flash monitor keymap
+.PHONY: test build build-rev3 build-wokwi sim sim-test menuconfig clean flash monitor keymap
