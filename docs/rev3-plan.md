@@ -2,7 +2,9 @@
 
 Status: schematic drafted 2026-09-17 in `pcb/`, revised 2026-09-18 (CH446Q in serial
 mode, per-key diodes, top-mount LEDs, RESTORE sense diode, fab assembly, aluminum plate
-boards generated); board file created and placed 2026-11-21, not routed; bench proofs not started.  Decisions taken 2026-09-17/18.  Background and the reasoning
+boards generated); board file created and placed 2026-11-21, routed and DRC clean
+2026-11-23, with the JLCPCB order files checked in the fab's preview and the dual-spacebar
+plate ready (see `pcb/README.md`); nothing ordered yet; bench proofs not started.  Decisions taken 2026-09-17/18.  Background and the reasoning
 behind each change is in [pcb-issues-and-plans.md](pcb-issues-and-plans.md), and a part-by-part
 explanation of the schematic is in [rev3-circuit-walkthrough.md](rev3-circuit-walkthrough.md);
 this document is
@@ -391,7 +393,9 @@ solders only through-hole parts: switches, connectors and headers.  Consequences
   `LCSC` field (verify each on the LCSC site before ordering).  The ESP32-S3-MINI-1U-N8,
   SK6812 MINI, CH446Q, 74HC154 and 74AHCT1G125 are stocked in some package; pick the
   stocked package at layout time and fill the field in.  The 220 uF electrolytic, the polyfuse
-  and the USB-C receptacle likewise.
+  and the USB-C receptacle likewise.  **Done 2026-11-22**: every SMD part has an in-stock
+  number (the list and two substitutions are in `pcb/README.md`, *Part numbers for fab
+  assembly*).
 - **CH446Q.**  A WCH part, so LCSC stocks it; confirm the part number and that it is not a
   minimum-order extended part.  LQFP-44 at 0.8 mm pitch is fine for the fab and workable by
   hand with flux if a board ever needs a replacement.
@@ -399,6 +403,7 @@ solders only through-hole parts: switches, connectors and headers.  Consequences
   maximum around 400 x 500 mm for assembly) before layout, and keep 5 mm of clear rail along
   the long edges for their fixtures if they ask for it.
 - **Fiducials and tooling holes** on both sides, three per side, outside the plate footprint.
+  Not added: JLCPCB quoted the board without them; confirm at their order review.
 - **Panelisation is not worth it** at this size; order as single boards.
 - The plate is a separate, unassembled aluminum order from the same fab.
 
@@ -453,15 +458,19 @@ All SMD goes on at the fab (see Assembly); the hand-build path is through-hole o
    reworked to physical + host nets.  **Drafted**: see [pcb/](../pcb/README.md),
    ERC clean; the bench rig and shopping list are in
    [pcb/bench/README.md](../pcb/bench/README.md).
-3. Layout: footprint changes, re-route, DRC clean; kibot outputs.
-4. Plate as an aluminum PCB: **done** (both spacebar variants generated, DRC clean); the
+3. Layout: footprint changes, re-route, DRC clean; kibot outputs.  **Done 2026-11-23**:
+   routed and DRC clean; the fab outputs come from `pcb/tools/fab.py` instead of kibot.
+4. Plate as an aluminum PCB: **done** (both spacebar variants generated, DRC clean, and a
+   dual plate with slots for both spacebars' stabilizers, the one to order); the
    stabilizer-clearance change and the bottom cover model remain.
 5. Firmware milestones 1 and 2 on a devkit wired to a rev 2.3 board through the breadboarded
    crosspoint, so bring-up of the first rev 3 board is just hardware.  **Started**: the
    ESP-IDF project in [firmware/](../firmware/README.md) has the scan, crosspoint mirror,
    saved lock keys, RESTORE sense/press and a console; it builds in the `idf` container
    (`make -C firmware build`) and flashes from the host.
-6. Order boards: two unlit hand builds, one assembled lit board.
+6. Order boards: two unlit hand builds, one assembled lit board.  **Ready** (2026-11-23):
+   five assembled boards quoted at about 500 USD shipped, plus about 50 USD for the plate;
+   not ordered yet.
 7. Bring-up, then firmware milestones 3 to 8.
 8. VICE positional keymaps for x128 and x64, tested against the shifted-symbol keys.
 9. README: rev 3 configuration table, flashing instructions, command reference page modeled

@@ -1,12 +1,16 @@
-# PCB rev 3 (draft)
+# PCB rev 3
 
 KiCad 10 project for the smart board described in [docs/rev3-plan.md](../docs/rev3-plan.md):
 ESP32-S3 module scanning the switches, a CH446Q crosspoint presenting them to the C128,
 per-key SK6812 MINI lighting, saved lock state, and a rear-exit host connector in stock C128
 pin order.
 
-Status: **schematic passes ERC with zero violations; board file created 2026-11-21 with every part placed
-(first pass) and nothing routed.**
+Status (2026-11-23): **schematic passes ERC with zero violations; the board is placed, fully
+routed and tidied, with nothing unconnected, no schematic parity differences and no DRC
+errors or silkscreen warnings.  The JLCPCB order files come out of `tools/fab.py`, every
+SMD part has an in-stock LCSC number, and the placement rotations have been checked part by
+part in JLCPCB's preview.  The dual-spacebar plate is ready to order.**  Nothing has been
+ordered or built yet.
 A part-by-part explanation of the circuit is in
 [docs/rev3-circuit-walkthrough.md](../docs/rev3-circuit-walkthrough.md).
 
@@ -21,19 +25,21 @@ A part-by-part explanation of the circuit is in
 | `leds.kicad_sch` | 92 SK6812 MINI (top mount) in chain order (lock keys first) |
 | `c128rev3.kicad_sym`, `sym-lib-table` | project library with the CH446Q symbol (LQFP-44 numbering) |
 | `c128rev3.pretty/`, `fp-lib-table` | project footprints: MX switches (1u, 1.5u, 2u, spacebar), the SK6812 MINI for the switch LED pocket, and the USB-C receptacle |
-| `datasheets/` | drawings the project footprints are made from |
+| `datasheets/` | drawings the project footprints are made from, and the datasheets of the fab parts whose pinouts and placement rotations were checked (named by LCSC number) |
 | `tools/gen_fp.py` | the generator that writes `c128rev3.pretty/` and `fp-lib-table` |
-| `C128-keyboard-rev3.kicad_pcb` | the board: rev 2.3 outline, four layers, every footprint linked to the schematic and placed; routing in progress |
+| `C128-keyboard-rev3.kicad_pcb` | the board: rev 2.3 outline, four layers, every footprint linked to the schematic, placed and routed; DRC clean |
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
 | `tools/route_keys.py` | lays the regular per-key copper on the board; rerunnable (see *Routing*) |
 | `tools/freeroute.py`, `tools/plane_taps.py`, `tools/clean_dangling.py` | autoroute the rest in a container; tap the inner planes from SMD pads; delete dead-end stubs (see *Routing*) |
 | `tools/move.py`, `tools/swap_footprint.py`, `tools/sync_nets.py`, `tools/rip_up.py`, `tools/tidy.py`, `tools/silk.py`, `tools/to_sheet.py` | rework a routed board: move or turn parts, swap a footprint, take the schematic's nets after a change, rip up an area, tidy the router's copper, clear the silkscreen, center the board on its sheet |
 | `tools/route_host.py` | lays the host lines between J2 and the CH446Q (see *Routing*) |
 | `bom.csv` | grouped BOM exported from the schematic |
+| `tools/fab.py`, `fab/` | the JLCPCB order files (gerber zip, BOM, placement list) and the script that writes them; `fab/` is not tracked (see *Ordering from JLCPCB*) |
 | `tools/gen_sch.py`, `tools/kisym.py` | the generator that produced all of the above |
 | `tools/pinmaps.json` | CH446Q LQFP-44 pin map, GPIO plan, host connector pinout |
 | `bench/README.md` | shopping list and breadboard wiring to prove the design on a rev 2.3 board |
-| `plate/plate-9u.kicad_pcb`, `plate/plate-6.25u.kicad_pcb` | the plate as a KiCad board (outline polygons plus a full copper pour) for aluminum-core PCB fabrication, in PCB coordinates; DRC clean |
+| `plate/plate-dual.kicad_pcb` | the plate to order: a KiCad board (outline polygons plus a full copper pour) for aluminum-core PCB fabrication, with stabilizer slots for both a 9u and a 6.25u spacebar; DRC clean |
+| `plate/plate-9u.kicad_pcb`, `plate/plate-6.25u.kicad_pcb` | the same plate for one spacebar only |
 | `plate/plate_features.json` | mounting holes, locating holes, tab slots and stabilizer cutouts in PCB coordinates, for the layout and the bottom cover |
 | `tools/plate_step.py`, `tools/gen_plate.py` | STEP reader and plate-board generator |
 | `tools/plate_header.kicad_pcb` | the plate boards' layer stack and setup block, copied into every generated board |
@@ -151,14 +157,22 @@ What it set up:
   (the five GPIO-column resistors, next to the keypad columns they drive).  The 74HC154
   and its 15 resistors sit mid-board at x 227-274 in the channel under the top row, which
   is clear of holes on the back the whole width (y 97.5-113).  First pass, packed by
-  courtyard; no overlaps.
+  courtyard; no overlaps.  (These x values are in the generator's frame, before the move
+  onto the sheet; see *Routing*.)
 - **Rules** in the project file: net class Power (0.5 mm) for GND, +5V_KB, +5V_KB_F,
   +5V_SYS, +3V3 and VBUS; Default 0.25 mm, 0.6/0.3 mm vias; JLCPCB minimums.
 
-DRC on the unrouted board has no copper or courtyard errors; it reports about 290
-silkscreen warnings (labels over pads and each other) left for the hand tidy.
+Changed since that first pass, by hand and with `move.py`: the ESP32 was turned 180 degrees
+so its GND row faces the rear edge and its GPIOs face the parts they drive (the GPIO plan in
+`gen_sch.py` was re-picked to suit), and the LED buffer moved next to it; the 20 column
+resistors are gone, since the key diodes already keep the columns apart (see the circuit
+walkthrough); the silkscreen was cleared with `silk.py`; and the board was moved onto an A3
+sheet with `to_sheet.py`.
 
 ## Routing
+
+Status: routed completely (2026-11-23) by the steps below, several router passes and the
+last few connections by hand, then `tidy.py` and `silk.py`.
 
 `tools/route_keys.py` (KiCad's python, like `gen_pcb.py`) lays the copper every key shares,
 in the switch's frame, and keeps it in one group, `route_keys`, that the next run replaces:
@@ -268,7 +282,7 @@ is not run and the zip carries gerbers only; and silkscreen outside the outline 
 board size the quote is based on, so the legend sits inside the plate.
 
 To check the cutouts yourself, open the gerbers in KiCad's gerber viewer (Tools > Gerber
-Viewer, or `gerbview`), or upload `plate-9u-Edge_Cuts.gm1` on its own: alone, the viewer
+Viewer, or `gerbview`), or upload `plate-dual-Edge_Cuts.gm1` on its own: alone, the viewer
 draws the plate correctly, cutouts and all.  The fab's CAM works from the outline data, not
 the preview; the routed result is what the outline says.
 
@@ -282,7 +296,10 @@ Every symbol carries an `LCSC` field, set in `gen_sch.py` (the `LCSC` table and 
 explicit fields).  Every SMD part has one; the through-hole parts the builder solders (key
 switches, J2-J4) and JP1 (copper only) are blank, which keeps them out of the fab's BOM.
 `bom.csv` includes the column.  Verify every number on lcsc.com before ordering; part
-numbers rotate.
+numbers rotate.  Two were swapped after a first JLCPCB upload (2026-11-22): U6 is TI's
+CD74HC154M96 (C2832236), because JLCPCB was out of the Nexperia 74HC154D; and the LEDs are
+the SK6812MINI-012 (C2886570), because JLCPCB rates the SK6812MINI-B-012 (C5183448) MSL 5 and
+"difficult to process".  Both are drop-in: same package, pins and lands.
 
 ## Ordering from JLCPCB
 
@@ -299,6 +316,13 @@ models don't all share KiCad's zero orientation.  The LED's pin 1 is DIN (its ch
 corner), which is pad 3 of our footprint, not pad 1; the silkscreen dot beside each LED marks
 that corner, so the part's pin-1 mark belongs on the dot.  Fix a turned part there, or put its
 footprint in `ROT_ADD` in `fab.py` (the degrees the preview needed on top of KiCad's rotation) and rerun.
+
+Status: checked in the preview on 2026-11-23, every part placed correctly with the CPL as
+written (J1, U1, U3, U6, U7, C5 and the diodes carry corrections in `ROT_ADD`); five
+assembled boards quoted at about 500 USD shipped.  J1's CPL position is the middle of its
+pads, not its footprint origin (which sits at the board edge), so the fab turns it in place.
+The plate is a separate order: upload `plate/gerbers/plate-dual-gerbers.zip` (made with the
+commands under *Verifying*) as a 1.5 mm single-layer aluminum board; about 50 USD.
 
 ## Verifying
 

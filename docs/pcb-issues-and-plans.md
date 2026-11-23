@@ -257,7 +257,8 @@ can stay.
 **Work items.**
 
 1. Plate: **done** as KiCad boards for aluminum-PCB fabrication, `pcb/plate/plate-9u.kicad_pcb`
-   and `plate-6.25u.kicad_pcb`, generated from the STEP model (see the rev 3 plan).  Stabilizers
+   and `plate-6.25u.kicad_pcb`, generated from the STEP model (see the rev 3 plan), and
+   `plate-dual.kicad_pcb`, which has the stabilizer slots of both and is the one to order.  Stabilizers
    are PCB-mount screw-in (decided), so the plate only needs clearance slots for the housings and
    wires and the PCB carries the 3.05 mm and 4.0 mm holes, which the spacebar footprint already has.
 2. Cosmetics: a 6.25u bar leaves about 1.4u of empty plate on each side of the spacebar
