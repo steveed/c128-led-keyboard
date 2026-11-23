@@ -18,9 +18,19 @@ the fab (the key switches and J2-J4, which the builder solders, and JP1, which i
 and is left out of both the BOM and the CPL; the script lists them, and refuses to write if an
 SMD footprint on the board has no number, or if DRC finds an error or anything unconnected.
 
-Rotations are KiCad's.  JLCPCB's part models don't all share KiCad's zero orientation, so
-check every part in the placement preview after upload and fix any that are turned there
-(or add a correction to ROT_FIX and rerun).
+Rotations: JLCPCB's part models follow the maker's package drawing, which is not always
+KiCad's zero orientation.  MODEL_ROT holds, per footprint, the turn from our footprint to that
+drawing (read off the datasheets in pcb/datasheets), and is applied as
+
+    top:     KiCad rotation + correction
+    bottom:  KiCad rotation + 180 - correction
+
+The bottom rule is because KiCad flips a part to the back top-to-bottom and JLCPCB mirrors it
+left-to-right: the same mirror plus a half turn, with the turn's sense reversed.  It is what
+the first upload showed: J1 (correction 0) came out flipped at KiCad's 0, U1 (correction 0)
+turned at KiCad's 180, U3 (LQFP, correction 270) turned at 0.  Footprints not listed pass
+KiCad's rotation through; they looked right in that preview.  Check pin 1 of every part in
+the placement preview anyway.
 """
 import csv
 import glob
@@ -41,7 +51,17 @@ SCH = os.path.join(PCB, NAME + ".kicad_sch")
 OUT = os.path.join(PCB, "fab")
 KC = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts"
-ROT_FIX = {}        # footprint name -> degrees added to KiCad's rotation, once checked at JLCPCB
+MODEL_ROT = {
+    # CH446Q (C109471.pdf): pin 1 bottom left, pins 1-11 along the bottom; KiCad's has pin 1
+    # top left, pins down the left side
+    "LQFP-44_10x10mm_P0.8mm": 270,
+    # ESP32-S3-MINI-1U (C2980299.pdf): pin 1 top left, GND row and antenna end at the top,
+    # as KiCad's
+    "ESP32-S2-MINI-1U": 0,
+    # USB-C (C41417453.pdf): recommended layout with the pad row at the top, opening down,
+    # as ours
+    "USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040": 0,
+}
 
 
 def run(*args):
@@ -129,7 +149,11 @@ def cpl(b, tmp, placed, board):
             continue
         fp = fps[ref]
         name = fp.GetFPID().GetLibItemName().wx_str()
-        rot = (float(r["Rot"]) + ROT_FIX.get(name, 0)) % 360
+        rot = float(r["Rot"])
+        if name in MODEL_ROT:
+            k = MODEL_ROT[name]
+            rot = rot + k if r["Side"] == "top" else rot + 180 - k
+        rot %= 360
         x, y = float(r["PosX"]), float(r["PosY"])
         # the fab turns a part about the point given here, and its models sit on the middle of
         # their pads.  Most footprints have their origin there; J1's is at the pad row's edge,
