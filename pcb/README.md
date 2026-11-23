@@ -293,7 +293,9 @@ It refuses to write if DRC finds an error, anything unconnected or a parity diff
 an SMD part has no LCSC number.  Order a 4-layer board, upload the zip, then turn on
 assembly for **both sides** and upload the BOM and CPL.  In the placement preview check
 every part's rotation and pin 1, the LEDs and the ESP32 module especially: JLCPCB's part
-models don't all share KiCad's zero orientation.  Fix a turned part there, or put its
+models don't all share KiCad's zero orientation.  The LED's pin 1 is DIN (its chamfered
+corner), which is pad 3 of our footprint, not pad 1; the silkscreen dot beside each LED marks
+that corner, so the part's pin-1 mark belongs on the dot.  Fix a turned part there, or put its
 footprint in `ROT_FIX` in `fab.py` and rerun.
 
 ## Verifying

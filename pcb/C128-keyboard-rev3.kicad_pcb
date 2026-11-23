@@ -177,8 +177,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -878,8 +878,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1043,8 +1043,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1476,8 +1476,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1641,8 +1641,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1806,8 +1806,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1971,8 +1971,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2136,8 +2136,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2301,8 +2301,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -3270,8 +3270,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -3971,8 +3971,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -4404,8 +4404,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -4569,8 +4569,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -4734,8 +4734,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -5971,8 +5971,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -6672,8 +6672,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -6837,8 +6837,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7002,8 +7002,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7167,8 +7167,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7332,8 +7332,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7497,8 +7497,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7930,8 +7930,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8095,8 +8095,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8260,8 +8260,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8693,8 +8693,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8858,8 +8858,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9023,8 +9023,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9456,8 +9456,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9621,8 +9621,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -10054,8 +10054,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -10219,8 +10219,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -10384,8 +10384,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -11085,8 +11085,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -13126,8 +13126,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -14095,8 +14095,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -14260,8 +14260,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -15569,8 +15569,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -15734,8 +15734,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -16435,8 +16435,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -16868,8 +16868,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17033,8 +17033,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17198,8 +17198,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -18435,8 +18435,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -19548,8 +19548,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -19981,8 +19981,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -20950,8 +20950,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -22527,8 +22527,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -22692,8 +22692,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -22857,8 +22857,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -23022,8 +23022,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -23455,8 +23455,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -24960,8 +24960,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -25393,8 +25393,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -25558,8 +25558,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -26527,8 +26527,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -26692,8 +26692,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -27393,8 +27393,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -28094,8 +28094,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -28259,8 +28259,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -28424,8 +28424,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -28857,8 +28857,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -29290,8 +29290,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -29723,8 +29723,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -29888,8 +29888,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -30589,8 +30589,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -30754,8 +30754,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -31259,8 +31259,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -31424,8 +31424,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -31589,8 +31589,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -32558,8 +32558,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -32723,8 +32723,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -32888,8 +32888,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -33053,8 +33053,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -33218,8 +33218,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -33651,8 +33651,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -33816,8 +33816,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -34249,8 +34249,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -34950,8 +34950,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -35115,8 +35115,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -35548,8 +35548,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -35981,8 +35981,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -36146,8 +36146,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -36311,8 +36311,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -36476,8 +36476,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -38249,8 +38249,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -38682,8 +38682,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -38847,8 +38847,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -39012,8 +39012,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -39445,8 +39445,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -39610,8 +39610,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -39775,8 +39775,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -40208,8 +40208,8 @@
 		(attr smd allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
-			(center -2.95 -0.875)
-			(end -2.8 -0.875)
+			(center 2.95 0.875)
+			(end 3.1 0.875)
 			(stroke
 				(width 0.12)
 				(type solid)

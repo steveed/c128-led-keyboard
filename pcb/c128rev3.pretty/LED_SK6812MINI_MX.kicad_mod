@@ -75,15 +75,15 @@
 		(uuid "0cc962bd-54e9-5a03-a736-dd006657e0c2")
 	)
 	(fp_circle
-		(center -2.95 -0.875)
-		(end -2.8 -0.875)
+		(center 2.95 0.875)
+		(end 3.1 0.875)
 		(stroke
 			(width 0.12)
 			(type solid)
 		)
 		(fill yes)
 		(layer "F.SilkS")
-		(uuid "a14207b9-43d3-5f9c-b2cb-644615ad379c")
+		(uuid "cbe742f3-cc4a-5b4e-9113-9791c3169fb2")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 0)

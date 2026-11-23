@@ -190,14 +190,19 @@ def led():
     fp.prop("Value", name, (0, 2.5), "F.Fab", 0.5)
     fp.prop("Datasheet", "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf", (0, 0), "F.Fab", hide=True)
     fp.prop("Description", "", (0, 0), "F.Fab", hide=True)
-    # numbering as KiCad's LED:SK6812MINI symbol
+    # numbering as KiCad's LED:SK6812MINI symbol.  The part fitted (OPSCO SK6812MINI-B-012, LCSC
+    # C5183448, pcb/datasheets/C5183448.pdf) numbers its pins differently (1 DIN, 2 VDD, 3 DOUT,
+    # 4 GND) but puts each in the same place, so the pads hold; its pin 1 and chamfered corner
+    # are our pad 3, DIN.
     fp.smd("1", -1.75, -0.875, 1.6, 0.85)    # DOUT
     fp.smd("2", -1.75, 0.875, 1.6, 0.85)     # VSS
     fp.smd("3", 1.75, 0.875, 1.6, 0.85)      # DIN
     fp.smd("4", 1.75, -0.875, 1.6, 0.85)     # VDD
     fp.rect(-1.75, -1.75, 1.75, 1.75, "F.Fab", 0.1)
     fp.line(1.75, 0.75, 0.75, 1.75, "F.Fab", 0.1)
-    fp.circle(-2.95, -0.875, 0.15, "F.SilkS", 0.12, fill=True)   # pin 1 dot, clear of the pads
+    # the dot marks the part's pin 1 (DIN, pad 3), not pad 1: at the fab, a part's pin-1 mark
+    # lined up with a dot on pad 1 would put every LED in turned 180 degrees
+    fp.circle(2.95, 0.875, 0.15, "F.SilkS", 0.12, fill=True)
     fp.text("${REFERENCE}", 0, 0, "F.Fab", 0.5)
     fp.model("${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm.step", (0, 0))
     fp.write()
