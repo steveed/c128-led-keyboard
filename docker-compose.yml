@@ -2,6 +2,9 @@
 #
 #   freerouting  the Freerouting autorouter for the rev 3 board (pcb/freerouting/Dockerfile)
 #
+#   kicad  KiCad 10's kicad-cli, for the README renders (`make render`) and CI.  The local
+#          pcbnew scripts in pcb/tools still use the KiCad app's python on the host.
+#
 #   idf   ESP-IDF (Espressif's official image) for building the rev 3 keyboard firmware.
 #         Build:      docker compose run --rm idf idf.py build
 #         Configure:  docker compose run --rm idf idf.py menuconfig
@@ -22,6 +25,16 @@ services:
       - IDF_CCACHE_ENABLE=1
       - IDF_TARGET=esp32s3
     command: idf.py build
+
+  kicad:
+    image: kicad/kicad:10.0-full
+    platform: linux/amd64
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      HOME: /tmp
+    working_dir: /repo
+    volumes:
+      - .:/repo
 
   freerouting:
     # Freerouting 2.5.0 autorouter, headless.  Run from pcb/tools/freeroute.py, which exports

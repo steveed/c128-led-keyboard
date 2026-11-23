@@ -1,0 +1,39 @@
+name: Render board
+
+# On every push to main that touches the board or plate: 3D renders for the README, pushed
+# to the renders branch (one commit, replaced each time) that the README's images point at.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pcb/**'
+      - 'Makefile'
+      - 'docker-compose.yml'
+      - '.github/workflows/render.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render board and plate
+        run: make render
+
+      - name: Publish to the renders branch
+        run: |
+          cd build/render
+          git init -q -b renders
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add board-top.png board-bottom.png board-iso.png plate-top.png
+          git commit -q -m "render board from ${GITHUB_SHA::7}."
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" renders
