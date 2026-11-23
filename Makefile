@@ -7,7 +7,7 @@ PLATE := pcb/plate/plate-dual.kicad_pcb
 BUILD := build
 KICAD := docker compose run --rm kicad kicad-cli
 
-.PHONY: render models adapters clean
+.PHONY: render models adapters liner clean
 
 # 3D models the KiCad library lacks, fetched for the renders rather than kept in the repo.
 # The ESP32-S3-MINI-1U is Espressif's (github.com/espressif/kicad-libraries, CC-BY-SA 4.0
@@ -42,6 +42,14 @@ $(ADAPTER)/stl/offset_adapter_left.stl: $(ADAPTER)/adapter.scad
 $(ADAPTER)/stl/offset_adapter_right.stl: $(ADAPTER)/adapter.scad
 	mkdir -p $(dir $@)
 	$(OPENSCAD) -D side=1 -o $@ $<
+
+# Bottom liner drawings for a die-cut quote, committed so they need no tools.
+# pcb/tools/gen_liner.py (KiCad's bundled python, for pcbnew) writes the liner board and the
+# cutter's DXF; this plots the dimensioned drawing (1:1 on A3, so it doubles as a template).
+LINER := pcb/liner
+LINER_PDF := pcb export pdf --mode-single --include-border-title --layers Edge.Cuts,User.1,User.2,User.Drawings
+liner:
+	$(KICAD) $(LINER_PDF) -o $(LINER)/liner.pdf $(LINER)/liner.kicad_pcb
 
 clean:
 	rm -rf $(BUILD)
