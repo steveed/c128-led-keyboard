@@ -25,7 +25,7 @@ A part-by-part explanation of the circuit is in
 | `leds.kicad_sch` | 92 SK6812 MINI (top mount) in chain order (lock keys first) |
 | `c128rev3.kicad_sym`, `sym-lib-table` | project library with the CH446Q symbol (LQFP-44 numbering) |
 | `c128rev3.pretty/`, `fp-lib-table` | project footprints: MX switches (1u, 1.5u, 2u, spacebar), the SK6812 MINI for the switch LED pocket, and the USB-C receptacle |
-| `datasheets/` | drawings the project footprints are made from, and the datasheets of the fab parts whose pinouts and placement rotations were checked (named by LCSC number) |
+| `datasheets/README.md` | links to the datasheets the footprints, pinouts and placement rotations were checked against; the PDFs are downloaded there by LCSC number and not tracked |
 | `tools/gen_fp.py` | the generator that writes `c128rev3.pretty/` and `fp-lib-table` |
 | `C128-keyboard-rev3.kicad_pcb` | the board: rev 2.3 outline, four layers, every footprint linked to the schematic, placed and routed; DRC clean |
 | `tools/gen_pcb.py` | made the board's first version; the board is the source now (see *The board* below) |
@@ -114,7 +114,7 @@ Placeholders to resolve during layout:
   The original C128 spacebar on its adapters wants the narrower 125.35 mm the rev 2.3 board
   drilled (and 99.77 mm for its 6.25u set); 125.35 and 133.35 are 4 mm apart, so one
   footprint cannot carry both, and rev 3 drills for standard MX spacebars.
-- USB-C is the SHOU HAN TYPE-C 16P 3MD 040 (LCSC C41417453, `datasheets/C41417453.pdf`), a
+- USB-C is the SHOU HAN TYPE-C 16P 3MD 040 (LCSC C41417453; datasheet linked in `datasheets/README.md`), a
   16-pin USB 2.0 receptacle that sits on the board surface (3.26 mm tall) with its shell legs
   in four plated slots.  It is on the back at the rear edge, where the case leaves about
   17 mm under the board, so a mid-mount part is not needed.  The footprint is drawn from the

@@ -27,7 +27,7 @@
 			)
 		)
 	)
-	(property "Datasheet" "pcb/datasheets/C41417453.pdf"
+	(property "Datasheet" "https://www.lcsc.com/product-detail/C41417453.html"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)

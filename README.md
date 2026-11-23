@@ -52,6 +52,8 @@ Some pieces are used as they are and are not copied here:
 - CH446Q analog crosspoint (WCH): <https://www.wch-ic.com/downloads/CH446DS1_PDF.html>
 - M5Stack NeoPixel / RGB LED units (SK6812), used on the bench:
   <https://docs.m5stack.com/en/unit/neopixel>, <https://docs.m5stack.com/en/unit/rgb>
+- Every part the board's footprints, pinouts and fab placement were checked against:
+  [pcb/datasheets/README.md](pcb/datasheets/README.md)
 
 ## License and credits
 

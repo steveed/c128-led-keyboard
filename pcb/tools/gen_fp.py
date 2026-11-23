@@ -227,7 +227,7 @@ def usb_c():
     y = lambda v: v - USBC_EDGE                    # datasheet y (from the pad row) to footprint y
     fp.prop("Reference", "REF**", (0, y(-1.2)), "F.SilkS")
     fp.prop("Value", name, (0, 1.5), "F.Fab", 0.6)
-    fp.prop("Datasheet", "pcb/datasheets/C41417453.pdf", (0, 0), "F.Fab", hide=True)
+    fp.prop("Datasheet", "https://www.lcsc.com/product-detail/C41417453.html", (0, 0), "F.Fab", hide=True)
     fp.prop("Description", "", (0, 0), "F.Fab", hide=True)
     for nums, x, w in USBC_PADS:
         for n in nums:
