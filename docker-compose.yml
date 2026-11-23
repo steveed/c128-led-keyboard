@@ -2,6 +2,8 @@
 #
 #   freerouting  the Freerouting autorouter for the rev 3 board (pcb/freerouting/Dockerfile)
 #
+#   openscad  OpenSCAD for the printed parts in printables/ (`make adapters`).
+#
 #   kicad  KiCad 10's kicad-cli, for the README renders (`make render`) and CI.  The local
 #          pcbnew scripts in pcb/tools still use the KiCad app's python on the host.
 #
@@ -28,6 +30,16 @@ services:
 
   kicad:
     image: kicad/kicad:10.0-full
+    platform: linux/amd64
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      HOME: /tmp
+    working_dir: /repo
+    volumes:
+      - .:/repo
+
+  openscad:
+    image: openscad/openscad:dev
     platform: linux/amd64
     user: "${UID:-1000}:${GID:-1000}"
     environment:

@@ -113,7 +113,10 @@ Placeholders to resolve during layout:
   and 133.35 mm (9u), matching both plates and the 9u keycap drawing.  Decided 2026-11-21.
   The original C128 spacebar on its adapters wants the narrower 125.35 mm the rev 2.3 board
   drilled (and 99.77 mm for its 6.25u set); 125.35 and 133.35 are 4 mm apart, so one
-  footprint cannot carry both, and rev 3 drills for standard MX spacebars.
+  footprint cannot carry both, and rev 3 drills for standard MX spacebars.  The original bar
+  goes on the 133.35 mm stabilizers through
+  [`printables/spacebar_offset_adapter`](../printables/spacebar_offset_adapter/README.md),
+  which moves each stabilizer stem 4 mm outward (test fit pending).
 - USB-C is the SHOU HAN TYPE-C 16P 3MD 040 (LCSC C41417453; datasheet linked in `datasheets/README.md`), a
   16-pin USB 2.0 receptacle that sits on the board surface (3.26 mm tall) with its shell legs
   in four plated slots.  It is on the back at the rear edge, where the case leaves about

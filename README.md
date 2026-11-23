@@ -32,6 +32,7 @@ yet.  Bench firmware runs on a devkit; the bench proofs have not started.  The p
 | [`pcb/`](pcb/README.md) | KiCad 10 project for the board (generated schematic, BOM), the plate as an aluminum-PCB board (takes a 9u or a 6.25u spacebar), JLCPCB order files, bench notes for proving the circuit |
 | [`layout/`](pcb/README.md#layout-data) | the switch positions, matrix nets and plate outline every generator reads |
 | [`firmware/`](firmware/README.md) | ESP-IDF project for the ESP32-S3, built in Docker, with a Wokwi simulation |
+| [`printables/`](printables/spacebar_offset_adapter/README.md) | the spacebar offset adapter: the C128's own spacebar on the board's 9u stabilizers |
 | [`keycaps/`](keycaps/README.md) | legend map, front-legend artwork and vendor notes for an MX keycap set, and the 9u spacebar drawing |
 | [`docs/`](docs/) | the rev 3 plan, a part-by-part circuit walkthrough, and the rev 2.3 issues that motivated it |
 
