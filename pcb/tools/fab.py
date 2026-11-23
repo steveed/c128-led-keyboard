@@ -18,20 +18,14 @@ the fab (the key switches and J2-J4, which the builder solders, and JP1, which i
 and is left out of both the BOM and the CPL; the script lists them, and refuses to write if an
 SMD footprint on the board has no number, or if DRC finds an error or anything unconnected.
 
-Rotations: JLCPCB's part models follow the maker's package drawing, which is not always
-KiCad's zero orientation.  MODEL_ROT holds, per footprint, the turn from our footprint to that
-drawing (read off the datasheets in pcb/datasheets), and is applied as
-
-    top:     KiCad rotation + correction
-    bottom:  KiCad rotation + 180 - correction
-
-The bottom rule is because KiCad flips a part to the back top-to-bottom and JLCPCB mirrors it
-left-to-right: the same mirror plus a half turn, with the turn's sense reversed.  It is what
-the first upload showed: J1 (correction 0) came out flipped at KiCad's 0, U1 (correction 0)
-turned at KiCad's 180, U3 (LQFP, correction 270) turned at 0, and the SOD-123 diodes
-(correction 0) had the band on the anode at 0.  Footprints not listed pass
-KiCad's rotation through; they looked right in that preview.  Check pin 1 of every part in
-the placement preview anyway.
+Rotations: JLCPCB's part models don't all share KiCad's zero orientation, and on the bottom
+side they don't follow the maker's package drawing consistently either, so the corrections
+are what the placement preview needed (first order, 2026-11-23).  ROT_ADD holds, per
+footprint, the degrees added to KiCad's rotation; every part listed is on the bottom and all
+parts of one footprint sit at the same KiCad rotation, so a correction found on one holds for
+the rest.  A footprint not listed passes KiCad's rotation through: resistors, capacitors and
+the tact switches (all symmetric), the SOT-23s (Q1-Q3, U4), U2 and the LEDs looked right.
+A part turned or moved to the other side needs its correction checked again in the preview.
 """
 import csv
 import glob
@@ -52,27 +46,15 @@ SCH = os.path.join(PCB, NAME + ".kicad_sch")
 OUT = os.path.join(PCB, "fab")
 KC = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts"
-MODEL_ROT = {
-    # CH446Q (C109471.pdf): pin 1 bottom left, pins 1-11 along the bottom; KiCad's has pin 1
-    # top left, pins down the left side
-    "LQFP-44_10x10mm_P0.8mm": 270,
-    # ESP32-S3-MINI-1U (C2980299.pdf): pin 1 top left, GND row and antenna end at the top,
-    # as KiCad's
-    "ESP32-S2-MINI-1U": 0,
-    # USB-C (C41417453.pdf): recommended layout with the pad row at the top, opening down,
-    # as ours
-    "USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040": 0,
-    # diodes: the model's band is on KiCad's pad 1 (cathode) at the same turn; seen in the
-    # preview, the band sat on the anode (the open end of the silk box) at KiCad's 0
-    "D_SOD-123": 0,
-    "D_SMA": 0,
-    # CD74HC154M96 (C2832236.pdf): pin 1 top left, pins down the left side, as KiCad's
-    "SOIC-24W_7.5x15.4mm_P1.27mm": 0,
-    # USBLC6-2SC6 (C7519.pdf, land pattern and marking): pins along the top and bottom,
-    # pin 1 bottom left; KiCad's has pin 1 top left, pins down the left side
-    "SOT-23-6": 270,
-    # Nichicon UWT 6.3x7.7 (C125979.pdf): + terminal at the top; KiCad's + pad is on the left
-    "CP_Elec_6.3x7.7": 90,
+ROT_ADD = {                       # footprint -> degrees added to KiCad's rotation
+    "USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040": 180,     # J1: 0 -> 180
+    "ESP32-S2-MINI-1U": 180,                                # U1: 180 -> 0
+    "LQFP-44_10x10mm_P0.8mm": 90,                           # U3: 0 -> 90
+    "SOIC-24W_7.5x15.4mm_P1.27mm": 90,                      # U6: 90 -> 180
+    "SOT-23-6": 90,                                         # U7: 0 -> 90
+    "CP_Elec_6.3x7.7": 180,                                 # C5: 0 -> 180
+    "D_SOD-123": 180,                                       # band on the anode at 0
+    "D_SMA": 180,
 }
 
 
@@ -161,11 +143,7 @@ def cpl(b, tmp, placed, board):
             continue
         fp = fps[ref]
         name = fp.GetFPID().GetLibItemName().wx_str()
-        rot = float(r["Rot"])
-        if name in MODEL_ROT:
-            k = MODEL_ROT[name]
-            rot = rot + k if r["Side"] == "top" else rot + 180 - k
-        rot %= 360
+        rot = (float(r["Rot"]) + ROT_ADD.get(name, 0)) % 360
         x, y = float(r["PosX"]), float(r["PosY"])
         # the fab turns a part about the point given here, and its models sit on the middle of
         # their pads.  Most footprints have their origin there; J1's is at the pad row's edge,

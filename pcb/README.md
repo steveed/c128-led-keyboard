@@ -298,7 +298,7 @@ every part's rotation and pin 1, the LEDs and the ESP32 module especially: JLCPC
 models don't all share KiCad's zero orientation.  The LED's pin 1 is DIN (its chamfered
 corner), which is pad 3 of our footprint, not pad 1; the silkscreen dot beside each LED marks
 that corner, so the part's pin-1 mark belongs on the dot.  Fix a turned part there, or put its
-footprint in `MODEL_ROT` in `fab.py` (with the turn from our footprint to the maker's drawing) and rerun.
+footprint in `ROT_ADD` in `fab.py` (the degrees the preview needed on top of KiCad's rotation) and rerun.
 
 ## Verifying
 
