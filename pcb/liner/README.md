@@ -8,8 +8,9 @@ the tray already does this job, so the liner is for flat builds and bare keyboar
 | File | What |
 | --- | --- |
 | `liner.dxf` | For the cutter: mm, origin at the liner's front left corner.  Layer `CUT` is the die line, layer `TAPE` the foam strips, one closed polyline per contour |
-| `liner.pdf` | Dimensioned drawing with the PCB's back-side parts behind it for reference.  1:1 on A3, so a print at 100 % is also a hand-cutting template |
-| `liner.kicad_pcb` | The source of both, in the PCB's coordinates |
+| `liner.pdf` | Dimensioned drawing with a table of every notch, window and tape strip, and the PCB behind it for reference.  1:1 on A2, so a print at 100 % is also a hand-cutting template |
+| `plot-theme.json` | The PDF's colors (`make liner` installs it in the container) |
+| `liner.kicad_pcb` | The drawing's source, on an A2 sheet |
 
 ## Spec
 
@@ -49,7 +50,8 @@ so only the tape touches the PCB.
 2. Peel the release liner, line up the rear edge and the notches with J1, J2 and C5, and
    press it down along each strip.
 
-Hand cut: print `liner.pdf` at 100 % on A3 and check the 393.3 mm dimension.  Tape it to the
+Hand cut: print `liner.pdf` at 100 % on A2 (a print shop, or tiled) and check the 393.3 mm
+dimension.  Tape it to the
 sheet, cut along the die line, and stick the tape on where the gray strips are.
 
 ## Regenerating
