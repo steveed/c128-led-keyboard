@@ -50,7 +50,7 @@ ROT_ADD = {                       # footprint -> degrees added to KiCad's rotati
     "USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040": 180,     # J1: 0 -> 180
     "ESP32-S2-MINI-1U": 180,                                # U1: 180 -> 0
     "LQFP-44_10x10mm_P0.8mm": 90,                           # U3: 0 -> 90
-    "SOIC-24W_7.5x15.4mm_P1.27mm": 90,                      # U6: 90 -> 180
+    "SOIC-24W_7.5x15.4mm_P1.27mm": 270,                     # U6: 90 -> 0 (trying 0; 180 was set by hand first)
     "SOT-23-6": 90,                                         # U7: 0 -> 90
     "CP_Elec_6.3x7.7": 180,                                 # C5: 0 -> 180
     "D_SOD-123": 180,                                       # band on the anode at 0
