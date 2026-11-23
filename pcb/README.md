@@ -231,7 +231,9 @@ $PY pcb/tools/silk.py
 `tools/gen_plate.py` reads the plate's loops from `layout/plate.json` (see *Layout data*
 below), fits the 88 switch openings onto the switch centers in `layout/switches.json` to get the plate-to-PCB transform (RMS 0.06 mm, so plate and PCB agree
 exactly), and writes the loops to Edge.Cuts.  The 6.25u variant is the same plate with the
-spacebar's stabilizer boxes slid in from 133.35 mm to 100 mm spacing.  Silkscreen text is on
+spacebar's stabilizer boxes slid in from 133.35 mm to 100 mm spacing; `plate-dual` has both
+pairs of boxes (the union of the two cutouts), so it takes either spacebar's stabilizers, as
+the PCB's spacebar footprint already does.  Order the dual plate.  Silkscreen text is on
 F.SilkS; add legends there if wanted.  Order as 1.5 mm single-layer aluminum PCB.
 
 Every loop is written as one closed polygon with arcs flattened to chords (error under
@@ -271,7 +273,7 @@ draws the plate correctly, cutouts and all.  The fab's CAM works from the outlin
 the preview; the routed result is what the outline says.
 
 To order: export with the commands below, then zip the `gerbers/` files **without** the
-Finder (`zip -X plate-9u-gerbers.zip plate-9u-*.g?? plate-9u-job.gbrjob`).  A Finder-made zip carries `__MACOSX`
+Finder (`zip -X plate-dual-gerbers.zip plate-dual-*.g?? plate-dual-job.gbrjob`).  A Finder-made zip carries `__MACOSX`
 resource-fork twins with the same extensions, which some uploaders mistake for layers.
 
 ## Part numbers for fab assembly
@@ -305,7 +307,7 @@ KC=/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli
 $KC sch erc --severity-all C128-keyboard-rev3.kicad_sch
 $KC sch export pdf -o rev3.pdf C128-keyboard-rev3.kicad_sch
 $KC sch export bom -o bom.csv --fields 'Reference,Value,Footprint,LCSC,${QUANTITY}' --group-by Value,Footprint C128-keyboard-rev3.kicad_sch
-$KC pcb drc --severity-all plate/plate-9u.kicad_pcb
-$KC pcb export gerbers --layers "Edge.Cuts,F.Cu,B.Cu,F.Mask,B.Mask,F.SilkS" -o plate/gerbers/ plate/plate-9u.kicad_pcb
+$KC pcb drc --severity-all plate/plate-dual.kicad_pcb
+$KC pcb export gerbers --layers "Edge.Cuts,F.Cu,B.Cu,F.Mask,B.Mask,F.SilkS" -o plate/gerbers/ plate/plate-dual.kicad_pcb
 # no drill export: the plate has no drilled holes, and header-only drill files confuse JLCPCB's viewer
 ```

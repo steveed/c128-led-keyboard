@@ -206,6 +206,87 @@ def spacebar_variant(holes, cls, spacing):
     return out
 
 
+def rectilinear_union(loops, snap=0.002):
+    """Union of closed loops made only of horizontal and vertical lines, as one loop.
+
+    Coordinate compression: every distinct x and y (values within `snap` merged, since the
+    STEP export has a few 1 um slips) cuts the plane into cells; a cell is filled if its
+    center is inside any loop; the filled cells' outer boundary, walked with the filled side
+    on the left and collinear runs merged, is the result.  Assumes the union is one piece
+    without islands, which holds for a spacebar cutout and its shifted copy."""
+    def cluster(vals):
+        out = []
+        for v in sorted(vals):
+            if not out or v - out[-1][-1] > snap:
+                out.append([v])
+            else:
+                out[-1].append(v)
+        return [sum(g) / len(g) for g in out]
+
+    pts = [p for loop in loops for s in loop for p in (s["a"], s["b"])]
+    xs, ys = cluster({p[0] for p in pts}), cluster({p[1] for p in pts})
+
+    def near(v, axis):
+        return min(axis, key=lambda a: abs(a - v))
+
+    polys = [[(near(s["a"][0], xs), near(s["a"][1], ys)) for s in loop] for loop in loops]
+
+    def inside(px, py, poly):
+        c = False
+        for (x1, y1), (x2, y2) in zip(poly, poly[1:] + poly[:1]):
+            if (y1 > py) != (y2 > py) and px < x1 + (py - y1) * (x2 - x1) / (y2 - y1):
+                c = not c
+        return c
+
+    nx, ny = len(xs) - 1, len(ys) - 1
+    fill = [[any(inside((xs[i] + xs[i + 1]) / 2, (ys[j] + ys[j + 1]) / 2, p) for p in polys)
+             for j in range(ny)] for i in range(nx)]
+
+    def filled(i, j):
+        return 0 <= i < nx and 0 <= j < ny and fill[i][j]
+
+    # directed boundary edges on the grid of corner indices, filled cell on the left (y up)
+    nxt = {}
+    for i in range(nx):
+        for j in range(ny):
+            if not fill[i][j]:
+                continue
+            if not filled(i, j - 1):
+                nxt[(i, j)] = (i + 1, j)
+            if not filled(i + 1, j):
+                nxt[(i + 1, j)] = (i + 1, j + 1)
+            if not filled(i, j + 1):
+                nxt[(i + 1, j + 1)] = (i, j + 1)
+            if not filled(i - 1, j):
+                nxt[(i, j + 1)] = (i, j)
+    start = min(nxt)
+    ring, cur = [start], nxt[start]
+    while cur != start:
+        ring.append(cur)
+        cur = nxt[cur]
+    assert len(ring) == len(nxt), "union is not one simple piece"
+    # merge collinear runs
+    corners = [p for k, p in enumerate(ring)
+               if not ((ring[k - 1][0] == p[0] == ring[(k + 1) % len(ring)][0]) or
+                       (ring[k - 1][1] == p[1] == ring[(k + 1) % len(ring)][1]))]
+    xy = [(round(xs[i], 5), round(ys[j], 5)) for i, j in corners]
+    return [{"type": "line", "a": a, "b": b} for a, b in zip(xy, xy[1:] + xy[:1])]
+
+
+def dual_spacebar(holes, cls, spacing):
+    """The stock 9u spacebar cutout with a second pair of stabilizer boxes at `spacing` too, so
+    either spacebar's stabilizers fit: the union of the stock cutout and its shifted copy."""
+    shifted = spacebar_variant(holes, cls, spacing)
+    out = []
+    for h, s, c in zip(holes, shifted, cls):
+        if c["kind"] == "cutout" and max(c["w"], c["h"]) > 100:
+            assert all(seg["type"] == "line" for seg in h), "spacebar cutout has curves"
+            out.append(rectilinear_union([h, s]))
+        else:
+            out.append(h)
+    return out
+
+
 def write_board(name, geo, holes, T, note):
     lines = [kicad_header()]
     lines.append(edge_poly(geo["outer"], T, f"{name}:outer", outer=True))
@@ -240,7 +321,9 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     x0, y0, x1, y1 = write_board("plate-9u.kicad_pcb", geo, geo["holes"], T, "stock 9u spacebar")
     write_board("plate-6.25u.kicad_pcb", geo, spacebar_variant(geo["holes"], cls, 100.0), T, "6.25u spacebar, 100 mm stabs")
-    fill_zones([os.path.join(OUT_DIR, n) for n in ("plate-9u.kicad_pcb", "plate-6.25u.kicad_pcb")])
+    write_board("plate-dual.kicad_pcb", geo, dual_spacebar(geo["holes"], cls, 100.0), T,
+                "9u or 6.25u spacebar, stabs at 133.35 and 100 mm")
+    fill_zones([os.path.join(OUT_DIR, n) for n in ("plate-9u.kicad_pcb", "plate-6.25u.kicad_pcb", "plate-dual.kicad_pcb")])
 
     # feature table in PCB coordinates
     feats = []
