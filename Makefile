@@ -7,12 +7,23 @@ PLATE := pcb/plate/plate-dual.kicad_pcb
 BUILD := build
 KICAD := docker compose run --rm kicad kicad-cli
 
-.PHONY: render clean
+.PHONY: render models clean
+
+# 3D models the KiCad library lacks, fetched for the renders rather than kept in the repo.
+# The ESP32-S3-MINI-1U is Espressif's (github.com/espressif/kicad-libraries, CC-BY-SA 4.0
+# with KiCad's library exception), pinned to a commit; U1 points at it through
+# ${KIPRJMOD}/../build/3dmodels, so pcbnew's 3D viewer shows it too once this has run.
+ESPRESSIF_LIB := https://raw.githubusercontent.com/espressif/kicad-libraries/d5b68fd9269c639b3a60681e00b91df33b4db4a3
+MODELS := $(BUILD)/3dmodels/ESP32-S3-MINI-1U.STEP
+models: $(MODELS)
+$(BUILD)/3dmodels/ESP32-S3-MINI-1U.STEP:
+	mkdir -p $(dir $@)
+	curl -fsSL -o $@ $(ESPRESSIF_LIB)/3dmodels/espressif.3dshapes/ESP32-S3-MINI-1U.STEP
 
 # 3D renders for the README (published to the renders branch by CI): the switch side, the
 # electronics side, an angled view, and the plate.
 RENDER := pcb render --quality high --background transparent
-render:
+render: models
 	mkdir -p $(BUILD)/render
 	$(KICAD) $(RENDER) --side top --width 2400 --height 800 --zoom 2.9 -o $(BUILD)/render/board-top.png $(BOARD)
 	$(KICAD) $(RENDER) --side bottom --width 2400 --height 800 --zoom 2.9 -o $(BUILD)/render/board-bottom.png $(BOARD)
