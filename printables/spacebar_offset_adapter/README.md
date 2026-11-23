@@ -30,8 +30,9 @@ it should clear the stabilizer housing it now passes over.
 
 ## Test fit
 
-**Not proven yet.**  Any Cherry-stabilized 9u spacebar board (133.35 mm) will do for the
-test, for example an MX Amiga keyboard:
+**Tested 2026-11-23**: the committed STLs fit and work, on Cherry stabilizers at 133.35 mm
+(an MX Amiga keyboard's 9u spacebar mount).  To check a new print, any Cherry-stabilized 9u
+board will do:
 
 1. Print one pair upright, socket down, in PETG or a resin; 0.12-0.16 mm layers.
 2. Push each plug into the bar's socket.  The plug's long arm is wider on one side, so it
