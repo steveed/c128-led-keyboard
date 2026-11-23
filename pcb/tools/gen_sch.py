@@ -70,7 +70,7 @@ LCSC = {
     ("Power_Protection:USBLC6-2SC6", None): "C7519",
     ("RF_Module:ESP32-S3-MINI-1U", None): "C2980299",     # ESP32-S3-MINI-1U-N8
     ("c128rev3:CH446Q", None): "C109471",                # WCH CH446Q, LQFP-44
-    ("74xx:74LS154", "74HC154"): "C13758",               # Nexperia 74HC154D, SOIC-24 300 mil
+    ("74xx:74LS154", "74HC154"): "C2832236",             # TI CD74HC154M96, SOIC-24 300 mil
     ("74xGxx:74AHCT1G125", None): "C7484",               # TI SN74AHCT1G125DBVR, SOT-23-5
     ("LED:SK6812MINI", None): "C5183448",                # OPSCO SK6812MINI-B-012, 3535
     ("Device:Polyfuse", "1.1A"): "C142746",              # Littelfuse 1812L110/16DR, 16 V
