@@ -1,11 +1,15 @@
-// Rev 3 keyboard firmware, bench milestone 1+2: scan the physical matrix, mirror it into
-// the CH446Q so the C128 sees the keys, virtual lock keys with saved state, key names and
-// a few commands over the USB console.
+// Rev 3 keyboard firmware, milestones 1-3: scan the physical matrix, mirror it into the
+// CH446Q so the C128 sees the keys, virtual lock keys with saved state, the LED engine, key
+// names and a few commands over the USB console.
 //
 // Console (115200 on the native USB port), single-character commands:
 //   ?  help        d  dump state       x  open every crosspoint (then re-apply shift lock)
 //   S  toggle SHIFT LOCK   C  toggle CAPS LOCK   8  toggle 40/80   R  press RESTORE 100 ms
 //   r  RUN/STOP + RESTORE
+// LEDs (until the SHIFT LOCK command layer exists):
+//   p / o  next / previous pattern    + / -  pattern brightness    > / <  speed
+//   a  next key action                ] / [  key-action brightness
+//   M / m  current cap +/- 50 mA      N / n  LED count +/- 1       z  LED defaults   l  show
 #include <stdio.h>
 #include <string.h>
 #include "freertos/FreeRTOS.h"
@@ -25,6 +29,7 @@
 #include "matrix.h"
 #include "ch446q.h"
 #include "locks.h"
+#include "leds.h"
 
 static const char *TAG = "c128kb";
 
@@ -37,6 +42,7 @@ static const char *key_name(int r, int c)
 // mirror one physical key change into the host matrix, or handle a lock key
 static void on_key(int r, int c, bool down)
 {
+    leds_key(r, c, down);
     uint8_t h = KEY_HOST[r][c];
     if (h == HOST_NONE) return;
     if (h < HOST_LOCK_SHIFT) {               // a crosspoint: host row in the high nibble
@@ -72,6 +78,7 @@ static void dump(void)
         for (int c = 0; c < MATRIX_COLS; c++)
             if (matrix_key(s, r, c)) printf(" %s(%d,%d)", key_name(r, c), r, c);
     printf("\n");
+    leds_dump();
 }
 
 static void console_task(void *arg)
@@ -80,7 +87,7 @@ static void console_task(void *arg)
         int ch = getchar();
         if (ch < 0) { vTaskDelay(pdMS_TO_TICKS(10)); continue; }
         switch (ch) {
-        case '?': printf("? d x S C 8 R r\n"); break;
+        case '?': printf("? d x S C 8 R r | leds: p o + - > < a ] [ M m N n z l\n"); break;
         case 'd': dump(); break;
         case 'x': ch446q_reset(); locks_set(LOCK_SHIFT, locks_get(LOCK_SHIFT)); printf("crosspoint cleared\n"); break;
         case 'S': locks_toggle(LOCK_SHIFT); break;
@@ -92,7 +99,7 @@ static void console_task(void *arg)
             restore_drive(true); vTaskDelay(pdMS_TO_TICKS(100)); restore_drive(false);
             vTaskDelay(pdMS_TO_TICKS(30)); ch446q_set(7, 7, false);
             printf("RUN/STOP+RESTORE\n"); break;
-        default: break;
+        default: leds_console(ch); break;
         }
     }
 }
@@ -114,6 +121,7 @@ static void scan_task(void *arg)
         if (restore_now != restore_was) {
             restore_was = restore_now;
             printf("%s RESTORE\n", restore_now ? "down" : "up  ");
+            leds_restore(restore_now);
         }
         int64_t t0 = esp_timer_get_time();
         bool changed = matrix_tick();
@@ -158,6 +166,7 @@ void app_main(void)
     ch446q_init();          // everything open first
     locks_init();           // then restore saved lock state (may close the shift crosspoint)
     matrix_init();
+    leds_init();            // after locks_init, which opens NVS
 
     xTaskCreate(scan_task, "scan", 4096, NULL, 10, NULL);
     xTaskCreate(console_task, "console", 4096, NULL, 5, NULL);
