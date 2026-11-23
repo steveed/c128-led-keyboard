@@ -45,11 +45,15 @@ $(ADAPTER)/stl/offset_adapter_right.stl: $(ADAPTER)/adapter.scad
 
 # Bottom liner drawings for a die-cut quote, committed so they need no tools.
 # pcb/tools/gen_liner.py (KiCad's bundled python, for pcbnew) writes the liner board and the
-# cutter's DXF; this plots the dimensioned drawing (1:1 on A3, so it doubles as a template).
+# cutter's DXF; this plots the dimensioned drawing (1:1 on A2, so it doubles as a template),
+# in the colors of plot-theme.json.
 LINER := pcb/liner
-LINER_PDF := pcb export pdf --mode-single --include-border-title --layers Edge.Cuts,User.1,User.2,User.Drawings
+LINER_THEME := /tmp/.config/kicad/10.0/colors
 liner:
-	$(KICAD) $(LINER_PDF) -o $(LINER)/liner.pdf $(LINER)/liner.kicad_pcb
+	docker compose run --rm --entrypoint sh kicad -c 'mkdir -p $(LINER_THEME) && \
+		cp $(LINER)/plot-theme.json $(LINER_THEME)/liner-plot.json && \
+		kicad-cli pcb export pdf --mode-single --include-border-title --theme liner-plot \
+		--layers Edge.Cuts,User.1,User.2,User.Drawings -o $(LINER)/liner.pdf $(LINER)/liner.kicad_pcb'
 
 clean:
 	rm -rf $(BUILD)

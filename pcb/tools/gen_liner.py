@@ -17,7 +17,7 @@ needs a rerun:
     and, where the stabilizers break that lane, a short one a lane back for the front-right
     corner.  Each is clear of every pin, pad and back-side part.
 
-It writes pcb/liner/liner.kicad_pcb in the board's coordinates: the die line on Edge.Cuts,
+It writes pcb/liner/liner.kicad_pcb, the drawing on an A2 sheet: the die line on Edge.Cuts,
 the tape strips on User.1, the PCB's outline and back-side parts for reference on User.2, and
 the notes and dimensions on User.Drawings, and pcb/liner/liner.dxf for the cutter (CUT and
 TAPE layers, closed polylines).  `make liner` plots the PDF drawings from the board.
@@ -267,8 +267,23 @@ def add_dim(board, a, b, offset):
     d.SetUnits(pcbnew.EDA_UNITS_MM)
     d.SetPrecision(pcbnew.DIM_PRECISION_X_X)
     d.SetLineThickness(iu(0.15))
-    d.SetTextSize(pcbnew.VECTOR2I(iu(2.0), iu(2.0)))
+    d.SetTextSize(pcbnew.VECTOR2I(iu(2.5), iu(2.5)))
+    d.SetTextThickness(iu(0.3))
     board.Add(d)
+
+
+def features(liner):
+    """The notches in the rear edge and the windows, as bounding boxes, left to right."""
+    lx0, ly0, lx1, ly1 = bbox(liner.BBox())
+    cut = rect_poly(lx0, ly0, lx1, ly1)
+    cut.BooleanSubtract(liner)
+    notches, windows = [], []
+    for i in range(cut.OutlineCount()):
+        if cut.Outline(i).Area() < iu(1) * iu(20):              # the rounded outer corners
+            continue
+        box = bbox(cut.Outline(i).BBox())
+        (notches if box[1] - ly0 < 0.01 else windows).append(box)
+    return sorted(notches), sorted(windows)
 
 
 def write_dxf(liner, strips):
@@ -325,21 +340,78 @@ def write(src, edge, liner, tall, strips, back, front):
         add_text(out, f"{ref} {h:g}", c[0], c[3] + 0.3, 1.2, pcbnew.User_2)
 
     lx0, ly0, lx1, ly1 = bbox(liner.BBox())
-    add_dim(out, (lx0, ly1), (lx1, ly1), -12)
-    add_dim(out, (lx1, ly0), (lx1, ly1), -8)
-    add_dim(out, (edge[0], edge[1]), (lx0, edge[1]), 6)
+    bx0, by0, bx1, by1 = edge
+    notches, windows = features(liner)
+
+    def dxf(x, y):                                # the DXF's frame: front left origin, Y up
+        return x - lx0, ly1 - y
+
+    # labels on the drawing, keyed to the table
+    for i, (a, b, c, d) in enumerate(notches, 1):
+        add_text(out, f"N{i}", (a + c) / 2, d + 2.0, 2.5, left=False)
+    for i, (a, b, c, d) in enumerate(windows, 1):
+        add_text(out, f"W{i}", (a + c) / 2, d + 2.0, 2.5, left=False)
+    for i, (a, b, c, d) in enumerate(strips, 1):
+        add_text(out, f"T{i}", a + 4, b - 2.0, 2.5, left=False)
+
+    # overall, and where the liner sits on the PCB
+    add_dim(out, (lx0, ly1), (lx1, ly1), by1 - ly1 + 10)                # width, below the PCB
+    add_dim(out, (lx1, ly0), (lx1, ly1), -(bx1 - lx1 + 10))             # depth, right
+    add_dim(out, (bx1, by0), (bx1, ly1), -18)                           # PCB rear edge to liner front
+    add_dim(out, (bx1, by0), (bx1, by1), -28)                           # the PCB's depth
+    # notches: width just above the rear edge, position from the left edge stacked above that
+    for i, (a, b, c, d) in enumerate(notches):
+        add_dim(out, (a, ly0), (c, ly0), -(ly0 - by0 + 6))
+        add_dim(out, (lx0, ly0), (a, ly0), -(ly0 - by0 + 15 + 8 * i))
+    # tape strips: centre line from the front edge, stacked on the left
+    for i, y in enumerate(sorted({round((b + d) / 2, 2) for _, b, _, d in strips}, reverse=True)):
+        add_dim(out, (lx0, ly1), (lx0, y), -(lx0 - bx0 + 8 + 8 * i))
+
+    # the table: every feature in the DXF's frame
+    tx, ty = bx0, by1 + 40
+    head = ["", "", "X", "Y", "W", "H"]
+    cols = [0, 14, 44, 70, 96, 122]
+    T = 2.5
+    rows_ = ([("N%d" % i, "notch", f) for i, f in enumerate(notches, 1)]
+             + [("W%d" % i, "window", f) for i, f in enumerate(windows, 1)]
+             + [("T%d" % i, "tape", f) for i, f in enumerate(strips, 1)])
+    add_text(out, "Features (mm)", tx, ty - 12, 3.5)
+    add_text(out, "In the DXF's frame: origin at the liner's front left corner, X right, Y toward the rear.",
+             tx, ty - 7, T)
+    add_text(out, "X, Y is each feature's front left corner.", tx, ty - 3.5, T)
+    for k, h in enumerate(head):
+        add_text(out, h, tx + cols[k], ty + 1, T)
+    for r_, (ident, kind, (a, b, c, d)) in enumerate(rows_, 1):
+        x, y = dxf(a, d)
+        vals = [ident, kind, f"{max(x, 0):.1f}", f"{max(y, 0):.1f}", f"{c - a:.1f}",
+                f"{min(d, ly1) - max(b, ly0):.1f}"]
+        for k, v in enumerate(vals):
+            add_text(out, v, tx + cols[k], ty + 1 + 4.2 * r_, T)
+
     tape_len = sum(c - a for a, _, c, _ in strips)
     notes = [
         "C128 LED keyboard rev 3 - bottom liner",
         f"Material: Formex GK-17 ({LINER_T} mm polypropylene), or fish paper 0.4 mm.  Die line: liner.dxf layer CUT.",
-        f"Tape: {len(strips)} strips, {TAPE_W:g} mm wide, {tape_len:.0f} mm in all, double-sided foam {TAPE_T} mm (3M VHB 4991 or equal),",
+        f"Tape: {len(strips)} strips, {TAPE_W:g} mm wide, {tape_len:.0f} mm in all, double-sided foam {TAPE_T} mm "
+        "(3M VHB 4991 or equal),",
         "   laminated to this face of the liner (liner.dxf layer TAPE); release liner left on.",
-        "View: from the PCB side (the tape side), in the PCB's coordinates.  Mirror for the view from below.",
-        f"Windows clear every back-side part taller than {LIMIT:.1f} mm (heights in mm beside each).  Corners R{R_OUTER:g} / R{R_INNER:g}.",
-        "Tolerance +/-0.3 mm.  Thin gray lines are the PCB and its back-side parts, for reference only.",
+        "View: from the PCB side (the tape side).  Mirror for the view from below.",
+        f"The liner sits {SIDE_MARGIN:g} mm inside the PCB's left, right and rear edges.",
+        f"Windows clear every back-side part taller than {LIMIT:.1f} mm (heights in mm beside each).",
+        f"Corners R{R_OUTER:g}, window and notch corners R{R_INNER:g}.  Tolerance +/-0.3 mm.",
+        "Thin blue lines are the PCB, its holes and back-side parts, for reference only.",
+        "Tape strips are dimensioned to their centre lines from the liner's front edge.",
+        "Scale 1:1 on A2.  The DXF governs; these dimensions are for checking it.",
     ]
-    for i, s in enumerate(notes):
-        add_text(out, s, edge[0], edge[3] + 18 + 3.2 * i, 2.0 if i == 0 else 1.6)
+    nx = tx + 175
+    add_text(out, notes[0], nx, ty - 12, 3.5)
+    for i, s_ in enumerate(notes[1:]):
+        add_text(out, s_, nx, ty - 7 + 4.2 * i, T)
+
+    # centre the drawing on the A2 sheet, the table and notes below it
+    off = pcbnew.VECTOR2I(iu(297 - (bx0 + bx1) / 2), iu(80 - by0))
+    for item in out.GetDrawings():
+        item.Move(off)
     tb = out.GetTitleBlock()
     tb.SetTitle("Bottom liner")
     tb.SetCompany("C128 LED keyboard")
@@ -348,7 +420,7 @@ def write(src, edge, liner, tall, strips, back, front):
     pcbnew.SaveBoard(OUT, out)
     with open(OUT) as fh:
         text = fh.read()
-    text = re.sub(r'\(paper "[^"]*"[^)]*\)', '(paper "A3")', text, count=1)
+    text = re.sub(r'\(paper "[^"]*"[^)]*\)', '(paper "A2")', text, count=1)
     with open(OUT, "w") as fh:
         fh.write(text)
     for junk in (".kicad_pro", ".kicad_prl"):         # SaveBoard's project files: not needed

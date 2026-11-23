@@ -1,0 +1,10 @@
+{
+  "meta": {"name": "liner-plot", "version": 5},
+  "board": {
+    "edge_cuts": "rgb(0, 0, 0)",
+    "user_1": "rgb(140, 140, 140)",
+    "user_2": "rgb(150, 185, 225)",
+    "dwgs_user": "rgb(30, 30, 30)",
+    "worksheet": "rgb(90, 90, 90)"
+  }
+}
