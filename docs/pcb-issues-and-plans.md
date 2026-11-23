@@ -277,8 +277,9 @@ can stay.
 - Stabilizers: PCB-mount screw-in everywhere; the plate carries clearance only.
 - Plate: order it as a 1.5 mm aluminum-core PCB from the board fab instead of laser-cut
   steel, generated from the same switch positions as the PCB.  Details in the rev 3 plan.
-- A thin insulating bottom cover for flat builds, with mounting holes added to the PCB for it
-  (rev 2.3 has none).  Specified in the rev 3 plan.
+- A thin insulating liner under the PCB for flat builds, held with double-sided tape as on
+  the Amiga 1000 keyboard, so the PCB needs no mounting holes (rev 2.3 has none either).
+  Specified in the rev 3 plan.
 - Shim: drop it by enlarging the plate's stabilizer clearance so the plate sits 1 mm lower
   on mid-height builds, and deepen the stabilizer adapters 1 mm.  Tracked here and in the
   rev 3 plate section, since it is a plate/printables change.

@@ -40,7 +40,7 @@ A part-by-part explanation of the circuit is in
 | `bench/README.md` | shopping list and breadboard wiring to prove the design on a rev 2.3 board |
 | `plate/plate-dual.kicad_pcb` | the plate to order: a KiCad board (outline polygons plus a full copper pour) for aluminum-core PCB fabrication, with stabilizer slots for both a 9u and a 6.25u spacebar; DRC clean |
 | `plate/plate-9u.kicad_pcb`, `plate/plate-6.25u.kicad_pcb` | the same plate for one spacebar only |
-| `plate/plate_features.json` | mounting holes, locating holes, tab slots and stabilizer cutouts in PCB coordinates, for the layout and the bottom cover |
+| `plate/plate_features.json` | mounting holes, locating holes, tab slots and stabilizer cutouts in PCB coordinates, for the layout |
 | `tools/plate_step.py`, `tools/gen_plate.py` | STEP reader and plate-board generator |
 | `tools/plate_header.kicad_pcb` | the plate boards' layer stack and setup block, copied into every generated board |
 | `tools/extract_layout.py`, `tools/layout.py` | write and read `../layout/`, the measurements every generator works from |

@@ -82,9 +82,9 @@ Procedure with the rev 2.3 keyboard installed as normal:
    tallest thing on it, so avoid the existing ICs on the back).
 
 Record in the plan under the underside height budget.  Compare against the parts: ESP32
-module about 3.2 mm, USB-C receptacle 3.3 mm, CH446Q 1.6 mm, bottom cover about 1 mm, IDC
+module about 3.2 mm, USB-C receptacle 3.3 mm, CH446Q 1.6 mm, bottom liner about 0.5 mm, IDC
 header 9 mm if fitted.  This decides whether the header is populated on flat builds and
-whether the cover can be a single flat sheet.
+whether the liner can be a single flat sheet.
 
 ## 4. Cable and connector facts (proof 6, partly)
 

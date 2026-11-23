@@ -48,8 +48,8 @@ and what has to be proven on the bench before copper is ordered.
   U.FL; with no WiFi wanted, nothing is fitted.  Same GPIO map.  RP2040 is the fallback only
   if the ESP32 fails bring-up on power or timing.
 - Board outline, plate-ground pad and switch positions do **not** move, so the existing
-  plate, printed case and printables keep fitting.  The PCB gains mounting holes (it has
-  none today) for a thin insulating bottom cover.
+  plate, printed case and printables keep fitting.  A thin insulating liner taped to the
+  underside protects flat builds, as on the Amiga 1000 keyboard; the PCB needs no holes.
 - One 1N4148W diode per scanned key, on the back with the other SMD parts, so the board also
   works as a ghost-free USB keyboard.
 - Every SMD part is placed by the fab; builders solder through-hole only (see Assembly).
@@ -197,10 +197,8 @@ no table.
 - Cluster every tall back-side part (module, CH446Q, USB-C, connectors) in a band along the
   rear edge.  The flat 128's wedge is deepest at the rear, and it keeps the bottom cover flat
   over the rest of the board.
-- Add mounting holes for the bottom cover: M3 clearance holes at the plate's six M3
-  positions where they fall inside the outline, plus M2.5 holes in the gaps between switch
-  rows along the front edge and mid-board so the cover cannot bow into the pins.  Keep them
-  clear of the LED pads and stabilizer holes.
+- No mounting holes for a bottom cover: it is a taped liner (decided 2026-11-23, see
+  *Bottom cover*).
 - Connector footprints on B.Cu near the rear edge, at roughly the same X as today's CN2 so the
   printed case's DB25 cutout still lines up.  Confirm clearance to the flat C128's RF shield
   before fixing Y.
@@ -218,26 +216,24 @@ no table.
 
 ## Bottom cover
 
-A thin insulating sheet under the PCB so the switch pins, solder joints and back-side parts
+A thin insulating liner under the PCB so the switch pins, solder joints and back-side parts
 can never touch the flat 128's RF shield, a bench, or a hand.  In the printed 128D case the
-tray already does this job, so the cover is for flat builds and bare keyboards.
+tray already does this job, so the liner is for flat builds and bare keyboards.
+
+Decided 2026-11-23: do what Commodore did on the Amiga 1000 keyboard, a thin plastic liner
+(the kind under an old computer case) held on with double-sided tape.  No screws, no printed
+part and no mounting holes in the PCB, which rev 3 does not have.
 
 - Coverage: the 128's main board does not reach under the last two key rows (the Z row and
-  the spacebar), which is also where there is only about 2 mm below the PCB.  The cover stops
+  the spacebar), which is also where there is only about 2 mm below the PCB.  The liner stops
   short of them; it only has to cover the area over the main board.
-- Two-level shape: a flat floor about 1 mm below the pin tips over the switch field it
-  covers, with a raised pocket along the rear band that clears the electronics cluster.  Openings for the cable exit, USB-C, and the ESP32 antenna region (plastic over
-  the antenna is fine, metal is not).
-- Material and thickness: printed PETG with a 0.6 mm floor in two halves for a 256 mm bed,
-  or a 0.5 mm PET/polycarbonate sheet cut by the plate vendor for the flat part with a small
-  printed pocket for the rear band.  Budget about 1 mm of underside height for it beyond the
-  pin tips themselves.
-- Fixing: M3 screws into the plate's existing holes through the PCB clearance holes with
-  spacers, or M2.5 screws into the new PCB holes with heat-set inserts in the cover, so the
-  cover comes off without disturbing the plate.  Adhesive foam pads are the fallback for a
-  sheet with no printed parts.
-- It is a printed part: an OpenSCAD or Fusion model driven by the PCB outline and
-  hole positions, like the case.
+- Material: a stiff insulating film, about 0.25 to 0.5 mm, cut to the outline by hand or by
+  the plate vendor.  It costs well under the 1 mm the budget allowed for a cover.
+- Fixing: strips of double-sided tape on the bare board between switch rows, where there are
+  no pins.  The liner rests on the pin tips over the switch field.
+- Rear band: the electronics cluster (ESP32, CH446Q, USB-C, connectors) is taller than the
+  pins.  Cut the liner around it, or tape a second piece over its parts.  Keep openings for
+  the cable exit and USB-C.  Plastic over the ESP32's antenna lead is fine; metal is not.
 
 ## Layout tooling: KiCadRoutingTools
 
@@ -462,7 +458,7 @@ All SMD goes on at the fab (see Assembly); the hand-build path is through-hole o
    routed and DRC clean; the fab outputs come from `pcb/tools/fab.py` instead of kibot.
 4. Plate as an aluminum PCB: **done** (both spacebar variants generated, DRC clean, and a
    dual plate with slots for both spacebars' stabilizers, the one to order); the
-   stabilizer-clearance change and the bottom cover model remain.
+   stabilizer-clearance change remains.  The bottom cover is a taped liner, cut by hand.
 5. Firmware milestones 1 and 2 on a devkit wired to a rev 2.3 board through the breadboarded
    crosspoint, so bring-up of the first rev 3 board is just hardware.  **Started**: the
    ESP-IDF project in [firmware/](../firmware/README.md) has the scan, crosspoint mirror,
