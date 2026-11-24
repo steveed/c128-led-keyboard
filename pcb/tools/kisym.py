@@ -7,7 +7,7 @@ pin positions so the generator can attach wires and labels to them.
 import os
 import re
 
-KICAD_SYMBOLS = "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols"
+KICAD_SYMBOLS = os.environ.get("KICAD_SYMBOLS", "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols")
 
 
 # --- s-expression parsing -----------------------------------------------------------

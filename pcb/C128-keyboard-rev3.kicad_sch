@@ -21,6 +21,17 @@
 		)
 		(uuid "a5175fef-d931-5719-bc06-86988b18342f")
 	)
+	(text "Nets between sheets are global labels:\n  P_ROW0-5, P_COL0-19      physical matrix (3.3 V), MCU <-> matrix sheet\n  MCU_COLSEL0-3            74HC154 address\n  MCU_XP_DAT/CK/STB/RST    CH446Q serial control, driven directly at 3.3 V\n  H_ROW0-7, H_COL0-10, H_RESTORE, H_4080, H_CAPLK   host (C128) lines\n  MCU_LED_DATA -> LED_DATA_5V -> LED_D1..LED_D91 -> LED_OUT   LED chain\n  +5V_KB (raw keyboard rail), +5V_SYS (OR'd with USB), +3V3, GND"
+		(exclude_from_sim no)
+		(at 20.32 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "adad2f50-41df-5b98-ba45-a9ff0cbb421b")
+	)
 	(sheet
 		(at 20.32 49.53)
 		(size 70 30)
@@ -34,11 +45,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0)
+			(color 0 0 0 0)
 		)
 		(uuid "4a8f1b31-9321-504a-af35-3fa18e108aee")
 		(property "Sheetname" "MCU and power"
 			(at 20.32 48.83 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48,6 +61,8 @@
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
 			(at 20.32 80.13 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57,8 +72,54 @@
 		)
 		(instances
 			(project "C128-keyboard-rev3"
-				(path "/6925b297-b1a2-5740-b020-7455b0ec5a85"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 289.56 49.53)
+		(size 70 30)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "8a0ce414-53c1-5dc0-bd9d-3d6c4cdc7cf2")
+		(property "Sheetname" "LEDs"
+			(at 289.56 48.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "leds.kicad_sch"
+			(at 289.56 80.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a"
+					(page "5")
 				)
 			)
 		)
@@ -76,11 +137,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0)
+			(color 0 0 0 0)
 		)
 		(uuid "95ea46b0-396d-5efe-bce4-03ce4dab9b0a")
 		(property "Sheetname" "Crosspoint and host"
 			(at 110.49 48.83 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90,6 +153,8 @@
 		)
 		(property "Sheetfile" "crosspoint.kicad_sch"
 			(at 110.49 80.13 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -99,7 +164,7 @@
 		)
 		(instances
 			(project "C128-keyboard-rev3"
-				(path "/6925b297-b1a2-5740-b020-7455b0ec5a85"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a"
 					(page "3")
 				)
 			)
@@ -118,11 +183,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0)
+			(color 0 0 0 0)
 		)
 		(uuid "be6a17b0-ac9e-512b-86d2-1151e1e1cc4c")
 		(property "Sheetname" "Physical matrix"
 			(at 199.39 48.83 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -132,6 +199,8 @@
 		)
 		(property "Sheetfile" "matrix.kicad_sch"
 			(at 199.39 80.13 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -141,64 +210,11 @@
 		)
 		(instances
 			(project "C128-keyboard-rev3"
-				(path "/6925b297-b1a2-5740-b020-7455b0ec5a85"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a"
 					(page "4")
 				)
 			)
 		)
-	)
-	(sheet
-		(at 289.56 49.53)
-		(size 70 30)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0)
-		)
-		(uuid "8a0ce414-53c1-5dc0-bd9d-3d6c4cdc7cf2")
-		(property "Sheetname" "LEDs"
-			(at 289.56 48.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "leds.kicad_sch"
-			(at 289.56 80.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path "/6925b297-b1a2-5740-b020-7455b0ec5a85"
-					(page "5")
-				)
-			)
-		)
-	)
-	(text "Nets between sheets are global labels:\n  P_ROW0-5, P_COL0-19      physical matrix (3.3 V), MCU <-> matrix sheet\n  MCU_COLSEL0-3            74HC154 address\n  MCU_XP_DAT/CK/STB/RST    CH446Q serial control, driven directly at 3.3 V\n  H_ROW0-7, H_COL0-10, H_RESTORE, H_4080, H_CAPLK   host (C128) lines\n  MCU_LED_DATA -> LED_DATA_5V -> LED_D1..LED_D91 -> LED_OUT   LED chain\n  +5V_KB (raw keyboard rail), +5V_SYS (OR'd with USB), +3V3, GND"
-		(exclude_from_sim no)
-		(at 20.32 100.33 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "adad2f50-41df-5b98-ba45-a9ff0cbb421b")
 	)
 	(sheet_instances
 		(path "/"

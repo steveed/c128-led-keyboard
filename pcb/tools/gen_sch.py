@@ -148,6 +148,17 @@ def ch446q_symbol():
 
 # --- schematic sheet builder ------------------------------------------------------------
 
+# Power and flag symbols are numbered across the whole project, not per sheet: eeschema's
+# annotation rejects a #PWR001 on two sheets.  Sheets are built in a fixed order, so the
+# numbers stay deterministic.
+_ref_seq = {}
+
+
+def next_ref(prefix):
+    _ref_seq[prefix] = _ref_seq.get(prefix, 0) + 1
+    return f"{prefix}{_ref_seq[prefix]:03d}"
+
+
 class Sheet:
     def __init__(self, filename, title, root_uuid=None, page=1, paper="A3"):
         self.paper = paper
@@ -299,8 +310,7 @@ class Sheet:
         lib = {"GND": "power:GND", "+5V": "power:+5V", "+3V3": "power:+3V3", "PWR_FLAG": "power:PWR_FLAG"}
         lib_id = lib.get(net, "power:+5V")
         ref = "#PWR" if net != "PWR_FLAG" else "#FLG"
-        n = sum(1 for r in self.refs if r.startswith(ref)) + 1
-        self.symbol(lib_id, f"{ref}{n:03d}", net, at, rot=rot, hide_value=(net == "PWR_FLAG"))
+        self.symbol(lib_id, next_ref(ref), net, at, rot=rot, hide_value=(net == "PWR_FLAG"))
 
     def no_connect(self, at):
         S = K.Sym
@@ -358,14 +368,17 @@ class Sheet:
             self.symbol({"+3V3": "power:+3V3", "+5V": "power:+5V"}[lib], self._pwr_ref(), net, at, rot=rot)
 
     def _pwr_ref(self):
-        n = sum(1 for r in self.refs if r.startswith("#PWR")) + 1
-        return f"#PWR{n:03d}"
+        return next_ref("#PWR")
 
     # -- output
     def emit(self, is_root=False):
         S = K.Sym
+        # A sub-sheet file needs a UUID of its own: self.uuid is the sheet symbol's in the root,
+        # which every symbol path (and so every footprint link) runs through, and eeschema
+        # "repairs" a file that shares it.  The root file's UUID is the root path itself.
+        file_uuid = self.uuid if is_root else uid(f"file:{self.filename}")
         doc = [S("kicad_sch"), [S("version"), S(VERSION)], [S("generator"), "eeschema"],
-               [S("generator_version"), GENERATOR_VERSION], [S("uuid"), self.uuid], [S("paper"), self.paper],
+               [S("generator_version"), GENERATOR_VERSION], [S("uuid"), file_uuid], [S("paper"), self.paper],
                [S("title_block"), [S("title"), self.title], [S("rev"), "3.0-draft"], [S("company"), "c128-led-keyboard"]],
                [S("lib_symbols")] + [self.lib_symbols[k] for k in sorted(self.lib_symbols)]]
         doc += self.items
