@@ -42,6 +42,8 @@ A part-by-part explanation of the circuit is in
 | `plate/plate-9u.kicad_pcb`, `plate/plate-6.25u.kicad_pcb` | the same plate for one spacebar only |
 | `plate/plate_features.json` | mounting holes, locating holes, tab slots and stabilizer cutouts in PCB coordinates, for the layout |
 | `tools/plate_step.py`, `tools/gen_plate.py` | STEP reader and plate-board generator |
+| `liner/` | the bottom liner: die-cut DXF, 1:1 drawing and how it fits ([liner/README.md](liner/README.md)) |
+| `tools/gen_liner.py` | writes the liner from the board: outline, windows over the tall back-side parts, tape strips on bare board |
 | `tools/plate_header.kicad_pcb` | the plate boards' layer stack and setup block, copied into every generated board |
 | `tools/extract_layout.py`, `tools/layout.py` | write and read `../layout/`, the measurements every generator works from |
 
@@ -67,6 +69,7 @@ point the extractor at it and regenerate:
 ```
 python3 pcb/tools/extract_layout.py switches pcb/<new board>.kicad_pcb
 python3 pcb/tools/gen_plate.py            # plate refits onto the new switch centers
+python3 pcb/tools/gen_liner.py            # liner windows and tape follow the parts (then make liner)
 python3 firmware/tools/gen_keymap.py
 ```
 
@@ -330,6 +333,8 @@ assembled boards quoted at about 500 USD shipped.  J1's CPL position is the midd
 pads, not its footprint origin (which sits at the board edge), so the fab turns it in place.
 The plate is a separate order: upload `plate/gerbers/plate-dual-gerbers.zip` (made with the
 commands under *Verifying*) as a 1.5 mm single-layer aluminum board; about 50 USD.
+The bottom liner, for flat builds, goes to a die-cut converter as `liner/liner.dxf` with
+`liner/liner.pdf`, or is cut by hand from the PDF.
 
 ## Verifying
 
