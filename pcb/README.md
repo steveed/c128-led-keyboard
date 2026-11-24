@@ -169,6 +169,9 @@ What it set up:
   onto the sheet; see *Routing*.)
 - **Rules** in the project file: net class Power (0.5 mm) for GND, +5V_KB, +5V_KB_F,
   +5V_SYS, +3V3 and VBUS; Default 0.25 mm, 0.6/0.3 mm vias; JLCPCB minimums.
+  `C128-keyboard-rev3.kicad_dru` adds one custom rule: J1's own pads may sit 0.15 mm from
+  its locating-peg holes, as the USB-C datasheet's land pattern has them (0.165 mm), under
+  the board's 0.25 mm hole clearance.
 
 Changed since that first pass, by hand and with `move.py`: the ESP32 was turned 180 degrees
 so its GND row faces the rear edge and its GPIOs face the parts they drive (the GPIO plan in
