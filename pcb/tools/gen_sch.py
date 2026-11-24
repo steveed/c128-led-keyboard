@@ -373,8 +373,12 @@ class Sheet:
     # -- output
     def emit(self, is_root=False):
         S = K.Sym
+        # A sub-sheet file needs a UUID of its own: self.uuid is the sheet symbol's in the root,
+        # which every symbol path (and so every footprint link) runs through, and eeschema
+        # "repairs" a file that shares it.  The root file's UUID is the root path itself.
+        file_uuid = self.uuid if is_root else uid(f"file:{self.filename}")
         doc = [S("kicad_sch"), [S("version"), S(VERSION)], [S("generator"), "eeschema"],
-               [S("generator_version"), GENERATOR_VERSION], [S("uuid"), self.uuid], [S("paper"), self.paper],
+               [S("generator_version"), GENERATOR_VERSION], [S("uuid"), file_uuid], [S("paper"), self.paper],
                [S("title_block"), [S("title"), self.title], [S("rev"), "3.0-draft"], [S("company"), "c128-led-keyboard"]],
                [S("lib_symbols")] + [self.lib_symbols[k] for k in sorted(self.lib_symbols)]]
         doc += self.items
