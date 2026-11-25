@@ -66,8 +66,9 @@ def run(*args):
 
 
 def copy_project(tmp):
-    """The board, project and schematic in a scratch folder, planes refilled."""
-    for f in glob.glob(os.path.join(PCB, NAME + ".kicad_p*")) + glob.glob(os.path.join(PCB, "*.kicad_sch")):
+    """The board, project, custom DRC rules and schematic in a scratch folder, planes refilled."""
+    for f in (glob.glob(os.path.join(PCB, NAME + ".kicad_p*")) + glob.glob(os.path.join(PCB, NAME + ".kicad_dru"))
+              + glob.glob(os.path.join(PCB, "*.kicad_sch"))):
         shutil.copy(f, tmp)
     b = os.path.join(tmp, NAME + ".kicad_pcb")
     board = pcbnew.LoadBoard(b)
