@@ -35,6 +35,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import zipfile
 
 import pcbnew
 
@@ -44,7 +45,7 @@ NAME = "C128-keyboard-rev3"
 BOARD = os.path.join(PCB, NAME + ".kicad_pcb")
 SCH = os.path.join(PCB, NAME + ".kicad_sch")
 OUT = os.path.join(PCB, "fab")
-KC = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
+KC = os.environ.get("KICAD_CLI", "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli")
 LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts"
 ROT_ADD = {                       # footprint -> degrees added to KiCad's rotation
     "USB_C_Receptacle_ShouHan_TYPE-C-16P-3MD-040": 180,     # J1: 0 -> 180
@@ -66,8 +67,9 @@ def run(*args):
 
 
 def copy_project(tmp):
-    """The board, project and schematic in a scratch folder, planes refilled."""
-    for f in glob.glob(os.path.join(PCB, NAME + ".kicad_p*")) + glob.glob(os.path.join(PCB, "*.kicad_sch")):
+    """The board, project, custom DRC rules and schematic in a scratch folder, planes refilled."""
+    for f in (glob.glob(os.path.join(PCB, NAME + ".kicad_p*")) + glob.glob(os.path.join(PCB, NAME + ".kicad_dru"))
+              + glob.glob(os.path.join(PCB, "*.kicad_sch"))):
         shutil.copy(f, tmp)
     b = os.path.join(tmp, NAME + ".kicad_pcb")
     board = pcbnew.LoadBoard(b)
@@ -198,8 +200,10 @@ def main():
         os.makedirs(OUT)
         files = sorted(os.listdir(ger))
         z = os.path.join(OUT, NAME + "-gerbers.zip")
-        # zip -X: no macOS extended attributes; a Finder zip's __MACOSX twins confuse uploaders
-        subprocess.run(["zip", "-X", "-j", "-q", z, *[os.path.join(ger, f) for f in files]], check=True)
+        # flat, and no macOS extended attributes: a Finder zip's __MACOSX twins confuse uploaders
+        with zipfile.ZipFile(z, "w", zipfile.ZIP_DEFLATED) as zf:
+            for f in files:
+                zf.write(os.path.join(ger, f), f)
         write_csv(os.path.join(OUT, NAME + "-bom.csv"), bom_rows,
                   ["Comment", "Designator", "Footprint", "LCSC Part #"])
         write_csv(os.path.join(OUT, NAME + "-cpl.csv"), cpl_rows,

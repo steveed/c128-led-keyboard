@@ -317,10 +317,10 @@ the SK6812MINI-012 (C2886570), because JLCPCB rates the SK6812MINI-B-012 (C51834
 ## Ordering from JLCPCB
 
 ```
-$PY pcb/tools/fab.py
+docker compose run --rm -e KICAD_CLI=kicad-cli kicad python3 pcb/tools/fab.py
 ```
 
-writes `pcb/fab/` (untracked): `C128-keyboard-rev3-gerbers.zip`, `-bom.csv` and `-cpl.csv`.
+(or `$PY pcb/tools/fab.py` with the KiCad app's python on the host) writes `pcb/fab/` (untracked): `C128-keyboard-rev3-gerbers.zip`, `-bom.csv` and `-cpl.csv`.
 It refuses to write if DRC finds an error, anything unconnected or a parity difference, or if
 an SMD part has no LCSC number.  Order a 4-layer board, upload the zip, then turn on
 assembly for **both sides** and upload the BOM and CPL.  In the placement preview check
