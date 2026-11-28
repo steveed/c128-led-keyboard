@@ -148,6 +148,11 @@ def ch446q_symbol():
     return sym
 
 
+# Symbols the project draws itself, by lib id; anything else comes from the KiCad libraries.
+# Another generator (the dongle's) adds its own before building sheets.
+PROJECT_SYMBOLS = {"c128rev3:CH446Q": ch446q_symbol}
+
+
 # --- schematic sheet builder ------------------------------------------------------------
 
 # Power and flag symbols are numbered across the whole project, not per sheet: eeschema's
@@ -185,7 +190,8 @@ class Sheet:
     # -- symbols
     def libsym(self, lib_id):
         if lib_id not in self.lib_symbols:
-            self.lib_symbols[lib_id] = ch446q_symbol() if lib_id == "c128rev3:CH446Q" else K.get_symbol(lib_id)
+            build = PROJECT_SYMBOLS.get(lib_id)
+            self.lib_symbols[lib_id] = build() if build else K.get_symbol(lib_id)
             self.pins_cache[lib_id] = K.pins(self.lib_symbols[lib_id])
         return self.lib_symbols[lib_id]
 
@@ -608,6 +614,16 @@ assert sorted(XP_Y_OF_ROW) == list(range(8)) and sorted(XP_Y_OF_ROW.values()) ==
 
 
 def build_crosspoint(sh):
+    """The keyboard's crosspoint sheet: the shared host-side circuit, then its connectors."""
+    crosspoint_core(sh)
+    keyboard_connectors(sh)
+
+
+def crosspoint_core(sh):
+    """The host-side circuit the keyboard and the 128D dongle share: CH446Q U3 with C8, R10 and
+    R11, the LED data buffer U4 with C9, the lock-line FETs Q1-Q3 with R5-R7, R12 and JP1, and
+    the RESTORE sense diode D3.  It reaches the host lines through H_* labels; the caller adds
+    the connectors that carry them."""
     sh.text("Host side: CH446Q crosspoint mirrors the physical matrix onto the C128 ROW/COL lines.  X = host columns, Y = host rows,\n"
             "in the order that routes cleanly from J2 (XP_X_OF_COL / XP_Y_OF_ROW in gen_sch.py); the firmware addresses through the same table.\n"
             "Serial address mode (P/S low): DAT, CS/CK, STB, RST straight from the ESP32 (VIH is 2.0 V at a 5 V supply).\n"
@@ -674,7 +690,10 @@ def build_crosspoint(sh):
     sh.connect(d3, 1, "H_RESTORE", stub=5.08)             # cathode (top) to the host line
     sh.connect(d3, 2, "MCU_RESTORE_SENSE", stub=5.08)     # anode (bottom) to the ESP32
 
-    # host connector and external LED header
+
+
+def keyboard_connectors(sh):
+    """The keyboard's host connector J2 (2x13, D-sub IDC order) and external LED header J3."""
     j2 = sh.symbol("Connector_Generic:Conn_02x13_Odd_Even", "J2", "C128 keyboard (D-sub IDC order)", (330, 205),
                    footprint="Connector_IDC:IDC-Header_2x13_P2.54mm_Vertical")
     for pin, net in HOST_PINS.items():
