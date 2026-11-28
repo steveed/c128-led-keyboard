@@ -69,7 +69,7 @@
   "IO35": "MCU_LED_DATA",
   "IO36": "P_ROW0",
   "IO37": null,
-  "IO38": null,
+  "IO38": "MCU_LED_EN",
   "IO39": null,
   "IO40": null,
   "IO41": null,

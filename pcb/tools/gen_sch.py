@@ -75,6 +75,8 @@ LCSC = {
     ("LED:SK6812MINI", None): "C2886570",                # OPSCO SK6812MINI-012, 3535; the -B-012 (C5183448) is MSL 5 at JLCPCB, flagged hard to assemble
     ("Device:Polyfuse", "1.1A"): "C142746",              # Littelfuse 1812L110/16DR, 16 V
     ("Device:C_Polarized", "220u"): "C125979",           # Nichicon UWT1C221MCL1GS, 16 V, 6.3x7.7
+    ("Transistor_FET:AO3401A", None): "C15127",          # AOS AO3401A, P-channel, SOT-23: the LED power switch
+    ("Device:C", "220n"): "C21120",                      # Samsung CL10B224KB8NNNC, 0603: the LED switch's soft start
 }
 TACT_LCSC = "C221880"                                    # C&K PTS645SM43SMTR92 LFS
 C_10U_1206_LCSC = "C13585"                               # Samsung CL31A106KBHNNNE, 50 V X5R
@@ -456,7 +458,7 @@ GPIO = {
     "IO26": "P_ROW1", "IO47": "P_ROW2", "IO33": "P_ROW3", "IO34": "P_ROW4", "IO48": "P_ROW5",
     # west side, bottom to top
     "IO35": "MCU_LED_DATA", "IO36": "P_ROW0",
-    "IO37": None, "IO38": None, "IO39": None, "IO40": None, "IO41": None, "IO42": None,
+    "IO37": None, "IO38": "MCU_LED_EN", "IO39": None, "IO40": None, "IO41": None, "IO42": None,
     "TXD0": "MCU_TXD0", "RXD0": "MCU_RXD0", "EN": "MCU_EN",
     # fixed
     "IO0": "MCU_BOOT",
@@ -476,7 +478,8 @@ HOST_PINS = {
 
 def build_mcu(sh):
     sh.text("MCU, USB-C and power.  +5V_KB is the raw keyboard rail from the host connector; +5V_SYS is the\n"
-            "OR of the fused keyboard rail and USB VBUS; +3V3 feeds the ESP32, the 74HC154 and the physical matrix.",
+            "OR of the fused keyboard rail and USB VBUS; +5V_LED is +5V_SYS switched by Q4 for the LEDs;\n"
+            "+3V3 feeds the ESP32, the 74HC154 and the physical matrix.",
             (15, 15), 1.5)
     u1 = sh.symbol("RF_Module:ESP32-S3-MINI-1U", "U1", "ESP32-S3-MINI-1U-N8", (135, 125),
                    footprint="RF_Module:ESP32-S2-MINI-1U")   # KiCad's S3-MINI-1U symbol uses this; same land pattern
@@ -546,7 +549,7 @@ def build_mcu(sh):
     d2 = sh.symbol("Diode:SS34", "D2", "SS34", (240, 210), footprint="Diode_SMD:D_SMA")
     sh.connect(d2, 2, "VBUS"); sh.connect(d2, 1, "+5V_SYS")
     c4 = sh.symbol("Device:C_Polarized", "C5", "220u", (265, 210), footprint="Capacitor_SMD:CP_Elec_6.3x7.7")
-    sh.connect(c4, 1, "+5V_SYS"); sh.connect(c4, 2, "GND")
+    sh.connect(c4, 1, "+5V_LED"); sh.connect(c4, 2, "GND")
     u2 = sh.symbol("Regulator_Linear:AP7361C-33E", "U2", "AP7361C-33E", (315, 190), footprint="Package_TO_SOT_SMD:SOT-223-3_TabPin2",
                    fields={"LCSC": "C500795"})
     n2 = u2.pins_named()
@@ -556,12 +559,37 @@ def build_mcu(sh):
     c7 = sh.symbol("Device:C", "C7", "10u", (345, 210), footprint=C_FP_1206, fields={"LCSC": C_10U_1206_LCSC})
     sh.connect(c7, 1, "+3V3"); sh.connect(c7, 2, "GND")
     # power flags
-    for i, (net, x) in enumerate((("+5V_KB", 150), ("+5V_SYS", 180), ("GND", 210), ("VBUS", 240))):
+    c14 = sh.symbol("Device:C", "C14", "10u", (300, 230), footprint=C_FP_1206, fields={"LCSC": C_10U_1206_LCSC})
+    sh.connect(c14, 1, "+5V_SYS"); sh.connect(c14, 2, "GND")   # C5 is on the LED side now: the LDO keeps its own
+    # power flags
+    for i, (net, x) in enumerate((("+5V_KB", 150), ("+5V_SYS", 180), ("GND", 210), ("VBUS", 240), ("+5V_LED", 270))):
         sh.power("PWR_FLAG", (x, 250))
         sh.glabel(net, (x, 250), "D")
-    sh.text("GPIO map: rows IO4-7,15,16; column select IO8-11 (columns 0-14); columns 15-19 IO17,18,14,21,35; CH446Q serial: CK IO12,\n"
-            "DAT IO38, STB IO39, RST IO40; LED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, gate IO13.  Spare: IO36,37.  IO0/IO3/IO45/IO46 strapping.",
-            (15, 280), 1.27)
+
+    # LED power switch (docs/led-power-switch.md): Q4 puts +5V_SYS on +5V_LED, which feeds the LEDs,
+    # C5 and J3.  R13 holds it off until the MCU turns Q5 on; R14 and C13 slow the turn-on so the
+    # LED rail's ~250 uF does not surge through F1; R15 keeps Q5 off while the ESP32 resets.
+    sh.text("LED power switch: IO38 high = LEDs on", (310, 22), 1.5)
+    q4 = sh.symbol("Transistor_FET:AO3401A", "Q4", "AO3401A", (380, 40), footprint="Package_TO_SOT_SMD:SOT-23")
+    n4 = q4.pins_named()
+    sh.connect(q4, n4["S"], "+5V_SYS"); sh.connect(q4, n4["D"], "+5V_LED"); sh.connect(q4, n4["G"], "LED_PWR_GATE", stub=5.08)
+    r13 = sh.symbol("Device:R", "R13", "100k", (315, 40), footprint=R_FP)
+    sh.connect(r13, 1, "+5V_SYS"); sh.connect(r13, 2, "LED_PWR_GATE", stub=2.54)
+    c13 = sh.symbol("Device:C", "C13", "220n", (341, 40), footprint=C_FP)
+    sh.connect(c13, 1, "+5V_LED"); sh.connect(c13, 2, "LED_PWR_GATE", stub=2.54)
+    c12 = sh.symbol("Device:C", "C12", "10u", (400, 40), footprint=C_FP_1206, fields={"LCSC": C_10U_1206_LCSC})
+    sh.connect(c12, 1, "+5V_LED"); sh.connect(c12, 2, "GND")
+    r14 = sh.symbol("Device:R", "R14", "10k", (328, 75), footprint=R_FP)
+    sh.connect(r14, 1, "LED_PWR_GATE", stub=2.54); sh.connect(r14, 2, "LED_PWR_PULL", stub=2.54)
+    q5 = sh.symbol("Transistor_FET:2N7002", "Q5", "2N7002", (380, 88), footprint="Package_TO_SOT_SMD:SOT-23")
+    n5 = q5.pins_named()
+    sh.connect(q5, n5["D"], "LED_PWR_PULL"); sh.connect(q5, n5["S"], "GND"); sh.connect(q5, n5["G"], "MCU_LED_EN", stub=5.08)
+    r15 = sh.symbol("Device:R", "R15", "100k", (350, 80), footprint=R_FP)
+    sh.connect(r15, 1, "MCU_LED_EN", stub=2.54); sh.connect(r15, 2, "GND")
+    used = [f"{io} {net}" for io, net in GPIO.items() if net and io.startswith("IO")]
+    spare = [io for io, net in GPIO.items() if net is None]
+    sh.text("GPIO map: " + ", ".join(used[:12]) + ",\n" + ", ".join(used[12:]) +
+            ".  Spare: " + ", ".join(spare) + " (IO0, IO3, IO45, IO46 are strapping pins).", (15, 280), 1.27)
 
 
 # Which crosspoint X pin carries each host column, and which Y pin each host row.  The C128
@@ -655,7 +683,7 @@ def build_crosspoint(sh):
             "Fit an IDC box header, or solder the ribbon straight into the pads on a flat.", (200, 268), 1.27)
     j3 = sh.symbol("Connector_Generic:Conn_01x03", "J3", "Ext LED", (330, 150),
                    footprint="Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
-    sh.connect(j3, 1, "+5V_SYS"); sh.connect(j3, 2, "LED_OUT"); sh.connect(j3, 3, "GND", kind="label")
+    sh.connect(j3, 1, "+5V_LED"); sh.connect(j3, 2, "LED_OUT"); sh.connect(j3, 3, "GND", kind="label")
 
 
 def build_matrix(sh, switches):
@@ -730,9 +758,9 @@ def build_leds(sh, chain):
         y = 42 + r * pitch_y
         led = sh.symbol("LED:SK6812MINI", "LED" + s["ref"][2:], "SK6812MINI", (x, y), footprint=LED_FP,
                         fields={"Key": s["val"]})
-        sh.connect(led, 4, "+5V_SYS", stub=2.54); sh.connect(led, 2, "GND", stub=2.54)
+        sh.connect(led, 4, "+5V_LED", stub=2.54); sh.connect(led, 2, "GND", stub=2.54)
         cap = sh.symbol("Device:C", "C" + str(100 + int(s["ref"][2:])), "100n", (x + 17.78, y + 19.05), footprint=C_FP)
-        sh.connect(cap, 1, "+5V_SYS", stub=2.54); sh.connect(cap, 2, "GND", stub=2.54)
+        sh.connect(cap, 1, "+5V_LED", stub=2.54); sh.connect(cap, 2, "GND", stub=2.54)
         din, _ = led.pin_end(3)
         dout, _ = led.pin_end(1)
         if i == 0:
@@ -763,7 +791,7 @@ def build_root(root, sheets):
               "  MCU_XP_DAT/CK/STB/RST    CH446Q serial control, driven directly at 3.3 V\n"
               "  H_ROW0-7, H_COL0-10, H_RESTORE, H_4080, H_CAPLK   host (C128) lines\n"
               "  MCU_LED_DATA -> LED_DATA_5V -> LED_D1..LED_D91 -> LED_OUT   LED chain\n"
-              "  +5V_KB (raw keyboard rail), +5V_SYS (OR'd with USB), +3V3, GND", (20, 100), 1.27)
+              "  +5V_KB (raw keyboard rail), +5V_SYS (OR'd with USB), +5V_LED (+5V_SYS switched by Q4), +3V3, GND", (20, 100), 1.27)
 
 
 def main():
