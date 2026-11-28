@@ -128,9 +128,9 @@ other, and a 3D-printed clamshell snapped over the whole board.
   already in the BOM and stocked by JLCPCB), placed by the fab like any other part, and its
   colour shows power, link and key activity.  The light pipe is part of the clamshell: a short
   clear-printed rod, or a standard press-fit pipe in a hole above the LED.
-  - **Data level:** at 5 V the SK6812 wants its data above about 3.5 V, and the ESP32 drives
-    3.3 V.  Use the keyboard's 74AHCT1G125 buffer (U4 there), or feed the LED's 5 V through a
-    Schottky diode (about 4.6 V), which brings its threshold within reach of 3.3 V.
+  - **Data level: a 74AHCT1G125 buffer** (decided 2026-11-27), as on the keyboard (U4 there,
+    LCSC C7484).  At 5 V the SK6812 wants its data above about 3.5 V and the ESP32 drives
+    3.3 V; the AHCT input reads 3.3 V as high and drives the LED at a full 5 V.
 - **Module: ESP32-S3-MINI-1** (decided 2026-11-27), the PCB-antenna version of the
   keyboard's S3-MINI-1U, chosen over a C3 because its USB can also host a USB keyboard.
 - **Antenna:** with metal D-sub shells at both ends and the USB-C north, the clearest spot is
@@ -233,4 +233,3 @@ USB-C still works for flashing.
 - USB host on the dongle: in host mode the S3 must supply 5 V to the USB keyboard, which the
   input diode blocks.  Either a power switch on VBUS for a dual-role port, or a USB-C OTG
   adapter with firmware that switches roles.
-- The status light's data level: the 74AHCT1G125 buffer or a diode-dropped 5 V for the LED.
