@@ -76,28 +76,61 @@ for flashing.  The board has two USB-C ports.
 
 ## Dongle hardware
 
-The user's direction (2026-11-27): the board is as wide as the DB25, and a straight
-solder-cup DB25 slides over fingers on its edge.
+The user's direction (2026-11-27): a straight solder-cup DB25 straddles fingers on each end
+of the board, so the dongle passes the keyboard through; USB-C on one side, status LEDs on the
+other, and a 3D-printed clamshell snapped over the whole board.
 
-- **Straddle mount:** the board's edge slides between the connector's two rows of solder
-  cups.  13 pads on one side (pins 1-13) and 12 on the other (pins 14-25), at the DB25's
-  2.77 mm pitch, the two rows offset by half a pitch.  Each cup is soldered flat to its pad: no
-  drilling, and strong mechanically.
-- **Board thickness:** set by the gap between the cup rows.  1.6 mm is commonly used in DB25
-  solder cups; check the chosen connector's drawing before fixing it.
-- **Width:** about 39-41 mm, the connector body behind its flange (the flange is about 53 mm).
-  That fits a standard DB25 hood, which becomes the dongle's case.
-- **Plastic hood only:** a metal hood blocks the radio.  Use a module with a PCB antenna (for
-  example the ESP32-C3-MINI-1), antenna end at the far end from the connector, copper kept
-  clear under it.
-- **Room:** the module (about 13 x 17 mm), the CH446Q (12 x 12 mm with pins), three SOT-23
-  FETs and a regulator fit on about 40 x 45 mm, using both sides.
-- **USB-C** on the far end, at the hood's cable exit, for the app and for flashing.
-- **Gender:** the opposite of the 128D's own keyboard socket.  Check it on the machine before
-  ordering.
-- **No pass-through:** a hood has one connector end, so a pass-through DB25 for a wired
-  keyboard needs a different, larger housing.  The choice is a compact dongle in a hood or a
-  pass-through box.
+```
+            north: USB-C
+        +-------------------+
+ west   |                   |   east
+ DB25 ==|  ESP32   CH446Q   |== DB25
+ to the |                   |   for the
+ 128D   |                   |   keyboard
+        +-------------------+
+            south: status LEDs, antenna corner
+```
+
+### The board
+
+- **Size:** at least about 41 mm north to south, so each DB25 body fits along its edge (the
+  flanges, about 53 mm, overhang outside the board).  East to west is free; about 50-60 mm
+  leaves room for the ESP32, the CH446Q and the routing.
+- **Straddle mounts:** at each end the board's edge slides between the connector's two rows of
+  solder cups: 13 pads on one side (pins 1-13) and 12 on the other (pins 14-25), at the
+  DB25's 2.77 mm pitch, the rows offset by half a pitch, each cup soldered flat to its pad.
+  The gap between the cup rows sets the board thickness; 1.6 mm is common, but check the
+  chosen connector's drawing.
+- **West DB25:** to the computer, the opposite gender to the 128D's own keyboard socket.
+- **East DB25:** for the keyboard cable, the same gender as the 128D's socket, so a keyboard
+  plugs into the dongle exactly as it would into the computer.  Check both genders on the
+  machine before ordering.
+- **Pass-through:** all 25 pins straight through between the two connectors, +5 V and GND
+  included, so a wired keyboard is powered as normal.  The CH446Q taps the same matrix lines
+  in parallel, the way the rev 3 board's crosspoint sits on the host lines.
+- **Pin numbering:** a plug and a socket number their pins as mirror images.  Work out which
+  side of the board carries each connector's 1-13 row before routing, so the 25 through-lines
+  need no via each.
+
+### North and south
+
+- **USB-C on the north edge,** for the app and for flashing.  Its 5 V joins the DB25's +5 V
+  through diodes, as the keyboard's D1 and D2 do.
+- **Status LEDs on the south edge:** side-firing (right-angle) LEDs at the board edge, seen
+  through the shell; or one SK6812 (the keyboard's part) behind a small light pipe, showing
+  power, link and key activity in colour.
+- **Antenna:** with metal D-sub shells at both ends and the USB-C north, the clearest spot is
+  the south edge.  Use a module with a PCB antenna (for example the ESP32-C3-MINI-1), its
+  antenna end at a south corner away from the LEDs, copper kept clear under it.
+
+### Clamshell
+
+- **Fit:** two printed halves snap together over the whole board, with slots that capture
+  the DB25 flanges, so the flanges take the plugging force, not the solder joints.
+- **Retention:** the flanges' 4-40 holes take jackscrews or hex standoffs, so the dongle can
+  screw to the computer and the keyboard cable can screw to the dongle.
+- **Openings:** a cut-out for the USB-C on the north side, and windows or light pipes for the
+  LEDs on the south side.  Plastic is fine for the radio.
 
 ## The dongle on its own
 
@@ -141,8 +174,8 @@ can type on the computer: the keyboard over ESP-NOW, or an app on a Mac or PC.
 The C128's matrix is wired together, so the dongle's switches and a real keyboard's switches
 can sit on the same lines at once.
 
-- **On a 128D:** a pass-through DB25 lets the normal keyboard plug in behind the dongle, though
-  not with the hood-mounted dongle above, which has one connector end.
+- **On a 128D:** the dongle's east DB25 passes the keyboard through, so the normal keyboard
+  plugs in behind it.
 - **On a flat C128:** the same circuit can sit on a small board at the internal keyboard
   header, alongside the stock keyboard.
 
@@ -166,5 +199,5 @@ USB-C still works for flashing.
 - Whether to use the J4 link at all, or start with a fixed wireless-mode LED limit.
 - The dongle's housing on the DB25, and whether it needs a pairing button.
 - ESP32-C3 or S3 for the dongle: the S3 can host a USB keyboard directly.
-- A compact dongle in a DB25 hood, or a larger box with a pass-through DB25 for a wired keyboard.
-- The solder-cup connector: its cup gap (board thickness) and gender.
+- The solder-cup connectors: their cup gap (board thickness) and the two genders.
+- Status LEDs: side-firing LEDs or one SK6812 behind a light pipe.
