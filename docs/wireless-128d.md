@@ -99,6 +99,15 @@ other, and a 3D-printed clamshell snapped over the whole board.
             south: status light pipe, antenna corner
 ```
 
+### How it sits on the 128D
+
+The 128D's keyboard socket is on the computer's right side, about halfway back (the user,
+2026-11-27).  The dongle plugs in sideways, like an extension of the socket: the west DB25 in
+the computer's side, the east DB25 facing out to the right for the keyboard cable, and the
+north edge toward the computer's rear.  So the USB cables run straight back alongside the case,
+clear of everything, and the status light on the south edge faces the front, where it can be
+seen.
+
 ### The board
 
 - **Size:** at least about 41 mm north to south, so each DB25 body fits along its edge (the
@@ -162,8 +171,7 @@ dongle has two ports and routes the S3 to one of them.
   (about 500 mA), turned on in host mode only.
 - **Both lie flat** (decided 2026-11-27): a right-angle USB-A beside the right-angle USB-C on
   the north edge, both opening the same way, toward the rear of the C128.  That keeps the
-  clamshell low, and both cables leave together.  Check on the machine that the plugs and
-  their cable bends clear the 128D's front panel next to the keyboard socket.
+  clamshell low, and both cables leave together.
 - **The switch:** a USB 2.0 analog switch chip routes the S3's D+/D- to one port or the
   other, so both can stay connected and the mode button toggles between them.
 - **Mode button:** a second tact switch through the clamshell.  The status light shows the
