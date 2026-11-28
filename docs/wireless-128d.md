@@ -160,6 +160,10 @@ dongle has two ports and routes the S3 to one of them.
   only ever a device, so its CC pins carry plain 5.1 k pull-downs, as on the keyboard.
 - **USB-A, host mode:** a USB keyboard.  Its 5 V comes through a current-limited power switch
   (about 500 mA), turned on in host mode only.
+- **Both lie flat** (decided 2026-11-27): a right-angle USB-A beside the right-angle USB-C on
+  the north edge, both opening the same way, toward the rear of the C128.  That keeps the
+  clamshell low, and both cables leave together.  Check on the machine that the plugs and
+  their cable bends clear the 128D's front panel next to the keyboard socket.
 - **The switch:** a USB 2.0 analog switch chip routes the S3's D+/D- to one port or the
   other, so both can stay connected and the mode button toggles between them.
 - **Mode button:** a second tact switch through the clamshell.  The status light shows the
@@ -254,5 +258,4 @@ USB-C still works for flashing.
 
 - Which charger and boost: a power-path charger with a separate boost, or an all-in-one
   power-bank chip.  Compare their current limits, quiescent draw and JLCPCB stock.
-- The USB parts: which analog switch, which current-limited power switch for the USB-A,
-  and whether the USB-A sits flat or upright under the clamshell.
+- The USB parts: which analog switch, and which current-limited power switch for the USB-A.
