@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "USB-A receptacle, right angle, Jing Extension 904-131A2032S10100 (LCSC C8328).  Pads from EasyEDA's C8328 footprint via easyeda2kicad 1.0.1, checked against pcb/datasheets/C8328.pdf; the two locating-peg holes made non-plated.")
+	(descr "USB-A receptacle, right angle, Jing Extension 904-131A2032S10100 (LCSC C8328).  Pads from EasyEDA's C8328 footprint via easyeda2kicad 1.0.1, checked against pcb/datasheets/C8328.pdf; the two locating-peg holes made non-plated; courtyard widened to the shell tabs and the signal pads' rear ends.")
 	(property "Reference" "REF**"
 		(at 0 -5.3 0)
 		(layer "F.SilkS")
@@ -595,8 +595,8 @@
 		(uuid "e7944638-b378-4429-84f9-a20b26cd555c")
 	)
 	(fp_line
-		(start -6.55 -1.03)
-		(end 6.55 -1.03)
+		(start -9.25 -3.45)
+		(end 9.25 -3.45)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -605,8 +605,8 @@
 		(uuid "ecae49f6-415f-46ef-825a-3e3f586ba1da")
 	)
 	(fp_line
-		(start -6.55 12.57)
-		(end -6.55 -1.03)
+		(start -9.25 12.57)
+		(end -9.25 -3.45)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -615,8 +615,8 @@
 		(uuid "46ace595-3323-41a2-a1f0-0c5e1f68723a")
 	)
 	(fp_line
-		(start 6.55 -1.03)
-		(end 6.55 12.57)
+		(start 9.25 -3.45)
+		(end 9.25 12.57)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -625,8 +625,8 @@
 		(uuid "ed026a8e-e766-4c2b-a759-1024e9b1ac12")
 	)
 	(fp_line
-		(start 6.55 12.57)
-		(end -6.55 12.57)
+		(start 9.25 12.57)
+		(end -9.25 12.57)
 		(stroke
 			(width 0.05)
 			(type solid)
