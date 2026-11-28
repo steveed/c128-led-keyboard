@@ -583,6 +583,10 @@
       },
       {
         "netclass": "Power",
+        "pattern": "+5V_LED"
+      },
+      {
+        "netclass": "Power",
         "pattern": "+3V3"
       },
       {

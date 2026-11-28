@@ -4,8 +4,8 @@
     /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 \\
         pcb/tools/plane_taps.py
 
-GND is In1.Cu and +5V_SYS In2.Cu, and an SMD pad reaches its plane only through a via or a
-through-hole pad.  For each GND or +5V_SYS SMD pad whose copper (the pad and the tracks
+GND is In1.Cu and +5V_LED In2.Cu, and an SMD pad reaches its plane only through a via or a
+through-hole pad.  For each GND or +5V_LED SMD pad whose copper (the pad and the tracks
 joined to it) holds neither, this drops a via next to the pad, joined by a short track, at
 the first spot that clears everything else on every copper layer.  Big pads (the module's
 center ground) take the via inside the pad instead.
@@ -23,7 +23,7 @@ import pcbnew
 HERE = os.path.dirname(os.path.abspath(__file__))
 BOARD = os.path.join(os.path.dirname(HERE), "C128-keyboard-rev3.kicad_pcb")
 GROUP = "plane_taps"
-PLANE_NETS = ("GND", "+5V_SYS")
+PLANE_NETS = ("GND", "+5V_LED")
 
 VIA_D, VIA_DRILL = 0.6, 0.3
 TRACK_W = 0.4
