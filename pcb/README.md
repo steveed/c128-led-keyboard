@@ -234,9 +234,11 @@ copper wholly inside pads, then string-pulls every chain of segments into the fe
 and the USB pair are left alone.  `--report` lists the chains it couldn't clean (most bends,
 longest detour) without changing anything, and `--mark` circles them on Eco1.User.
 
-`tools/silk.py` hides the LCSC and Key fields the schematic gives every footprint and moves
-any reference that overlaps other silk, a mask opening, a hole or the edge to a clear spot
-beside its part.  `tools/to_sheet.py` puts the board in the middle of an A3 sheet.  It moved
+`tools/silk.py` hides the LCSC and Key fields the schematic gives every footprint, runs
+KiCad's DRC and fixes only the silkscreen it flags: a reference moves to a clear spot beside its
+part (or to the fab layer), a pin-1 mark moves at most 1 mm (or to the fab layer), and a
+footprint line over a mask opening or past the board edge is trimmed.  It takes a board path
+(the dongle uses it too) and finds `kicad-cli` on the PATH or in `$KICAD_CLI`.  `tools/to_sheet.py` puts the board in the middle of an A3 sheet.  It moved
 the board by (-96.475, +5.475) mm, so its coordinates no longer match rev 2.3's, `layout.py`
 or the `gen_pcb.py` PLACE table; add that offset to any coordinate taken from those.
 
