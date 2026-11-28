@@ -74,6 +74,60 @@ for flashing.  The board has two USB-C ports.
 - **Space:** the printed 128D case has about 31 mm of height at the rear, which fits a flat
   5000 mAh or larger pack.
 
+## The dongle on its own
+
+The dongle does not care where key states come from: the C128 only sees switches closing
+between its matrix lines.  So anything that can tell the dongle's ESP32 "these keys are down"
+can type on the computer: the keyboard over ESP-NOW, or an app on a Mac or PC.
+
+### How an app talks to it
+
+- **USB serial:** the simplest.  The ESP32 shows up as a serial port, and the app sends
+  commands such as `type 10 PRINT "HI"`, `press RETURN` or `hold SHIFT`.  The ESP32-C3 has USB
+  built in, so no extra chip is needed.
+- **Wi-Fi:** a small TCP or WebSocket server on the ESP32, so the app works across the room
+  with only the C128 powering the dongle.
+- **A USB keyboard plugged straight in:** with an ESP32-S3 instead of a C3, its USB can act as
+  a host and read a USB keyboard directly, with no computer involved.  This is the main reason
+  to pick the S3 over the C3.
+
+### What it is good for
+
+- Pasting text: BASIC listings, or long commands typed from a file.
+- A Mac's or PC's keyboard as the C128's keyboard: the app forwards key presses.
+- Scripting: automated tests of software, reproducible key sequences, demos.
+- Controls the C128's own keyboard lacks: RESTORE, CAPS LOCK and 40/80 are lines the dongle
+  drives, so the app can set them too.
+
+### Limits
+
+- **Typing speed:** the KERNAL reads the keyboard once per 60 Hz tick and buffers only 10
+  characters.  A paste has to hold each key for about two ticks and release between repeated
+  letters, so it types at about 15-25 characters a second at most.  Programs that read the
+  matrix themselves (most games) see key presses directly.
+- **Character mapping:** PETSCII becomes matrix keys plus SHIFT or C= combinations, including
+  the graphics characters.  The rev 3 firmware's key map (`firmware/tools/gen_keymap.py`)
+  already has the C128's matrix.
+- **Power:** a dongle on USB and on the DB25 at once joins the two 5 V supplies through
+  diodes, as the keyboard's D1 and D2 do.
+
+### With a real keyboard as well
+
+The C128's matrix is wired together, so the dongle's switches and a real keyboard's switches
+can sit on the same lines at once.
+
+- **On a 128D:** a pass-through DB25 on the dongle lets the normal keyboard plug in behind it.
+- **On a flat C128:** the same circuit can sit on a small board at the internal keyboard
+  header, alongside the stock keyboard.
+
+Two keys pressed at once from the two sources can ghost, just as three keys on one keyboard
+can.
+
+### Firmware
+
+Mostly the rev 3 firmware's CH446Q driver and crosspoint map, plus a command parser for the
+app and the ESP-NOW receiver for the keyboard.
+
 ## On the Commodore
 
 None of this is used on a wired build.  The keyboard runs from J2's +5V_KB as now, and its
@@ -85,3 +139,5 @@ USB-C still works for flashing.
   power-bank chip.  Compare their current limits, quiescent draw and JLCPCB stock.
 - Whether to use the J4 link at all, or start with a fixed wireless-mode LED limit.
 - The dongle's housing on the DB25, and whether it needs a pairing button.
+- ESP32-C3 or S3 for the dongle: the S3 can host a USB keyboard directly.
+- Whether the 128D dongle carries a pass-through DB25 for a wired keyboard.
