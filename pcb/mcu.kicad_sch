@@ -3790,6 +3790,635 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Transistor_FET:2N7002"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "2N7002"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
+				(at 5.08 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "N-Channel Switching MOSFET"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "2N7002_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 0.381) (xy 3.683 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "2N7002_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Transistor_FET:AO3401A"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "AO3401A"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
+				(at 5.08 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "P-Channel MOSFET"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "AO3401A_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "AO3401A_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3V3"
 			(power global)
 			(pin_numbers
@@ -4299,7 +4928,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "GPIO map: rows IO4-7,15,16; column select IO8-11 (columns 0-14); columns 15-19 IO17,18,14,21,35; CH446Q serial: CK IO12,\nDAT IO38, STB IO39, RST IO40; LED IO41; 40/80 gate IO42; CAPS gate IO2; RESTORE sense IO1, gate IO13.  Spare: IO36,37.  IO0/IO3/IO45/IO46 strapping."
+	(text "GPIO map: IO1 P_COL15, IO2 P_COL16, IO4 P_COL17, IO5 P_COL18, IO6 P_COL19, IO7 MCU_4080_GATE, IO8 MCU_CAPLK_GATE, IO9 MCU_RESTORE_GATE, IO10 MCU_XP_STB, IO11 MCU_XP_CK, IO12 MCU_XP_DAT, IO13 MCU_XP_RST,\nIO14 MCU_RESTORE_SENSE, IO15 MCU_COLSEL3, IO16 MCU_COLSEL2, IO17 MCU_COLSEL1, IO18 MCU_COLSEL0, IO26 P_ROW1, IO47 P_ROW2, IO33 P_ROW3, IO34 P_ROW4, IO48 P_ROW5, IO35 MCU_LED_DATA, IO36 P_ROW0, IO38 MCU_LED_EN, IO0 MCU_BOOT.  Spare: IO21, IO37, IO39, IO40, IO41, IO42, IO3, IO45, IO46 (IO0, IO3, IO45, IO46 are strapping pins)."
 		(exclude_from_sim no)
 		(at 15.24 279.4 0)
 		(effects
@@ -4310,7 +4939,7 @@
 		)
 		(uuid "32804d57-d1c1-5537-b7f2-38908c77f1cc")
 	)
-	(text "MCU, USB-C and power.  +5V_KB is the raw keyboard rail from the host connector; +5V_SYS is the\nOR of the fused keyboard rail and USB VBUS; +3V3 feeds the ESP32, the 74HC154 and the physical matrix."
+	(text "MCU, USB-C and power.  +5V_KB is the raw keyboard rail from the host connector; +5V_SYS is the\nOR of the fused keyboard rail and USB VBUS; +5V_LED is +5V_SYS switched by Q4 for the LEDs;\n+3V3 feeds the ESP32, the 74HC154 and the physical matrix."
 		(exclude_from_sim no)
 		(at 15.24 15.24 0)
 		(effects
@@ -4332,6 +4961,17 @@
 		)
 		(uuid "75467a95-496d-5ff0-84fc-8d9f709723b5")
 	)
+	(text "LED power switch: IO38 high = LEDs on"
+		(exclude_from_sim no)
+		(at 309.88 21.59 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left top)
+		)
+		(uuid "d2ff4807-d6a6-5eaf-9260-8dd5c9e45f15")
+	)
 	(junction
 		(at 44.45 80.01)
 		(diameter 0)
@@ -4347,10 +4987,6 @@
 	(no_connect
 		(at 275.59 134.62)
 		(uuid "0406c3e6-dee9-507b-a00f-b080d0bdef98")
-	)
-	(no_connect
-		(at 149.86 129.54)
-		(uuid "234f7ac0-cf6f-5b1e-b44e-9b4eb7d6cfda")
 	)
 	(no_connect
 		(at 149.86 134.62)
@@ -4421,6 +5057,16 @@
 			(type default)
 		)
 		(uuid "0efeefd0-4847-504a-9c0f-f1e54ebd1b59")
+	)
+	(wire
+		(pts
+			(xy 382.27 34.29) (xy 382.27 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13504800-73f8-5452-acc6-c08e0f1b5e1b")
 	)
 	(wire
 		(pts
@@ -4544,6 +5190,16 @@
 	)
 	(wire
 		(pts
+			(xy 314.96 43.18) (xy 314.96 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29b30caa-0513-5f56-9a08-6cf5249299b8")
+	)
+	(wire
+		(pts
 			(xy 185.42 62.23) (xy 180.34 62.23)
 		)
 		(stroke
@@ -4551,6 +5207,16 @@
 			(type default)
 		)
 		(uuid "2bdffd8e-a1e2-5b1c-a99c-25576d2ba050")
+	)
+	(wire
+		(pts
+			(xy 382.27 44.45) (xy 382.27 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ebe6a2b-dd25-5bc2-be22-5de84d720008")
 	)
 	(wire
 		(pts
@@ -4594,6 +5260,16 @@
 	)
 	(wire
 		(pts
+			(xy 374.65 87.63) (xy 369.57 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35ad10dd-892d-54bf-8b79-41fa1a385f5f")
+	)
+	(wire
+		(pts
 			(xy 149.86 114.3) (xy 157.48 114.3)
 		)
 		(stroke
@@ -4601,6 +5277,16 @@
 			(type default)
 		)
 		(uuid "3c9946a3-c885-5d89-b360-5505d14cf318")
+	)
+	(wire
+		(pts
+			(xy 382.27 92.71) (xy 382.27 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d23c2f5-3167-50e1-90fc-3ffa85a4f82c")
 	)
 	(wire
 		(pts
@@ -4634,6 +5320,26 @@
 	)
 	(wire
 		(pts
+			(xy 382.27 82.55) (xy 382.27 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "452463af-73e8-5c05-b893-f5ad5c8baed4")
+	)
+	(wire
+		(pts
+			(xy 400.05 35.56) (xy 400.05 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47b72c9f-526f-54fe-911f-70b7243775fe")
+	)
+	(wire
+		(pts
 			(xy 134.62 93.98) (xy 134.62 88.9)
 		)
 		(stroke
@@ -4651,6 +5357,16 @@
 			(type default)
 		)
 		(uuid "4ad62772-59e8-5ac5-b716-56eeefb1d4a5")
+	)
+	(wire
+		(pts
+			(xy 350.52 76.2) (xy 350.52 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c5ff25d-755f-5978-88b2-a90ea47af5c0")
 	)
 	(wire
 		(pts
@@ -4754,6 +5470,16 @@
 	)
 	(wire
 		(pts
+			(xy 341.63 35.56) (xy 341.63 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61daee15-7335-590e-8410-e8677adfb0e0")
+	)
+	(wire
+		(pts
 			(xy 314.96 104.14) (xy 314.96 109.22)
 		)
 		(stroke
@@ -4854,6 +5580,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 129.54) (xy 157.48 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85fd0c88-facb-5f37-a15f-fc05345f248f")
+	)
+	(wire
+		(pts
 			(xy 299.72 147.32) (xy 299.72 152.4)
 		)
 		(stroke
@@ -4884,6 +5620,16 @@
 	)
 	(wire
 		(pts
+			(xy 341.63 43.18) (xy 341.63 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bfcf525-8414-5d0c-ab36-4eabd43d86be")
+	)
+	(wire
+		(pts
 			(xy 119.38 147.32) (xy 111.76 147.32)
 		)
 		(stroke
@@ -4911,6 +5657,16 @@
 			(type default)
 		)
 		(uuid "90931793-90be-50d4-9b15-6b825a2f9593")
+	)
+	(wire
+		(pts
+			(xy 327.66 71.12) (xy 327.66 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9141800b-f209-5810-8cf1-93fd725a0e78")
 	)
 	(wire
 		(pts
@@ -4964,6 +5720,16 @@
 	)
 	(wire
 		(pts
+			(xy 314.96 35.56) (xy 314.96 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3e89745-7230-5f33-b4d8-f141c23feb89")
+	)
+	(wire
+		(pts
 			(xy 119.38 121.92) (xy 111.76 121.92)
 		)
 		(stroke
@@ -5011,6 +5777,26 @@
 			(type default)
 		)
 		(uuid "b336cdee-8bd4-5cb3-98b1-b6da1a598490")
+	)
+	(wire
+		(pts
+			(xy 374.65 39.37) (xy 369.57 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6485c65-144c-5aad-b648-20a26a3b81ca")
+	)
+	(wire
+		(pts
+			(xy 400.05 43.18) (xy 400.05 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7dadbe9-2198-5f3b-ae66-5b465d5326d4")
 	)
 	(wire
 		(pts
@@ -5164,6 +5950,16 @@
 	)
 	(wire
 		(pts
+			(xy 299.72 226.06) (xy 299.72 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8f791d7-6e52-55ca-8d88-1809de0e4ba4")
+	)
+	(wire
+		(pts
 			(xy 275.59 111.76) (xy 280.67 111.76)
 		)
 		(stroke
@@ -5194,6 +5990,16 @@
 	)
 	(wire
 		(pts
+			(xy 327.66 78.74) (xy 327.66 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4ca51d6-ee4d-536b-9dd9-f007134c25a7")
+	)
+	(wire
+		(pts
 			(xy 243.84 195.58) (xy 248.92 195.58)
 		)
 		(stroke
@@ -5201,6 +6007,26 @@
 			(type default)
 		)
 		(uuid "f5c42ed3-4727-5c1d-803a-6de6d7f25e56")
+	)
+	(wire
+		(pts
+			(xy 350.52 83.82) (xy 350.52 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6db0aba-081b-5956-a624-8971e435e8ae")
+	)
+	(wire
+		(pts
+			(xy 299.72 233.68) (xy 299.72 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7e00fe9-40b8-5c59-ad80-555a2c36d691")
 	)
 	(wire
 		(pts
@@ -5367,6 +6193,29 @@
 			)
 		)
 	)
+	(global_label "LED_PWR_GATE"
+		(shape passive)
+		(at 369.57 39.37 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1b6b51bb-5804-5004-8deb-379646722894")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 369.57 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "VBUS"
 		(shape passive)
 		(at 240.03 250.19 270)
@@ -5426,6 +6275,29 @@
 		(uuid "200a65ce-27b7-5633-8ecf-4ab92796edc6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.76 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "MCU_LED_EN"
+		(shape passive)
+		(at 157.48 129.54 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "29338d99-666b-54de-addd-9d71cdb5777a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5666,6 +6538,52 @@
 			)
 		)
 	)
+	(global_label "MCU_LED_EN"
+		(shape passive)
+		(at 369.57 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "52bad33c-e7e2-54dd-80b3-d9d647c3b19f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 369.57 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_PWR_GATE"
+		(shape passive)
+		(at 341.63 45.72 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5ff25c58-2c05-5bc1-b067-53fb5db53183")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 341.63 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "+5V_SYS"
 		(shape passive)
 		(at 180.34 250.19 270)
@@ -5735,6 +6653,52 @@
 			)
 		)
 	)
+	(global_label "MCU_LED_EN"
+		(shape passive)
+		(at 350.52 73.66 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "688c6976-61c6-51a1-a2da-72d5593caead")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 350.52 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_PWR_GATE"
+		(shape passive)
+		(at 314.96 45.72 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "72d2c933-ef0d-5c10-a013-fba86bc66f1e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 314.96 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "MCU_TXD0"
 		(shape passive)
 		(at 157.48 99.06 0)
@@ -5748,6 +6712,29 @@
 		(uuid "737df660-0bee-5dc3-9608-336961455b0c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 157.48 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_PWR_GATE"
+		(shape passive)
+		(at 327.66 68.58 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "75e9824f-39cf-58dd-b917-c12720bfb41a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 327.66 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5932,6 +6919,29 @@
 		(uuid "8bb38fff-83e0-539a-8693-3f774968fa15")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 231.14 209.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_PWR_PULL"
+		(shape passive)
+		(at 327.66 81.28 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "951915bd-1dba-59c8-a6c5-cbe61d22e0f7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 327.66 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6540,6 +7550,29 @@
 			)
 		)
 	)
+	(global_label "+5V_LED"
+		(shape passive)
+		(at 270.51 250.19 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ecad58a9-0e64-584e-baf6-868636d9b4b1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 270.51 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "MCU_XP_CK"
 		(shape passive)
 		(at 111.76 132.08 180)
@@ -6609,6 +7642,29 @@
 			)
 		)
 	)
+	(global_label "LED_PWR_PULL"
+		(shape passive)
+		(at 382.27 77.47 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f9daefc4-9f3c-55f4-b650-78470572bd54")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 382.27 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "USB_DP_C"
 		(shape passive)
 		(at 289.56 139.7 180)
@@ -6622,6 +7678,29 @@
 		(uuid "faff4925-a3be-5beb-ace6-d28c79aff02f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 289.56 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+5V_SYS"
+		(shape passive)
+		(at 382.27 49.53 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fe37b2bc-e32f-5be9-9da4-d1141da060ff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 382.27 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6940,6 +8019,105 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:2N7002")
+		(at 379.73 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0f20d33e-ce45-58fc-b85e-ddca8cd975bf")
+		(property "Reference" "Q5"
+			(at 373.38 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2N7002"
+			(at 373.38 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 379.73 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
+			(at 379.73 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+			(at 379.73 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C8545"
+			(at 379.73 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "39ea55ce-67a7-5a0a-b5ac-8ea6848c4ab8")
+		)
+		(pin "2"
+			(uuid "3014e2aa-cf59-5386-ac69-293eef4a911d")
+		)
+		(pin "3"
+			(uuid "1b27875c-39f6-50cb-b3b8-7d1a8fe318ef")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 54.61 95.25 0)
 		(unit 1)
@@ -7028,6 +8206,196 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
 					(reference "#PWR005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 327.66 74.93 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "12f36f13-8669-54ea-adb6-57164d75e178")
+		(property "Reference" "R14"
+			(at 330.2 72.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 330.2 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 327.66 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 327.66 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 327.66 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 327.66 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "5e0e3d35-8e1f-589f-8d50-6365a20d5443")
+		)
+		(pin "2"
+			(uuid "a4ca42f7-5727-5b86-a9f9-efb26dda1991")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 382.27 29.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "175fb7c0-d992-5887-89e4-96f0ff5354e8")
+		(property "Reference" "#PWR026"
+			(at 382.27 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V_LED"
+			(at 382.27 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 382.27 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 382.27 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 382.27 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 382.27 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "babf0da7-1a43-5514-9327-3e1ab048ba23")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -8888,6 +10256,105 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:AO3401A")
+		(at 379.73 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6f7bd280-77de-51a5-ae1a-0ba6f2bba4e8")
+		(property "Reference" "Q4"
+			(at 373.38 29.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "AO3401A"
+			(at 373.38 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 379.73 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
+			(at 379.73 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+			(at 379.73 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C15127"
+			(at 379.73 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "16051149-3c1a-50f5-9791-dc84cc5de02a")
+		)
+		(pin "2"
+			(uuid "8875ad6f-aaa3-56b0-885e-85d58c2b1e5d")
+		)
+		(pin "3"
+			(uuid "3df960df-b3a4-5c45-97cb-66653b25553f")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 134.62 88.9 0)
 		(unit 1)
@@ -9084,6 +10551,194 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
 					(reference "U7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 314.96 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "819f98ca-a684-5f31-af3d-b321a93b61af")
+		(property "Reference" "#PWR027"
+			(at 314.96 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V_SYS"
+			(at 314.96 26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 314.96 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 314.96 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 314.96 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "9f55b333-6d6d-5c58-936b-b0408f061ebd")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 350.52 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8273896e-a0d5-5fe9-8f73-e522d6032e8d")
+		(property "Reference" "#PWR032"
+			(at 350.52 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 350.52 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 350.52 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 350.52 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 350.52 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 350.52 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "62df3b18-aad5-56b1-8e63-e8a1cf469362")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -9661,6 +11316,100 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 382.27 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9d0ea473-1331-5a73-ba05-e3b58f4b0a67")
+		(property "Reference" "#PWR031"
+			(at 382.27 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 382.27 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 382.27 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 382.27 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 382.27 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 382.27 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "e143723e-53a3-5a08-a7ed-c9740de8efa7")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 74.93 91.44 90)
 		(unit 1)
@@ -9757,6 +11506,100 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 299.72 220.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a5fd233a-8ca1-50c2-81cb-b20ddef2173f")
+		(property "Reference" "#PWR024"
+			(at 299.72 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V_SYS"
+			(at 299.72 217.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 299.72 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 299.72 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 299.72 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 299.72 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "c07f8cf5-1971-51e1-ae80-672f21655806")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 299.72 109.22 0)
 		(unit 1)
@@ -9845,6 +11688,291 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 270.51 250.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "afa10285-73bd-5222-b42a-0c724320c73d")
+		(property "Reference" "#FLG005"
+			(at 270.51 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 270.51 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 270.51 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 270.51 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 270.51 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 270.51 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "0b75163e-1601-5998-8523-332e01b9eb94")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#FLG005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 350.52 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b8c0f466-7f5c-5c5d-afe5-7ad722020387")
+		(property "Reference" "R15"
+			(at 353.06 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 353.06 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 350.52 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 350.52 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 350.52 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 350.52 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "eecd87a4-82da-5d47-ae8d-f6e1d38621e4")
+		)
+		(pin "2"
+			(uuid "26dd59a4-58cb-5359-a7c8-a6620853e093")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 400.05 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b905e1a9-12d6-5653-9701-b11bb414fa54")
+		(property "Reference" "#PWR029"
+			(at 400.05 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V_LED"
+			(at 400.05 26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 400.05 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 400.05 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 400.05 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 400.05 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "be56eece-8333-5b11-89cf-ed37ead835c6")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -10135,6 +12263,102 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 400.05 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cc886fb6-7e60-5ef7-8177-72c6001d6868")
+		(property "Reference" "C12"
+			(at 402.59 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u"
+			(at 402.59 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 400.05 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 400.05 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 400.05 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C13585"
+			(at 400.05 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "0c80ccdd-0421-5b6f-811b-d24fa82fe16c")
+		)
+		(pin "2"
+			(uuid "50af8d0a-ae8a-5eb4-bef1-6c1d676d35df")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 265.43 200.66 0)
 		(unit 1)
@@ -10157,7 +12381,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "+5V_SYS"
+		(property "Value" "+5V_LED"
 			(at 265.43 196.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10412,6 +12636,100 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 341.63 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d5157411-061e-5687-8ca2-abfd962e654e")
+		(property "Reference" "#PWR028"
+			(at 341.63 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V_LED"
+			(at 341.63 26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 341.63 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 341.63 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 341.63 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 341.63 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "810acede-9e7a-5580-a3b9-4ab74d5d18fc")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -10801,6 +13119,100 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 299.72 238.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "def9c39d-d98c-5d8e-9be7-6a8a67cbea6f")
+		(property "Reference" "#PWR025"
+			(at 299.72 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 299.72 242.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 299.72 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 299.72 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 299.72 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 299.72 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "e021a2e3-9eb3-5bc0-aafe-23944cf61e93")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Polyfuse")
 		(at 209.55 185.42 0)
 		(unit 1)
@@ -10891,6 +13303,100 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
 					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 400.05 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e36341e2-2ba4-549b-850c-490a12735b5f")
+		(property "Reference" "#PWR030"
+			(at 400.05 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 400.05 52.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 400.05 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 400.05 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 400.05 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 400.05 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "1c9c123b-7ea6-50d2-bcda-acdcd06b99d0")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -11182,6 +13688,102 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 299.72 229.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f23a985e-1728-557b-a23d-1574fc3116cb")
+		(property "Reference" "C14"
+			(at 302.26 227.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u"
+			(at 302.26 232.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 299.72 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 299.72 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 299.72 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C13585"
+			(at 299.72 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "d7c3d3cb-c8af-5045-8567-1e4622eab916")
+		)
+		(pin "2"
+			(uuid "a414d796-8fa8-5af6-bb42-635b735c70fe")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 314.96 109.22 0)
 		(unit 1)
@@ -11276,6 +13878,102 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 341.63 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f6805886-23b9-5232-a4fb-98a99c0a5cf1")
+		(property "Reference" "C13"
+			(at 344.17 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "220n"
+			(at 344.17 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 341.63 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 341.63 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 341.63 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C21120"
+			(at 341.63 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "3c57561a-8dd7-57e4-9f22-a2d48ba7fb15")
+		)
+		(pin "2"
+			(uuid "2a049daf-d8eb-5c13-a9dd-184a08fc2723")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 74.93 101.6 0)
 		(unit 1)
@@ -11364,6 +14062,102 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
 					(reference "#PWR007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 314.96 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fd2e5915-516d-5732-81bc-78c52e45cb69")
+		(property "Reference" "R13"
+			(at 317.5 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 317.5 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 314.96 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 314.96 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 314.96 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 314.96 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "071a9a94-7dda-5d06-ae57-845662f18836")
+		)
+		(pin "2"
+			(uuid "34b60d20-7850-5b8c-926b-52ce1a6f628e")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/4a8f1b31-9321-504a-af35-3fa18e108aee"
+					(reference "R13")
 					(unit 1)
 				)
 			)

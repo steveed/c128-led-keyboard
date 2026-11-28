@@ -4607,6 +4607,29 @@
 			)
 		)
 	)
+	(global_label "+5V_LED"
+		(shape passive)
+		(at 320.04 147.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0f45e84b-52da-5cd7-a73e-32748acb9959")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "H_COL4"
 		(shape passive)
 		(at 345.44 194.31 0)
@@ -5665,29 +5688,6 @@
 			)
 		)
 	)
-	(global_label "+5V_SYS"
-		(shape passive)
-		(at 320.04 147.32 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b08bbc62-111b-5c15-9bfd-ec2b0d1abe3e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 320.04 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "MCU_4080_GATE"
 		(shape passive)
 		(at 29.21 229.87 180)
@@ -6126,8 +6126,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 62.23 240.03 0)
+		(lib_id "power:+5V")
+		(at 110.49 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6137,7 +6137,7 @@
 		(dnp no)
 		(uuid "06e0b949-309a-5142-9942-b2cc7bece188")
 		(property "Reference" "#PWR033"
-			(at 62.23 240.03 0)
+			(at 110.49 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6148,8 +6148,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 62.23 243.84 0)
+		(property "Value" "+5V_KB"
+			(at 110.49 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6160,7 +6160,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 62.23 240.03 0)
+			(at 110.49 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6172,7 +6172,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 62.23 240.03 0)
+			(at 110.49 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6183,8 +6183,8 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 62.23 240.03 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 110.49 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6196,7 +6196,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 62.23 240.03 0)
+			(at 110.49 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6214,6 +6214,194 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
 					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 304.8 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0c9a6bce-b24e-5b3c-be0c-6c96319740ac")
+		(property "Reference" "#PWR041"
+			(at 304.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 304.8 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 304.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 304.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 304.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 304.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "76de41de-5276-5398-9368-a0c7ad5fc91c")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 252.73 240.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "104d274f-1459-528e-9289-4a92121e8fa3")
+		(property "Reference" "#PWR047"
+			(at 252.73 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 252.73 243.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 252.73 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 252.73 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 252.73 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 252.73 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "f751c0c6-e767-51ed-848d-5378699d6e37")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -6427,8 +6615,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 245.11 116.84 0)
+		(lib_id "power:GND")
+		(at 227.33 251.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6436,9 +6624,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "1b00e5f0-e3ba-5557-a493-d5de96cffbb1")
-		(property "Reference" "#PWR029"
-			(at 245.11 116.84 0)
+		(uuid "13607e7b-bf0c-518f-8304-aebc60b426df")
+		(property "Reference" "#PWR048"
+			(at 227.33 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6449,8 +6637,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "+5V_SYS"
-			(at 245.11 113.03 0)
+		(property "Value" "GND"
+			(at 227.33 255.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6461,7 +6649,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 245.11 116.84 0)
+			(at 227.33 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6473,7 +6661,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.11 116.84 0)
+			(at 227.33 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6484,8 +6672,8 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 245.11 116.84 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 227.33 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6497,7 +6685,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 245.11 116.84 0)
+			(at 227.33 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6509,12 +6697,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "438dbdeb-4dc5-59b4-8f29-270c8289e710")
+			(uuid "ef093b85-e6d1-5fdd-bff2-66ef21b865bd")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR029")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -6611,6 +6799,100 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
 					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 36.83 191.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1b72706e-f24d-57b0-8436-70cfada3e5e9")
+		(property "Reference" "#PWR044"
+			(at 36.83 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 36.83 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 36.83 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 36.83 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 36.83 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "89e8e071-7acd-542e-b6ba-e54e1b12c384")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -6809,8 +7091,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 36.83 251.46 0)
+		(lib_id "power:+5V")
+		(at 149.86 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6820,7 +7102,7 @@
 		(dnp no)
 		(uuid "3de9ea0d-b5bb-5e75-9032-535f6d062bf9")
 		(property "Reference" "#PWR034"
-			(at 36.83 251.46 0)
+			(at 149.86 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6831,8 +7113,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 36.83 255.27 0)
+		(property "Value" "+5V_KB"
+			(at 149.86 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6843,7 +7125,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 36.83 251.46 0)
+			(at 149.86 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6855,7 +7137,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 36.83 251.46 0)
+			(at 149.86 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6866,8 +7148,8 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 36.83 251.46 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 149.86 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6879,7 +7161,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 36.83 251.46 0)
+			(at 149.86 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6897,6 +7179,100 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
 					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 62.23 240.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3e3dbb06-e405-5c8f-8e0b-150ec7addd36")
+		(property "Reference" "#PWR042"
+			(at 62.23 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 62.23 243.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 62.23 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 62.23 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 62.23 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "2c4c9922-8dad-51b6-ace3-6ac3992dd779")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -6999,102 +7375,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 304.8 119.38 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "437e3363-d141-5afa-8930-65986aa4efa9")
-		(property "Reference" "#PWR032"
-			(at 304.8 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GND"
-			(at 304.8 123.19 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 304.8 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 304.8 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 304.8 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "LCSC" ""
-			(at 304.8 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "d1a7c5a9-6885-52d5-8ed8-7930d0302f4b")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
-		(at 110.49 80.01 0)
+		(at 245.11 116.84 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7102,9 +7384,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "44212318-3731-5c29-a0fa-958d1442a850")
-		(property "Reference" "#PWR024"
-			(at 110.49 80.01 0)
+		(uuid "4cba4919-cbe6-53a8-9c92-9908696c58ce")
+		(property "Reference" "#PWR038"
+			(at 245.11 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7115,8 +7397,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "+5V_KB"
-			(at 110.49 76.2 0)
+		(property "Value" "+5V_SYS"
+			(at 245.11 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7127,7 +7409,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 80.01 0)
+			(at 245.11 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7139,7 +7421,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 110.49 80.01 0)
+			(at 245.11 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7151,7 +7433,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 110.49 80.01 0)
+			(at 245.11 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7163,101 +7445,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 110.49 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "0ab8faee-a118-5dd7-ac19-5597581d2f65")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 252.73 240.03 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4cba4919-cbe6-53a8-9c92-9908696c58ce")
-		(property "Reference" "#PWR038"
-			(at 252.73 240.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GND"
-			(at 252.73 243.84 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 252.73 240.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 252.73 240.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 252.73 240.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "LCSC" ""
-			(at 252.73 240.03 0)
+			(at 245.11 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7282,7 +7470,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 106.68 251.46 0)
+		(at 214.63 99.06 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7292,7 +7480,7 @@
 		(dnp no)
 		(uuid "4d387665-e1f2-5d2a-a396-6ee40f29303f")
 		(property "Reference" "#PWR037"
-			(at 106.68 251.46 0)
+			(at 214.63 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7304,7 +7492,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 106.68 255.27 0)
+			(at 214.63 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7315,7 +7503,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 251.46 0)
+			(at 214.63 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7327,7 +7515,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 106.68 251.46 0)
+			(at 214.63 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7339,7 +7527,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 251.46 0)
+			(at 214.63 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7351,7 +7539,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 106.68 251.46 0)
+			(at 214.63 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7468,100 +7656,6 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
 					(reference "Q3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 304.8 101.6 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "53f8440b-54a6-546b-92f9-33ae78736d33")
-		(property "Reference" "#PWR031"
-			(at 304.8 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "+5V_SYS"
-			(at 304.8 97.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 304.8 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 304.8 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 304.8 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "LCSC" ""
-			(at 304.8 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "bb5c7f37-aa18-51c5-a076-656d56f3b15b")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -7932,7 +8026,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 227.33 251.46 0)
+		(at 245.11 144.78 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7942,7 +8036,7 @@
 		(dnp no)
 		(uuid "5e1217f1-3b4c-50a1-b951-3dbba741eff3")
 		(property "Reference" "#PWR039"
-			(at 227.33 251.46 0)
+			(at 245.11 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7954,7 +8048,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 227.33 255.27 0)
+			(at 245.11 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7965,7 +8059,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 227.33 251.46 0)
+			(at 245.11 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7977,7 +8071,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 227.33 251.46 0)
+			(at 245.11 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7989,7 +8083,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 227.33 251.46 0)
+			(at 245.11 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8001,7 +8095,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 227.33 251.46 0)
+			(at 245.11 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8025,8 +8119,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 132.08 240.03 0)
+		(lib_id "power:+3V3")
+		(at 190.5 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8036,7 +8130,7 @@
 		(dnp no)
 		(uuid "62f2fefa-0924-5e43-aa13-89c637ed24d2")
 		(property "Reference" "#PWR036"
-			(at 132.08 240.03 0)
+			(at 190.5 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8047,8 +8141,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 132.08 243.84 0)
+		(property "Value" "+3V3"
+			(at 190.5 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8059,7 +8153,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 240.03 0)
+			(at 190.5 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8071,7 +8165,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 240.03 0)
+			(at 190.5 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8082,8 +8176,8 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 240.03 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 190.5 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8095,7 +8189,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 132.08 240.03 0)
+			(at 190.5 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8113,6 +8207,100 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
 					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 304.8 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "79ee9d38-af5a-582b-8dc2-75123f2fdb07")
+		(property "Reference" "#PWR040"
+			(at 304.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V_SYS"
+			(at 304.8 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 304.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 304.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 304.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" ""
+			(at 304.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "e192fc07-8bd7-5c3d-acd4-15b62fb5ef81")
+		)
+		(instances
+			(project "C128-keyboard-rev3"
+				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -8216,7 +8404,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 214.63 99.06 0)
+		(at 106.68 251.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8224,9 +8412,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "7d2b691c-3ff3-5749-8e9a-270af6ddebbe")
-		(property "Reference" "#PWR028"
-			(at 214.63 99.06 0)
+		(uuid "9ab46d07-7ed7-503a-9042-bc65f41c5f88")
+		(property "Reference" "#PWR046"
+			(at 106.68 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8238,7 +8426,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 214.63 102.87 0)
+			(at 106.68 255.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8249,7 +8437,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 214.63 99.06 0)
+			(at 106.68 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8261,7 +8449,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 214.63 99.06 0)
+			(at 106.68 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8273,7 +8461,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 214.63 99.06 0)
+			(at 106.68 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8285,7 +8473,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 214.63 99.06 0)
+			(at 106.68 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8297,106 +8485,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "ed5afe30-ca1f-5ba2-8a33-8f1d7acc592e")
+			(uuid "011a16ad-2f8b-5cea-92bc-f2e9f1034ac3")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 149.86 60.96 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a0f62a5a-4d6f-58d8-9605-25bde3ed1db4")
-		(property "Reference" "#PWR025"
-			(at 149.86 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "+5V_KB"
-			(at 149.86 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 149.86 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 149.86 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "LCSC" ""
-			(at 149.86 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "a41804e4-1bde-5449-8182-4cff14fa1c5d")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR025")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -8404,7 +8498,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 245.11 144.78 0)
+		(at 132.08 240.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8412,9 +8506,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "af4995da-2ba5-50fc-b15e-356b84cd30ed")
-		(property "Reference" "#PWR030"
-			(at 245.11 144.78 0)
+		(uuid "b19ee32d-c9d3-5ec7-a341-a7e4b8eeb3ae")
+		(property "Reference" "#PWR045"
+			(at 132.08 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8426,7 +8520,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 245.11 148.59 0)
+			(at 132.08 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8437,7 +8531,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 245.11 144.78 0)
+			(at 132.08 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8449,7 +8543,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.11 144.78 0)
+			(at 132.08 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8461,7 +8555,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 245.11 144.78 0)
+			(at 132.08 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8473,7 +8567,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 245.11 144.78 0)
+			(at 132.08 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8485,20 +8579,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "90b07177-f58f-58d0-bdf9-72fd071590f2")
+			(uuid "1d54d388-56de-5730-a09c-92fe02089bfa")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR030")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 36.83 191.77 0)
+		(lib_id "power:GND")
+		(at 149.86 78.74 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8508,7 +8602,7 @@
 		(dnp no)
 		(uuid "b682b938-c08d-57bb-826a-81d6cc9a7511")
 		(property "Reference" "#PWR035"
-			(at 36.83 191.77 0)
+			(at 149.86 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8519,8 +8613,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "+3V3"
-			(at 36.83 187.96 0)
+		(property "Value" "GND"
+			(at 149.86 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8531,7 +8625,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 36.83 191.77 0)
+			(at 149.86 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8543,7 +8637,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 36.83 191.77 0)
+			(at 149.86 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8554,8 +8648,8 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 36.83 191.77 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 149.86 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8567,7 +8661,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 36.83 191.77 0)
+			(at 149.86 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8981,8 +9075,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 190.5 81.28 0)
+		(lib_id "power:GND")
+		(at 36.83 251.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8990,9 +9084,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "d07658c9-3035-52eb-bc6a-51f73153ebaa")
-		(property "Reference" "#PWR027"
-			(at 190.5 81.28 0)
+		(uuid "d52e569c-fb60-5ca5-b670-dcdfb4e74a59")
+		(property "Reference" "#PWR043"
+			(at 36.83 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9003,8 +9097,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "+3V3"
-			(at 190.5 77.47 0)
+		(property "Value" "GND"
+			(at 36.83 255.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9015,7 +9109,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 81.28 0)
+			(at 36.83 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9027,7 +9121,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 190.5 81.28 0)
+			(at 36.83 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9038,8 +9132,8 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 190.5 81.28 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 36.83 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9051,7 +9145,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 190.5 81.28 0)
+			(at 36.83 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9063,12 +9157,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "5719a527-cb7d-5282-9f57-8426b83e2f24")
+			(uuid "39b7a232-990f-5e84-b5a7-acc899ce231c")
 		)
 		(instances
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR027")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -9165,100 +9259,6 @@
 			(project "C128-keyboard-rev3"
 				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
 					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 149.86 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e640a09d-94c6-5f0f-8588-253906be2328")
-		(property "Reference" "#PWR026"
-			(at 149.86 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GND"
-			(at 149.86 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 149.86 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 149.86 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "LCSC" ""
-			(at 149.86 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "a0526077-774c-5bab-afdc-e538d2e8d436")
-		)
-		(instances
-			(project "C128-keyboard-rev3"
-				(path "/a561fc79-65f4-4640-8771-3b647f438d5a/95ea46b0-396d-5efe-bce4-03ce4dab9b0a"
-					(reference "#PWR026")
 					(unit 1)
 				)
 			)

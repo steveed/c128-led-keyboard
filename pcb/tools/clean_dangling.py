@@ -15,7 +15,7 @@ import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BOARD = os.path.join(os.path.dirname(HERE), "C128-keyboard-rev3.kicad_pcb")
-PLANE_NETS = ("GND", "+5V_SYS")
+PLANE_NETS = ("GND", "+5V_LED")
 
 
 def main():

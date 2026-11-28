@@ -27,6 +27,7 @@
 
 // LEDs
 #define PIN_LED_DATA    35
+#define PIN_LED_EN      38     // high = LED power on (Q5 -> Q4, docs/led-power-switch.md); hold PIN_LED_DATA low before turning it off
 
 // lock lines and RESTORE
 #define PIN_4080_GATE   7      // high = pull 40/80 low = 80 columns

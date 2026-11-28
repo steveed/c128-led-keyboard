@@ -2,6 +2,8 @@
 #
 #   freerouting  the Freerouting autorouter for the rev 3 board (pcb/freerouting/Dockerfile)
 #
+#   krt   KiCadRoutingTools' placer and checks, pinned and built native (pcb/krt/Dockerfile).
+#
 #   openscad  OpenSCAD for the printed parts in printables/ (`make adapters`).
 #
 #   kicad  KiCad 10's kicad-cli, for the README renders (`make render`) and CI.  The local
@@ -56,6 +58,22 @@ services:
     working_dir: /work
     volumes:
       - ./pcb:/work
+
+  krt:
+    # KiCadRoutingTools' placer and checks, baked into the image at KRT_COMMIT with its Rust
+    # router compiled for this machine (pcb/krt/Dockerfile).  This repo is at /repo; working
+    # files go in build/placement/ (not committed):
+    #   docker compose run --rm krt py_placer/place_simple.py /repo/build/placement/fixed.kicad_pcb ...
+    build:
+      context: pcb/krt
+      args:
+        KRT_COMMIT: be713c55eb8698bf056c9b64a0827528268bca5f
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      HOME: /tmp
+    working_dir: /krt
+    volumes:
+      - .:/repo
 
 volumes:
   idf-ccache:

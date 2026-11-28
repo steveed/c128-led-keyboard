@@ -33,7 +33,7 @@ import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BOARD = os.path.join(os.path.dirname(HERE), "C128-keyboard-rev3.kicad_pcb")
-PLANE_NETS = {"GND", "+5V_SYS"}
+PLANE_NETS = {"GND", "+5V_LED"}
 KEEP_NETS = {"USB_DP", "USB_DN", "USB_DP_C", "USB_DN_C"}   # a pair: straighten by hand, together
 MARGIN = pcbnew.FromMM(0.01)          # on top of the rule clearance
 CELL = pcbnew.FromMM(2.0)             # spatial index cell
