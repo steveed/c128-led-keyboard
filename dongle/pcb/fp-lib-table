@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "c128rev3")(type "KiCad")(uri "${KIPRJMOD}/../../pcb/c128rev3.pretty")(options "")(descr "the keyboard's footprints: USB-C"))
+  (lib (name "dongle")(type "KiCad")(uri "${KIPRJMOD}/dongle.pretty")(options "")(descr "edge-straddle DB25s, USB-A"))
+)

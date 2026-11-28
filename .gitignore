@@ -10,6 +10,7 @@ __pycache__/
 fp-info-cache
 pcb/plate/gerbers/
 pcb/fab/
+dongle/pcb/fab/
 pcb/datasheets/*.pdf
 
 # Generated outputs (renders)

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Make the JLCPCB order files for the rev 3 board: gerbers + drills (zipped), BOM and CPL.
+"""Make the JLCPCB order files for the rev 3 board, or the board given: gerbers + drills
+(zipped), BOM and CPL.
 
-    /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 \\
-        pcb/tools/fab.py
+    docker compose run --rm -e KICAD_CLI=kicad-cli kicad python3 pcb/tools/fab.py [BOARD]
 
-Writes pcb/fab/ (not tracked):
+BOARD defaults to pcb/C128-keyboard-rev3.kicad_pcb; the dongle is
+dongle/pcb/c128-dongle.kicad_pcb.  Writes fab/ next to the board (not tracked), here pcb/fab/:
   C128-keyboard-rev3-gerbers.zip   copper (4 layers), mask, paste, silk, outline, drills
   C128-keyboard-rev3-bom.csv       Comment, Designator, Footprint, LCSC Part #
   C128-keyboard-rev3-cpl.csv       Designator, Mid X, Mid Y, Layer, Rotation
@@ -16,15 +17,18 @@ origin for gerbers, drills and positions alike.  The planes are refilled on a co
 The BOM comes from the schematic's LCSC fields.  A part with no LCSC number is not placed by
 the fab (the key switches and J2-J4, which the builder solders, and JP1, which is copper only)
 and is left out of both the BOM and the CPL; the script lists them, and refuses to write if an
-SMD footprint on the board has no number, or if DRC finds an error or anything unconnected.
+SMD footprint on the board has no number (other than those in HAND, per board), or if DRC
+finds an error or anything unconnected.
 
 Rotations: JLCPCB's part models don't all share KiCad's zero orientation, and on the bottom
 side they don't follow the maker's package drawing consistently either, so the corrections
 are what the placement preview needed (first order, 2026-11-23).  ROT_ADD holds, per
-footprint, the degrees added to KiCad's rotation; every part listed is on the bottom and all
-parts of one footprint sit at the same KiCad rotation, so a correction found on one holds for
-the rest.  A footprint not listed passes KiCad's rotation through: resistors, capacitors and
-the tact switches (all symmetric), the SOT-23s (Q1-Q3, U4), U2 and the LEDs looked right.
+footprint, the degrees added to KiCad's rotation on the bottom side; all parts of one
+footprint there sit at the same KiCad rotation, so a correction found on one holds for the
+rest.  ROT_ADD_TOP holds the top side's, per LCSC part number, since on the dongle two parts
+on one footprint (U4 and U6, both SOT-23-5) needed different turns (the dongle's preview,
+2026-11-27; its other top parts and its whole bottom side looked right).  A footprint not listed passes KiCad's rotation through: resistors, capacitors and
+the tact switches (all symmetric), the SOT-23s (Q1-Q3, U4), the keyboard's U2 and the LEDs looked right.
 A part turned or moved to the other side needs its correction checked again in the preview.
 """
 import csv
@@ -40,11 +44,16 @@ import zipfile
 import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PCB = os.path.dirname(HERE)
-NAME = "C128-keyboard-rev3"
-BOARD = os.path.join(PCB, NAME + ".kicad_pcb")
+BOARD = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.join(os.path.dirname(HERE), "C128-keyboard-rev3.kicad_pcb")
+PCB = os.path.dirname(BOARD)
+NAME = os.path.splitext(os.path.basename(BOARD))[0]
 SCH = os.path.join(PCB, NAME + ".kicad_sch")
 OUT = os.path.join(PCB, "fab")
+# SMD footprints with no LCSC number on purpose: copper only, or soldered by the builder
+HAND = {
+    "C128-keyboard-rev3": ("JP1",),
+    "c128-dongle": ("JP1", "J2", "J3"),       # the DB25s straddle the board edges
+}.get(NAME, ())
 KC = os.environ.get("KICAD_CLI", "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli")
 LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts"
 ROT_ADD = {                       # footprint -> degrees added to KiCad's rotation
@@ -56,6 +65,14 @@ ROT_ADD = {                       # footprint -> degrees added to KiCad's rotati
     "CP_Elec_6.3x7.7": 180,                                 # C5: 0 -> 180
     "D_SOD-123": 180,                                       # band on the anode at 0
     "D_SMA": 180,
+}
+ROT_ADD_TOP = {                   # LCSC number -> degrees, for top-side parts; "right 90" in
+    "C500795": 180,               # the preview (clockwise) is 270.  U2 AP7361C, SOT-223
+    "C109471": 270,               # U3 CH446Q, LQFP-44
+    "C7484": 180,                 # U4 74AHCT1G125, SOT-23-5
+    "C150097": 270,               # U5 CH442E, MSOP-10
+    "C55136": 270,                # U6 SY6280AAC, SOT-23-5
+    "C7519": 270,                 # U7, U8 USBLC6-2SC6, SOT-23-6
 }
 
 
@@ -134,18 +151,20 @@ def pad_center(fp):
     return bb.GetCenter()
 
 
-def cpl(b, tmp, placed, board):
+def cpl(b, tmp, lcsc_of, board):
     raw = os.path.join(tmp, "pos-raw.csv")
     run("pcb", "export", "pos", "--format", "csv", "--units", "mm", "--side", "both", "-o", raw, b)
     fps = {f.GetReference(): f for f in board.GetFootprints()}
     rows = []
     for r in csv.DictReader(open(raw, encoding="utf-8")):
         ref = r["Ref"]
-        if ref not in placed:
+        if ref not in lcsc_of:
             continue
         fp = fps[ref]
         name = fp.GetFPID().GetLibItemName().wx_str()
-        rot = (float(r["Rot"]) + ROT_ADD.get(name, 0)) % 360
+        # each side has its own corrections: a footprint's model can be off on one side only
+        add = ROT_ADD.get(name, 0) if r["Side"] == "bottom" else ROT_ADD_TOP.get(lcsc_of[ref], 0)
+        rot = (float(r["Rot"]) + add) % 360
         x, y = float(r["PosX"]), float(r["PosY"])
         # the fab turns a part about the point given here, and its models sit on the middle of
         # their pads.  Most footprints have their origin there; J1's is at the pad row's edge,
@@ -176,7 +195,7 @@ def main():
         # every SMD part must have a number: the fab places them all
         missing = sorted(f.GetReference() for f in board.GetFootprints()
                          if f.GetAttributes() & pcbnew.FP_SMD and f.GetReference() not in lcsc_of
-                         and f.GetReference() not in ("JP1",))
+                         and f.GetReference() not in HAND)
         if missing:
             sys.exit(f"fab: SMD footprints with no LCSC number: {', '.join(missing)}")
         on_board = {f.GetReference() for f in board.GetFootprints()}
@@ -184,7 +203,7 @@ def main():
         if lost:
             sys.exit(f"fab: in the BOM but not on the board: {', '.join(lost)}")
 
-        cpl_rows = cpl(b, tmp, set(lcsc_of), board)
+        cpl_rows = cpl(b, tmp, lcsc_of, board)
         if len(cpl_rows) != len(lcsc_of):
             sys.exit(f"fab: CPL has {len(cpl_rows)} parts, BOM {len(lcsc_of)}")
 
