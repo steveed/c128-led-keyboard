@@ -45,6 +45,68 @@ the keyboard are worth a test.
 Feeding the keyboard through its own USB-C keeps the keyboard unchanged and keeps USB data
 for flashing.  The board has two USB-C ports.
 
+### Basics: one cell and a boost
+
+- **Boost, not buck.**  One lithium cell (a LiPo pouch or an 18650) sits between 4.2 V full and
+  about 3.0 V empty, always below the keyboard's 5 V, so the board needs a boost converter
+  (steps up), not a buck (steps down).  Two cells in series (7.4 V) would take a buck, but
+  charging them from USB needs a balancing charger and a boost of its own.  One cell and a
+  boost is the standard way.
+- **Rough currents:** a boost is about 90 % efficient, so 1 A out at 5 V draws about 1.5 A from
+  a 3.7 V cell.
+
+### Safety rules for one lithium cell
+
+- **Charge with a proper charger chip:** constant current, then constant voltage, stopping at
+  exactly 4.2 V.  Never connect 5 V straight to a cell.
+- **Charge current at or below the cell's rating,** usually 0.5-1 times its capacity (0.5-1 C):
+  1 A is gentle for a 5000 mAh pack.
+- **Cells with a built-in protection board.**  Most pouch cells sold with wires have one: it
+  cuts the cell off on overcharge, over-discharge, overcurrent and short circuit.
+- **Temperature:** no charging below about 0 C or above about 45 C.  Better chargers read a
+  thermistor on the pack.
+- **Mechanics:** a pouch cell must not be punctured, crushed or squeezed, and needs a little
+  room to swell with age.  A printed tray with soft padding is the usual fix.
+- **Connector polarity:** JST-PH battery plugs are wired with opposite polarity by different
+  sellers.  Check every pack with a meter before plugging it in.
+
+### Step 1: measure
+
+Before choosing the cell or the boost, run the keyboard from USB through an in-line USB power
+meter (a USB-A to USB-C type with a current display, about 15 USD) and note its draw with the
+LEDs off and idle, while typing, and with the LEDs at a usual brightness.  Those numbers set the
+battery size and the boost rating, and show whether a low-load auto-off (below) would bite.
+
+### Step 2: test with an off-the-shelf module
+
+**Adafruit PowerBoost 1000C** (Adafruit product 2465, about 20 USD; stocked by Jameco and The
+Pi Hut, among others, when checked on 2026-11-27).  It is built the way the final board is: a
+Microchip MCP73871 power-path charger feeding a TI TPS61090 5 V boost.  It switches to USB power
+whenever USB is plugged in, so the keyboard runs from a charging pack.
+
+- **Output:** a USB-A socket at 5 V, about 1 A continuous, into the keyboard's J1 with an
+  ordinary USB-A to USB-C cable.  Charging is from its micro-USB input, up to 1.8 A.
+- **Limits:** 1 A rather than 2 A, so set the firmware's LED current cap to about 600-700 mA
+  while testing on it.  No USB data pass-through: flash the keyboard by plugging it into the Mac
+  directly.  Keep the cell connected: it absorbs the load spikes.
+- **Cell:** a protected LiPo with a JST-PH plug of Adafruit's polarity (Adafruit's own packs are
+  the safe choice; check any other with a meter), about 2500 mAh for tests.
+- **Other candidates found:** Pimoroni's MP2636 module (2.5 A charge and boost, but whether it
+  powers the load while charging needs checking in its datasheet); Adafruit's bq25185 board
+  (power path, but 1 A out and a 6-hour charge timer); SparkFun's boards (600 mA, or no power
+  path).
+- **The catch with cheap modules and power banks:** many switch themselves off when the load
+  falls below roughly 50-100 mA, which a keyboard with its LEDs off can.  The PowerBoost 1000C
+  does not do this.
+
+### Step 3: the final board
+
+A power-path charger and a separate 5 V boost, as on the PowerBoost 1000C, with the two USB-C
+ports below.  Candidates: TI's BQ24074 or Microchip's MCP73871 for the charger, and a boost
+such as TI's TPS61023 or TPS61088, sized from the step 1 numbers.  An all-in-one power-bank
+chip (Injoinic's IP5306, as in M5Stack devices) is cheaper and smaller, but has the low-load
+auto-off to work around.
+
 ### Port 1: on the outside of the case (charge and data in)
 
 - **CC:** 5.1 k pull-downs (Rd), like the keyboard's R3 and R4, so a charger or PC supplies power.
@@ -264,6 +326,6 @@ USB-C still works for flashing.
 
 ## Open questions
 
-- Which charger and boost: a power-path charger with a separate boost, or an all-in-one
-  power-bank chip.  Compare their current limits, quiescent draw and JLCPCB stock.
+- The battery board's charger and boost parts, chosen from the step 1 measurements: compare
+  current limits, quiescent draw and JLCPCB stock.
 - The USB parts: which analog switch, and which current-limited power switch for the USB-A.
