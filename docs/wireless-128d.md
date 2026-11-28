@@ -74,6 +74,31 @@ for flashing.  The board has two USB-C ports.
 - **Space:** the printed 128D case has about 31 mm of height at the rear, which fits a flat
   5000 mAh or larger pack.
 
+## Dongle hardware
+
+The user's direction (2026-11-27): the board is as wide as the DB25, and a straight
+solder-cup DB25 slides over fingers on its edge.
+
+- **Straddle mount:** the board's edge slides between the connector's two rows of solder
+  cups.  13 pads on one side (pins 1-13) and 12 on the other (pins 14-25), at the DB25's
+  2.77 mm pitch, the two rows offset by half a pitch.  Each cup is soldered flat to its pad: no
+  drilling, and strong mechanically.
+- **Board thickness:** set by the gap between the cup rows.  1.6 mm is commonly used in DB25
+  solder cups; check the chosen connector's drawing before fixing it.
+- **Width:** about 39-41 mm, the connector body behind its flange (the flange is about 53 mm).
+  That fits a standard DB25 hood, which becomes the dongle's case.
+- **Plastic hood only:** a metal hood blocks the radio.  Use a module with a PCB antenna (for
+  example the ESP32-C3-MINI-1), antenna end at the far end from the connector, copper kept
+  clear under it.
+- **Room:** the module (about 13 x 17 mm), the CH446Q (12 x 12 mm with pins), three SOT-23
+  FETs and a regulator fit on about 40 x 45 mm, using both sides.
+- **USB-C** on the far end, at the hood's cable exit, for the app and for flashing.
+- **Gender:** the opposite of the 128D's own keyboard socket.  Check it on the machine before
+  ordering.
+- **No pass-through:** a hood has one connector end, so a pass-through DB25 for a wired
+  keyboard needs a different, larger housing.  The choice is a compact dongle in a hood or a
+  pass-through box.
+
 ## The dongle on its own
 
 The dongle does not care where key states come from: the C128 only sees switches closing
@@ -116,7 +141,8 @@ can type on the computer: the keyboard over ESP-NOW, or an app on a Mac or PC.
 The C128's matrix is wired together, so the dongle's switches and a real keyboard's switches
 can sit on the same lines at once.
 
-- **On a 128D:** a pass-through DB25 on the dongle lets the normal keyboard plug in behind it.
+- **On a 128D:** a pass-through DB25 lets the normal keyboard plug in behind the dongle, though
+  not with the hood-mounted dongle above, which has one connector end.
 - **On a flat C128:** the same circuit can sit on a small board at the internal keyboard
   header, alongside the stock keyboard.
 
@@ -140,4 +166,5 @@ USB-C still works for flashing.
 - Whether to use the J4 link at all, or start with a fixed wireless-mode LED limit.
 - The dongle's housing on the DB25, and whether it needs a pairing button.
 - ESP32-C3 or S3 for the dongle: the S3 can host a USB keyboard directly.
-- Whether the 128D dongle carries a pass-through DB25 for a wired keyboard.
+- A compact dongle in a DB25 hood, or a larger box with a pass-through DB25 for a wired keyboard.
+- The solder-cup connector: its cup gap (board thickness) and gender.
