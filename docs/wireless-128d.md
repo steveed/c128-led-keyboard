@@ -89,7 +89,7 @@ of the board, so the dongle passes the keyboard through; USB-C on one side, stat
 other, and a 3D-printed clamshell snapped over the whole board.
 
 ```
-            north: USB-C
+            north: USB-C, USB-A
         +-------------------+
  west   |                   |   east
  DB25 ==|  ESP32   CH446Q   |== DB25
@@ -121,8 +121,10 @@ other, and a 3D-printed clamshell snapped over the whole board.
 
 ### North and south
 
-- **USB-C on the north edge,** for the app and for flashing.  Its 5 V joins the DB25's +5 V
-  through diodes, as the keyboard's D1 and D2 do.
+- **Two USB ports on the north edge** (decided 2026-11-27): a USB-C for the Mac and for
+  flashing, and a USB-A for a USB keyboard.  Both can stay plugged in; a mode button picks
+  which one the S3 talks to (see *USB: two ports, one switch* below).  The USB-C's 5 V joins
+  the DB25's +5 V through diodes, as the keyboard's D1 and D2 do.
 - **Status light on the south edge: one SK6812 MINI behind a light pipe** (the user's choice,
   2026-11-27: simplest to make and cheapest).  It is the keyboard's own LED (LCSC C2886570,
   already in the BOM and stocked by JLCPCB), placed by the fab like any other part, and its
@@ -148,6 +150,28 @@ other, and a 3D-printed clamshell snapped over the whole board.
   screw to the computer and the keyboard cable can screw to the dongle.
 - **Openings:** a cut-out for the USB-C on the north side, and the light pipe over the status
   LED on the south side.  Plastic is fine for the radio.
+
+## USB: two ports, one switch
+
+The S3 has one USB transceiver: its USB is a device or a host, never both at once.  So the
+dongle has two ports and routes the S3 to one of them.
+
+- **USB-C, device mode (the default):** the Mac app (USB serial) and flashing.  The port is
+  only ever a device, so its CC pins carry plain 5.1 k pull-downs, as on the keyboard.
+- **USB-A, host mode:** a USB keyboard.  Its 5 V comes through a current-limited power switch
+  (about 500 mA), turned on in host mode only.
+- **The switch:** a USB 2.0 analog switch chip routes the S3's D+/D- to one port or the
+  other, so both can stay connected and the mode button toggles between them.
+- **Mode button:** a second tact switch through the clamshell.  The status light shows the
+  mode: for example cyan for the Mac and flashing, amber for the USB keyboard.  The mode is
+  saved, and the simplest firmware saves it and restarts in the new mode, which takes under a
+  second.
+- **Flashing always wins:** holding BOOT (the pairing button) at reset puts the S3 into
+  download mode on the USB-C, whatever mode is saved, so a bad setting can never stop a
+  reflash.
+- Considered and set aside: one USB-C that swaps roles (needs an adapter for a USB-A keyboard
+  and a switched CC pull-up), and a separate USB-host chip (keyboard and Mac at once, but more
+  parts and cost than the use needs).
 
 ## Pairing
 
@@ -180,8 +204,8 @@ can type on the computer: the keyboard over ESP-NOW, or an app on a Mac or PC.
 - **Wi-Fi:** a small TCP or WebSocket server on the ESP32, so the app works across the room
   with only the C128 powering the dongle.
 - **A USB keyboard plugged straight in:** the S3's USB can act as a host and read a USB
-  keyboard directly, with no computer involved.  This is why the dongle uses the S3 rather
-  than a C3 (see the open question on supplying the keyboard's 5 V).
+  keyboard on the dongle's USB-A, with no computer involved.  This is why the dongle uses the
+  S3 rather than a C3.
 
 ### What it is good for
 
@@ -230,6 +254,5 @@ USB-C still works for flashing.
 
 - Which charger and boost: a power-path charger with a separate boost, or an all-in-one
   power-bank chip.  Compare their current limits, quiescent draw and JLCPCB stock.
-- USB host on the dongle: in host mode the S3 must supply 5 V to the USB keyboard, which the
-  input diode blocks.  Either a power switch on VBUS for a dual-role port, or a USB-C OTG
-  adapter with firmware that switches roles.
+- The USB parts: which analog switch, which current-limited power switch for the USB-A,
+  and whether the USB-A sits flat or upright under the clamshell.
