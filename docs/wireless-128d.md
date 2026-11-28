@@ -11,7 +11,13 @@ battery board that is part of the case.
 |---|---|---|
 | Keyboard | the rev 3 board, unchanged; new firmware only | 5 V into its USB-C (J1) from the battery board |
 | Dongle | plugs into the 128D's front DB25 keyboard port: an ESP32 (a C3 is enough) and a copy of the rev 3 crosspoint sheet (CH446Q, the RESTORE and lock-line FETs, 3.3 V regulator) | the computer's +5 V on the DB25 |
-| Battery board | in the case: a LiPo, a power-path charger, a 5 V boost, two USB-C ports | its cell, or USB when plugged in |
+| Battery board | in the keyboard's case: a LiPo, a power-path charger, a 5 V boost, two USB-C ports | its cell, or USB when plugged in |
+
+The dongle and the battery board are separate boards that know nothing of each other.  The
+dongle is powered by the 128D (or its own USB-C); the battery board only ever feeds the
+keyboard.  The radio link between the keyboard and the dongle is all they share, and either
+can be built without the other: a dongle with a wired keyboard, or a battery keyboard with a
+dongle on a second 128D.
 
 ## Why a dongle works
 
@@ -61,10 +67,12 @@ for flashing.  The board has two USB-C ports.
 
 ### Other connections and settings
 
-- **J4 link (optional):** J4 (UART TX, RX, GND) can carry two messages.  The battery board
-  reports its charge level, so the firmware can show it and warn when low.  The keyboard asks
-  to be turned off after a long idle, and a power button on the case turns it back on.  J4 is
-  the development console otherwise; the finished keyboard does not need it.
+- **J4 stays available (decided 2026-11-27).**  The keyboard's 3-pin UART header (TX, RX,
+  GND) is already on the board and is left as it is.  A battery board can use it later for two
+  messages: the battery board reports its charge level, so the firmware can show it and warn
+  when low; and the keyboard asks to be turned off after a long idle, with a power button on
+  the case to turn it back on.  Until then J4 is the development console.  No keyboard change
+  is needed either way.
 - **LED current on battery:** the firmware's LED current cap should come down on battery,
   whatever the boost is rated for.  The firmware cannot see the source by itself; the J4 link
   or a lower LED setting in wireless mode covers it.
@@ -200,7 +208,6 @@ USB-C still works for flashing.
 
 - Which charger and boost: a power-path charger with a separate boost, or an all-in-one
   power-bank chip.  Compare their current limits, quiescent draw and JLCPCB stock.
-- Whether to use the J4 link at all, or start with a fixed wireless-mode LED limit.
 - The dongle's housing on the DB25, and whether it needs a pairing button.
 - ESP32-C3 or S3 for the dongle: the S3 can host a USB keyboard directly.
 - The status light's data level: the 74AHCT1G125 buffer or a diode-dropped 5 V for the LED.
