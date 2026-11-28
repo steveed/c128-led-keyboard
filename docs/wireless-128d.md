@@ -175,13 +175,13 @@ can type on the computer: the keyboard over ESP-NOW, or an app on a Mac or PC.
 ### How an app talks to it
 
 - **USB serial:** the simplest.  The ESP32 shows up as a serial port, and the app sends
-  commands such as `type 10 PRINT "HI"`, `press RETURN` or `hold SHIFT`.  The ESP32-C3 has USB
-  built in (the C3 and the S3 both), so no extra chip is needed.
+  commands such as `type 10 PRINT "HI"`, `press RETURN` or `hold SHIFT`.  The S3 has USB
+  built in, so no extra chip is needed.
 - **Wi-Fi:** a small TCP or WebSocket server on the ESP32, so the app works across the room
   with only the C128 powering the dongle.
-- **A USB keyboard plugged straight in:** with an ESP32-S3 instead of a C3, its USB can act as
-  a host and read a USB keyboard directly, with no computer involved.  This is the main reason
-  to pick the S3 over the C3.
+- **A USB keyboard plugged straight in:** the S3's USB can act as a host and read a USB
+  keyboard directly, with no computer involved.  This is why the dongle uses the S3 rather
+  than a C3 (see the open question on supplying the keyboard's 5 V).
 
 ### What it is good for
 
