@@ -88,7 +88,7 @@ other, and a 3D-printed clamshell snapped over the whole board.
  to the |                   |   for the
  128D   |                   |   keyboard
         +-------------------+
-            south: status LEDs, antenna corner
+            south: status light pipe, antenna corner
 ```
 
 ### The board
@@ -115,9 +115,14 @@ other, and a 3D-printed clamshell snapped over the whole board.
 
 - **USB-C on the north edge,** for the app and for flashing.  Its 5 V joins the DB25's +5 V
   through diodes, as the keyboard's D1 and D2 do.
-- **Status LEDs on the south edge:** side-firing (right-angle) LEDs at the board edge, seen
-  through the shell; or one SK6812 (the keyboard's part) behind a small light pipe, showing
-  power, link and key activity in colour.
+- **Status light on the south edge: one SK6812 MINI behind a light pipe** (the user's choice,
+  2026-11-27: simplest to make and cheapest).  It is the keyboard's own LED (LCSC C2886570,
+  already in the BOM and stocked by JLCPCB), placed by the fab like any other part, and its
+  colour shows power, link and key activity.  The light pipe is part of the clamshell: a short
+  clear-printed rod, or a standard press-fit pipe in a hole above the LED.
+  - **Data level:** at 5 V the SK6812 wants its data above about 3.5 V, and the ESP32 drives
+    3.3 V.  Use the keyboard's 74AHCT1G125 buffer (U4 there), or feed the LED's 5 V through a
+    Schottky diode (about 4.6 V), which brings its threshold within reach of 3.3 V.
 - **Antenna:** with metal D-sub shells at both ends and the USB-C north, the clearest spot is
   the south edge.  Use a module with a PCB antenna (for example the ESP32-C3-MINI-1), its
   antenna end at a south corner away from the LEDs, copper kept clear under it.
@@ -128,8 +133,8 @@ other, and a 3D-printed clamshell snapped over the whole board.
   the DB25 flanges, so the flanges take the plugging force, not the solder joints.
 - **Retention:** the flanges' 4-40 holes take jackscrews or hex standoffs, so the dongle can
   screw to the computer and the keyboard cable can screw to the dongle.
-- **Openings:** a cut-out for the USB-C on the north side, and windows or light pipes for the
-  LEDs on the south side.  Plastic is fine for the radio.
+- **Openings:** a cut-out for the USB-C on the north side, and the light pipe over the status
+  LED on the south side.  Plastic is fine for the radio.
 
 ## The dongle on its own
 
@@ -198,4 +203,4 @@ USB-C still works for flashing.
 - Whether to use the J4 link at all, or start with a fixed wireless-mode LED limit.
 - The dongle's housing on the DB25, and whether it needs a pairing button.
 - ESP32-C3 or S3 for the dongle: the S3 can host a USB keyboard directly.
-- Status LEDs: side-firing LEDs or one SK6812 behind a light pipe.
+- The status light's data level: the 74AHCT1G125 buffer or a diode-dropped 5 V for the LED.
