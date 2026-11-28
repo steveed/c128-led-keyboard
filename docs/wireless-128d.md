@@ -99,12 +99,11 @@ other, and a 3D-printed clamshell snapped over the whole board.
 - **Straddle mounts:** at each end the board's edge slides between the connector's two rows of
   solder cups: 13 pads on one side (pins 1-13) and 12 on the other (pins 14-25), at the
   DB25's 2.77 mm pitch, the rows offset by half a pitch, each cup soldered flat to its pad.
-  The gap between the cup rows sets the board thickness; 1.6 mm is common, but check the
-  chosen connector's drawing.
-- **West DB25:** to the computer, the opposite gender to the 128D's own keyboard socket.
-- **East DB25:** for the keyboard cable, the same gender as the 128D's socket, so a keyboard
-  plugs into the dongle exactly as it would into the computer.  Check both genders on the
-  machine before ordering.
+- **Board thickness: 1.6 mm,** which fits between the cup rows (confirmed by the user,
+  2026-11-27).
+- **West DB25: male,** to the computer.  The 128D's keyboard socket is female.
+- **East DB25: female,** like the 128D's socket, for the keyboard cable's male plug, so a
+  keyboard plugs into the dongle exactly as it would into the computer.
 - **Pass-through:** all 25 pins straight through between the two connectors, +5 V and GND
   included, so a wired keyboard is powered as normal.  The CH446Q taps the same matrix lines
   in parallel, the way the rev 3 board's crosspoint sits on the host lines.
@@ -199,5 +198,4 @@ USB-C still works for flashing.
 - Whether to use the J4 link at all, or start with a fixed wireless-mode LED limit.
 - The dongle's housing on the DB25, and whether it needs a pairing button.
 - ESP32-C3 or S3 for the dongle: the S3 can host a USB keyboard directly.
-- The solder-cup connectors: their cup gap (board thickness) and the two genders.
 - Status LEDs: side-firing LEDs or one SK6812 behind a light pipe.
