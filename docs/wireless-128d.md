@@ -10,7 +10,7 @@ battery board that is part of the case.
 | Part | What it is | Power |
 |---|---|---|
 | Keyboard | the rev 3 board, unchanged; new firmware only | 5 V into its USB-C (J1) from the battery board |
-| Dongle | plugs into the 128D's front DB25 keyboard port: an ESP32 (a C3 is enough) and a copy of the rev 3 crosspoint sheet (CH446Q, the RESTORE and lock-line FETs, 3.3 V regulator) | the computer's +5 V on the DB25 |
+| Dongle | plugs into the 128D's front DB25 keyboard port: an ESP32-S3 and a copy of the rev 3 crosspoint sheet (CH446Q, the RESTORE and lock-line FETs, 3.3 V regulator) | the computer's +5 V on the DB25 |
 | Battery board | in the keyboard's case: a LiPo, a power-path charger, a 5 V boost, two USB-C ports | its cell, or USB when plugged in |
 
 The dongle and the battery board are separate boards that know nothing of each other.  The
@@ -131,9 +131,14 @@ other, and a 3D-printed clamshell snapped over the whole board.
   - **Data level:** at 5 V the SK6812 wants its data above about 3.5 V, and the ESP32 drives
     3.3 V.  Use the keyboard's 74AHCT1G125 buffer (U4 there), or feed the LED's 5 V through a
     Schottky diode (about 4.6 V), which brings its threshold within reach of 3.3 V.
+- **Module: ESP32-S3-MINI-1** (decided 2026-11-27), the PCB-antenna version of the
+  keyboard's S3-MINI-1U, chosen over a C3 because its USB can also host a USB keyboard.
 - **Antenna:** with metal D-sub shells at both ends and the USB-C north, the clearest spot is
-  the south edge.  Use a module with a PCB antenna (for example the ESP32-C3-MINI-1), its
-  antenna end at a south corner away from the LEDs, copper kept clear under it.
+  the south edge: the module's antenna end at a south corner away from the status light,
+  copper kept clear under it.
+- **Pairing button:** reachable through the clamshell (a printed cap over a tact switch).  It
+  can be the S3's BOOT button on IO0: held at reset it enters download mode, pressed while
+  running it starts pairing, so one switch does both.
 
 ### Clamshell
 
@@ -143,6 +148,23 @@ other, and a 3D-printed clamshell snapped over the whole board.
   screw to the computer and the keyboard cable can screw to the dongle.
 - **Openings:** a cut-out for the USB-C on the north side, and the light pipe over the status
   LED on the south side.  Plastic is fine for the radio.
+
+## Pairing
+
+The user's flow (2026-11-27): press the dongle's pairing button, its light blinks, then press
+RETURN on the keyboard.
+
+1. **The button opens pairing** for about 30 seconds.  The status light blinks, and the
+   dongle broadcasts a "pairing open" beacon over ESP-NOW.
+2. **The keyboard answers at the next RETURN** (or keypad ENTER).  A keyboard that hears the
+   beacon sends a pairing request instead of the key.  The first request wins.
+3. **Both sides store each other** (the other's MAC address and a shared ESP-NOW encryption
+   key, in NVS), so they find each other after a power cycle.  The dongle's light goes solid,
+   and the keyboard can flash its own LEDs to confirm.
+4. **The RETURN is not typed:** it is swallowed by the pairing, so the C128 never sees it.
+
+Pairing again replaces the stored partner.  A timeout with no RETURN closes pairing and
+leaves the old pairing in place.
 
 ## The dongle on its own
 
@@ -154,7 +176,7 @@ can type on the computer: the keyboard over ESP-NOW, or an app on a Mac or PC.
 
 - **USB serial:** the simplest.  The ESP32 shows up as a serial port, and the app sends
   commands such as `type 10 PRINT "HI"`, `press RETURN` or `hold SHIFT`.  The ESP32-C3 has USB
-  built in, so no extra chip is needed.
+  built in (the C3 and the S3 both), so no extra chip is needed.
 - **Wi-Fi:** a small TCP or WebSocket server on the ESP32, so the app works across the room
   with only the C128 powering the dongle.
 - **A USB keyboard plugged straight in:** with an ESP32-S3 instead of a C3, its USB can act as
@@ -208,6 +230,7 @@ USB-C still works for flashing.
 
 - Which charger and boost: a power-path charger with a separate boost, or an all-in-one
   power-bank chip.  Compare their current limits, quiescent draw and JLCPCB stock.
-- The dongle's housing on the DB25, and whether it needs a pairing button.
-- ESP32-C3 or S3 for the dongle: the S3 can host a USB keyboard directly.
+- USB host on the dongle: in host mode the S3 must supply 5 V to the USB keyboard, which the
+  input diode blocks.  Either a power switch on VBUS for a dual-role port, or a USB-C OTG
+  adapter with firmware that switches roles.
 - The status light's data level: the 74AHCT1G125 buffer or a diode-dropped 5 V for the LED.
